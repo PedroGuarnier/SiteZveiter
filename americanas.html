@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/ChatGPT Image 13 de mai. de 2025, 15_42_05.png" type="image/png">
+    <title>GRUPO AMERICANAS | Escritório de Advocacia Zveiter</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .card {
+    width: auto; /* Ajuste para que a largura seja determinada pelo conteúdo */
+    height: fit-content;
+    background: #191919;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Ajuste do padding */
+    gap: 10px; /* Espaço entre os ícones */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+    border-radius: 5px; /* Adiciona bordas arredondadas se desejado */
+}
+
+.socialContainer {
+    width: 32px; /* Tamanho dos ícones */
+    height: 32px; /* Tamanho dos ícones */
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+
+.containerOne:hover {
+    background-color: #d62976;
+}
+
+.containerThree:hover {
+    background-color: #0072b1;
+}
+
+.socialContainer:active {
+    transform: scale(0.9);
+}
+
+.socialSvg {
+    width: 20px; /* Tamanho reduzido dos ícones */
+}
+
+.socialSvg path {
+    fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+}
+
+.social-icons-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre os ícones */
+}
+
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+
+}
+    /* Estilo para o container do dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilo para o botão do dropdown */
+.dropbtn {
+    
+    background-color: #4a4a4a; /* Cor de fundo do botão */
+    color: #f1f1f1; /* Cor do texto do botão */
+    padding: 16px; /* Espaçamento interno do botão */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    border: none; /* Remover borda */
+    cursor: pointer; /* Cursor do mouse */
+    width: 100%; /* Largura total do botão */
+    text-align: left; /* Alinhamento do texto à esquerda */
+}
+
+/* Estilo para o conteúdo do dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+/* Estilo para os itens do dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alterar a cor de fundo e o texto ao passar o mouse sobre um item do dropdown */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #191919;
+}
+
+/* Mostrar o conteúdo do dropdown ao passar o mouse sobre o botão */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mostrar o conteúdo do dropdown ao passar o mouse sobre o botão */
+.dropdown:hover .dropbtn {
+    background-color: #ddd;
+    color:#191919
+}
+
+/* Estilo para o conteúdo que aparece ao clicar */
+.content {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+
+/* Estilo de animação para mostrar/ocultar o conteúdo */
+.content {
+    display: none;
+    transition: max-height 0.3s ease-out;
+}
+
+/* Mostrar o conteúdo ao clicar */
+.show {
+    display: block;
+    max-height: 1000px; /* Ajuste conforme necessário */
+}
+.vertical-align-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens verticalmente à esquerda */
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+.vertical-align-section .dropdown {
+    width: 100%; /* Opcional: ajuste conforme necessário */
+}
+.container {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .section-title {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+            flex: 1;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 5px;
+            transition: width var(--transition-ease);
+        }
+
+        .section-title:hover::after {
+            width: 100px;
+        }
+
+        .section-content {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 800px; /* Consistent width for both sections */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            transition: transform var(--transition-ease), box-shadow var(--transition-ease);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+        }
+            
+    .pdf-link {
+    background-color: #f1f1f1;
+    color: #f1f1f1;
+    
+}
+
+.pdf-link:hover {
+    background-color: #f1f1f1;
+    color: white;
+}
+
+
+        
+    
+        </style>
+         
+    </head>
+    <body id="top">
+        <div class="loading-container">
+        </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="transition-wrapper">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="institucional.html"><strong>INSTITUCIONAL</strong></a></li>
+                            <li class="nav-item"><a class="nav-link" href="profissionais.html"><strong>PROFISSIONAIS</strong></a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="especialidadesLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <strong>ESPECIALIDADES</strong>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownEspecialidades">
+                                    <a class="dropdown-item" href="dirsocietario.html">Empresarial e Societário</a>
+                                    <a class="dropdown-item" href="dirinr.html">Direito Imobiliário, Notarial e Registral</a>
+                                    <a class="dropdown-item" href="dirintelec.html">Comunicação e Propriedade Intelectual</a>
+                                    <a class="dropdown-item" href="dirsucessorio.html">Direito Sucessório e Família</a>
+                                    <a class="dropdown-item" href="dirambiental.html">Direito Ambiental</a>
+                                    <a class="dropdown-item" href="">Direito de Saúde Suplementar</a>
+                                    <a class="dropdown-item" href="dirdespent.html">Direito Desportivo e do Entretenimento</a>
+                                    <a class="dropdown-item" href="#">Recuperação Judicial e Falência</a>
+                                    <a class="dropdown-item" href="contTrib.html">Contencioso Tributário</a>
+                                    <a class="dropdown-item" href="diradm.html">Direito Administrativo</a>
+                                    <a class="dropdown-item" href="#">Arbitragem e Mediação</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRecuperacoes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <strong>RECUPERAÇÕES JUDICIAIS E FALÊNCIAS</strong>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownRecuperacoes">
+                                    <a class="dropdown-item" href="grppetro.html">GRUPO PETRÓPOLIS</a>
+                                    <a class="dropdown-item" href="americanas.html">GRUPO AMERICANAS</a>
+                                    <a class="dropdown-item" href="mintucano.html">MINA TUCANO</a>
+                                    <a class="dropdown-item" href="gas.html">G.A.S. CONSULTORIA</a>
+                                    <a class="dropdown-item" href="transporte.html">TRANSPORTE CAMPO GRANDE LTDA E VIAÇÃO PENHA RIO LTDA</a>
+                                    <a class="dropdown-item" href="transcarioca.html">CONSÓRCIO TRANSCARIOCA DE TRANSPORTES</a>
+                                    <a class="dropdown-item" href="stcruz.html">CONSÓRCIO SANTA CRUZ TRANSPORTES</a>
+                                    <a class="dropdown-item" href="airmix.html">AIRMIX AR CONDICIONADO LTDA - FALÊNCIA</a>
+                                    <a class="dropdown-item" href="kpfr.html">KPFR EMPREENDIMENTOS</a>
+
+                                    
+                                </div>
+                                
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="#contato"><strong>CONTATO</strong></a></li> 
+                            <div class hidden="card">
+                                <div class="social-icons-wrapper">
+                                    <a href="#" class="socialContainer containerOne">
+                                        <svg class="socialSvg instagramSvg" viewBox="0 0 16 16"> 
+                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="socialContainer containerThree">
+                                        <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512">
+                                            <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </ul>
+
+
+                        
+                        
+                    </div>
+                    
+                </div>
+                
+        </nav>
+        
+        <header class="sticky-header">
+            <div class="container d-flex flex-column align-items-center py-3">
+                <div class="logo-wrapper">
+                    <a href="index.html">
+                        <img src="imgs/zveiter-advocacia.jpg" alt="Logo" class="img-fluid logo">
+                    </a>
+                </div>
+                
+                </div>
+            </div>
+        </header>
+
+    <section id="sobre-nos" class="container">
+        <h2 class="section-title">GRUPO AMERICANAS
+
+        </h2>
+        <div class="section-content">
+                <h3><p>AMERICANAS S.A., B2W DIGITAL LUX S.À.R.L, JSM GLOBAL S.À.R.L</h3></p>
+
+                <h6><p>Tutela Cautelar Antecedente de Recuperação Judicial nº 0803087-20.2023.8.19.0001</h6></p> 
+                
+                <h6><p>Juízo: 4ª Vara Empresarial da Comarca da Capital do Rio de Janeiro</h6></p>
+               
+                <h6><p>Administrador Judicial: Escritório de Advocacia Zveiter e  Preserva-Ação Administração Judicial</h6></p>
+
+                <h6><p>E-mail oficial para contato:<strong>:ajamericanas@psvar.com.br </strong></h6></p>
+
+                <h6><p>Site para consulta dos acompanhamentos processuais da recuperação judicial do Grupo Americanas</p></h6>
+
+                <a href="https://psvar.com.br/recuperacao-judicial/grupo-americanas/" target="_blank">Grupo Americanas - Recuperação Judicial</a>
+
+                 </section>
+                 <section class="vertical-align-section">                    
+                    <div class="container">
+                        <div class="dropdown">
+                            <button class="dropbtn">Informativos</button>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" onclick="toggleContent('content1')">INFORMATIVO 0001/2024</a>
+                                    <div id="content1" class="content" style="display: none;">
+                                        <br>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER e PSVAR INFORMAM:</strong></p>
+                                        <p>LEILÃO REVERSO - DIRETRIZES</p>
+                                        <p>A Administração Judicial conjunta informa que, em complemento ao Edital de Leilão Reverso publicado em 27/03/2024, para antecipação de pagamento de créditos quirografários, os credores que estiverem interessados em participar do leilão deverão observar as diretrizes, informadas pelas Recuperandas, nos autos do processo de recuperação judicial, no id. nº 112611591.</p>
+                                        <p>As diretrizes informadas pelas Recuperandas podem ser encontradas em: 
+                                            <a href="https://psvar.com.br/recuperacao-judicial/grupo-americanas" target="_blank">Grupo Americanas - Recuperação Judicial</a> 
+                                            e vistas 
+                                            <a href="https://psvar.com.br/wp-content/uploads/2024/04/DIRETRIZES-DO-LEILAO-REVERSO.pdf" target="_blank">DIRETRIZES DO LEILÃO REVERSO (PDF)</a>.
+                                        </p>
+                                        <p>Rio de Janeiro, 17 de abril de 2024</p>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER</strong></p>
+                                    </div>
+                                    <a class="dropdown-item" onclick="toggleContent('content2')">INFORMATIVO 0008/2023</a>
+                                    <div id="content2" class="content" style="display: none;">
+                                        <br>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER e PSVAR INFORMAM:</strong></p>
+                                        <p>REUNIÃO PARA APRESENTAÇÃO DO ADITIVO AO PLANO DE RECUPERAÇÃO JUDICIAL</p>
+                                        <p>Informamos que o Grupo Americanas realizará, no próximo dia 12/12/2023, às 10h, reunião de apresentação do aditivo ao Plano de Recuperação Judicial destinada aos credores listados.</p>
+                                        <p>Para participar, o credor deverá acessar e se cadastrar no link: 
+                                            <a href="https://us06web.zoom.us/webinar/register/WN_JAKQBdMGRIq4nQClmszlmA" target="_blank">Link para a Reunião Zoom</a>.
+                                        </p>
+                                        <p>A participação na referida reunião não importará em habilitação para a Assembleia Geral de Credores, devendo os credores adotarem as medidas previstas no edital convocatório para garantir seu credenciamento na AGC.</p>
+                                        <p>Rio de Janeiro, 07 de dezembro de 2023</p>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER</strong></p>
+                                    </div>
+                                    <a class="dropdown-item" onclick="toggleContent('content3')">INFORMATIVO 0007/2023</a>
+                                    <div id="content3" class="content" style="display: none;">
+                                        <br>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER e PSVAR INFORMAM:</strong></p>
+                                        <p>APRESENTAÇÃO DE ADITIVO AO PLANO DE RECUPERAÇÃO JUDICIAL</p>
+                                        <p>A administração Judicial conjunta informa que em 27/11/2023, as recuperandas apresentaram nos autos do processo de recuperação judicial, ADITAMENTO ao PLANO DE RECUPERAÇÃO JUDICIAL.</p>
+                                        <p>Rio de Janeiro, 28 de novembro de 2023</p>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER</strong></p>
+                                    </div>
+                                    
+                                    <a class="dropdown-item" onclick="toggleContent('content4')">INFORMATIVO 0006/2023</a>
+                                    <div id="content4" class="content" style="display: none;">
+                                        <br>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER e PSVAR INFORMAM:</strong></p>
+                                        <p>A Administração Judicial Una e Conjunta do Grupo Americanas informa que foi determinada a convocação da Assembleia Geral de Credores para os dias 19/12/2023, em primeira convocação, e 22/01/2024, em segunda convocação, conforme se extrai do edital que pode ser encontrado neste site.</p>
+                                        <p>Ficam os credores investidores detentores de títulos de dívida do Grupo cientes que terão até o dia 29/11/2023 para requererem o desmembramento dos seus créditos perante a Administração judicial, conforme edital publicado em 23/10/2023.</p>
+                                        <p>Rio de Janeiro, 28 de novembro de 2023</p>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER</strong></p>
+                                    </div>
+                                    
+                                    <a class="dropdown-item" onclick="toggleContent('content5')">INFORMATIVO 0005/2023</a>
+                                    <div id="content5" class="content" style="display: none;">
+                                        <br>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER e PSVAR INFORMAM:</strong></p>
+                                        <p>A Administração Judicial Una e Conjunta informa que, em 03/10/2023, o d. Juízo da 4ª Vara Empresarial do Rio de Janeiro autorizou a instauração de procedimento administrativo para que se promova o desmembramento dos credores investidores titulares de títulos de dívida nacionais e estrangeiras emitidos pelas empresas recuperandas.</p>
+                                        <p>O referido procedimento visa permitir que os ditos credores possam exercer, individual e autonomamente, seus direitos de crédito, voto e de voz, independentemente da vontade dos agentes fiduciários que se encontram listados na relação de credores.</p>
+                                        <p>Rio de Janeiro, 28 de novembro de 2023</p>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER</strong></p>
+                                    </div>
+                                    
+                                    <a class="dropdown-item" onclick="toggleContent('content6')">INFORMATIVO 0004/2023</a>
+                                    <div id="content6" class="content" style="display: none;">
+                                        <br>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER e PSVAR INFORMAM:</strong></p>
+                                        <p>A Administração Judicial Una e Conjunta informa que, conforme exposto na petição de providências iniciais protocolada pela AJ no dia 01/02/2023, no processo 0803087-20.2023.8.19.0001, localizada no index 44335023, os avisos e informações relacionados à recuperação judicial do grupo Americanas estão sendo divulgadas em seu site unificado que pode ser acessado através do link: <a href="https://psvar.com.br/" target="_blank">psvar.com.br</a>.</p>
+                                        <p>Rio de Janeiro, 20 de abril de 2023</p>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER</strong></p>
+                                    </div>
+                                    
+                                    <a class="dropdown-item" onclick="toggleContent('content7')">INFORMATIVO 0003/2023</a>
+                                    <div id="content7" class="content" style="display: none;">
+                                        <br>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER e PSVAR INFORMAM:</strong></p>
+                                        <p>APRESENTADA NOVA RELAÇÃO DE CREDORES</p>
+                                        <p>NÃO FOI INICIADO O PRAZO PARA APRESENTAÇÃO DE HABILITAÇÕES OU DIVERGÊNCIAS</p>
+                                        <p>A nova Relação de Credores pode ser acessada, em: <a href="https://psvar.com.br/recuperacao-judicial/grupo-americanas/" target="_blank">Link para a Relação de Credores</a>.</p>
+                                        <p>Rio de Janeiro, 14 de fevereiro de 2023</p>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER</strong></p>
+                                    </div>
+                                    
+                                    <a class="dropdown-item" onclick="toggleContent('content8')">INFORMATIVO 0002/2023</a>
+                                    <div id="content8" class="content" style="display: none;">
+                                        <br>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER e PSVAR INFORMAM:</strong></p>
+                                        <p>A Administração Judicial conjunta – A.J. informa que está trabalhando na verificação e complementação dos endereços de credores listados pelo “Grupo Americanas” para, após, encaminhar carta aos mesmos.</p>
+                                        <p>Os credores não listados ou que discordem dos créditos e/ou classe, poderão requerer a inclusão ou correção através do link: <a href="https://psvar.com.br/recuperacao-judicial/grupo-americanas/" target="_blank">psvar.com.br</a>.</p>
+                                        <p>Rio de Janeiro, 27 de janeiro de 2023</p>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER</strong></p>
+                                    </div>
+                                    
+                                    <a class="dropdown-item" onclick="toggleContent('content9')">INFORMATIVO 0001/2023</a>
+                                    <div id="content9" class="content" style="display: none;">
+                                        <br>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER INFORMAM:</strong></p>
+                                        <p>AVISO AOS CREDORES DO "GRUPO AMERICANAS"</p>
+                                        <p>A Administração Judicial nomeada pelo Juízo da 4ª Vara Empresarial do Tribunal de Justiça do Estado do Rio de Janeiro informa que foi deferido o pedido de Tutela Cautelar Antecedente, autuado sob o nº 0803087-20-2023.8.19.0001.</p>
+                                        <p>As cópias das principais peças encontram-se disponíveis neste site.</p>
+                                        <p>Rio de Janeiro, 14 de janeiro de 2023</p>
+                                        <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER</strong></p>
+                                    </div>
+                               
+                                    </div>
+                        </div>
+                
+                        <div class="dropdown">
+                            <button class="dropbtn">DOCUMENTOS</button>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" onclick="toggleContent('content10')">25/07/2024 - Comunicado ao Mercado - Procedimentos de entrega das ações e bônus de subscrição aos credores</a>
+                                    <div id="content10" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Comunicado-ao-Mercado-Procedimentos-de-entrega-das-acoes-e-bonus-de-subscricao-aos-credore.pdf" download class="pdf-link">Comunicado ao Mercado - Procedimentos de entrega das ações e bônus de subscrição aos credores</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content11')">18/07/2024 - PRJ Consolidado e Anexos - 17/07/2024</a>
+                                    <div id="content11" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PRJ-Consolidado-e-Anexos-17-07-24.pdf" download class="pdf-link">PRJ Consolidado e Anexos - 17/07/2024</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content12')">18/07/2024 - Alteração do PRJ - 17/07/2024 - cláusula 10.1.1</a>
+                                    <div id="content12" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Alteracao-do-PRJ-17-07-2024-clausula-10.1.1.pdf" download class="pdf-link">Alteração do PRJ - 17/07/2024 - cláusula 10.1.1</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content13')">31/05/2024 - Resultado do Leilão Reverso – Atualizado em 31/05/2024</a>
+                                    <div id="content13" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Doc.-01-Resultado-Leilao-Reverso-Atualizado-31.05.24.pdf" download class="pdf-link">Resultado do Leilão Reverso – Atualizado em 31/05/2024</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content14')">14/05/2024 - Edital Leilão Eletrônico - Automóveis</a>
+                                    <div id="content14" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Edital-leilao-eletronico-Automoveis-14-05-2024.pdf" download class="pdf-link">Edital Leilão Eletrônico - Automóveis</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content15')">13/05/2024 - Relação de credores bondholders/senior notes habilitados apresentada pela DF KING</a>
+                                    <div id="content15" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Doc-02-Tender-Offer-Lista-dos-Habilitados-apresentada-pela-DF-KING.pdf" download class="pdf-link">Relação de credores bondholders/senior notes habilitados apresentada pela DF KING</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content16')">13/05/2024 - Relação de credores habilitados para Leilão Reverso</a>
+                                    <div id="content16" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Doc_01_-_Relacao_de_credores_habilitados_leilao_reverso_-_Administracao_Judicial.pdf" download class="pdf-link">Relação de credores habilitados para Leilão Reverso</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content17')">17/04/2024 - Diretrizes para participação do Leilão Reverso</a>
+                                    <div id="content17" class="content" style="display: none;">
+                                        <a href="assets/pdfs/DIRETRIZES-DO-LEILAO-REVERSO.pdf" download class="pdf-link">Diretrizes para participação do Leilão Reverso</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content18')">28/03/2024 - Edital de Leilão Reverso - DJe 27/03/2024</a>
+                                    <div id="content18" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Edital-Leilao-Reverso-DJE-27-03-2024.pdf" download class="pdf-link">Edital de Leilão Reverso - DJe 27/03/2024</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content19')">21/12/2023 - Apresentação do Plano de Recuperação Judicial feita durante a AGC</a>
+                                    <div id="content19" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Doc.-06-Apresentacao-do-Plano-de-Recuperacao-Judicial-feita-durante-a-AGC.pdf" download class="pdf-link">Apresentação do Plano de Recuperação Judicial feita durante a AGC</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content20')">21/12/2023 - Plano de Recuperação Judicial aprovado</a>
+                                    <div id="content20" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Doc.-05-Plano-de-Recuperacao-Judicial-Deliberado.pdf" download class="pdf-link">Plano de Recuperação Judicial aprovado</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content21')">19/12/2023 - Material reproduzido pelas Recuperandas na AGC em 19/12/2023</a>
+                                    <div id="content21" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Apresentacao-do-Plano-de-Recuperacao-Judicial-feita-durante-a-AGC1.pdf" download class="pdf-link">Material reproduzido pelas Recuperandas na AGC em 19/12/2023</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content22')">19/12/2023 - 2º Aditivo ao PRJ</a>
+                                    <div id="content22" class="content" style="display: none;">
+                                        <a href="assets/pdfs/2o-Aditivo-ao-PRJ-19-12-2023.pdf" download class="pdf-link">2º Aditivo ao PRJ</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content23')">19/12/2023 - 2º Aditivo ao PRJ - Versão com marcas de revisão</a>
+                                    <div id="content23" class="content" style="display: none;">
+                                        <a href="assets/pdfs/2o-Aditivo-ao-PRJ-19-12-2023-Versao-com-marcas-de-revisao.pdf" download class="pdf-link">2º Aditivo ao PRJ - Versão com marcas de revisão</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content24')">19/12/2023 - Aditivo do Plano de Recuperação Judicial</a>
+                                    <div id="content24" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Doc-01-2º-Aditivo-ao-PRJ.pdf" download class="pdf-link">Aditivo do Plano de Recuperação Judicial</a><br>
+                                        <a href="assets/pdfs/Doc-02-2º-Aditivo-ao-PRJ.pdf" download class="pdf-link">Doc. 02 - 2º Aditivo ao PRJ</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content25')">19/12/2023 - Anexos do aditivo ao PRJ</a>
+                                    <div id="content25" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Peticao-Recuperanda-com-anexos-ao-Adititvo-19-12-2023.pdf" download class="pdf-link">Anexos do aditivo ao PRJ</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content26')">18/12/2023 - Relação de credores desmembradas</a>
+                                    <div id="content26" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Relacao-Consolidada-Credores-Desmembrados.pdf" download class="pdf-link">Relação de credores desmembradas</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content27')">18/12/2023 - Relação consolidada dos credores bondholders/senior notes para apuração do crédito</a>
+                                        <div id="content27" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc_01_-_Relacao_consolidada_bondholders-senior_notes_-_Administracao_Judicial.pdf" download class="pdf-link">Relação consolidada dos credores bondholders/senior notes para apuração do crédito</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content28')">13/12/2023 - Material reproduzido pelas Recuperandas na Reunião de Apresentação do Plano realizada em 12/12/2023</a>
+                                        <div id="content28" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Americanas-Apresentacao-do-PRJ-feita-pelas-recuperandas.pdf" download class="pdf-link">Material reproduzido pelas Recuperandas</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content29')">12/12/2023 - Relatório do Aditivo ao Plano de Recuperação Judicial</a>
+                                        <div id="content29" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Relatorio-do-Aditivo-ao-Plano-de-Recuperacao-Judicial.pdf" download class="pdf-link">Relatório do Aditivo ao Plano de Recuperação Judicial</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content30')">07/12/2023 - Relação de credores desmembrados</a>
+                                        <div id="content30" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Relacao-de-Credores-Desmembrados-Grupo-Americanas-1.pdf" download class="pdf-link">Relação de credores desmembrados</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content31')">27/11/2023 - Acordo de Apoio à Reestruturação, Plano de Recuperação Judicial, Investimento e outra avenças</a>
+                                        <div id="content31" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Acordo-de-Apoio-a-Reestruturacao-Plano-De-Recuperacao-Judicial-Investimen.pdf" download class="pdf-link">Acordo de Apoio à Reestruturação</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content32')">27/11/2023 - Aditamento ao Plano de Recuperação Judicial</a>
+                                        <div id="content32" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-PRJ-Aditado-27-11-2023.pdf" download class="pdf-link">Aditamento ao Plano de Recuperação Judicial</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content33')">21/11/2023 - Edital de convocação para AGC</a>
+                                        <div id="content33" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Edital-de-convocacao-para-AGC-2.pdf" download class="pdf-link">Edital de convocação para AGC</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content34')">23/10/2023 - Edital de desmembramento de credores investidores - Bondholders</a>
+                                        <div id="content34" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Edital-EDITAL-DE-DESMEMBRAMENTO-DOS-CREDORES-INVESTIDORES-Bondholders.pdf" download class="pdf-link">Edital de desmembramento de credores investidores</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content35')">19/06/2023 - Edital do art. 7º,§2º, e art 53 da LRE</a>
+                                        <div id="content35" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Edital do art. 7º,§2º, e art 53 da LRE.pdf" download class="pdf-link">Edital do art. 7º,§2º, e art 53 da LRE</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content36')">14/06/2023 - Versão Final da Relação de Credores apresentada pela Administração Judicial</a>
+                                        <div id="content36" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc. 01 - Relação de Credores - Grupo Americanas - Art. 7º,§2º, LRE.pdf" download class="pdf-link">Versão Final da Relação de Credores</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content37')">02/06/2023 - Publicação do Edital - Edital para divulgação do procedimento para informação acerca do atendimento dos requisitos para enquadramento como credor fornecedor colaborador no plano de recuperação judicial do Grupo Americanas</a>
+                                        <div id="content37" class="content" style="display: none;">
+                                            <a href="assets/pdfs/EDITAL CREDOR FORNECEDOR - DJE 02.06.23.pdf" download class="pdf-link">Publicação do Edital</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content38')">02/06/2023 - Relação de Credores - Art. 7º, §2º da Lei nº 11.101/2005</a>
+                                        <div id="content38" class="content" style="display: none;">
+                                            <a href="assets/pdfs/RELAÇÃO DE CREDORES - ART. 7º P. 2 LRF.pdf" download class="pdf-link">Relação de Credores</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content39')">05/05/2023 – Edital para participação no Financiamento D.I.P. – 0813541-59.2023.8.19.0001</a>
+                                        <div id="content39" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo Americanas – Edital para participação no Financiamento D.I.P. – 0813541-59.2023.8.19.pdf" download class="pdf-link">Edital para participação no Financiamento D.I.P.</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content40')">01/03/2023 – Edital art. 52, §1° da LRE - 01/03/2023</a>
+                                        <div id="content40" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo Americanas – Edital art. 52, §1° da LRE - 01_03_2023.pdf" download class="pdf-link">Edital art. 52, §1° da LRE</a><br>
+                                        </div>
+                                        <a class="dropdown-item" onclick="toggleContent('content41')">20/03/2023 - Laudo de avaliação</a>
+                                        <div id="content41" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Laudo-de-avaliacao.pdf" download class="pdf-link">Laudo de avaliação</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content42')">20/03/2023 - Laudo de viabilidade econômica</a>
+                                        <div id="content42" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Laudo-de-viabilidade-economica.pdf" download class="pdf-link">Laudo de viabilidade econômica</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content43')">20/03/2023 - Plano de Recuperação Judicial</a>
+                                        <div id="content43" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Plano-de-Recuperacao-Judicial.pdf" download class="pdf-link">Plano de Recuperação Judicial</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content44')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – JSM Global</a>
+                                        <div id="content44" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-JSM-Global-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - JSM Global</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content45')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – ST Importações</a>
+                                        <div id="content45" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-ST-Importacoes-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - ST Importações</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content46')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – B2W Lux</a>
+                                        <div id="content46" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-B2W-Lux-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - B2W Lux</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content47')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – Americanas</a>
+                                        <div id="content47" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-Americanas-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - Americanas</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content48')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – Consolidado</a>
+                                        <div id="content48" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-Consolidado-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - Consolidado</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content49')">26/01/2023 - Orientações aos credores sobre habilitações e divergências administrativas</a>
+                                        <div id="content49" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Orientacoes-aos-Creadores.pdf" download class="pdf-link">Orientações aos credores sobre habilitações e divergências administrativas</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content50')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - ST Importações</a>
+                                        <div id="content50" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-ST-Importacoes.pdf" download class="pdf-link">Relação de Credores - ST Importações</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content51')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - JSM Global</a>
+                                        <div id="content51" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-JSM-Global.pdf" download class="pdf-link">Relação de Credores - JSM Global</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content52')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - B2W Lux</a>
+                                        <div id="content52" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-B2W-Lux.pdf" download class="pdf-link">Relação de Credores - B2W Lux</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content53')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - Americanas</a>
+                                        <div id="content53" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-Americanas.pdf" download class="pdf-link">Relação de Credores - Americanas</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content54')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - Consolidado</a>
+                                        <div id="content54" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-Consolidado.pdf" download class="pdf-link">Relação de Credores - Consolidado</a><br>
+                                        </div>
+                            </div>
+                        </div>
+                
+                        <div class="dropdown">
+                            <button class="dropbtn">MODELOS</button>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" onclick="toggleContent('content55')">18/07/2024 - Modelo de Notificação - Não Recebimento Debentures Privadas</a>
+                                <div id="content55" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Modelo-de-Notificacao-Nao-Recebimento-Debentures-Privadas-17.07.pdf" download class="pdf-link">Modelo de Notificação - Não Recebimento Debentures Privadas</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content56')">06/06/2024 - Modelo de Notificação de Renúncia ao Recebimento de Ações</a>
+                                <div id="content56" class="content" style="display: none;">
+                                    <a href="assets/pdfs/PRJ-Americanas-Modelo-de-Notificacao-de-Renuncia-ao-Recebimento-de-Acoes.pdf" download class="pdf-link">Modelo de Notificação de Renúncia ao Recebimento de Ações</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content57')">04/10/2023 - Modelo - Procuração para Desmembramento de Credor e AGC - Americanas - BILÍNGUE</a>
+                                <div id="content57" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Modelo-Procuracao-para-Desmembramento-de-Credor-e-AGC-Americanas-BILINGUE.docx" download class="pdf-link">Modelo - Procuração para Desmembramento de Credor e AGC - Americanas - BILÍNGUE</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content58')">04/10/2023 - Modelo - Declaração de Credor Investidor - Americanas - BILÍNGUE</a>
+                                <div id="content58" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Modelo-Declaracao-de-Credor-Investidor-Americanas-BILINGUE-1.docx" download class="pdf-link">Modelo - Declaração de Credor Investidor - Americanas - BILÍNGUE</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content59')">04/10/2023 - Modelo - Certificado de Eleição e Incumbência - Americanas - BILÍNGUE</a>
+                                <div id="content59" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Modelo-Certificado-de-Eleicao-e-Incumbencia-Americanas-BILINGUE.docx" download class="pdf-link">Modelo - Certificado de Eleição e Incumbência - Americanas - BILÍNGUE</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content60')">04/10/2023 - Minuta - Edital de Desmembramento de Credor Investidor - Americanas - BILÍNGUE</a>
+                                <div id="content60" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Minuta-Edital-de-Desmembramento-de-Credor-Investidor-Americanas-BILINGUE.docx" download class="pdf-link">Minuta - Edital de Desmembramento de Credor Investidor - Americanas - BILÍNGUE</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content61')">05/04/2023 – Modelo de procuração – AGC</a>
+                                <div id="content61" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Modelo-de-Procuracao-AGC-1.docx" download class="pdf-link">Modelo de procuração – AGC</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content62')">26/01/2023 - Modelo de Divergência de Crédito</a>
+                                <div id="content62" class="content" style="display: none;">
+                                    <a href="assets/pdfs/AMERICANAS-Modelo-de-Divergencia-de-Credito-RJ-1.docx" download class="pdf-link">Modelo de Divergência de Crédito</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content63')">26/01/2023 - Modelo de Habilitação de Crédito</a>
+                                <div id="content63" class="content" style="display: none;">
+                                    <a href="assets/pdfs/AMERICANAS-Modelo-de-Habilitacao-de-Credito-RJ-1.docx" download class="pdf-link">Modelo de Habilitação de Crédito</a><br>
+                                </div>
+
+                            </div>
+                        </div>
+                
+                        <div class="dropdown">
+                            <button class="dropbtn">PROCEDIMENTO DE MONITORAMENTO PERIÓDICO-PMP</button>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" onclick="toggleContent('content64')">01/10/2024 - PMP semanal – 23/09/2024 a 29/09/2024</a>
+                                <div id="content64" class="content" style="display: none;">
+                                    <a href="assets/pdfs/PMP-semanal-23-09-2024-a-29-09-2024.pdf" download class="pdf-link">Fazer download de PDF • 340KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content65')">25/09/2024 - PMP semanal – 16/09/2024 a 22/09/2024</a>
+                                <div id="content65" class="content" style="display: none;">
+                                    <a href="assets/pdfs/PMP-semanal-16-09-2024-a-22-09-2024.pdf" download class="pdf-link">Fazer download de PDF • 339KB</a><br>
+                                </div>
+                                <a class="dropdown-item" onclick="toggleContent('content66')">17/09/2024 - PMP Mensal – Agosto 2024</a>
+                                <div id="content66" class="content" style="display: none;">
+                                    <a href="assets/pdfs/PMP-Mensal-Agosto-2024.pdf" download class="pdf-link">Fazer download de PDF • 999KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content67')">17/09/2024 - PMP semanal – 09/09/2024 a 15/09/2024</a>
+                                <div id="content67" class="content" style="display: none;">
+                                    <a href="assets/pdfs/PMP-semanal-09-09-2024-a-15-09-2024.pdf" download class="pdf-link">Fazer download de PDF • 340KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content68')">11/09/2024 - PMP semanal – 02/09/2024 a 08/09/2024</a>
+                                <div id="content68" class="content" style="display: none;">
+                                    <a href="assets/pdfs/PMP-semanal-02-09-2024-a-08-09-2024.pdf" download class="pdf-link">Fazer download de PDF • 341KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content69')">04/09/2024 - PMP semanal – 26/08/2024 a 01/09/2024</a>
+                                <div id="content69" class="content" style="display: none;">
+                                    <a href="assets/pdfs/PMP-semanal-26-08-2024-a-01-09-2024.pdf" download class="pdf-link">Fazer download de PDF • 343KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content70')">28/08/2024 - PMP semanal – 19/08/2024 a 25/08/2024</a>
+                                <div id="content70" class="content" style="display: none;">
+                                    <a href="assets/pdfs/PMP-semanal-19-08-2024-a-25-08-2024.pdf" download class="pdf-link">Fazer download de PDF • 343KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content71')">21/08/2024 - PMP semanal – 12/08/2024 a 18/08/2024</a>
+                                <div id="content71" class="content" style="display: none;">
+                                    <a href="assets/pdfs/PMP-semanal-12-08-2024-a-18-08-2024.pdf" download class="pdf-link">Fazer download de PDF • 341KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content72')">16/08/2024 - PMP Mensal – Julho 2024</a>
+                                <div id="content72" class="content" style="display: none;">
+                                    <a href="assets/pdfs/PMP-Mensal-Julho-2024.pdf" download class="pdf-link">Fazer download de PDF • 790KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content73')">14/08/2024 - PMP semanal – 05/08/2024 a 11/08/2024</a>
+                                <div id="content73" class="content" style="display: none;">
+                                    <a href="assets/pdfs/PMP-semanal-05-08-2024-a-11-08-2024.pdf" download class="pdf-link">Fazer download de PDF • 338KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content74')">06/08/2024 - PMP semanal – 29/07/2024 a 04/08/2024</a>
+                                <div id="content74" class="content" style="display: none;">
+                                    <a href="assets/pdfs/PMP-semanal-29-07-2024-a-04-08-2024.pdf" download class="pdf-link">Fazer download de PDF • 336KB</a><br>
+                                </div>
+                                <a class="dropdown-item" onclick="toggleContent('content75')">31/07/2024 - PMP semanal – 22/07/2024 a 28/07/2024</a>
+                                    <div id="content75" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-22-07-2024-a-28-07-2024.pdf" download class="pdf-link">Fazer download de PDF • 370KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content76')">24/07/2024 - PMP semanal – 15/07/2024 a 21/07/2024</a>
+                                    <div id="content76" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-15-07-2024-a-21-07-2024.pdf" download class="pdf-link">Fazer download de PDF • 340KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content77')">17/07/2024 - PMP semanal – 08/07/2024 a 14/07/2024</a>
+                                    <div id="content77" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-08-07-2024-a-14-07-2024.pdf" download class="pdf-link">Fazer download de PDF • 342KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content78')">16/07/2024 - PMP Mensal – Junho 2024</a>
+                                    <div id="content78" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Junho-2024.pdf" download class="pdf-link">Fazer download de PDF • 947KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content79')">11/07/2024 - PMP semanal – 01/07/2024 a 07/07/2024</a>
+                                    <div id="content79" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-01-07-2024-a-07-07-2024.pdf" download class="pdf-link">Fazer download de PDF • 337KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content80')">02/07/2024 - PMP semanal – 24/06/2024 a 30/06/2024</a>
+                                    <div id="content80" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-24-06-2024-a-30-06-2024.pdf" download class="pdf-link">Fazer download de PDF • 353KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content81')">25/06/2024 - PMP semanal – 17/06/2024 a 23/06/2024</a>
+                                    <div id="content81" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-17-06-2024-a-23-06-2024.pdf" download class="pdf-link">Fazer download de PDF • 338KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content82')">19/06/2024 - PMP semanal – 10/06/2024 a 16/06/2024</a>
+                                    <div id="content82" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-10-06-2024-a-16-06-2024.pdf" download class="pdf-link">Fazer download de PDF • 337KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content83')">18/06/2024 - PMP Mensal – Maio 2024</a>
+                                    <div id="content83" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Maio-2024.pdf" download class="pdf-link">Fazer download de PDF • 852KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content84')">12/06/2024 - PMP semanal – 03/06/2024 a 09/06/2024</a>
+                                    <div id="content84" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-03-06-2024-a-09-06-2024.pdf" download class="pdf-link">Fazer download de PDF • 338KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content85')">05/06/2024 - PMP semanal – 27/05/2024 a 02/06/2024</a>
+                                    <div id="content85" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-27-05-2024-a-02-06-2024.pdf" download class="pdf-link">Fazer download de PDF • 340KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content86')">29/05/2024 - PMP semanal – 20/05/2024 a 26/05/2024</a>
+                                    <div id="content86" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-20-05-2024-a-26-05-2024.pdf" download class="pdf-link">Fazer download de PDF • 338KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content87')">23/05/2024 - PMP semanal – 13/05/2024 a 19/05/2024</a>
+                                    <div id="content87" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-13-05-2024-a-19-05-2024.pdf" download class="pdf-link">Fazer download de PDF • 356KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content88')">16/05/2024 - PMP Mensal – Abril 2024</a>
+                                    <div id="content88" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Abril-2024-1.pdf" download class="pdf-link">Fazer download de PDF • 951KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content89')">15/05/2024 - PMP semanal – 06/05/2024 a 12/05/2024</a>
+                                    <div id="content89" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-06-05-2024-a-12-05-2024.pdf" download class="pdf-link">Fazer download de PDF • 341KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content90')">08/05/2024 - PMP semanal - 29/04/2024 a 05/05/2024</a>
+                                    <div id="content90" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-29-04-2024-a-05-05-2024.pdf" download class="pdf-link">Fazer download de PDF • 341KB</a><br>
+                                    </div>
+                                    <a class="dropdown-item" onclick="toggleContent('content91')">30/04/2024 - PMP semanal - 22/04/2024 a 28/04/2024</a>
+                                    <div id="content91" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-22-04-2024-a-28-04-2024-1.pdf" download class="pdf-link">Fazer download de PDF • 355KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content92')">25/04/2024 - PMP semanal - 15/04/2024 a 21/04/2024</a>
+                                    <div id="content92" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-15-04-2024-a-21-04-2024.pdf" download class="pdf-link">Fazer download de PDF • 340KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content93')">17/04/2024 - PMP semanal - 08/04/2024 a 14/04/2024</a>
+                                    <div id="content93" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-08-04-2024-a-14-04-2024.pdf" download class="pdf-link">Fazer download de PDF • 340KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content94')">16/04/2024 - PMP Mensal - Março 2024</a>
+                                    <div id="content94" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Marco-2024.pdf" download class="pdf-link">Fazer download de PDF • 865KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content95')">10/04/2024 - PMP semanal - 01/04/2024 a 07/04/2024</a>
+                                    <div id="content95" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-01-04-2024-a-07-04-2024-1.pdf" download class="pdf-link">Fazer download de PDF • 339KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content96')">04/04/2024 - PMP semanal - 25/03/2024 a 31/03/2024</a>
+                                    <div id="content96" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-25-03-2024-a-31-03-2024.pdf" download class="pdf-link">Fazer download de PDF • 342KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content97')">01/04/2024 - PMP Mensal - Fevereiro 2024</a>
+                                    <div id="content97" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Fevereiro-2024.pdf" download class="pdf-link">Fazer download de PDF • 1.20MB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content98')">27/03/2024 - PMP semanal - 18/03/2024 a 24/03/2024</a>
+                                    <div id="content98" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-18-03-2024-a-24-03-2024.pdf" download class="pdf-link">Fazer download de PDF • 340KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content99')">21/03/2024 - PMP semanal - 11/03/2024 a 17/03/2024</a>
+                                    <div id="content99" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-11-03-2024-a-17-03-2024.pdf" download class="pdf-link">Fazer download de PDF • 337KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content100')">14/03/2024 - PMP semanal - 04/03/2024 a 10/03/2024</a>
+                                    <div id="content100" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-04-03-2024-a-10-03-2024.pdf" download class="pdf-link">Fazer download de PDF • 341KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content91')">30/04/2024 - PMP semanal - 22/04/2024 a 28/04/2024</a>
+                                    <div id="content91" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-22-04-2024-a-28-04-2024.pdf" download class="pdf-link">Fazer download de PDF • 355KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content92')">25/04/2024 - PMP semanal – 15/04/2024 a 21/04/2024</a>
+                                    <div id="content92" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-15-04-2024-a-21-04-2024.pdf" download class="pdf-link">Fazer download de PDF • 340KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content93')">17/04/2024 - PMP semanal – 08/04/2024 a 14/04/2024</a>
+                                    <div id="content93" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-08-04-2024-a-14-04-2024.pdf" download class="pdf-link">Fazer download de PDF • 340KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content94')">16/04/2024 - PMP Mensal – Março 2024</a>
+                                    <div id="content94" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Marco-2024.pdf" download class="pdf-link">Fazer download de PDF • 865KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content95')">10/04/2024 - PMP semanal – 01/04/2024 a 07/04/2024</a>
+                                    <div id="content95" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-01-04-2024-a-07-04-2024.pdf" download class="pdf-link">Fazer download de PDF • 339KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content96')">04/04/2024 - PMP semanal – 25/03/2024 a 31/03/2024</a>
+                                    <div id="content96" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-25-03-2024-a-31-03-2024.pdf" download class="pdf-link">Fazer download de PDF • 342KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content97')">01/04/2024 - PMP Mensal – Fevereiro 2024</a>
+                                    <div id="content97" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Fevereiro-2024.pdf" download class="pdf-link">Fazer download de PDF • 1.20MB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content98')">27/03/2024 - PMP semanal – 18/03/2024 a 24/03/2024</a>
+                                    <div id="content98" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-18-03-2024-a-24-03-2024.pdf" download class="pdf-link">Fazer download de PDF • 340KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content99')">21/03/2024 - PMP semanal – 11/03/2024 a 17/03/2024</a>
+                                    <div id="content99" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-11-03-2024-a-17-03-2024.pdf" download class="pdf-link">Fazer download de PDF • 337KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content100')">14/03/2024 - PMP semanal – 04/03/2024 a 10/03/2024</a>
+                                    <div id="content100" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-04-03-2024-a-10-03-2024.pdf" download class="pdf-link">Fazer download de PDF • 341KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content101')">06/03/2024 - PMP semanal – 26/02/2024 a 03/03/2024</a>
+                                    <div id="content101" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-26-02-2024-a-03-03-2024.pdf" download class="pdf-link">Fazer download de PDF • 342KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content102')">29/02/2024 - PMP Mensal – Janeiro 2024</a>
+                                    <div id="content102" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Janero-2024.pdf" download class="pdf-link">Fazer download de PDF • 877KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content103')">28/02/2024 - PMP semanal – 19/02/2024 a 25/02/2024</a>
+                                    <div id="content103" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-19-02-2024-a-25-02-2024.pdf" download class="pdf-link">Fazer download de PDF • 340KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content104')">21/02/2024 - PMP semanal – 12/02/2024 a 18/02/2024</a>
+                                    <div id="content104" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-12-02-2024-a-18-02-2024.pdf" download class="pdf-link">Fazer download de PDF • 337KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content105')">16/02/2024 - PMP semanal – 05/02/2024 a 11/02/2024</a>
+                                    <div id="content105" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-05-02-2024-a-11-02-2024.pdf" download class="pdf-link">Fazer download de PDF • 338KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content106')">08/02/2024 - PMP semanal – 29-01-2024 a 04-02-2024</a>
+                                    <div id="content106" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-29-01-2024-a-04-02-2024.pdf" download class="pdf-link">Fazer download de PDF • 340KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content107')">31/01/2024 - PMP semanal – 22-01-2024 a 28-01-2024</a>
+                                    <div id="content107" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-22-01-2024-a-28-01-2024.pdf" download class="pdf-link">Fazer download de PDF • 336KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content108')">24/01/2024 - PMP semanal – 15-01-2024 a 21-01-2024</a>
+                                    <div id="content108" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-15-01-2024-a-21-01-2024.pdf" download class="pdf-link">Fazer download de PDF • 339KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content109')">18/01/2024 - PMP Mensal – Dezembro 2023</a>
+                                    <div id="content109" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Dezembro-2023.pdf" download class="pdf-link">Fazer download de PDF • 763KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content110')">17/01/2024 - PMP semanal – 08-01-2024 a 14-01-2024</a>
+                                    <div id="content110" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-08-01-2024-a-14-01-2024.pdf" download class="pdf-link">Fazer download de PDF • 334KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content111')">15/01/2024 - PMP semanal – 01-01-2024 a 07-01-2024</a>
+                                    <div id="content111" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-01-01-2024-a-07-01-2024.pdf" download class="pdf-link">Fazer download de PDF • 336KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content112')">10/01/2024 - PMP semanal – 25-12-2023 a 31-12-2023</a>
+                                    <div id="content112" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-25-12-2023-a-31-12-2023.pdf" download class="pdf-link">Fazer download de PDF • 332KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content113')">20/12/2023 - PMP semanal – 11-12-2023 a 17-12-2023</a>
+                                    <div id="content113" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-11-12-2023-a-17-12-2023.pdf" download class="pdf-link">Fazer download de PDF • 330KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content114')">13/12/2023 - PMP Mensal – Novembro 2023</a>
+                                    <div id="content114" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Novembro-2023.pdf" download class="pdf-link">Fazer download de PDF • 678KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content115')">11/12/2023 - PMP semanal – 04-12-2023 a 10-12-2023</a>
+                                    <div id="content115" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-04-12-2023-a-10-12-2023.pdf" download class="pdf-link">Fazer download de PDF • 331KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content116')">04/12/2023 - PMP semanal – 27-11-2023 a 03-12-2023</a>
+                                    <div id="content116" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-27-11-2023-a-03-12-2023.pdf" download class="pdf-link">Fazer download de PDF • 327KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content117')">30/11/2023 - PMP Mensal – Outubro 2023</a>
+                                    <div id="content117" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Outubro-2023.pdf" download class="pdf-link">Fazer download de PDF • 570KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content118')">29/11/2023 - PMP semanal – 20-11-2023 a 26-11-2023</a>
+                                    <div id="content118" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-20-11-2023-a-26-11-2023.pdf" download class="pdf-link">Fazer download de PDF • 332KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content119')">21/11/2023 - PMP semanal – 13-11-2023 a 19-11-2023</a>
+                                    <div id="content119" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-13-11-2023-a-19-11-2023.pdf" download class="pdf-link">Fazer download de PDF • 330KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content120')">15/11/2023 - PMP semanal – 06-11-2023 a 12-11-2023</a>
+                                    <div id="content120" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-06-11-2023-a-12-11-2023.pdf" download class="pdf-link">Fazer download de PDF • 329KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content121')">09/11/2023 - PMP semanal – 30-10-2023 a 05-11-2023</a>
+                                    <div id="content121" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-30-10-2023-a-05-11-2023.pdf" download class="pdf-link">Fazer download de PDF • 334KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content122')">03/11/2023 - PMP Mensal – Outubro 2023</a>
+                                    <div id="content122" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Outubro-2023.pdf" download class="pdf-link">Fazer download de PDF • 674KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content123')">30/10/2023 - PMP semanal – 23-10-2023 a 29-10-2023</a>
+                                    <div id="content123" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-23-10-2023-a-29-10-2023.pdf" download class="pdf-link">Fazer download de PDF • 332KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content124')">25/10/2023 - PMP semanal – 16-10-2023 a 22-10-2023</a>
+                                    <div id="content124" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-16-10-2023-a-22-10-2023.pdf" download class="pdf-link">Fazer download de PDF • 331KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content125')">19/10/2023 - PMP semanal – 09-10-2023 a 15-10-2023</a>
+                                    <div id="content125" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-09-10-2023-a-15-10-2023.pdf" download class="pdf-link">Fazer download de PDF • 330KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content126')">13/10/2023 - PMP semanal – 02-10-2023 a 08-10-2023</a>
+                                    <div id="content126" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-02-10-2023-a-08-10-2023.pdf" download class="pdf-link">Fazer download de PDF • 330KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content127')">09/10/2023 - PMP Mensal – Setembro 2023</a>
+                                    <div id="content127" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Setembro-2023.pdf" download class="pdf-link">Fazer download de PDF • 562KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content128')">03/10/2023 - PMP semanal – 25-09-2023 a 01-10-2023</a>
+                                    <div id="content128" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-25-09-2023-a-01-10-2023.pdf" download class="pdf-link">Fazer download de PDF • 331KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content129')">26/09/2023 - PMP semanal – 18-09-2023 a 24-09-2023</a>
+                                    <div id="content129" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-18-09-2023-a-24-09-2023.pdf" download class="pdf-link">Fazer download de PDF • 330KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content130')">21/09/2023 - PMP semanal – 11-09-2023 a 17-09-2023</a>
+                                    <div id="content130" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-11-09-2023-a-17-09-2023.pdf" download class="pdf-link">Fazer download de PDF • 328KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content131')">14/09/2023 - PMP mensal – Agosto 2023</a>
+                                    <div id="content131" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Agosto-2023.pdf" download class="pdf-link">Fazer download de PDF • 687KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content132')">12/09/2023 - PMP semanal – 04-09-2023 a 10-09-2023</a>
+                                    <div id="content132" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-04-09-2023-a-10-09-2023.pdf" download class="pdf-link">Fazer download de PDF • 327KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content133')">05/09/2023 - PMP semanal – 28-08-2023 a 03-09-2023</a>
+                                    <div id="content133" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-28-08-2023-a-03-09-2023.pdf" download class="pdf-link">Fazer download de PDF • 334KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content134')">01/09/2023 - PMP mensal – Agosto 2023</a>
+                                    <div id="content134" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Agosto-2023.pdf" download class="pdf-link">Fazer download de PDF • 660KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content135')">29/08/2023 - PMP semanal – 21-08-2023 a 27-08-2023</a>
+                                    <div id="content135" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-21-08-2023-a-27-08-2023.pdf" download class="pdf-link">Fazer download de PDF • 325KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content136')">22/08/2023 - PMP semanal – 14-08-2023 a 20-08-2023</a>
+                                    <div id="content136" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-14-08-2023-a-20-08-2023.pdf" download class="pdf-link">Fazer download de PDF • 327KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content137')">15/08/2023 - PMP semanal – 07-08-2023 a 13-08-2023</a>
+                                    <div id="content137" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-07-08-2023-a-13-08-2023.pdf" download class="pdf-link">Fazer download de PDF • 330KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content138')">08/08/2023 - PMP semanal – 31-07-2023 a 06-08-2023</a>
+                                    <div id="content138" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-31-07-2023-a-06-08-2023.pdf" download class="pdf-link">Fazer download de PDF • 331KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content139')">01/08/2023 - PMP mensal – Julho 2023</a>
+                                    <div id="content139" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Julho-2023.pdf" download class="pdf-link">Fazer download de PDF • 634KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content140')">31/07/2023 - PMP semanal – 24-07-2023 a 30-07-2023</a>
+                                    <div id="content140" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-24-07-2023-a-30-07-2023.pdf" download class="pdf-link">Fazer download de PDF • 330KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content141')">25/07/2023 - PMP semanal – 17-07-2023 a 23-07-2023</a>
+                                    <div id="content141" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-17-07-2023-a-23-07-2023.pdf" download class="pdf-link">Fazer download de PDF • 335KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content142')">18/07/2023 - PMP semanal – 10-07-2023 a 16-07-2023</a>
+                                    <div id="content142" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-10-07-2023-a-16-07-2023.pdf" download class="pdf-link">Fazer download de PDF • 327KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content143')">11/07/2023 - PMP mensal – Junho 2023</a>
+                                    <div id="content143" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Junho-2023.pdf" download class="pdf-link">Fazer download de PDF • 591KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content144')">10/07/2023 - PMP semanal – 03-07-2023 a 09-07-2023</a>
+                                    <div id="content144" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-03-07-2023-a-09-07-2023.pdf" download class="pdf-link">Fazer download de PDF • 333KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content145')">03/07/2023 - PMP semanal – 26-06-2023 a 02-07-2023</a>
+                                    <div id="content145" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-26-06-2023-a-02-07-2023.pdf" download class="pdf-link">Fazer download de PDF • 326KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content146')">26/06/2023 - PMP semanal – 19-06-2023 a 25-06-2023</a>
+                                    <div id="content146" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-19-06-2023-a-25-06-2023.pdf" download class="pdf-link">Fazer download de PDF • 330KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content147')">20/06/2023 - PMP mensal – Maio 2023</a>
+                                    <div id="content147" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Maio-2023.pdf" download class="pdf-link">Fazer download de PDF • 709KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content148')">19/06/2023 - PMP semanal – 12-06-2023 a 18-06-2023</a>
+                                    <div id="content148" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-12-06-2023-a-18-06-2023.pdf" download class="pdf-link">Fazer download de PDF • 330KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content149')">12/06/2023 - PMP semanal – 05-06-2023 a 11-06-2023</a>
+                                    <div id="content149" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-05-06-2023-a-11-06-2023.pdf" download class="pdf-link">Fazer download de PDF • 331KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content150')">05/06/2023 - PMP semanal – 29-05-2023 a 04-06-2023</a>
+                                    <div id="content150" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-29-05-2023-a-04-06-2023.pdf" download class="pdf-link">Fazer download de PDF • 327KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content151')">30/05/2023 - PMP mensal – Maio 2023</a>
+                                    <div id="content151" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Maio-2023.pdf" download class="pdf-link">Fazer download de PDF • 707KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content152')">29/05/2023 - PMP semanal – 22-05-2023 a 28-05-2023</a>
+                                    <div id="content152" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-22-05-2023-a-28-05-2023.pdf" download class="pdf-link">Fazer download de PDF • 328KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content153')">22/05/2023 - PMP semanal – 15-05-2023 a 21-05-2023</a>
+                                    <div id="content153" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-15-05-2023-a-21-05-2023.pdf" download class="pdf-link">Fazer download de PDF • 328KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content154')">15/05/2023 - PMP semanal – 08-05-2023 a 14-05-2023</a>
+                                    <div id="content154" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-08-05-2023-a-14-05-2023.pdf" download class="pdf-link">Fazer download de PDF • 332KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content155')">08/05/2023 - PMP semanal – 01-05-2023 a 07-05-2023</a>
+                                    <div id="content155" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-01-05-2023-a-07-05-2023.pdf" download class="pdf-link">Fazer download de PDF • 331KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content156')">01/05/2023 - PMP mensal – Abril 2023</a>
+                                    <div id="content156" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Abril-2023.pdf" download class="pdf-link">Fazer download de PDF • 577KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content157')">26/04/2023 - PMP semanal – 17-04-2023 a 23-04-2023</a>
+                                    <div id="content157" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-17-04-2023-a-23-04-2023.pdf" download class="pdf-link">Fazer download de PDF • 329KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content158')">20/04/2023 - PMP mensal – Março 2023</a>
+                                    <div id="content158" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Marco-2023.pdf" download class="pdf-link">Fazer download de PDF • 615KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content159')">17/04/2023 - PMP semanal – 10-04-2023 a 16-04-2023</a>
+                                    <div id="content159" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-semanal-10-04-2023-a-16-04-2023.pdf" download class="pdf-link">Fazer download de PDF • 330KB</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content160')">10/04/2023 - PMP mensal – Março 2023</a>
+                                    <div id="content160" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PMP-Mensal-Marco-2023.pdf" download class="pdf-link">Fazer download de PDF • 611KB</a><br>
+                                    </div>
+
+
+                               
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropbtn">DECISÕES JUDICIAIS:</button>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" onclick="toggleContent('content161')">25/07/2024 - Decisão do dia 24/07/2024</a>
+                                <div id="content161" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Decisao-24-07-2024.pdf" download class="pdf-link">Fazer download de PDF • 37KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content162')">17/04/2024 - Decisão do dia 17/04/2024</a>
+                                <div id="content162" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Decisao-17-04-2024.pdf" download class="pdf-link">Fazer download de PDF • 38KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content163')">03/04/2024 - Decisão do dia 02/04/2024</a>
+                                <div id="content163" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Decisao-4.pdf" download class="pdf-link">Fazer download de PDF • 55KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content164')">01/04/2024 - Decisão do dia 01/02/2024</a>
+                                <div id="content164" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Decisao.pdf" download class="pdf-link">Fazer download de PDF • 37KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content165')">27/02/2024 - Decisão do dia 27/02/2024 – Bloqueio dos valores mobiliários por 30 dias</a>
+                                <div id="content165" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Decisao-27-02-2024-bloqueio-dos-valores-mobiliarios-por-30-dias.pdf" download class="pdf-link">Fazer download de PDF • 40KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content166')">26/02/2024 - Decisão do dia 26/02/2024 - Homologação do Plano de Recuperação</a>
+                                <div id="content166" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Decisao.pdf" download class="pdf-link">Fazer download de PDF • 138KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content167')">13/12/2023 - Decisão do dia 13/12/2023</a>
+                                <div id="content167" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Decisao-13-12-2023.pdf" download class="pdf-link">Fazer download de PDF • 34KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content168')">21/11/2023 - Decisão do dia 21/11/2023 - Consolidação Substancial</a>
+                                <div id="content168" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Decisao-Consolidação-Substancial.pdf" download class="pdf-link">Fazer download de PDF • 40KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content169')">30/10/2023 - Decisão do dia 30/10/2023</a>
+                                <div id="content169" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Decisao-30-10-2023.pdf" download class="pdf-link">Fazer download de PDF • 59KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content170')">03/10/2023 - Decisão do dia 03/10/2023</a>
+                                <div id="content170" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Decisao-03-10-2023.pdf" download class="pdf-link">Fazer download de PDF • 74KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content171')">11/07/2023 - Decisão do dia 11/07/2023 - Prorrogação do Stay Period</a>
+                                <div id="content171" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Decisao-dia-11-07-2023-Stay-Period.pdf" download class="pdf-link">Fazer download de PDF • 16KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content172')">05/07/2023 - Decisão do dia 05/07/2023</a>
+                                <div id="content172" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Decisão-do-dia-05.07.2023.pdf" download class="pdf-link">Fazer download de PDF • 31KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content173')">28/05/2023 - Decisão do dia 28/05/2023</a>
+                                <div id="content173" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Decisão-do-dia-28.05.2023.pdf" download class="pdf-link">Fazer download de PDF • 21KB</a><br>
+                                </div>
+
+                                <a class="dropdown-item" onclick="toggleContent('content174')">03/05/2023 - Decisão do dia 03/05/2023</a>
+                                <div id="content174" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Gruppo-Americanas-Decisão-do-dia-03_05_2023.pdf" download class="pdf-link">Fazer download de PDF • 18KB</a><br>
+                                </div> 
+                                <a class="dropdown-item" onclick="toggleContent('content175')">26/04/2023 - Decisão do dia 25/04/2023</a>
+                                <div id="content175" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-25_04_2023.pdf" download class="pdf-link">Fazer download de PDF • 29KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content176')">12/04/2023 - Decisão do dia 12/04/2023</a>
+                                <div id="content176" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-12_04_2023.pdf" download class="pdf-link">Fazer download de PDF • 39KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content177')">28/03/2023 - Decisão do dia 28/03/2023</a>
+                                <div id="content177" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-28_03_2023.pdf" download class="pdf-link">Fazer download de PDF • 13KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content178')">24/03/2023 - Decisão do dia 23/03/2023</a>
+                                <div id="content178" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-23_03_2023.pdf" download class="pdf-link">Fazer download de PDF • 632KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content179')">22/03/2023 - Decisão do dia 22/03/2023</a>
+                                <div id="content179" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-22_03_2023.pdf" download class="pdf-link">Fazer download de PDF • 41KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content180')">17/03/2023 - Decisão do dia 16/03/2023</a>
+                                <div id="content180" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-16_03_2023.pdf" download class="pdf-link">Fazer download de PDF • 15KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content181')">11/03/2023 - Grupo Americanas - Decisão do dia 11/03/2023</a>
+                                <div id="content181" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-11_03_2023.pdf" download class="pdf-link">Fazer download de PDF • 133KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content182')">28/02/2023 - Decisão do dia 28/02/2023 - Pagamento das classes I e IV</a>
+                                <div id="content182" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-28_02_2023-Pagamento-das-classes-I-e-IV.pdf" download class="pdf-link">Fazer download de PDF • 42KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content183')">24/02/2023 - Decisão do dia 10/02/2023</a>
+                                <div id="content183" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-10_02_2023.pdf" download class="pdf-link">Fazer download de PDF • 27KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content184')">09/02/2023 - Decisão do dia 09/02/2023 - Incidente Financiamento D.I.P. - 0813541-59.2023.8.19.0001</a>
+                                <div id="content184" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Decisao-09-02-2023-Financiamento-DIP.pdf" download class="pdf-link">Fazer download de PDF • 20KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content185')">09/02/2023 - Decisão do dia 09/02/2023</a>
+                                <div id="content185" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-09_02_2023.pdf" download class="pdf-link">Fazer download de PDF • 22KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content186')">02/02/2023 - Decisão do dia 01/02/2023</a>
+                                <div id="content186" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-01_02_2023.pdf" download class="pdf-link">Fazer download de PDF • 15KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content187')">02/02/2023 - Decisão do dia 26/01/2023</a>
+                                <div id="content187" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-26_01_2023.pdf" download class="pdf-link">Fazer download de PDF • 10KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content188')">02/02/2023 - Decisão do dia 25/01/2023</a>
+                                <div id="content188" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-25_01_2023.pdf" download class="pdf-link">Fazer download de PDF • 4KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content189')">02/02/2023 - Decisão do dia 24/01/2023</a>
+                                <div id="content189" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-24_01_2023.pdf" download class="pdf-link">Fazer download de PDF • 9KB</a><br>
+                                </div>
+                                <a class="dropdown-item" onclick="toggleContent('content190')">19/01/2023 - Decisão do dia 19/01/2023 - Deferimento do processamento da RJ</a>
+                                <div id="content190" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-19_01_2023-Deferimento-do-processamento-da-RJ.pdf" download class="pdf-link">Fazer download de PDF • 55KB</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content191')">15/01/2023 - Decisão do dia 14/01/2023 - Deferimento da Tutela</a>
+                                <div id="content191" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-14_01_2023-Deferimento-da-Tutela.pdf" download class="pdf-link">Fazer download de PDF • 47KB</a><br>
+                                </div>
+
+                                 
+
+                                        
+                                        
+                                        
+                                       
+                                </div>
+                                
+
+                                        
+                                        
+                                        
+                                       
+                                </div>
+                               
+                                        
+                                        
+                                        
+                                       
+                                <div class="dropdown">
+                                    <button class="dropbtn">Ata de Assembleia de credores:</button>
+                                    <div class="dropdown-content">
+                                        <a class="dropdown-item" onclick="toggleContent('content192')">21/12/2023 - Declarações de voto e ressalvas</a>
+                                        <div id="content192" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-08-Declaracoes-de-voto-e-ressalvas.pdf" download class="pdf-link">Fazer download de PDF • 5.01MB</a><br>
+                                        </div>
+                                        
+                                        <a class="dropdown-item" onclick="toggleContent('content193')">21/12/2023 - Manifestações apresentadas pelos credores através do chat disponibilizado no ambiente virtual</a>
+                                        <div id="content193" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-07-Manifestacoes-apresentadas-pelos-credores-atraves-do-chat-disponibilizado-no-ambiente-virtual.pdf" download class="pdf-link">Fazer download de PDF • 317KB</a><br>
+                                        </div>
+                                        
+                                        <a class="dropdown-item" onclick="toggleContent('content194')">21/12/2023 - Apresentação do Plano de Recuperação Judicial feita durante a AGC</a>
+                                        <div id="content194" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-06-Apresentacao-do-Plano-de-Recuperacao-Judicial-feita-durante-a-AGC.pdf" download class="pdf-link">Fazer download de PDF • 969KB</a><br>
+                                        </div>
+                                        
+                                        <a class="dropdown-item" onclick="toggleContent('content195')">21/12/2023 - Plano de Recuperação Judicial aprovado</a>
+                                        <div id="content195" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-05-Plano-de-Recuperacao-Judicial-Deliberado.pdf" download class="pdf-link">Fazer download de PDF • 1.35MB</a><br>
+                                        </div>
+                                        
+                                        <a class="dropdown-item" onclick="toggleContent('content196')">21/12/2023 - Laudo de votação do pedido de suspensão rejeitado pela AGC</a>
+                                        <div id="content196" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-04-Laudo-de-votacao-do-pedido-de-suspensao-rejeitado-pela-AGC.pdf" download class="pdf-link">Fazer download de PDF • 916KB</a><br>
+                                        </div>
+                                        
+                                        <a class="dropdown-item" onclick="toggleContent('content197')">21/12/2023 - Laudo de deliberação do Plano de Recuperação Judicial</a>
+                                        <div id="content197" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-03-Laudo-de-deliberacao-do-Plano-de-Recuperacao-Judicial.pdf" download class="pdf-link">Fazer download de PDF • 1.47MB</a><br>
+                                        </div>
+                                        
+                                        <a class="dropdown-item" onclick="toggleContent('content198')">21/12/2023 - Laudo de credenciamento</a>
+                                        <div id="content198" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-02-Laudo-de-Credenciamento.pdf" download class="pdf-link">Fazer download de PDF • 2.40MB</a><br>
+                                        </div>
+                                        
+                                        <a class="dropdown-item" onclick="toggleContent('content199')">20/12/2023 - Ata da AGC realizada em 19/12/2023 - Aprovação do Plano</a>
+                                        <div id="content199" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-01-Ata-da-AGC-19-12-2023-Grupo-Americanas-PRJ-aprovado.pdf" download class="pdf-link">Fazer download de PDF • 400KB</a><br>
+                                        </div>
+                                
+                                
+
+                       
+
+
+                            
+                </div>
+                                        
+                
+                </section>
+               
+               
+                
+    
+    <footer>
+        <div class="footer-logo">
+            <a href="index.html"><img src="imgs/logopreta.jpg" alt="Logo" class="footer-logo-img"></a>
+        </div>
+        <div class="footer-addresses">
+            <div class="footer-address">
+                <h4>Brasília</h4>
+                <p>Tel.: 55 (61) 3447-4343</p>
+            </div>
+            <div class="footer-address">
+                <h4>Rio de Janeiro</h4>
+                <p>Av Presidente Antônio Carlos nº 51, 19º e 20º andares, Centro - Rio de Janeiro - RJ</p>
+                <p>Tel.: 55 (21) 3380-1155</p>
+                <a href="https://maps.app.goo.gl/bw6XGbnmrtH9fzNT8" target="_blank">Ver no Google Maps</a>
+            </div>
+            <div class="footer-address">
+                <h4>São Paulo</h4>
+                <p>Tel.: 55 (11) 4858-0383</p>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="#" class="social-container containerOne">
+                <svg class="socialSvg instagramSvg" viewBox="0 0 16 16"> <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path> </svg>
+            </a>
+            <a href="#" class="social-container containerThree">
+                <svg class="socialSvg linkedinSvg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
+            </a>
+        </div>
+        
+    </footer>
+    
+      <!-- jQuery and Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@highwayjs/core@latest"></script>
+      <script src="assets/js/highway-setup.js"></script>
+      <script>
+        function toggleContent(contentId) {
+            var content = document.getElementById(contentId);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        function addComment() {
+    // Obter o valor do textarea
+    const commentInput = document.getElementById('comment-input');
+    const commentText = commentInput.value.trim();
+
+    // Verificar se o campo de comentário não está vazio
+    if (commentText) {
+        // Criar um novo elemento de comentário
+        const commentList = document.getElementById('comment-list');
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment');
+        commentDiv.textContent = commentText;
+
+        // Adicionar o novo comentário à lista
+        commentList.appendChild(commentDiv);
+
+        // Limpar o campo de comentário após o envio
+        commentInput.value = '';
+    } else {
+        alert('Por favor, digite um comentário.');
+    }
+}
+    </script>
+          
+  </body>
+  </html>
+  
