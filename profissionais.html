@@ -86,73 +86,39 @@
     
         </style>
 		<style>
-	.wrapper-socios .main-text h5, /* Nome dos sócios */
-.wrapper-socios .main-text h6 { /* Cargos dos sócios */
-    color: white; /* Define a cor branca */
-}
-
-.wrapper-socios .card-socio {
-    text-decoration: none; /* Remove a sublinhado dos links */
-    color: inherit; /* Garante que a cor branca seja aplicada ao link */
-}
-.btn-color-white {
-    background-color: black; /* Define o fundo do botão como branco */
-    color: white; /* Define a cor do texto do botão como preta para contraste */
-    border: 1px solid black; /* Adiciona uma borda preta para destaque */
-    padding: 10px 20px; /* Ajuste o espaçamento interno do botão */
-    text-transform: uppercase; /* Deixa o texto em maiúsculas */
-    font-weight: bold; /* Torna o texto mais destacado */
-    transition: background-color 0.3s, color 0.3s; /* Adiciona uma transição suave */
-}
-
-.btn-color-white:hover {
-    background-color: white; /* Altera o fundo para preto ao passar o mouse */
-    color: black; /* Altera a cor do texto para branco ao passar o mouse */
-}
-		</style>
-		<style>
-			.card-socio {
+	.card-socio {
   display: block;
   text-decoration: none;
   overflow: hidden;
   border-radius: 10px;
-  background: #f8f9fa;
+  background:  rgb(44, 44, 44); /* Fundo preto */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05); /* Sombra leve clara */
+  color: #fff; /* Texto branco por padrão */
 }
 
 .card-socio:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Efeito de elevação */
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.1); /* Leve brilho branco */
 }
 
-
-.main-text {
+.card-socio .main-text {
   text-align: center;
-  padding: 15px;
-  background: #191919;
-  color: white;
-  transition: background-color 0.3s ease;
+  padding: 20px;
+  background: transparent; /* Sem fundo sobreposto */
+  color: #fff;
 }
 
-.card-socio:hover .main-text {
-  background: #191919;
+.card-socio h5,
+.card-socio h6 {
+  color: #fff; /* Texto branco */
+  margin: 5px 0;
 }
 
-.main-text h5 {
-  margin: 0;
-  font-size: 1.25rem;
-}
-
-.main-text h6 {
-  margin: 5px 0 0;
+.card-socio h6 {
+  font-weight: normal;
   font-size: 1rem;
-  font-weight: 400;
-  color: #ced4da;
-}
-
-.card-socio:hover .main-text h6 {
-  color: #f8f9fa;
+  opacity: 0.8;
 }
 .col-lg-4.col-md-6 {
   margin-bottom: 20px; /* Espaçamento vertical */
@@ -285,7 +251,7 @@
 						Sócio Fundador					</h5>
 					<h3 class="color-black">Waldemar Zveiter</h3>
 				</div>
-								<div class="main-text color-black">
+								<div class="main-text color-black" style="text-align: justify;">
 										<p><span class="TextRun SCXW252602379 BCX8" lang="PT-BR" xml:lang="PT-BR" data-contrast="auto"><span class="NormalTextRun SCXW252602379 BCX8">Iniciada sua atividade advocatícia, Waldemar Zveiter presidiu a Ordem dos Advogados do Brasil/ RJ em dois biênios, pertenceu também, ao Conselho Federal dessa mesma entidade, e ao Conselho Superior do Instituto dos Advogados do Brasil no qual permanece filiado até o presente sendo, Membro Nato da Ordem dos Advogados do Brasil. Exerceu a advocacia por cerca de vinte e cinco anos, ininterruptos, no curso dos quais foi eleito pelo Tribunal de Justiça do Estado do Rio de Janeiro para compor o Tribunal Regional Eleitoral como jurista, cumprindo o primeiro mandato de dois anos e reeleito para o segundo biênio, no início desse mandato foi nomeado Desembargador do Tribunal de Justiça do Estado do Rio de Janeiro no quinto reservado aos advogados, por atender os requisitos constitucionais do “notável saber jurídico e conduta ilibada”.</span></span><span class="EOP SCXW252602379 BCX8" data-ccp-props="{&quot;201341983&quot;:0,&quot;335551550&quot;:6,&quot;335551620&quot;:6,&quot;335559739&quot;:160,&quot;335559740&quot;:259}"> </span></p>
 					
 				</div>
@@ -297,7 +263,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 col-lg-8">
-				<div class="main-text color-black">
+								<div class="main-text color-black" style="text-align: justify;">
 					<p>O Escritório de advocacia desde seu início sempre focou em seus profissionais, sendo uma verdadeira escola para produção de excelentes advogados, que ingressam, em sua maioria, como estagiários e após sua formação e aprovação na OAB tem a oportunidade de ingressar e crescer na sociedade.</p>
 				</div>
 			</div>
@@ -310,7 +276,7 @@
 												
 											</div>
 					<div class="main-text">
-						<h5 class="color-white">Sérgio Zveiter</h5>
+						<h5 class="nome font-loos-extrawide color-black">Sergio Zveiter</h5>
 												<h6 class="cargo color-dark-gray">
 							Sócio						</h6>
 					</div>

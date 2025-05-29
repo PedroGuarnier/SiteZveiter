@@ -256,48 +256,55 @@
             </div>
         </header>
     
-        <section id="contato" class="contact-section">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <!-- Título da Seção -->
-                    <div class="col-12 text-center mb-4">
-                        <h1 class="main-title">Contato</h1>
-                    </div>
-        
-                    <!-- Informações de Contato -->
-                    <div class="col-lg-5 mb-4">
-                        <div class="contact-info">
-                            <a href="mailto:contato@zveiter.adv.br" class="contact-email">
-                                <span>Email: contato@zveiter.adv.br</span>
-                            </a>
-        
-                            <div class="card-address">
-                                <p class="city">Rio de Janeiro</p>
-                                <p class="address">
-                                    Avenida Presidente Antônio Carlos, nº 51 - 19º e 20º andares<br>
-                                    Centro - Rio de Janeiro - RJ - 20.020-010<br>
-                                    <a href="tel:2133801155">+55 (21) 3380-1155</a>
-                                </p>
-                                <a target="_blank" href="https://www.google.com/maps?q=Av+Presidente+Antônio+Carlos,+51,+centro,+rio+de+janeiro,+rj" class="maps">
-                                </a>
-                            </div>
-        
-                            <div class="card-address">
-                                <p class="city">Brasília</p>
-                                <p class="address"><a href="tel:6134474343">+55 (61) 3447-4343</a></p>
-                            </div>
-        
-                            <div class="card-address">
-                                <p class="city">São Paulo</p>
-                                <p class="address">Avenida Paulista, nº 777, 7º andar, São Paulo<br>
+       <section id="contato" class="contact-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Título da Seção -->
+            <div class="col-12 text-center mb-4">
+                <h1 class="main-title">Contato</h1>
+            </div>
 
-                                    <a href="tel:1148580383">+55 (11) 4858-0383</a></p>
-                            </div>
-                        </div>
+            <!-- Informações de Contato -->
+            <div class="col-lg-8 col-md-10 col-12">
+                <div class="contact-info text-center">
+                    <a href="mailto:contato@zveiter.adv.br" class="contact-email d-block mb-3">
+                        <span>Email: contato@zveiter.adv.br</span>
+                    </a>
+
+                    <div class="card-address mb-4">
+                        <p class="city fw-bold">Rio de Janeiro</p>
+                        <p class="address">
+                            Avenida Presidente Antônio Carlos, nº 51 - 19º e 20º andares<br>
+                            Centro - Rio de Janeiro - RJ - 20.020-010<br>
+                            <a href="tel:2133801155">+55 (21) 3380-1155</a>
+                        </p>
+                        <a target="_blank" href="https://www.google.com/maps?q=Av+Presidente+Antônio+Carlos,+51,+centro,+rio+de+janeiro,+rj" class="maps d-block">
+                            Ver no mapa
+                        </a>
                     </div>
+
+                    <div class="card-address mb-4">
+                        <p class="city fw-bold">Brasília</p>
+                        <p class="address">
+                            <a href="tel:6134474343">+55 (61) 3447-4343</a>
+                        </p>
+                    </div>
+
+                    <div class="card-address mb-4">
+                        <p class="city fw-bold">São Paulo</p>
+                        <p class="address">
+                            Avenida Paulista, nº 777, 7º andar, São Paulo<br>
+                            <a href="tel:1148580383">+55 (11) 4858-0383</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
         
                   <!-- Formulário de Contato -->
-<div class ="col-lg-5 mb-4">
+<div class hidden ="col-lg-5 mb-4">
     <h2 style="color: #191919;">Fale Conosco</h2>
     <form action="process_form.php" method="post" class="contact-form">
         <input type="text" name="nome" placeholder="Nome*" required>
