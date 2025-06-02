@@ -1,0 +1,24 @@
+{
+  "name": "projetositezv-main-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroGuarnier/SiteZveiter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PedroGuarnier/SiteZveiter/issues"
+  },
+  "homepage": "https://github.com/PedroGuarnier/SiteZveiter#readme",
+  "dependencies": {
+    "@netlify/sdk": "^2.26.2"
+  }
+}
