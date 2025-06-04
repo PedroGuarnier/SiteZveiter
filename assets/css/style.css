@@ -594,8 +594,8 @@ button:active .button_top {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 footer {
-    background-color: #fff; /* White background color */
-    color: #191919; /* Black text color */
+    background-color: #fff; /* Cor de fundo branca */
+    color: #191919; /* Cor do texto preta */
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -605,7 +605,6 @@ footer {
 
 .footer-logo {
     margin-bottom: 20px; /* Espaço entre a logo e os endereços */
-    margin-right: 120px;
 }
 
 .footer-logo-img {
@@ -620,15 +619,16 @@ footer {
 
 .footer-addresses {
     display: flex;
-    justify-content: center; /* Centraliza os endereços */
-    gap: 20px; /* Diminui o espaçamento entre os endereços */
-    flex-wrap: wrap;
-    margin-top: 10px; /* Reduz o espaço entre a logo e os endereços */
+    justify-content: center;     /* Centraliza os blocos de endereço horizontalmente */
+    align-items: flex-start;     /* Alinha os blocos pelo topo */
+    gap: 40px;                   /* Espaçamento entre os blocos */
+    flex-wrap: wrap;             /* Permite quebra de linha em telas menores */
+    margin-top: 10px;
+    text-align: left;            /* Mantém o texto alinhado à esquerda dentro de cada bloco */
 }
 
 .footer-address {
     max-width: 300px;
-    margin: 50px;
 }
 
 .footer-address h4 {
@@ -649,6 +649,7 @@ footer {
 .footer-address a:hover {
     text-decoration: underline;
 }
+
 
 /* Media Queries */
 @media (max-width: 768px) {
