@@ -164,7 +164,7 @@ body {
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownRecuperacoes">
                                     <a class="dropdown-item" href="grppetro.html">GRUPO PETRÓPOLIS</a>
                                     <a class="dropdown-item" href="americanas.html">GRUPO AMERICANAS</a>
-                                    <a class="dropdown-item" href="pb.html">MINA TUCANO</a>
+                                    <a class="dropdown-item" href="mintucano.html">MINA TUCANO</a>
                                     <a class="dropdown-item" href="gas.html">G.A.S. CONSULTORIA</a>
                                     <a class="dropdown-item" href="transporte.html">TRANSPORTE CAMPO GRANDE LTDA E VIAÇÃO PENHA RIO LTDA</a>
                                     <a class="dropdown-item" href="transcarioca.html">CONSÓRCIO TRANSCARIOCA DE TRANSPORTES</a>
@@ -264,7 +264,7 @@ body {
                 </div>
                 <div class="col-lg-7">
                     <div class="secondary-text color-black">
-                        <p>O Escritório de Advocacia Zveiter, fundado pelo Ministro Waldemar Zveiter, é reconhecido pela sua atuação de excelência em litígio, consultoria e assessoria, tendo como norte a garantia do direito de seus clientes, desde 1957.</p>
+                        <p>O Escritório de Advocacia Zveiter, fundado pelo Advogado Waldemar Zveiter, é reconhecido pela sua atuação de excelência em litígio, consultoria e assessoria, tendo como norte a garantia do direito de seus clientes, desde 1957.</p>
                     </div>
                     <a href="institucional.html" class="main-btn btn-black">
                         <span class="font-ratio">Saiba mais</span>
@@ -490,7 +490,75 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-        
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const dropdownLinks = document.querySelectorAll('.navbar-nav .dropdown-toggle');
+
+  function handleDropdownClick(e) {
+    e.preventDefault();
+    const parentItem = this.parentElement;
+
+    // Fecha todos os outros dropdowns
+    document.querySelectorAll('.navbar-nav .nav-item.dropdown').forEach(function (item) {
+      if (item !== parentItem) {
+        item.classList.remove('show');
+      }
+    });
+
+    // Alterna o dropdown clicado
+    parentItem.classList.toggle('show');
+  }
+
+  // Adiciona ou remove evento conforme largura da tela
+  function updateDropdownBehavior() {
+    if (window.innerWidth < 992) {
+      dropdownLinks.forEach(link => {
+        link.removeEventListener('click', handleDropdownClick);
+        link.addEventListener('click', handleDropdownClick);
+      });
+    } else {
+      // No desktop, remove qualquer .show residual
+      document.querySelectorAll('.navbar-nav .nav-item.dropdown').forEach(function (item) {
+        item.classList.remove('show');
+      });
+
+      // Remove os listeners manuais
+      dropdownLinks.forEach(link => {
+        link.removeEventListener('click', handleDropdownClick);
+      });
+    }
+  }
+
+  // Chama na inicialização
+  updateDropdownBehavior();
+
+  // Atualiza ao redimensionar
+  window.addEventListener('resize', updateDropdownBehavior);
+});
+</script>
+        <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+
+  dropdowns.forEach(dropdown => {
+    const link = dropdown.querySelector('.nav-link');
+    const menu = dropdown.querySelector('.dropdown-menu');
+
+    // Abre ao entrar no link
+    link.addEventListener('mouseenter', () => {
+      dropdown.classList.add('show');
+      menu.classList.add('show');
+    });
+
+    // Fecha ao sair do link e do menu
+    dropdown.addEventListener('mouseleave', () => {
+      dropdown.classList.remove('show');
+      menu.classList.remove('show');
+    });
+  });
+});
+</script>
+
         
 </body>
 </html>
