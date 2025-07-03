@@ -618,14 +618,17 @@ footer {
 }
 
 .footer-addresses {
-    display: flex;
-    justify-content: center;     /* Centraliza os blocos de endereço horizontalmente */
-    align-items: flex-start;     /* Alinha os blocos pelo topo */
-    gap: 40px;                   /* Espaçamento entre os blocos */
-    flex-wrap: wrap;             /* Permite quebra de linha em telas menores */
-    margin-top: 10px;
-    text-align: left;            /* Mantém o texto alinhado à esquerda dentro de cada bloco */
+  max-width: 1000px;            /* ou outro valor que você preferir */
+  margin: 20px auto 0 auto;     /* centralizado por padrão */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: center;
+  transform: translateX(40px);  /* <-- aqui você ajusta o deslocamento lateral */
 }
+
 
 .footer-address {
     max-width: 300px;
@@ -653,26 +656,10 @@ footer {
 
 /* Media Queries */
 @media (max-width: 768px) {
-    .footer-addresses {
-        flex-direction: column;
-        gap: 20px; /* Menos espaço entre os endereços em telas menores */
-    }
-
-    .footer-address {
-        margin: 20px 0;
-        text-align: center;
-    }
-
-    .footer-logo {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .footer-address-bra,
-    .footer-address-rio,
-    .footer-address-sp {
-        margin: 0; /* Remove margens laterais para centralizar tudo */
-    }
+  .footer-addresses {
+    transform: none !important;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 576px) {
@@ -729,4 +716,16 @@ footer {
         flex: 1 1 100%;
         margin: 10px 0;
     }
+}
+.main-text {
+  text-align: justify !important;
+}
+#sobre-nos .section-content {
+  text-align: justify !important;
+}
+#featured-profissionais .main-text {
+  text-align: justify !important;
+}
+.card-socio .main-text {
+  text-align: center !important;
 }

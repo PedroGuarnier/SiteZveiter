@@ -362,34 +362,46 @@ body {
             </div>
         </footer>
     
-         <!-- jQuery and Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@highwayjs/core@latest"></script>
-    <script src="assets/js/highway-setup.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script>
-        document.getElementById('especialidadesLink').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.getElementById('areas-de-atuacao').scrollIntoView({ behavior: 'smooth' });
-        });
-        </script>
-        <script>
-            document.querySelector('.footer-logo a').addEventListener('click', function(event) {
-                event.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        </script>
-        <script>
-            document.addEventListener('scroll', function() {
+      <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Bootstrap Bundle (inclui Popper.js) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+<!-- GSAP -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+
+<!-- HighwayJS -->
+<script src="https://cdn.jsdelivr.net/npm/@highwayjs/core@latest"></script>
+
+<!-- Seus scripts customizados -->
+<script src="assets/js/highway-setup.js"></script>
+<script src="assets/js/script.js"></script>
+
+<!-- Botão de rolar para áreas de atuação -->
+<script>
+document.getElementById('especialidadesLink').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('areas-de-atuacao').scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+
+<!-- Scroll to Top -->
+<script>
+document.querySelector('.footer-logo a').addEventListener('click', function(event) {
+    event.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+</script>
+
+<!-- Animação da logo ao rolar -->
+<script>
+document.addEventListener('scroll', function() {
     var header = document.querySelector('header');
     var logoWrapper = document.querySelector('.logo-wrapper');
-    
     if (window.scrollY > 100) {
         logoWrapper.classList.add('scrolled');
         logoWrapper.classList.remove('center');
@@ -398,123 +410,86 @@ body {
         logoWrapper.classList.add('center');
     }
 });
-            
-        </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var navbar = document.querySelector('.navbar');
-                var lastScrollTop = 0;
-                
-                window.addEventListener('scroll', function() {
-                    var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-                    if (currentScrollTop > lastScrollTop) {
-                        // Rolando para baixo
-                        navbar.classList.add('navbar-hidden');
-                    } else {
-                        // Rolando para cima
-                        navbar.classList.remove('navbar-hidden');
-                    }
-        
-                    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Para não permitir valores negativos
-                });
-            });
-        </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var navbar = document.querySelector('.navbar');
-                var lastScrollTop = 0;
-        
-                window.addEventListener('scroll', function() {
-                    var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-                    if (currentScrollTop > lastScrollTop) {
-                        // Rolando para baixo
-                        navbar.classList.add('navbar-transparent');
-                        navbar.classList.remove('navbar-visible');
-                    } else {
-                        // Rolando para cima
-                        navbar.classList.add('navbar-visible');
-                        navbar.classList.remove('navbar-transparent');
-                    }
-        
-                    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Para não permitir valores negativos
-                });
-            });
-        </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
+</script>
+
+<!-- Mostrar/ocultar navbar ao rolar -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var navbar = document.querySelector('.navbar');
+    var lastScrollTop = 0;
+
+    window.addEventListener('scroll', function() {
+        var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScrollTop > lastScrollTop) {
+            navbar.classList.add('navbar-hidden');
+        } else {
+            navbar.classList.remove('navbar-hidden');
+        }
+
+        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+    });
+});
+</script>
+
+<!-- Transparência da navbar ao rolar -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var navbar = document.querySelector('.navbar');
+    var lastScrollTop = 0;
+
+    window.addEventListener('scroll', function() {
+        var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScrollTop > lastScrollTop) {
+            navbar.classList.add('navbar-transparent');
+            navbar.classList.remove('navbar-visible');
+        } else {
+            navbar.classList.add('navbar-visible');
+            navbar.classList.remove('navbar-transparent');
+        }
+
+        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+    });
+});
+</script>
+
+<!-- Header sticky ao rolar -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
     var header = document.querySelector('header');
-    
     window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) { // Ajuste o valor conforme necessário
+        if (window.scrollY > 50) {
             header.classList.add('header-scrolled');
         } else {
             header.classList.remove('header-scrolled');
         }
     });
 });
-        </script>
-        <script>document.addEventListener('DOMContentLoaded', function() {
-            const btnContencioso = document.getElementById('btnContencioso');
-            const btnEstrategico = document.getElementById('btnEstrategico');
-            const contenciosoContent = document.getElementById('contenciosoContent');
-            const estrategicoContent = document.getElementById('estrategicoContent');
-        
-            // Mostrar o conteúdo do Estratégico por padrão
-            contenciosoContent.classList.add('hidden');
-            estrategicoContent.classList.remove('hidden');
-        
-            btnContencioso.addEventListener('click', function() {
-                contenciosoContent.classList.remove('hidden');
-                estrategicoContent.classList.add('hidden');
-            });
-        
-            btnEstrategico.addEventListener('click', function() {
-                contenciosoContent.classList.add('hidden');
-                estrategicoContent.classList.remove('hidden');
-            });
-        });</script>
-         <script>
-            $(document).ready(function () {
-                $(window).scroll(function () {
-                    if ($(this).scrollTop() > 100) {
-                        $('.sticky-header').addClass('fixed-top');
-                        $('.social-icons').addClass('d-flex').removeClass('d-none');
-                    } else {
-                        $('.sticky-header').removeClass('fixed-top');
-                        $('.social-icons').removeClass('d-flex').addClass('d-none');
-                    }
-                });
-            });
-        </script>
-        <script>
-         document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona o link "Recuperação Judicial e Falência" na seção "Áreas de Atuação"
-    var recJudFalLink = document.querySelector('a[href="pagina-recuperacao.html"]');
-    
-    // Seleciona o submenu de "RECUPERAÇÕES JUDICIAIS E FALÊNCIAS" na navbar
-    var recJudFalMenu = document.getElementById('navbarDropdownRecuperacoes');
-    
-    // Adiciona um evento de clique no link
-    recJudFalLink.addEventListener('click', function(event) {
-        event.preventDefault(); // Evita o comportamento padrão do link
+</script>
 
-        // Abre o submenu na navbar
-        if (!recJudFalMenu.classList.contains('show')) {
-            recJudFalMenu.classList.add('show');
-            recJudFalMenu.setAttribute('aria-expanded', 'true');
-        }
+<!-- Botões de Áreas de Atuação -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const btnContencioso = document.getElementById('btnContencioso');
+    const btnEstrategico = document.getElementById('btnEstrategico');
+    const contenciosoContent = document.getElementById('contenciosoContent');
+    const estrategicoContent = document.getElementById('estrategicoContent');
 
-        // Rola a página para o topo
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+    contenciosoContent.classList.add('hidden');
+    estrategicoContent.classList.remove('hidden');
+
+    btnContencioso.addEventListener('click', function() {
+        contenciosoContent.classList.remove('hidden');
+        estrategicoContent.classList.add('hidden');
+    });
+
+    btnEstrategico.addEventListener('click', function() {
+        contenciosoContent.classList.add('hidden');
+        estrategicoContent.classList.remove('hidden');
     });
 });
-
-        </script>
+</script>
         
         
 </body>
