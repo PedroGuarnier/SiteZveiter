@@ -129,11 +129,7 @@ header {
     padding: 10px 0;
 }
 
-.nav-item:hover .dropdown-menu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
+
 
 .dropdown-item {
     color: #f1f1f1;
@@ -730,32 +726,7 @@ footer {
   text-align: center !important;
 }
 
-@media (min-width: 992px) {
-  /* Dropdown de ESPECIALIDADES */
-  #especialidadesLink + .dropdown-menu {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(250px, 1fr));
-    gap: 12px 24px; /* gap: linhas e colunas */
-    padding: 15px 20px;
-  }
 
-  /* Dropdown de RECUPERAÇÕES */
-  #navbarDropdownRecuperacoes + .dropdown-menu {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(250px, 1fr));
-    gap: 12px 24px;
-    padding: 15px 20px;
-  }
-
-  /* Ajuste dos links */
-  #especialidadesLink + .dropdown-menu .dropdown-item,
-  #navbarDropdownRecuperacoes + .dropdown-menu .dropdown-item {
-    text-align: left;
-    padding: 6px 8px;           /* Espaço interno de cada link */
-    white-space: normal;        /* Permite quebra de linha */
-    word-break: break-word;     /* Quebra palavra se for grande */
-  }
-}
 /* ============================
    MELHORIAS MENU MOBILE
    ============================ */
@@ -837,9 +808,23 @@ footer {
     margin-top: 0;
   }
 
-  .nav-item:hover .dropdown-menu {
+  /* Apenas quando HOVER no LINK ou no DROPDOWN */
+  .nav-link:hover + .dropdown-menu,
+  .nav-item:hover > .dropdown-menu {
     display: block;
     opacity: 1;
     transform: translateY(0);
+  }
+}
+/* No mobile (<992px), o Bootstrap controla via .show */
+@media (max-width: 991.98px) {
+  .dropdown-menu {
+    display: none;
+    opacity: 1; /* Sem animação no mobile */
+    transform: none;
+  }
+
+  .nav-item.show > .dropdown-menu {
+    display: block;
   }
 }

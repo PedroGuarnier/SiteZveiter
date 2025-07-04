@@ -362,7 +362,7 @@ body {
             </div>
         </footer>
     
-      <!-- jQuery -->
+     <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <!-- Bootstrap Bundle (inclui Popper.js) -->
@@ -490,72 +490,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+<!-- Hover Dropdown no desktop -->
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const dropdownLinks = document.querySelectorAll('.navbar-nav .dropdown-toggle');
-
-  function handleDropdownClick(e) {
-    e.preventDefault();
-    const parentItem = this.parentElement;
-
-    // Fecha todos os outros dropdowns
-    document.querySelectorAll('.navbar-nav .nav-item.dropdown').forEach(function (item) {
-      if (item !== parentItem) {
-        item.classList.remove('show');
+$(document).ready(function() {
+  if ($(window).width() >= 992) {
+    $('.navbar .dropdown').hover(
+      function() {
+        $(this).addClass('show');
+        $(this).find('.dropdown-menu').addClass('show');
+      },
+      function() {
+        $(this).removeClass('show');
+        $(this).find('.dropdown-menu').removeClass('show');
       }
-    });
-
-    // Alterna o dropdown clicado
-    parentItem.classList.toggle('show');
+    );
   }
-
-  // Adiciona ou remove evento conforme largura da tela
-  function updateDropdownBehavior() {
-    if (window.innerWidth < 992) {
-      dropdownLinks.forEach(link => {
-        link.removeEventListener('click', handleDropdownClick);
-        link.addEventListener('click', handleDropdownClick);
-      });
-    } else {
-      // No desktop, remove qualquer .show residual
-      document.querySelectorAll('.navbar-nav .nav-item.dropdown').forEach(function (item) {
-        item.classList.remove('show');
-      });
-
-      // Remove os listeners manuais
-      dropdownLinks.forEach(link => {
-        link.removeEventListener('click', handleDropdownClick);
-      });
-    }
-  }
-
-  // Chama na inicialização
-  updateDropdownBehavior();
-
-  // Atualiza ao redimensionar
-  window.addEventListener('resize', updateDropdownBehavior);
-});
-</script>
-        <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const dropdowns = document.querySelectorAll('.nav-item.dropdown');
-
-  dropdowns.forEach(dropdown => {
-    const link = dropdown.querySelector('.nav-link');
-    const menu = dropdown.querySelector('.dropdown-menu');
-
-    // Abre ao entrar no link
-    link.addEventListener('mouseenter', () => {
-      dropdown.classList.add('show');
-      menu.classList.add('show');
-    });
-
-    // Fecha ao sair do link e do menu
-    dropdown.addEventListener('mouseleave', () => {
-      dropdown.classList.remove('show');
-      menu.classList.remove('show');
-    });
-  });
 });
 </script>
 
