@@ -80,154 +80,106 @@
 }
     /* Estilo para o container do dropdown */
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
+  width: 100%;
 }
 
 /* Estilo para o botão do dropdown */
 .dropbtn {
-    
-    background-color: #4a4a4a; /* Cor de fundo do botão */
-    color: #f1f1f1; /* Cor do texto do botão */
-    padding: 16px; /* Espaçamento interno do botão */
-    font-size: 16px; /* Tamanho da fonte do botão */
-    border: none; /* Remover borda */
-    cursor: pointer; /* Cursor do mouse */
-    width: 100%; /* Largura total do botão */
-    text-align: left; /* Alinhamento do texto à esquerda */
+  background-color: #0066cc;
+  color: #fff;
+  padding: 14px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%;
+}
+
+.dropbtn:hover {
+  background-color: #004c99;
+  color: #ffffff;
 }
 
 /* Estilo para o conteúdo do dropdown */
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 4px;
+  display: none;
+  position: absolute;
+  background-color: #222;
+  min-width: 220px;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  padding: 0.5rem 0;
 }
 
 /* Estilo para os itens do dropdown */
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    border-bottom: 1px solid #ddd;
+  color: #eee;
+  padding: 12px 18px;
+  text-decoration: none;
+  display: block;
+  font-size: 15px;
+  transition: background-color 0.2s ease, padding-left 0.2s ease;
 }
 
 /* Alterar a cor de fundo e o texto ao passar o mouse sobre um item do dropdown */
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
-    color: #191919;
+  background-color: #333;
+  padding-left: 24px;
 }
 
 /* Mostrar o conteúdo do dropdown ao passar o mouse sobre o botão */
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
+  animation: fadeInDropdown 0.25s ease;
 }
 
-/* Mostrar o conteúdo do dropdown ao passar o mouse sobre o botão */
-.dropdown:hover .dropbtn {
-    background-color: #ddd;
-    color:#191919
+/* Animação de aparição */
+@keyframes fadeInDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Estilo para o conteúdo que aparece ao clicar */
 .content {
-    padding: 15px;
-    border-top: 1px solid #ddd;
-}
-
-/* Estilo de animação para mostrar/ocultar o conteúdo */
-.content {
-    display: none;
-    transition: max-height 0.3s ease-out;
+  display: none;
+  padding: 15px;
+  background-color: #2b2b2b;
+  border-radius: 4px;
+  margin-top: 8px;
+  color: #f0f0f0;
+  transition: max-height 0.3s ease-out;
 }
 
 /* Mostrar o conteúdo ao clicar */
 .show {
-    display: block;
-    max-height: 1000px; /* Ajuste conforme necessário */
+  display: block;
+  max-height: 1000px;
 }
+
+/* Ajustes de alinhamento vertical */
 .vertical-align-section .container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alinha os itens verticalmente à esquerda */
-    gap: 20px; /* Espaçamento entre os itens */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .vertical-align-section .dropdown {
-    width: 100%; /* Opcional: ajuste conforme necessário */
-}
-.container {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 20px;
-        }
-
-        .section-title {
-            color: var(--text-color);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-            flex: 1;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--accent-color);
-            border-radius: 5px;
-            transition: width var(--transition-ease);
-        }
-
-        .section-title:hover::after {
-            width: 100px;
-        }
-
-        .section-content {
-            background-color: var(--secondary-color);
-            border-radius: 10px;
-            padding: 30px;
-            margin: 30px auto;
-            max-width: 800px; /* Consistent width for both sections */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-            transition: transform var(--transition-ease), box-shadow var(--transition-ease);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .section-content:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
-        }
-            
-    .pdf-link {
-    background-color: #f1f1f1;
-    color: #f1f1f1;
-    
+  width: 100%;
 }
 
-.pdf-link:hover {
-    background-color: #f1f1f1;
-    color: white;
-}
-
-
-        
     
         </style>
          

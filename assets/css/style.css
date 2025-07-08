@@ -118,7 +118,7 @@ header {
 .dropdown-menu {
     background-color: #191919;
     border: none;
-    display: none;
+    column-count: 2;                   /* DUAS COLUNAS */
     position: absolute;
     top: 100%;
     left: 0;
@@ -126,22 +126,28 @@ header {
     opacity: 0;
     transition: opacity 0.5s ease, transform 0.5s ease;
     transform: translateY(10px);
-    padding: 10px 0;
+    padding: 0;
 }
-
-
 
 .dropdown-item {
     color: #f1f1f1;
     padding: 10px 20px;
     display: block;
+    width: 100%;
+    box-sizing: border-box;
+    break-inside: avoid;              /* Evita quebra estranha */
 }
 
 .dropdown-item:hover {
     color: #000;
     background-color: #d4d4d4;
 }
-
+/* Mobile: apenas 1 coluna */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        column-count: 1;
+    }
+}
 #carouselExampleIndicators {
     position: relative; /* Adiciona contexto de posicionamento para o carrossel */
     margin-top: 0; /* Remover qualquer margem superior do carrossel para que ele se alinhe com o topo */
@@ -759,7 +765,7 @@ footer {
     color: #d4d4d4;
   }
 
-  /* Submenus no mobile */
+  @media (max-width: 991.98px) {
   .navbar-nav .dropdown-menu {
     position: static;
     float: none;
@@ -773,10 +779,10 @@ footer {
     opacity: 1;
   }
 
-  /* Quando aberto */
-  .navbar-nav .nav-item.show > .dropdown-menu {
-    display: block;
+  .navbar-nav .dropdown-menu.show {
+    display: block; /* Mostrar quando Bootstrap adiciona .show */
   }
+}
 
   /* Itens dos submenus */
   .dropdown-item {
