@@ -119,7 +119,15 @@ body {
     width: 200px; /* Ajuste o tamanho conforme necessário */
     height: auto; /* Mantém a proporção da imagem */
 }
+/* Justifica o texto da seção "Quem Somos" */
+.secondary-text p {
+    text-align: justify;
+}
 
+/* Justifica o texto da área "Contencioso de Massa" */
+#contenciosoContent p {
+    text-align: justify;
+}
         </style>
     </head>
     <body id="top">
@@ -401,6 +409,7 @@ document.addEventListener('scroll', function() {
 document.addEventListener('DOMContentLoaded', function() {
     var navbar = document.querySelector('.navbar');
     var lastScrollTop = 0;
+    
 
     window.addEventListener('scroll', function() {
         var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -422,19 +431,19 @@ document.addEventListener('DOMContentLoaded', function() {
     var navbar = document.querySelector('.navbar');
     var lastScrollTop = 0;
 
-    window.addEventListener('scroll', function() {
-        var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (window.innerWidth >= 992) {
+        window.addEventListener('scroll', function() {
+            var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (currentScrollTop > lastScrollTop) {
-            navbar.classList.add('navbar-transparent');
-            navbar.classList.remove('navbar-visible');
-        } else {
-            navbar.classList.add('navbar-visible');
-            navbar.classList.remove('navbar-transparent');
-        }
+            if (currentScrollTop > lastScrollTop) {
+                navbar.classList.add('navbar-hidden');
+            } else {
+                navbar.classList.remove('navbar-hidden');
+            }
 
-        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
-    });
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+        });
+    }
 });
 </script>
 

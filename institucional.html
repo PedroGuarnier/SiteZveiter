@@ -286,24 +286,24 @@
               
           </script>
           <script>
-              document.addEventListener('DOMContentLoaded', function() {
-                  var navbar = document.querySelector('.navbar');
-                  var lastScrollTop = 0;
-                  
-                  window.addEventListener('scroll', function() {
-                      var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          
-                      if (currentScrollTop > lastScrollTop) {
-                          // Rolando para baixo
-                          navbar.classList.add('navbar-hidden');
-                      } else {
-                          // Rolando para cima
-                          navbar.classList.remove('navbar-hidden');
-                      }
-          
-                      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Para não permitir valores negativos
-                  });
-              });
+             document.addEventListener('DOMContentLoaded', function() {
+    var navbar = document.querySelector('.navbar');
+    var lastScrollTop = 0;
+
+    if (window.innerWidth >= 992) {
+        window.addEventListener('scroll', function() {
+            var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScrollTop > lastScrollTop) {
+                navbar.classList.add('navbar-hidden');
+            } else {
+                navbar.classList.remove('navbar-hidden');
+            }
+
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+        });
+    }
+});
           </script>
           <script>
               document.addEventListener('DOMContentLoaded', function() {
