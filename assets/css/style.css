@@ -834,3 +834,40 @@ footer {
     display: block;
   }
 }
+/* Estilos para melhorar a formatação do texto na página do sócio, sem alterar as cores */
+
+/* Melhora a legibilidade do conteúdo principal */
+.equipe-conteudo {
+    line-height: 1.7; /* Aumenta o espaçamento entre as linhas para facilitar a leitura */
+    font-size: 1.1em; /* Aumenta um pouco o tamanho da fonte do parágrafo */
+}
+
+/* Estiliza os títulos "FORMAÇÃO" e "EXPERIÊNCIA" para dar mais destaque e estrutura */
+.equipe-conteudo h5 {
+    font-size: 1.4em; /* Aumenta o tamanho da fonte dos subtítulos */
+    letter-spacing: 0.5px; /* Adiciona um leve espaçamento entre as letras */
+    padding-bottom: 10px; /* Adiciona um espaço abaixo do texto do subtítulo */
+    margin-bottom: 20px; /* Adiciona um espaço antes do parágrafo seguinte */
+    border-bottom: 2px solid var(--primary-color); /* Adiciona uma linha sutil abaixo do título, usando a cor primária já definida */
+}
+
+/* Justifica o texto dos parágrafos para um visual mais alinhado e profissional */
+.equipe-conteudo p {
+    text-align: justify;
+    margin-bottom: 1.5em; /* Garante um bom espaçamento após cada parágrafo */
+}
+
+/* Ajusta o padding geral para dar mais "respiro" ao texto */
+#single-equipe .equipe-full {
+    padding: 20px;
+}
+/* Estilos para a lista de formação */
+.equipe-conteudo ul {
+    margin-top: 0; /* Remove o espaçamento de cima da lista */
+    margin-bottom: 1.5em; /* Mantém o mesmo espaçamento de um parágrafo abaixo */
+    padding-left: 20px; /* Controla o recuo do marcador */
+}
+
+.equipe-conteudo li {
+    text-align: justify; /* Alinha o texto do item da lista */
+}
