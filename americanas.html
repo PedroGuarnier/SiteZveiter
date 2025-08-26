@@ -179,6 +179,20 @@
 .vertical-align-section .dropdown {
   width: 100%;
 }
+/* Move toda a seção 'sobre-nos' para a esquerda e ajusta o conteúdo */
+#sobre-nos .section-content {
+  margin-left: 0;          /* Move o bloco para a esquerda */
+  align-items: flex-start;  /* Alinha o texto interno à esquerda */
+  text-align: left;         /* Garante o alinhamento do texto */
+}
+
+#sobre-nos .section-content h3 {
+  margin-bottom: 15px;      /* Espaçamento abaixo do título principal */
+}
+
+#sobre-nos .section-content h6 {
+  margin-bottom: 8px;       /* Espaçamento reduzido entre as linhas de informação */
+}
 
     
         </style>
@@ -278,25 +292,25 @@
 
         </h2>
         <div class="section-content">
-                <h3><p>AMERICANAS S.A., B2W DIGITAL LUX S.À.R.L, JSM GLOBAL S.À.R.L</h3></p>
+                            <h3>
+            AMERICANAS S.A., B2W DIGITAL LUX S.À.R.L, JSM GLOBAL S.À.R.L
+            </h3>
 
-                <h6><p>Tutela Cautelar Antecedente de Recuperação Judicial nº 0803087-20.2023.8.19.0001</h6></p> 
-                
-                <h6><p>Juízo: 4ª Vara Empresarial da Comarca da Capital do Rio de Janeiro</h6></p>
-               
-                <h6><p>Administrador Judicial: Escritório de Advocacia Zveiter e  Preserva-Ação Administração Judicial</h6></p>
+            <h6>Tutela Cautelar Antecedente de Recuperação Judicial nº 0803087-20.2023.8.19.0001</h6>
+            <h6>Juízo: 4ª Vara Empresarial da Comarca da Capital do Rio de Janeiro</h6>
+            <h6>Administrador Judicial: Escritório de Advocacia Zveiter e Preserva-Ação Administração Judicial</h6>
+            <h6>E-mail oficial para contato: <strong>ajamericanas@psvar.com.br</strong></h6>
+            <h6>Site para consulta dos acompanhamentos processuais da recuperação judicial do Grupo Americanas</h6>
 
-                <h6><p>E-mail oficial para contato:<strong>:ajamericanas@psvar.com.br </strong></h6></p>
-
-                <h6><p>Site para consulta dos acompanhamentos processuais da recuperação judicial do Grupo Americanas</p></h6>
-
-                <a href="https://psvar.com.br/recuperacao-judicial/grupo-americanas/" target="_blank">Grupo Americanas - Recuperação Judicial</a>
+            <a href="https://psvar.com.br/recuperacao-judicial/grupo-americanas/" target="_blank">
+            Grupo Americanas - Recuperação Judicial
+            </a>
 
                  </section>
                  <section class="vertical-align-section">                    
                     <div class="container">
                         <div class="dropdown">
-                            <button class="dropbtn">Informativos</button>
+                            <button class="dropbtn">INFORMATIVOS</button>
                             <div class="dropdown-content">
                                 <a class="dropdown-item" onclick="toggleContent('content1')">INFORMATIVO 0001/2024</a>
                                     <div id="content1" class="content" style="display: none;">
@@ -398,288 +412,53 @@
                                
                                     </div>
                         </div>
-                
                         <div class="dropdown">
-                            <button class="dropbtn">DOCUMENTOS</button>
+                            <button class="dropbtn">ATA DE ASSEMBLEIA DE CREDORES</button>
                             <div class="dropdown-content">
-                                <a class="dropdown-item" onclick="toggleContent('content10')">25/07/2024 - Comunicado ao Mercado - Procedimentos de entrega das ações e bônus de subscrição aos credores</a>
-                                    <div id="content10" class="content" style="display: none;">
-                                        <a href="assets/pdfs/Comunicado-ao-Mercado-Procedimentos-de-entrega-das-acoes-e-bonus-de-subscricao-aos-credore.pdf" download class="pdf-link">Comunicado ao Mercado - Procedimentos de entrega das ações e bônus de subscrição aos credores</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content11')">18/07/2024 - PRJ Consolidado e Anexos - 17/07/2024</a>
-                                    <div id="content11" class="content" style="display: none;">
-                                        <a href="assets/pdfs/PRJ-Consolidado-e-Anexos-17-07-24.pdf" download class="pdf-link">PRJ Consolidado e Anexos - 17/07/2024</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content12')">18/07/2024 - Alteração do PRJ - 17/07/2024 - cláusula 10.1.1</a>
-                                    <div id="content12" class="content" style="display: none;">
-                                        <a href="assets/pdfs/Alteracao-do-PRJ-17-07-2024-clausula-10.1.1.pdf" download class="pdf-link">Alteração do PRJ - 17/07/2024 - cláusula 10.1.1</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content13')">31/05/2024 - Resultado do Leilão Reverso – Atualizado em 31/05/2024</a>
-                                    <div id="content13" class="content" style="display: none;">
-                                        <a href="assets/pdfs/Doc.-01-Resultado-Leilao-Reverso-Atualizado-31.05.24.pdf" download class="pdf-link">Resultado do Leilão Reverso – Atualizado em 31/05/2024</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content14')">14/05/2024 - Edital Leilão Eletrônico - Automóveis</a>
-                                    <div id="content14" class="content" style="display: none;">
-                                        <a href="assets/pdfs/Edital-leilao-eletronico-Automoveis-14-05-2024.pdf" download class="pdf-link">Edital Leilão Eletrônico - Automóveis</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content15')">13/05/2024 - Relação de credores bondholders/senior notes habilitados apresentada pela DF KING</a>
-                                    <div id="content15" class="content" style="display: none;">
-                                        <a href="assets/pdfs/Doc-02-Tender-Offer-Lista-dos-Habilitados-apresentada-pela-DF-KING.pdf" download class="pdf-link">Relação de credores bondholders/senior notes habilitados apresentada pela DF KING</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content16')">13/05/2024 - Relação de credores habilitados para Leilão Reverso</a>
-                                    <div id="content16" class="content" style="display: none;">
-                                        <a href="assets/pdfs/Doc_01_-_Relacao_de_credores_habilitados_leilao_reverso_-_Administracao_Judicial.pdf" download class="pdf-link">Relação de credores habilitados para Leilão Reverso</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content17')">17/04/2024 - Diretrizes para participação do Leilão Reverso</a>
-                                    <div id="content17" class="content" style="display: none;">
-                                        <a href="assets/pdfs/DIRETRIZES-DO-LEILAO-REVERSO.pdf" download class="pdf-link">Diretrizes para participação do Leilão Reverso</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content18')">28/03/2024 - Edital de Leilão Reverso - DJe 27/03/2024</a>
-                                    <div id="content18" class="content" style="display: none;">
-                                        <a href="assets/pdfs/Edital-Leilao-Reverso-DJE-27-03-2024.pdf" download class="pdf-link">Edital de Leilão Reverso - DJe 27/03/2024</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content19')">21/12/2023 - Apresentação do Plano de Recuperação Judicial feita durante a AGC</a>
-                                    <div id="content19" class="content" style="display: none;">
-                                        <a href="assets/pdfs/Doc.-06-Apresentacao-do-Plano-de-Recuperacao-Judicial-feita-durante-a-AGC.pdf" download class="pdf-link">Apresentação do Plano de Recuperação Judicial feita durante a AGC</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content20')">21/12/2023 - Plano de Recuperação Judicial aprovado</a>
-                                    <div id="content20" class="content" style="display: none;">
-                                        <a href="assets/pdfs/Doc.-05-Plano-de-Recuperacao-Judicial-Deliberado.pdf" download class="pdf-link">Plano de Recuperação Judicial aprovado</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content21')">19/12/2023 - Material reproduzido pelas Recuperandas na AGC em 19/12/2023</a>
-                                    <div id="content21" class="content" style="display: none;">
-                                        <a href="assets/pdfs/Apresentacao-do-Plano-de-Recuperacao-Judicial-feita-durante-a-AGC1.pdf" download class="pdf-link">Material reproduzido pelas Recuperandas na AGC em 19/12/2023</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content22')">19/12/2023 - 2º Aditivo ao PRJ</a>
-                                    <div id="content22" class="content" style="display: none;">
-                                        <a href="assets/pdfs/2o-Aditivo-ao-PRJ-19-12-2023.pdf" download class="pdf-link">2º Aditivo ao PRJ</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content23')">19/12/2023 - 2º Aditivo ao PRJ - Versão com marcas de revisão</a>
-                                    <div id="content23" class="content" style="display: none;">
-                                        <a href="assets/pdfs/2o-Aditivo-ao-PRJ-19-12-2023-Versao-com-marcas-de-revisao.pdf" download class="pdf-link">2º Aditivo ao PRJ - Versão com marcas de revisão</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content24')">19/12/2023 - Aditivo do Plano de Recuperação Judicial</a>
-                                    <div id="content24" class="content" style="display: none;">
-                                        <a href="assets/pdfs/Doc-01-2º-Aditivo-ao-PRJ.pdf" download class="pdf-link">Aditivo do Plano de Recuperação Judicial</a><br>
-                                        <a href="assets/pdfs/Doc-02-2º-Aditivo-ao-PRJ.pdf" download class="pdf-link">Doc. 02 - 2º Aditivo ao PRJ</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content25')">19/12/2023 - Anexos do aditivo ao PRJ</a>
-                                    <div id="content25" class="content" style="display: none;">
-                                        <a href="assets/pdfs/Peticao-Recuperanda-com-anexos-ao-Adititvo-19-12-2023.pdf" download class="pdf-link">Anexos do aditivo ao PRJ</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content26')">18/12/2023 - Relação de credores desmembradas</a>
-                                    <div id="content26" class="content" style="display: none;">
-                                        <a href="assets/pdfs/Relacao-Consolidada-Credores-Desmembrados.pdf" download class="pdf-link">Relação de credores desmembradas</a><br>
-                                    </div>
-
-                                    <a class="dropdown-item" onclick="toggleContent('content27')">18/12/2023 - Relação consolidada dos credores bondholders/senior notes para apuração do crédito</a>
-                                        <div id="content27" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Doc_01_-_Relacao_consolidada_bondholders-senior_notes_-_Administracao_Judicial.pdf" download class="pdf-link">Relação consolidada dos credores bondholders/senior notes para apuração do crédito</a><br>
+                                    <a class="dropdown-item" onclick="toggleContent('content192')">21/12/2023 - Declarações de voto e ressalvas</a>
+                                        <div id="content192" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-08-Declaracoes-de-voto-e-ressalvas.pdf" download class="pdf-link">Fazer download de PDF • 5.01MB</a><br>
                                         </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content28')">13/12/2023 - Material reproduzido pelas Recuperandas na Reunião de Apresentação do Plano realizada em 12/12/2023</a>
-                                        <div id="content28" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Americanas-Apresentacao-do-PRJ-feita-pelas-recuperandas.pdf" download class="pdf-link">Material reproduzido pelas Recuperandas</a><br>
+                                        
+                                        <a class="dropdown-item" onclick="toggleContent('content193')">21/12/2023 - Manifestações apresentadas pelos credores através do chat disponibilizado no ambiente virtual</a>
+                                        <div id="content193" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-07-Manifestacoes-apresentadas-pelos-credores-atraves-do-chat-disponibilizado-no-ambiente-virtual.pdf" download class="pdf-link">Fazer download de PDF • 317KB</a><br>
                                         </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content29')">12/12/2023 - Relatório do Aditivo ao Plano de Recuperação Judicial</a>
-                                        <div id="content29" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Relatorio-do-Aditivo-ao-Plano-de-Recuperacao-Judicial.pdf" download class="pdf-link">Relatório do Aditivo ao Plano de Recuperação Judicial</a><br>
+                                        
+                                        <a class="dropdown-item" onclick="toggleContent('content194')">21/12/2023 - Apresentação do Plano de Recuperação Judicial feita durante a AGC</a>
+                                        <div id="content194" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-06-Apresentacao-do-Plano-de-Recuperacao-Judicial-feita-durante-a-AGC.pdf" download class="pdf-link">Fazer download de PDF • 969KB</a><br>
                                         </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content30')">07/12/2023 - Relação de credores desmembrados</a>
-                                        <div id="content30" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Relacao-de-Credores-Desmembrados-Grupo-Americanas-1.pdf" download class="pdf-link">Relação de credores desmembrados</a><br>
+                                        
+                                        <a class="dropdown-item" onclick="toggleContent('content195')">21/12/2023 - Plano de Recuperação Judicial aprovado</a>
+                                        <div id="content195" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-05-Plano-de-Recuperacao-Judicial-Deliberado.pdf" download class="pdf-link">Fazer download de PDF • 1.35MB</a><br>
                                         </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content31')">27/11/2023 - Acordo de Apoio à Reestruturação, Plano de Recuperação Judicial, Investimento e outra avenças</a>
-                                        <div id="content31" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Acordo-de-Apoio-a-Reestruturacao-Plano-De-Recuperacao-Judicial-Investimen.pdf" download class="pdf-link">Acordo de Apoio à Reestruturação</a><br>
+                                        
+                                        <a class="dropdown-item" onclick="toggleContent('content196')">21/12/2023 - Laudo de votação do pedido de suspensão rejeitado pela AGC</a>
+                                        <div id="content196" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-04-Laudo-de-votacao-do-pedido-de-suspensao-rejeitado-pela-AGC.pdf" download class="pdf-link">Fazer download de PDF • 916KB</a><br>
                                         </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content32')">27/11/2023 - Aditamento ao Plano de Recuperação Judicial</a>
-                                        <div id="content32" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-PRJ-Aditado-27-11-2023.pdf" download class="pdf-link">Aditamento ao Plano de Recuperação Judicial</a><br>
+                                        
+                                        <a class="dropdown-item" onclick="toggleContent('content197')">21/12/2023 - Laudo de deliberação do Plano de Recuperação Judicial</a>
+                                        <div id="content197" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-03-Laudo-de-deliberacao-do-Plano-de-Recuperacao-Judicial.pdf" download class="pdf-link">Fazer download de PDF • 1.47MB</a><br>
                                         </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content33')">21/11/2023 - Edital de convocação para AGC</a>
-                                        <div id="content33" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Edital-de-convocacao-para-AGC-2.pdf" download class="pdf-link">Edital de convocação para AGC</a><br>
+                                        
+                                        <a class="dropdown-item" onclick="toggleContent('content198')">21/12/2023 - Laudo de credenciamento</a>
+                                        <div id="content198" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-02-Laudo-de-Credenciamento.pdf" download class="pdf-link">Fazer download de PDF • 2.40MB</a><br>
                                         </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content34')">23/10/2023 - Edital de desmembramento de credores investidores - Bondholders</a>
-                                        <div id="content34" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Edital-EDITAL-DE-DESMEMBRAMENTO-DOS-CREDORES-INVESTIDORES-Bondholders.pdf" download class="pdf-link">Edital de desmembramento de credores investidores</a><br>
+                                        
+                                        <a class="dropdown-item" onclick="toggleContent('content199')">20/12/2023 - Ata da AGC realizada em 19/12/2023 - Aprovação do Plano</a>
+                                        <div id="content199" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc.-01-Ata-da-AGC-19-12-2023-Grupo-Americanas-PRJ-aprovado.pdf" download class="pdf-link">Fazer download de PDF • 400KB</a><br>
                                         </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content35')">19/06/2023 - Edital do art. 7º,§2º, e art 53 da LRE</a>
-                                        <div id="content35" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Edital do art. 7º,§2º, e art 53 da LRE.pdf" download class="pdf-link">Edital do art. 7º,§2º, e art 53 da LRE</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content36')">14/06/2023 - Versão Final da Relação de Credores apresentada pela Administração Judicial</a>
-                                        <div id="content36" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Doc. 01 - Relação de Credores - Grupo Americanas - Art. 7º,§2º, LRE.pdf" download class="pdf-link">Versão Final da Relação de Credores</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content37')">02/06/2023 - Publicação do Edital - Edital para divulgação do procedimento para informação acerca do atendimento dos requisitos para enquadramento como credor fornecedor colaborador no plano de recuperação judicial do Grupo Americanas</a>
-                                        <div id="content37" class="content" style="display: none;">
-                                            <a href="assets/pdfs/EDITAL CREDOR FORNECEDOR - DJE 02.06.23.pdf" download class="pdf-link">Publicação do Edital</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content38')">02/06/2023 - Relação de Credores - Art. 7º, §2º da Lei nº 11.101/2005</a>
-                                        <div id="content38" class="content" style="display: none;">
-                                            <a href="assets/pdfs/RELAÇÃO DE CREDORES - ART. 7º P. 2 LRF.pdf" download class="pdf-link">Relação de Credores</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content39')">05/05/2023 – Edital para participação no Financiamento D.I.P. – 0813541-59.2023.8.19.0001</a>
-                                        <div id="content39" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo Americanas – Edital para participação no Financiamento D.I.P. – 0813541-59.2023.8.19.pdf" download class="pdf-link">Edital para participação no Financiamento D.I.P.</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content40')">01/03/2023 – Edital art. 52, §1° da LRE - 01/03/2023</a>
-                                        <div id="content40" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo Americanas – Edital art. 52, §1° da LRE - 01_03_2023.pdf" download class="pdf-link">Edital art. 52, §1° da LRE</a><br>
-                                        </div>
-                                        <a class="dropdown-item" onclick="toggleContent('content41')">20/03/2023 - Laudo de avaliação</a>
-                                        <div id="content41" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Laudo-de-avaliacao.pdf" download class="pdf-link">Laudo de avaliação</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content42')">20/03/2023 - Laudo de viabilidade econômica</a>
-                                        <div id="content42" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Laudo-de-viabilidade-economica.pdf" download class="pdf-link">Laudo de viabilidade econômica</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content43')">20/03/2023 - Plano de Recuperação Judicial</a>
-                                        <div id="content43" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Plano-de-Recuperacao-Judicial.pdf" download class="pdf-link">Plano de Recuperação Judicial</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content44')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – JSM Global</a>
-                                        <div id="content44" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-JSM-Global-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - JSM Global</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content45')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – ST Importações</a>
-                                        <div id="content45" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-ST-Importacoes-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - ST Importações</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content46')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – B2W Lux</a>
-                                        <div id="content46" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-B2W-Lux-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - B2W Lux</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content47')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – Americanas</a>
-                                        <div id="content47" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-Americanas-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - Americanas</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content48')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – Consolidado</a>
-                                        <div id="content48" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-Consolidado-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - Consolidado</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content49')">26/01/2023 - Orientações aos credores sobre habilitações e divergências administrativas</a>
-                                        <div id="content49" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Orientacoes-aos-Creadores.pdf" download class="pdf-link">Orientações aos credores sobre habilitações e divergências administrativas</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content50')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - ST Importações</a>
-                                        <div id="content50" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-ST-Importacoes.pdf" download class="pdf-link">Relação de Credores - ST Importações</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content51')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - JSM Global</a>
-                                        <div id="content51" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-JSM-Global.pdf" download class="pdf-link">Relação de Credores - JSM Global</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content52')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - B2W Lux</a>
-                                        <div id="content52" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-B2W-Lux.pdf" download class="pdf-link">Relação de Credores - B2W Lux</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content53')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - Americanas</a>
-                                        <div id="content53" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-Americanas.pdf" download class="pdf-link">Relação de Credores - Americanas</a><br>
-                                        </div>
-
-                                        <a class="dropdown-item" onclick="toggleContent('content54')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - Consolidado</a>
-                                        <div id="content54" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-Consolidado.pdf" download class="pdf-link">Relação de Credores - Consolidado</a><br>
-                                        </div>
-                            </div>
-                        </div>
-                
-                        <div class="dropdown">
-                            <button class="dropbtn">MODELOS</button>
-                            <div class="dropdown-content">
-                                <a class="dropdown-item" onclick="toggleContent('content55')">18/07/2024 - Modelo de Notificação - Não Recebimento Debentures Privadas</a>
-                                <div id="content55" class="content" style="display: none;">
-                                    <a href="assets/pdfs/Modelo-de-Notificacao-Nao-Recebimento-Debentures-Privadas-17.07.pdf" download class="pdf-link">Modelo de Notificação - Não Recebimento Debentures Privadas</a><br>
-                                </div>
-                                
-                                <a class="dropdown-item" onclick="toggleContent('content56')">06/06/2024 - Modelo de Notificação de Renúncia ao Recebimento de Ações</a>
-                                <div id="content56" class="content" style="display: none;">
-                                    <a href="assets/pdfs/PRJ-Americanas-Modelo-de-Notificacao-de-Renuncia-ao-Recebimento-de-Acoes.pdf" download class="pdf-link">Modelo de Notificação de Renúncia ao Recebimento de Ações</a><br>
-                                </div>
-                                
-                                <a class="dropdown-item" onclick="toggleContent('content57')">04/10/2023 - Modelo - Procuração para Desmembramento de Credor e AGC - Americanas - BILÍNGUE</a>
-                                <div id="content57" class="content" style="display: none;">
-                                    <a href="assets/pdfs/Modelo-Procuracao-para-Desmembramento-de-Credor-e-AGC-Americanas-BILINGUE.docx" download class="pdf-link">Modelo - Procuração para Desmembramento de Credor e AGC - Americanas - BILÍNGUE</a><br>
-                                </div>
-                                
-                                <a class="dropdown-item" onclick="toggleContent('content58')">04/10/2023 - Modelo - Declaração de Credor Investidor - Americanas - BILÍNGUE</a>
-                                <div id="content58" class="content" style="display: none;">
-                                    <a href="assets/pdfs/Modelo-Declaracao-de-Credor-Investidor-Americanas-BILINGUE-1.docx" download class="pdf-link">Modelo - Declaração de Credor Investidor - Americanas - BILÍNGUE</a><br>
-                                </div>
-                                
-                                <a class="dropdown-item" onclick="toggleContent('content59')">04/10/2023 - Modelo - Certificado de Eleição e Incumbência - Americanas - BILÍNGUE</a>
-                                <div id="content59" class="content" style="display: none;">
-                                    <a href="assets/pdfs/Modelo-Certificado-de-Eleicao-e-Incumbencia-Americanas-BILINGUE.docx" download class="pdf-link">Modelo - Certificado de Eleição e Incumbência - Americanas - BILÍNGUE</a><br>
-                                </div>
-                                
-                                <a class="dropdown-item" onclick="toggleContent('content60')">04/10/2023 - Minuta - Edital de Desmembramento de Credor Investidor - Americanas - BILÍNGUE</a>
-                                <div id="content60" class="content" style="display: none;">
-                                    <a href="assets/pdfs/Minuta-Edital-de-Desmembramento-de-Credor-Investidor-Americanas-BILINGUE.docx" download class="pdf-link">Minuta - Edital de Desmembramento de Credor Investidor - Americanas - BILÍNGUE</a><br>
-                                </div>
-                                
-                                <a class="dropdown-item" onclick="toggleContent('content61')">05/04/2023 – Modelo de procuração – AGC</a>
-                                <div id="content61" class="content" style="display: none;">
-                                    <a href="assets/pdfs/Modelo-de-Procuracao-AGC-1.docx" download class="pdf-link">Modelo de procuração – AGC</a><br>
-                                </div>
-                                
-                                <a class="dropdown-item" onclick="toggleContent('content62')">26/01/2023 - Modelo de Divergência de Crédito</a>
-                                <div id="content62" class="content" style="display: none;">
-                                    <a href="assets/pdfs/AMERICANAS-Modelo-de-Divergencia-de-Credito-RJ-1.docx" download class="pdf-link">Modelo de Divergência de Crédito</a><br>
-                                </div>
-                                
-                                <a class="dropdown-item" onclick="toggleContent('content63')">26/01/2023 - Modelo de Habilitação de Crédito</a>
-                                <div id="content63" class="content" style="display: none;">
-                                    <a href="assets/pdfs/AMERICANAS-Modelo-de-Habilitacao-de-Credito-RJ-1.docx" download class="pdf-link">Modelo de Habilitação de Crédito</a><br>
-                                </div>
 
                             </div>
+                            
+
                         </div>
-                
                         <div class="dropdown">
                             <button class="dropbtn">PROCEDIMENTO DE MONITORAMENTO PERIÓDICO-PMP</button>
                             <div class="dropdown-content">
@@ -1216,11 +995,242 @@
                                     </div>
 
 
-                               
+
                             </div>
                         </div>
+                
                         <div class="dropdown">
-                            <button class="dropbtn">DECISÕES JUDICIAIS:</button>
+                            <button class="dropbtn">DOCUMENTOS</button>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" onclick="toggleContent('content10')">25/07/2024 - Comunicado ao Mercado - Procedimentos de entrega das ações e bônus de subscrição aos credores</a>
+                                    <div id="content10" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Comunicado-ao-Mercado-Procedimentos-de-entrega-das-acoes-e-bonus-de-subscricao-aos-credore.pdf" download class="pdf-link">Comunicado ao Mercado - Procedimentos de entrega das ações e bônus de subscrição aos credores</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content11')">18/07/2024 - PRJ Consolidado e Anexos - 17/07/2024</a>
+                                    <div id="content11" class="content" style="display: none;">
+                                        <a href="assets/pdfs/PRJ-Consolidado-e-Anexos-17-07-24.pdf" download class="pdf-link">PRJ Consolidado e Anexos - 17/07/2024</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content12')">18/07/2024 - Alteração do PRJ - 17/07/2024 - cláusula 10.1.1</a>
+                                    <div id="content12" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Alteracao-do-PRJ-17-07-2024-clausula-10.1.1.pdf" download class="pdf-link">Alteração do PRJ - 17/07/2024 - cláusula 10.1.1</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content13')">31/05/2024 - Resultado do Leilão Reverso – Atualizado em 31/05/2024</a>
+                                    <div id="content13" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Doc.-01-Resultado-Leilao-Reverso-Atualizado-31.05.24.pdf" download class="pdf-link">Resultado do Leilão Reverso – Atualizado em 31/05/2024</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content14')">14/05/2024 - Edital Leilão Eletrônico - Automóveis</a>
+                                    <div id="content14" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Edital-leilao-eletronico-Automoveis-14-05-2024.pdf" download class="pdf-link">Edital Leilão Eletrônico - Automóveis</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content15')">13/05/2024 - Relação de credores bondholders/senior notes habilitados apresentada pela DF KING</a>
+                                    <div id="content15" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Doc-02-Tender-Offer-Lista-dos-Habilitados-apresentada-pela-DF-KING.pdf" download class="pdf-link">Relação de credores bondholders/senior notes habilitados apresentada pela DF KING</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content16')">13/05/2024 - Relação de credores habilitados para Leilão Reverso</a>
+                                    <div id="content16" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Doc_01_-_Relacao_de_credores_habilitados_leilao_reverso_-_Administracao_Judicial.pdf" download class="pdf-link">Relação de credores habilitados para Leilão Reverso</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content17')">17/04/2024 - Diretrizes para participação do Leilão Reverso</a>
+                                    <div id="content17" class="content" style="display: none;">
+                                        <a href="assets/pdfs/DIRETRIZES-DO-LEILAO-REVERSO.pdf" download class="pdf-link">Diretrizes para participação do Leilão Reverso</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content18')">28/03/2024 - Edital de Leilão Reverso - DJe 27/03/2024</a>
+                                    <div id="content18" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Edital-Leilao-Reverso-DJE-27-03-2024.pdf" download class="pdf-link">Edital de Leilão Reverso - DJe 27/03/2024</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content19')">21/12/2023 - Apresentação do Plano de Recuperação Judicial feita durante a AGC</a>
+                                    <div id="content19" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Doc.-06-Apresentacao-do-Plano-de-Recuperacao-Judicial-feita-durante-a-AGC.pdf" download class="pdf-link">Apresentação do Plano de Recuperação Judicial feita durante a AGC</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content20')">21/12/2023 - Plano de Recuperação Judicial aprovado</a>
+                                    <div id="content20" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Doc.-05-Plano-de-Recuperacao-Judicial-Deliberado.pdf" download class="pdf-link">Plano de Recuperação Judicial aprovado</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content21')">19/12/2023 - Material reproduzido pelas Recuperandas na AGC em 19/12/2023</a>
+                                    <div id="content21" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Apresentacao-do-Plano-de-Recuperacao-Judicial-feita-durante-a-AGC1.pdf" download class="pdf-link">Material reproduzido pelas Recuperandas na AGC em 19/12/2023</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content22')">19/12/2023 - 2º Aditivo ao PRJ</a>
+                                    <div id="content22" class="content" style="display: none;">
+                                        <a href="assets/pdfs/2o-Aditivo-ao-PRJ-19-12-2023.pdf" download class="pdf-link">2º Aditivo ao PRJ</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content23')">19/12/2023 - 2º Aditivo ao PRJ - Versão com marcas de revisão</a>
+                                    <div id="content23" class="content" style="display: none;">
+                                        <a href="assets/pdfs/2o-Aditivo-ao-PRJ-19-12-2023-Versao-com-marcas-de-revisao.pdf" download class="pdf-link">2º Aditivo ao PRJ - Versão com marcas de revisão</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content24')">19/12/2023 - Aditivo do Plano de Recuperação Judicial</a>
+                                    <div id="content24" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Doc-01-2º-Aditivo-ao-PRJ.pdf" download class="pdf-link">Aditivo do Plano de Recuperação Judicial</a><br>
+                                        <a href="assets/pdfs/Doc-02-2º-Aditivo-ao-PRJ.pdf" download class="pdf-link">Doc. 02 - 2º Aditivo ao PRJ</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content25')">19/12/2023 - Anexos do aditivo ao PRJ</a>
+                                    <div id="content25" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Peticao-Recuperanda-com-anexos-ao-Adititvo-19-12-2023.pdf" download class="pdf-link">Anexos do aditivo ao PRJ</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content26')">18/12/2023 - Relação de credores desmembradas</a>
+                                    <div id="content26" class="content" style="display: none;">
+                                        <a href="assets/pdfs/Relacao-Consolidada-Credores-Desmembrados.pdf" download class="pdf-link">Relação de credores desmembradas</a><br>
+                                    </div>
+
+                                    <a class="dropdown-item" onclick="toggleContent('content27')">18/12/2023 - Relação consolidada dos credores bondholders/senior notes para apuração do crédito</a>
+                                        <div id="content27" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc_01_-_Relacao_consolidada_bondholders-senior_notes_-_Administracao_Judicial.pdf" download class="pdf-link">Relação consolidada dos credores bondholders/senior notes para apuração do crédito</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content28')">13/12/2023 - Material reproduzido pelas Recuperandas na Reunião de Apresentação do Plano realizada em 12/12/2023</a>
+                                        <div id="content28" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Americanas-Apresentacao-do-PRJ-feita-pelas-recuperandas.pdf" download class="pdf-link">Material reproduzido pelas Recuperandas</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content29')">12/12/2023 - Relatório do Aditivo ao Plano de Recuperação Judicial</a>
+                                        <div id="content29" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Relatorio-do-Aditivo-ao-Plano-de-Recuperacao-Judicial.pdf" download class="pdf-link">Relatório do Aditivo ao Plano de Recuperação Judicial</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content30')">07/12/2023 - Relação de credores desmembrados</a>
+                                        <div id="content30" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Relacao-de-Credores-Desmembrados-Grupo-Americanas-1.pdf" download class="pdf-link">Relação de credores desmembrados</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content31')">27/11/2023 - Acordo de Apoio à Reestruturação, Plano de Recuperação Judicial, Investimento e outra avenças</a>
+                                        <div id="content31" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Acordo-de-Apoio-a-Reestruturacao-Plano-De-Recuperacao-Judicial-Investimen.pdf" download class="pdf-link">Acordo de Apoio à Reestruturação</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content32')">27/11/2023 - Aditamento ao Plano de Recuperação Judicial</a>
+                                        <div id="content32" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-PRJ-Aditado-27-11-2023.pdf" download class="pdf-link">Aditamento ao Plano de Recuperação Judicial</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content33')">21/11/2023 - Edital de convocação para AGC</a>
+                                        <div id="content33" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Edital-de-convocacao-para-AGC-2.pdf" download class="pdf-link">Edital de convocação para AGC</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content34')">23/10/2023 - Edital de desmembramento de credores investidores - Bondholders</a>
+                                        <div id="content34" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Edital-EDITAL-DE-DESMEMBRAMENTO-DOS-CREDORES-INVESTIDORES-Bondholders.pdf" download class="pdf-link">Edital de desmembramento de credores investidores</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content35')">19/06/2023 - Edital do art. 7º,§2º, e art 53 da LRE</a>
+                                        <div id="content35" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Edital do art. 7º,§2º, e art 53 da LRE.pdf" download class="pdf-link">Edital do art. 7º,§2º, e art 53 da LRE</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content36')">14/06/2023 - Versão Final da Relação de Credores apresentada pela Administração Judicial</a>
+                                        <div id="content36" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Doc. 01 - Relação de Credores - Grupo Americanas - Art. 7º,§2º, LRE.pdf" download class="pdf-link">Versão Final da Relação de Credores</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content37')">02/06/2023 - Publicação do Edital - Edital para divulgação do procedimento para informação acerca do atendimento dos requisitos para enquadramento como credor fornecedor colaborador no plano de recuperação judicial do Grupo Americanas</a>
+                                        <div id="content37" class="content" style="display: none;">
+                                            <a href="assets/pdfs/EDITAL CREDOR FORNECEDOR - DJE 02.06.23.pdf" download class="pdf-link">Publicação do Edital</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content38')">02/06/2023 - Relação de Credores - Art. 7º, §2º da Lei nº 11.101/2005</a>
+                                        <div id="content38" class="content" style="display: none;">
+                                            <a href="assets/pdfs/RELAÇÃO DE CREDORES - ART. 7º P. 2 LRF.pdf" download class="pdf-link">Relação de Credores</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content39')">05/05/2023 – Edital para participação no Financiamento D.I.P. – 0813541-59.2023.8.19.0001</a>
+                                        <div id="content39" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo Americanas – Edital para participação no Financiamento D.I.P. – 0813541-59.2023.8.19.pdf" download class="pdf-link">Edital para participação no Financiamento D.I.P.</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content40')">01/03/2023 – Edital art. 52, §1° da LRE - 01/03/2023</a>
+                                        <div id="content40" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo Americanas – Edital art. 52, §1° da LRE - 01_03_2023.pdf" download class="pdf-link">Edital art. 52, §1° da LRE</a><br>
+                                        </div>
+                                        <a class="dropdown-item" onclick="toggleContent('content41')">20/03/2023 - Laudo de avaliação</a>
+                                        <div id="content41" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Laudo-de-avaliacao.pdf" download class="pdf-link">Laudo de avaliação</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content42')">20/03/2023 - Laudo de viabilidade econômica</a>
+                                        <div id="content42" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Laudo-de-viabilidade-economica.pdf" download class="pdf-link">Laudo de viabilidade econômica</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content43')">20/03/2023 - Plano de Recuperação Judicial</a>
+                                        <div id="content43" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Plano-de-Recuperacao-Judicial.pdf" download class="pdf-link">Plano de Recuperação Judicial</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content44')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – JSM Global</a>
+                                        <div id="content44" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-JSM-Global-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - JSM Global</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content45')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – ST Importações</a>
+                                        <div id="content45" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-ST-Importacoes-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - ST Importações</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content46')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – B2W Lux</a>
+                                        <div id="content46" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-B2W-Lux-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - B2W Lux</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content47')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – Americanas</a>
+                                        <div id="content47" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-Americanas-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - Americanas</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content48')">13/02/2023 – Nova Relação de Credores apresentada pelas recuperandas, em 10/02/2023 – Consolidado</a>
+                                        <div id="content48" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Nova-Relação-de-Creadores-Consolidado-10_02_2023.pdf" download class="pdf-link">Nova Relação de Credores - Consolidado</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content49')">26/01/2023 - Orientações aos credores sobre habilitações e divergências administrativas</a>
+                                        <div id="content49" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Orientacoes-aos-Creadores.pdf" download class="pdf-link">Orientações aos credores sobre habilitações e divergências administrativas</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content50')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - ST Importações</a>
+                                        <div id="content50" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-ST-Importacoes.pdf" download class="pdf-link">Relação de Credores - ST Importações</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content51')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - JSM Global</a>
+                                        <div id="content51" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-JSM-Global.pdf" download class="pdf-link">Relação de Credores - JSM Global</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content52')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - B2W Lux</a>
+                                        <div id="content52" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-B2W-Lux.pdf" download class="pdf-link">Relação de Credores - B2W Lux</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content53')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - Americanas</a>
+                                        <div id="content53" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-Americanas.pdf" download class="pdf-link">Relação de Credores - Americanas</a><br>
+                                        </div>
+
+                                        <a class="dropdown-item" onclick="toggleContent('content54')">25/01/2023 - Relação de Credores apresentada pelas recuperandas - Consolidado</a>
+                                        <div id="content54" class="content" style="display: none;">
+                                            <a href="assets/pdfs/Grupo-Americanas-Relação-de-Creadores-Consolidado.pdf" download class="pdf-link">Relação de Credores - Consolidado</a><br>
+                                        </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dropdown">
+                            <button class="dropbtn">DECISÕES JUDICIAIS</button>
                             <div class="dropdown-content">
                                 <a class="dropdown-item" onclick="toggleContent('content161')">25/07/2024 - Decisão do dia 24/07/2024</a>
                                 <div id="content161" class="content" style="display: none;">
@@ -1375,68 +1385,67 @@
                                     <a href="assets/pdfs/Grupo-Americanas-Decisão-do-dia-14_01_2023-Deferimento-da-Tutela.pdf" download class="pdf-link">Fazer download de PDF • 47KB</a><br>
                                 </div>
 
-                                 
-
-                                        
-                                        
-                                        
-                                       
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropbtn">MODELOS</button>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" onclick="toggleContent('content55')">18/07/2024 - Modelo de Notificação - Não Recebimento Debentures Privadas</a>
+                                <div id="content55" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Modelo-de-Notificacao-Nao-Recebimento-Debentures-Privadas-17.07.pdf" download class="pdf-link">Modelo de Notificação - Não Recebimento Debentures Privadas</a><br>
                                 </div>
                                 
-
-                                        
-                                        
-                                        
-                                       
+                                <a class="dropdown-item" onclick="toggleContent('content56')">06/06/2024 - Modelo de Notificação de Renúncia ao Recebimento de Ações</a>
+                                <div id="content56" class="content" style="display: none;">
+                                    <a href="assets/pdfs/PRJ-Americanas-Modelo-de-Notificacao-de-Renuncia-ao-Recebimento-de-Acoes.pdf" download class="pdf-link">Modelo de Notificação de Renúncia ao Recebimento de Ações</a><br>
                                 </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content57')">04/10/2023 - Modelo - Procuração para Desmembramento de Credor e AGC - Americanas - BILÍNGUE</a>
+                                <div id="content57" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Modelo-Procuracao-para-Desmembramento-de-Credor-e-AGC-Americanas-BILINGUE.docx" download class="pdf-link">Modelo - Procuração para Desmembramento de Credor e AGC - Americanas - BILÍNGUE</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content58')">04/10/2023 - Modelo - Declaração de Credor Investidor - Americanas - BILÍNGUE</a>
+                                <div id="content58" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Modelo-Declaracao-de-Credor-Investidor-Americanas-BILINGUE-1.docx" download class="pdf-link">Modelo - Declaração de Credor Investidor - Americanas - BILÍNGUE</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content59')">04/10/2023 - Modelo - Certificado de Eleição e Incumbência - Americanas - BILÍNGUE</a>
+                                <div id="content59" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Modelo-Certificado-de-Eleicao-e-Incumbencia-Americanas-BILINGUE.docx" download class="pdf-link">Modelo - Certificado de Eleição e Incumbência - Americanas - BILÍNGUE</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content60')">04/10/2023 - Minuta - Edital de Desmembramento de Credor Investidor - Americanas - BILÍNGUE</a>
+                                <div id="content60" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Minuta-Edital-de-Desmembramento-de-Credor-Investidor-Americanas-BILINGUE.docx" download class="pdf-link">Minuta - Edital de Desmembramento de Credor Investidor - Americanas - BILÍNGUE</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content61')">05/04/2023 – Modelo de procuração – AGC</a>
+                                <div id="content61" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Modelo-de-Procuracao-AGC-1.docx" download class="pdf-link">Modelo de procuração – AGC</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content62')">26/01/2023 - Modelo de Divergência de Crédito</a>
+                                <div id="content62" class="content" style="display: none;">
+                                    <a href="assets/pdfs/AMERICANAS-Modelo-de-Divergencia-de-Credito-RJ-1.docx" download class="pdf-link">Modelo de Divergência de Crédito</a><br>
+                                </div>
+                                
+                                <a class="dropdown-item" onclick="toggleContent('content63')">26/01/2023 - Modelo de Habilitação de Crédito</a>
+                                <div id="content63" class="content" style="display: none;">
+                                    <a href="assets/pdfs/AMERICANAS-Modelo-de-Habilitacao-de-Credito-RJ-1.docx" download class="pdf-link">Modelo de Habilitação de Crédito</a><br>
+                                </div>
+
+                            </div>
+                        </div>
+                
+                        
+                        
                                
                                         
                                         
                                         
                                        
-                                <div class="dropdown">
-                                    <button class="dropbtn">Ata de Assembleia de credores:</button>
-                                    <div class="dropdown-content">
-                                        <a class="dropdown-item" onclick="toggleContent('content192')">21/12/2023 - Declarações de voto e ressalvas</a>
-                                        <div id="content192" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Doc.-08-Declaracoes-de-voto-e-ressalvas.pdf" download class="pdf-link">Fazer download de PDF • 5.01MB</a><br>
-                                        </div>
-                                        
-                                        <a class="dropdown-item" onclick="toggleContent('content193')">21/12/2023 - Manifestações apresentadas pelos credores através do chat disponibilizado no ambiente virtual</a>
-                                        <div id="content193" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Doc.-07-Manifestacoes-apresentadas-pelos-credores-atraves-do-chat-disponibilizado-no-ambiente-virtual.pdf" download class="pdf-link">Fazer download de PDF • 317KB</a><br>
-                                        </div>
-                                        
-                                        <a class="dropdown-item" onclick="toggleContent('content194')">21/12/2023 - Apresentação do Plano de Recuperação Judicial feita durante a AGC</a>
-                                        <div id="content194" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Doc.-06-Apresentacao-do-Plano-de-Recuperacao-Judicial-feita-durante-a-AGC.pdf" download class="pdf-link">Fazer download de PDF • 969KB</a><br>
-                                        </div>
-                                        
-                                        <a class="dropdown-item" onclick="toggleContent('content195')">21/12/2023 - Plano de Recuperação Judicial aprovado</a>
-                                        <div id="content195" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Doc.-05-Plano-de-Recuperacao-Judicial-Deliberado.pdf" download class="pdf-link">Fazer download de PDF • 1.35MB</a><br>
-                                        </div>
-                                        
-                                        <a class="dropdown-item" onclick="toggleContent('content196')">21/12/2023 - Laudo de votação do pedido de suspensão rejeitado pela AGC</a>
-                                        <div id="content196" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Doc.-04-Laudo-de-votacao-do-pedido-de-suspensao-rejeitado-pela-AGC.pdf" download class="pdf-link">Fazer download de PDF • 916KB</a><br>
-                                        </div>
-                                        
-                                        <a class="dropdown-item" onclick="toggleContent('content197')">21/12/2023 - Laudo de deliberação do Plano de Recuperação Judicial</a>
-                                        <div id="content197" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Doc.-03-Laudo-de-deliberacao-do-Plano-de-Recuperacao-Judicial.pdf" download class="pdf-link">Fazer download de PDF • 1.47MB</a><br>
-                                        </div>
-                                        
-                                        <a class="dropdown-item" onclick="toggleContent('content198')">21/12/2023 - Laudo de credenciamento</a>
-                                        <div id="content198" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Doc.-02-Laudo-de-Credenciamento.pdf" download class="pdf-link">Fazer download de PDF • 2.40MB</a><br>
-                                        </div>
-                                        
-                                        <a class="dropdown-item" onclick="toggleContent('content199')">20/12/2023 - Ata da AGC realizada em 19/12/2023 - Aprovação do Plano</a>
-                                        <div id="content199" class="content" style="display: none;">
-                                            <a href="assets/pdfs/Doc.-01-Ata-da-AGC-19-12-2023-Grupo-Americanas-PRJ-aprovado.pdf" download class="pdf-link">Fazer download de PDF • 400KB</a><br>
-                                        </div>
-                                
+                                    
                                 
 
                        

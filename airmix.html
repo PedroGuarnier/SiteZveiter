@@ -179,6 +179,20 @@
 .vertical-align-section .dropdown {
   width: 100%;
 }
+/* Move toda a seção 'sobre-nos' para a esquerda e ajusta o conteúdo */
+#sobre-nos .section-content {
+  margin-left: 0;          /* Move o bloco para a esquerda */
+  align-items: flex-start;  /* Alinha o texto interno à esquerda */
+  text-align: left;         /* Garante o alinhamento do texto */
+}
+
+#sobre-nos .section-content h3 {
+  margin-bottom: 15px;      /* Espaçamento abaixo do título principal */
+}
+
+#sobre-nos .section-content h6 {
+  margin-bottom: 8px;       /* Espaçamento reduzido entre as linhas de informação */
+}
 
     
         </style>
@@ -276,15 +290,14 @@
     <section id="sobre-nos" class="container">
         <h2 class="section-title">AIRMIX AR CONDICIONADO LTDA - FALÊNCIA ENCERRADA</h2>
         <div class="section-content">
-                <h3><p>CONSÓRCIO SANTA CRUZ TRANSPORTES EM RECUPERAÇÃO JUDICIAL</h3></p>
+                                <h3>
+                AIRMIX AR CONDICIONADO LTDA - FALÊNCIA ENCERRADA E ARQUIVADA
+                </h3>
 
-                <h6><p>Processo nº 0192744-24.2017.8.19.0001</h6></p> 
-                
-                <h6><p>Juízo: 2ª Vara Empresarial da Comarca da capital do Rio de Janeiro</h6></p>
-                
-                <h6><p>Administrador Judicial: Escritório de Advocacia Zveiter</h6></p>
-                 
-                <h6><p>E-mail oficial para contato: <strong>falenciaairmix@zveiter.adv.br</strong></h6></p>
+                <h6>Processo nº 0192744-24.2017.8.19.0001</h6>
+                <h6>Juízo: 2ª Vara Empresarial da Comarca da Capital do Rio de Janeiro</h6>
+                <h6>Administrador Judicial: Escritório de Advocacia Zveiter</h6>
+                <h6>E-mail oficial para contato: <strong>falenciaairmix@zveiter.adv.br</strong></h6>
 
                  </section>
                  
@@ -310,132 +323,7 @@
                             </div>
                         </div>
                 
-                        <div class="dropdown">
-                            <button class="dropbtn">HISTÓRICO</button>
-                            <div class="dropdown-content">
-                                <a class="dropdown-item" onclick="toggleContent('content4')">24/08/2022 - Sentença que extingue o processo sem análise do mérito</a>
-                                <div id="content4" class="content" style="display: none;">
-                                    <a href="assets/pdfs/SENTENCA_QUE_JULGA_O_PROCESSO_SEM_ANALISE_DO_MERITO.pdf" download class="pdf-link">PDF Sentença que extingue o processo sem análise do mérito</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content5')">24/08/2022 - Manifestação recuperanda desistindo da recuperação judicial</a>
-                                <div id="content5" class="content" style="display: none;">
-                                    <a href="assets/pdfs/02222110920218190001-peticao-de-desistencia-transcarioca.pdf" download class="pdf-link">PDF Manifestação recuperanda desistindo da recuperação judicial</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content6')">01/08/2022 - 6º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="content6" class="content" style="display: none;">
-                                    <a href="assets/pdfs/6-RMA-Consorcio-Transcarioca-de-Transportes.pdf" download class="pdf-link">PDF 6º Relatório Mensal de Atividades (RMA)</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content7')">30/06/2022 - 5º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="content7" class="content" style="display: none;">
-                                    <a href="assets/pdfs/5-RMA-Consorcio-Transcarioca-de-Transportes.pdf" download class="pdf-link">PDF 5º Relatório Mensal de Atividades (RMA)</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content8')">31/05/2022 - 4º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="content8" class="content" style="display: none;">
-                                    <a href="assets/pdfs/4-RMA-TRANSCARIOCA.pdf" download class="pdf-link">PDF 4º Relatório Mensal de Atividades (RMA)</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content9')">02/05/2022 - 3º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="content9" class="content" style="display: none;">
-                                    <a href="assets/pdfs/3-RMA-TRANSCARIOCA.pdf" download class="pdf-link">PDF 3º Relatório Mensal de Atividades (RMA)</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content10')">31/03/2022 - 2º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="content10" class="content" style="display: none;">
-                                    <a href="assets/pdfs/2-RMA-TRANSCARIOCA.pdf" download class="pdf-link">PDF 2º Relatório Mensal de Atividades (RMA)</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content11')">25/02/2022 - 1º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="content11" class="content" style="display: none;">
-                                    <a href="assets/pdfs/1-RMA-TRANSCARIOCA.pdf" download class="pdf-link">PDF 1º Relatório Mensal de Atividades (RMA)</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content12')">01/02/2022 - Decisão que autoriza o requerido pela Administração</a>
-                                <div id="content12" class="content" style="display: none;">
-                                    <a href="assets/pdfs/decisao-que-autoriza-que-o-aj-elabore-o-rma.pdf" download class="pdf-link">PDF Decisão que autoriza o requerido pela Administração</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content13')">16/12/2021 - Petição da Administração Conjunta requerendo que seja autorizada a elaboração dos relatórios mensais de atividade</a>
-                                <div id="content13" class="content" style="display: none;">
-                                    <a href="assets/pdfs/pet-aj-requerendo-autorizacao-elaboracao-rma.pdf" download class="pdf-link">PDF Petição da Administração Conjunta requerendo autorização</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content14')">22/10/2021 - Primeira Manifestação da Administração Judicial Conjunta</a>
-                                <div id="content14" class="content" style="display: none;">
-                                    <a href="assets/pdfs/PRIMEIRA-MANIFESTACAO-DA-ADMINISTRACAO-JUDICIAL.pdf" download class="pdf-link">PDF Primeira Manifestação da Administração Judicial Conjunta</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content15')">15/10/2021 - Manifestação da Recuperanda informando ao juízo quanto a medição extrajudicial perante o NUPEMEC/CEJUSC com a Prefeitura do Município do Rio de Janeiro - Secretaria de Transportes</a>
-                                <div id="content15" class="content" style="display: none;">
-                                    <a href="assets/pdfs/peticao-consorcio-transcarioca-mediacao.pdf" download class="pdf-link">PDF Manifestação da Recuperanda sobre mediação extrajudicial</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content16')">04/10/2021 - Decisão Deferindo o Processamento da Recuperação Judicial e nomeando a Administração Judicial Conjunta</a>
-                                <div id="content16" class="content" style="display: none;">
-                                    <a href="assets/pdfs/DECISAO-DEFERINDO-O-RJ-TRANSCARIOCA.pdf" download class="pdf-link">PDF Decisão Deferindo o Processamento da Recuperação Judicial</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content17')">01/10/2021 - Pedido de recuperação judicial do Consórcio Santa Cruz</a>
-                                <div id="content17" class="content" style="display: none;">
-                                    <a href="assets/pdfs/PEDIDO-DE-RECUPERACAO-JUDICIAL-TRANSCARIOCA.pdf" download class="pdf-link">PDF Pedido de recuperação judicial do Consórcio Santa Cruz</a><br>
-                                </div>
-
-                            
-                            
-                            
-                            
-                            
-                            </div>
-                                
-                        </div>
-                        <div class="dropdown">
-                            <button class="dropbtn">RECURSOS</button>
-                            <div class="dropdown-content">
-                                <a class="dropdown-item" onclick="toggleContent('content18')">01/01/2022 - Decisão de Suspensão</a>
-                                <div id="content18" class="content" style="display: none;">
-                                    <a href="assets/pdfs/DECISAO-DE-SUSPENSAO-AI.pdf" download class="pdf-link">PDF Decisão de Suspensão</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content19')">27/01/2022 - Manifestação da Administração Judicial sobre a Mediação</a>
-                                <div id="content19" class="content" style="display: none;">
-                                    <a href="assets/pdfs/MANIFESTACAO-AJ-SOBRE-A-MEDIACAO.pdf" download class="pdf-link">PDF Manifestação da Administração Judicial sobre a Mediação</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content20')">23/11/2021 - Contrarrazões no Agravo de Instrumento da Administração Judicial</a>
-                                <div id="content20" class="content" style="display: none;">
-                                    <a href="assets/pdfs/CONTRARRAZOES-AJ-TRANSCARIOCA-AI-MP.pdf" download class="pdf-link">PDF Contrarrazões no Agravo de Instrumento da Administração Judicial</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content21')">22/11/2021 - Contrarrazões no Agravo de Instrumento da Recuperanda</a>
-                                <div id="content21" class="content" style="display: none;">
-                                    <a href="assets/pdfs/CONTRARRAZOES-TRANSCARIOCA.pdf" download class="pdf-link">PDF Contrarrazões no Agravo de Instrumento da Recuperanda</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content22')">03/11/2021 - Decisão de concessão de efeito suspensivo</a>
-                                <div id="content22" class="content" style="display: none;">
-                                    <a href="assets/pdfs/DECISAO-EFEITO-SUSPENSIVO.pdf" download class="pdf-link">PDF Decisão de concessão de efeito suspensivo</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content23')">15/10/2021 - Manifestação Recuperanda informando sobre a mediação</a>
-                                <div id="content23" class="content" style="display: none;">
-                                    <a href="assets/pdfs/MANIFESTACAO-RECUPERANDA-TRANSCARIOCA.pdf" download class="pdf-link">PDF Manifestação Recuperanda informando sobre a mediação</a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content24')">13/10/2021 - Inicial</a>
-                                <div id="content24" class="content" style="display: none;">
-                                    <a href="assets/pdfs/0075990-60.2021.8.19.0000-AGRAVO-MP-TRANSCARIOCA.pdf" download class="pdf-link">PDF Inicial</a><br>
-                                </div>
-                               
-                            </div>
-                        </div>
-                
                         
-
-                            
-                </div>
                 </section>
                
                

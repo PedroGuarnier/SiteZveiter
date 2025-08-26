@@ -179,7 +179,20 @@
 .vertical-align-section .dropdown {
   width: 100%;
 }
+/* Move toda a seção 'sobre-nos' para a esquerda e ajusta o conteúdo */
+#sobre-nos .section-content {
+  margin-left: 0;          /* Move o bloco para a esquerda */
+  align-items: flex-start;  /* Alinha o texto interno à esquerda */
+  text-align: left;         /* Garante o alinhamento do texto */
+}
 
+#sobre-nos .section-content h3 {
+  margin-bottom: 15px;      /* Espaçamento abaixo do título principal */
+}
+
+#sobre-nos .section-content h6 {
+  margin-bottom: 8px;       /* Espaçamento reduzido entre as linhas de informação */
+}
     
         </style>
          
@@ -276,15 +289,14 @@
     <section id="sobre-nos" class="container">
         <h2 class="section-title">TRANSPORTE CAMPO GRANDE LTDA E VIAÇÃO PENHA RIO LTDA - RECUPERAÇÃO JUDICIAL</h2>
         <div class="section-content">
-                <h3><p>TRANSPORTE CAMPO GRANDE LTDA E VIAÇÃO PENHA RIO LTDA EM RECUPERAÇÃO JUDICIAL</h3></p>
+                                <h3>
+                    TRANSPORTE CAMPO GRANDE LTDA E VIAÇÃO PENHA RIO LTDA EM RECUPERAÇÃO JUDICIAL
+                    </h3>
 
-                <h6><p>Processo nº 0140355-23.2021.8.19.0001</h6></p> 
-                
-                <h6><p>Juízo: 2ª Vara Empresarial da Comarca da capital do Rio de Janeiro</h6></p>
-                
-                <h6><p>Administrador Judicial: Escritório de Advocacia Zveiter</h6></p>
-                 
-                <h6><p>E-mail oficial para contato: <strong>rj.tcgepenha@zveiter.adv.br</strong></h6></p>
+                    <h6>Processo nº 0140355-23.2021.8.19.0001</h6>
+                    <h6>Juízo: 2ª Vara Empresarial da Comarca da Capital do Rio de Janeiro</h6>
+                    <h6>Administrador Judicial: Escritório de Advocacia Zveiter</h6>
+                    <h6>E-mail oficial para contato: <strong>rj.tcgepenha@zveiter.adv.br</strong></h6>
 
                  </section>
                  <section id="sobre-nos" class="container">
@@ -298,7 +310,7 @@
                             <h6><p>ESCRITÓRIO DE ADVOCACIA ZVEITER</h6></p>
             
                              </section>
-                             <section id="informativo-assembleia" class="container">
+                             <section id="sobre-nos" class="container">
                                 <div class="section-content">
                                     <h3><p>INFORMATIVO SOBRE A ASSEMBLEIA GERAL</p></h3>
                             

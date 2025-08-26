@@ -179,7 +179,20 @@
 .vertical-align-section .dropdown {
   width: 100%;
 }
+/* Move toda a seção 'sobre-nos' para a esquerda e ajusta o conteúdo */
+#sobre-nos .section-content {
+  margin-left: 0;          /* Move o bloco para a esquerda */
+  align-items: flex-start;  /* Alinha o texto interno à esquerda */
+  text-align: left;         /* Garante o alinhamento do texto */
+}
 
+#sobre-nos .section-content h3 {
+  margin-bottom: 15px;      /* Espaçamento abaixo do título principal */
+}
+
+#sobre-nos .section-content h6 {
+  margin-bottom: 8px;       /* Espaçamento reduzido entre as linhas de informação */
+}
     
         </style>
          
@@ -273,25 +286,68 @@
             </div>
         </header>
 
-    <section id="sobre-nos" class="container">
-        <h2 class="section-title">GRUPO PETRÓPOLIS
-        </h2>
-        <div class="section-content">
-                <h3><p>RECUPERAÇÃO JUDICIAL DO GRUPO PETRÓPOLIS</h3></p>
-
-                <h6><p>Processo nº  0835616-92.2023.8.19.0001</h6></p> 
-                
-                <h6><p>Juízo: 5ª Vara Empresarial da Comarca da Capital do Rio de Janeiro</h6></p>
-                
-                <h6><p> Administrador Judicial: Escritório de Advocacia Zveiter e Preserva-Ação Administração Judicial.</h6></p>
-                 
-                <h6><p>E-mail oficial para contato: <strong>ajpetropolis@psvar.com.br</strong></h6></p>
-
-                 </section>
+                    <section id="sobre-nos" class="container">
+                <h2 class="section-title">GRUPO PETRÓPOLIS</h2>
+                <div class="section-content">
+                    <h3>RECUPERAÇÃO JUDICIAL DO GRUPO PETRÓPOLIS</h3>
+                    <h6>Processo nº 0835616-92.2023.8.19.0001</h6>
+                    <h6>Juízo: 5ª Vara Empresarial da Comarca da Capital do Rio de Janeiro</h6>
+                    <h6>Administrador Judicial: Escritório de Advocacia Zveiter e Preserva-Ação Administração Judicial.</h6>
+                    <h6>E-mail oficial para contato: <strong>ajpetropolis@psvar.com.br</strong></h6>
+                </div>
+                </section>
                  <section class="vertical-align-section">                    
                     <div class="container">
                         <div class="dropdown">
-                            <button class="dropbtn">Plano de Recuperação Judicial</button>
+                            <button class="dropbtn">EDITAIS</button>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" onclick="toggleContent('content17')">09/08/2023 - Edital de convocação para AGC nos dias 24/08/2023 e 31/08/2023</a>
+                                <div id="content17" class="content" style="display: none;">
+                                    <a href="assets/pdfs/pdfs grupo petrópolis/pdfs grupo petrópolis/20230809EDIDJETJRJ_16 (1).pdf" download class="pdf-link">PDF 09/08/2023 - Edital de convocação para AGC nos dias 24/08/2023 e 31/08/2023</a><br>
+                                </div>
+                                <a class="dropdown-item" onclick="toggleContent('content18')">03/08/2023 - Edital de convocação para AGC</a>
+                                <div id="content18" class="content" style="display: none;">
+                                    <a href="assets/pdfs/pdfs grupo petrópolis/pdfs grupo petrópolis/20230803EDIDJETJRJ_17.pdf" download class="pdf-link">PDF 03/08/2023 - Edital de convocação para AGC</a><br>
+                                </div>
+                                <a class="dropdown-item" onclick="toggleContent('content19')">28/07/2023 - Edital do artigo 7º § 2º e artigo 53 da LRE</a>
+                                <div id="content19" class="content" style="display: none;">
+                                    <a href="assets/pdfs/pdfs grupo petrópolis/pdfs grupo petrópolis/Edital-art.-7o-§2o-LRE.pdf" download class="pdf-link">PDF 28/07/2023 - Edital do artigo 7º § 2º e artigo 53 da LRE</a><br>
+                                </div>
+                                <a class="dropdown-item" onclick="toggleContent('content20')">17/05/2023 - Publicado Edital (art. 52, §1° da LRE)</a>
+                                <div id="content20" class="content" style="display: none;">
+                                    <a href="assets/pdfs/pdfs grupo petrópolis/pdfs grupo petrópolis/Edital GRUPO PETRÓPOLIS.pdf" download class="pdf-link">PDF 17/05/2023 - Publicado Edital (art. 52, §1° da LRE)</a><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropbtn">RELAÇÃO DE CREDORES</button>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" onclick="toggleContent('content43')">18/07/2023 - Apresentação da relação de credores segregada e consolidada</a>
+                                <div id="content43" class="content" style="display: none;">
+                                    <p>18/07/2023 - Apresentação da relação de credores segregada e consolidada</p>
+                                    <a href="Manifestacao-A.J.-Apresentacao-Relacao-de-Credores.pdf" download>Manifestacao-A.J.-Apresentacao-Relacao-de-Credores.pdf (873KB)</a><br>
+                                    <a href="Relacao-de-Credores-Grupo-Petropolis-Art.-7o-§2o-LRE-SEGREGADA-PROCESSO.pdf" download>Relacao-de-Credores-Grupo-Petropolis-Art.-7o-§2o-LRE-SEGREGADA-PROCESSO.pdf (385KB)</a><br>
+                                    <a href="Relacao-de-Credores-Grupo-Petropolis-Art.-7o-§2o-LRE-CONSOLIDADA-PROCESSO.pdf" download>Relacao-de-Credores-Grupo-Petropolis-Art.-7o-§2o-LRE-CONSOLIDADA-PROCESSO.pdf (511KB)</a>
+                                </div>
+                                <a class="dropdown-item" onclick="toggleContent('content44')">19/04/2023 - Relação de credores apresentada pela recuperandas – detalhada</a>
+                                <div id="content44" class="content" style="display: none;">
+                                    <p>19/04/2023 - Relação de credores apresentada pela recuperandas – detalhada</p>
+                                    <a href="Grupo-Petropolis-Relacao-de-Credores-Detalhada (1).pdf" download>Grupo-Petropolis-Relacao-de-Credores-Detalhada (1).pdf (2.60MB)</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropbtn">AVISOS</button>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" onclick="toggleContent('content50')">Aviso aos credores - Habilitações e Divergências administrativas	                                </a>
+                                <div id="content50" class="content" style="display: none;">
+                                    <a href="assets/pdfs/Manifestacao-A.J.-Relatorio-da-Fase-de-Verificacao-Administrativa-de-Creditos-17-07-2023-1 (1).pdf" download class="pdf-link">Aviso aos credores - Habilitações e Divergências administrativas</a><br></div>
+                                    
+                                </div>
+                            </div>
+                
+                        <div class="dropdown">
+                            <button class="dropbtn">PLANO DE RECUPERAÇÃO JUDICIAL</button>
                             <div class="dropdown-content">
                                 <a class="dropdown-item" onclick="toggleContent('content1')">11/09/2023 - ATA - APROVAÇÃO DO PRJ</a>
                                 <div id="content1" class="content" style="display: none;">
@@ -350,7 +406,7 @@
                         </div>
                 
                         <div class="dropdown">
-                            <button class="dropbtn">Ata de Assembleia de Credores</button>
+                            <button class="dropbtn">ATA DE ASSEMBLEIA DE CREDORES</button>
                             <div class="dropdown-content">
                                 <a class="dropdown-item" onclick="toggleContent('content14')">11/09/2023 - ATA - APROVAÇÃO DO PRJ</a>
                                 <div id="content14" class="content" style="display: none;">
@@ -367,30 +423,10 @@
                             </div>
                         </div>
                 
-                        <div class="dropdown">
-                            <button class="dropbtn">Editais</button>
-                            <div class="dropdown-content">
-                                <a class="dropdown-item" onclick="toggleContent('content17')">09/08/2023 - Edital de convocação para AGC nos dias 24/08/2023 e 31/08/2023</a>
-                                <div id="content17" class="content" style="display: none;">
-                                    <a href="assets/pdfs/pdfs grupo petrópolis/pdfs grupo petrópolis/20230809EDIDJETJRJ_16 (1).pdf" download class="pdf-link">PDF 09/08/2023 - Edital de convocação para AGC nos dias 24/08/2023 e 31/08/2023</a><br>
-                                </div>
-                                <a class="dropdown-item" onclick="toggleContent('content18')">03/08/2023 - Edital de convocação para AGC</a>
-                                <div id="content18" class="content" style="display: none;">
-                                    <a href="assets/pdfs/pdfs grupo petrópolis/pdfs grupo petrópolis/20230803EDIDJETJRJ_17.pdf" download class="pdf-link">PDF 03/08/2023 - Edital de convocação para AGC</a><br>
-                                </div>
-                                <a class="dropdown-item" onclick="toggleContent('content19')">28/07/2023 - Edital do artigo 7º § 2º e artigo 53 da LRE</a>
-                                <div id="content19" class="content" style="display: none;">
-                                    <a href="assets/pdfs/pdfs grupo petrópolis/pdfs grupo petrópolis/Edital-art.-7o-§2o-LRE.pdf" download class="pdf-link">PDF 28/07/2023 - Edital do artigo 7º § 2º e artigo 53 da LRE</a><br>
-                                </div>
-                                <a class="dropdown-item" onclick="toggleContent('content20')">17/05/2023 - Publicado Edital (art. 52, §1° da LRE)</a>
-                                <div id="content20" class="content" style="display: none;">
-                                    <a href="assets/pdfs/pdfs grupo petrópolis/pdfs grupo petrópolis/Edital GRUPO PETRÓPOLIS.pdf" download class="pdf-link">PDF 17/05/2023 - Publicado Edital (art. 52, §1° da LRE)</a><br>
-                                </div>
-                            </div>
-                        </div>
+                        
                 
                         <div class="dropdown">
-                            <button class="dropbtn">Decisões Judiciais</button>
+                            <button class="dropbtn">DECISÕES JUDICIAIS</button>
                             <div class="dropdown-content">
                                 <a class="dropdown-item" onclick="toggleContent('content21')">13/12/2023 - Decisão – dia 12/12/2023</a>
                                 <div id="content21" class="content" style="display: none;">
@@ -491,26 +527,10 @@
                         </div>
 
                         
-                        <div class="dropdown">
-                            <button class="dropbtn">Relação de Credores</button>
-                            <div class="dropdown-content">
-                                <a class="dropdown-item" onclick="toggleContent('content43')">18/07/2023 - Apresentação da relação de credores segregada e consolidada</a>
-                                <div id="content43" class="content" style="display: none;">
-                                    <p>18/07/2023 - Apresentação da relação de credores segregada e consolidada</p>
-                                    <a href="Manifestacao-A.J.-Apresentacao-Relacao-de-Credores.pdf" download>Manifestacao-A.J.-Apresentacao-Relacao-de-Credores.pdf (873KB)</a><br>
-                                    <a href="Relacao-de-Credores-Grupo-Petropolis-Art.-7o-§2o-LRE-SEGREGADA-PROCESSO.pdf" download>Relacao-de-Credores-Grupo-Petropolis-Art.-7o-§2o-LRE-SEGREGADA-PROCESSO.pdf (385KB)</a><br>
-                                    <a href="Relacao-de-Credores-Grupo-Petropolis-Art.-7o-§2o-LRE-CONSOLIDADA-PROCESSO.pdf" download>Relacao-de-Credores-Grupo-Petropolis-Art.-7o-§2o-LRE-CONSOLIDADA-PROCESSO.pdf (511KB)</a>
-                                </div>
-                                <a class="dropdown-item" onclick="toggleContent('content44')">19/04/2023 - Relação de credores apresentada pela recuperandas – detalhada</a>
-                                <div id="content44" class="content" style="display: none;">
-                                    <p>19/04/2023 - Relação de credores apresentada pela recuperandas – detalhada</p>
-                                    <a href="Grupo-Petropolis-Relacao-de-Credores-Detalhada (1).pdf" download>Grupo-Petropolis-Relacao-de-Credores-Detalhada (1).pdf (2.60MB)</a>
-                                </div>
-                            </div>
-                        </div>
+                        
                     
                     <div class="dropdown">
-                        <button class="dropbtn">Processo</button>
+                        <button class="dropbtn">PROCESSO</button>
                         <div class="dropdown-content">
                             <a class="dropdown-item" onclick="toggleContent('content45')">17/07/2023 - Relatório da Fase de Verificação Administrativa de Créditos</a>
                             <div id="content45" class="content" style="display: none;">
@@ -538,17 +558,9 @@
                               
 
                         </div>
-                        <div class="dropdown">
-                            <button class="dropbtn">Avisos</button>
-                            <div class="dropdown-content">
-                                <a class="dropdown-item" onclick="toggleContent('content50')">Aviso aos credores - Habilitações e Divergências administrativas	                                </a>
-                                <div id="content50" class="content" style="display: none;">
-                                    <a href="assets/pdfs/Manifestacao-A.J.-Relatorio-da-Fase-de-Verificacao-Administrativa-de-Creditos-17-07-2023-1 (1).pdf" download class="pdf-link">Aviso aos credores - Habilitações e Divergências administrativas</a><br></div>
-                                    
-                                </div>
-                            </div>
+                        
                             <div class="dropdown">
-                                <button class="dropbtn">Modelos</button>
+                                <button class="dropbtn">MODELOS</button>
                                 <div class="dropdown-content">
                                     <a class="dropdown-item" onclick="toggleContent('content51')">Modelo de Divergência de Crédito:</a>
                                     <div id="content51" class="content" style="display: none;">
