@@ -143,6 +143,25 @@ body {
   #meuPopup .modal-dialog {
     margin-bottom: 5vh; /* Ajuste este valor para mais ou menos espaço do fundo */
   }
+   /* 1. Faz a camada de fundo do modal ficar "atravessável" aos cliques */
+    .modal-backdrop {
+        pointer-events: none;
+    }
+
+    /* 2. Faz o contêiner principal do modal (que ocupa a tela toda) também ficar atravessável... */
+    #meuPopup {
+        pointer-events: none;
+        /* ...e mantém o posicionamento que fizemos antes */
+        display: flex !important;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    /* 3. IMPORTANTE: Reativa os cliques APENAS para a caixa do pop-up */
+    #meuPopup .modal-dialog {
+        pointer-events: all; 
+        margin-bottom: 5vh;
+    }
         </style>
     </head>
     <body id="top">
