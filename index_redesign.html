@@ -213,7 +213,7 @@
 
         /* Mobile menu */
         .mobile-menu {
-            display: none;
+            display: block;
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             background: var(--black-rich);
@@ -226,19 +226,59 @@
         .mobile-menu.open {
             transform: translateX(0);
         }
-        .mobile-menu a {
-            display: block;
+        .mobile-menu .menu-item {
+            border-bottom: 1px solid rgba(184,150,62,0.1);
+        }
+        .mobile-menu .menu-item > a,
+        .mobile-menu .menu-item > .menu-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-family: var(--font-display);
             font-size: 1.8rem;
             color: var(--white);
             text-decoration: none;
             padding: 14px 0;
-            border-bottom: 1px solid rgba(184,150,62,0.1);
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
             transition: color 0.2s;
         }
-        .mobile-menu a:hover { color: var(--gold-light); }
-        .mobile-menu .sub-links { padding-left: 20px; }
-        .mobile-menu .sub-links a { font-size: 1.1rem; font-family: var(--font-body); }
+        .mobile-menu .menu-item > a:hover,
+        .mobile-menu .menu-item > .menu-toggle:hover { color: var(--gold-light); }
+        .mobile-menu .menu-toggle-icon {
+            font-size: 1.2rem;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        .mobile-menu .menu-item.expanded .menu-toggle-icon {
+            transform: rotate(45deg);
+        }
+        .mobile-menu .sub-links {
+            padding: 0 0 12px 16px;
+            display: none;
+        }
+        .mobile-menu .menu-item.expanded .sub-links {
+            display: block;
+        }
+        .mobile-menu .sub-links a {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--white-dim);
+            text-decoration: none;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(184,150,62,0.05);
+            letter-spacing: 0.03em;
+            transition: color 0.2s, padding-left 0.2s;
+        }
+        .mobile-menu .sub-links a:hover {
+            color: var(--gold-light);
+            padding-left: 8px;
+        }
 
         /* ========================
            HERO
@@ -445,15 +485,17 @@
         .about-plaque {
             position: relative;
             overflow: hidden;
+            border-radius: 2px;
         }
 
         .about-plaque img {
             width: 100%;
-            height: 420px;
+            height: 380px;
             object-fit: cover;
-            object-position: center;
-            filter: sepia(20%) contrast(1.05);
+            object-position: center 30%;
+            filter: sepia(15%) contrast(1.05);
             transition: transform 0.8s ease;
+            display: block;
         }
 
         .about-plaque:hover img {
@@ -466,6 +508,11 @@
             inset: 0;
             border: 1px solid rgba(184,150,62,0.25);
             pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .about-plaque { display: none; }
+            .about-year { font-size: 4rem !important; }
         }
 
         /* RJ photo strip */
@@ -1197,7 +1244,30 @@
         /* ========================
            UTILITIES
         ======================== */
+        .hero-subtitle,
+        .about-text,
+        .contencioso-text,
+        .secondary-text p,
+        .footer-brand p,
+        .footer-address p {
+            text-align: justify;
+        }
+
         .hidden { display: none !important; }
+
+        /* Areas tabs mobile */
+        @media (max-width: 768px) {
+            .areas-tabs {
+                width: 100%;
+                display: flex;
+            }
+            .area-tab {
+                flex: 1;
+                text-align: center;
+                padding: 12px 8px;
+                font-size: 0.65rem;
+            }
+        }
 
         /* ========================
            RESPONSIVE
@@ -1314,11 +1384,55 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="institucional.html">Institucional</a>
-        <a href="profissionais.html">Profissionais</a>
-        <a href="recuperacao.html">Especialidades</a>
-        <a href="recuperacao.html">Recuperações Judiciais</a>
-        <a href="contato.html">Contato</a>
+        <div class="menu-item">
+            <a href="institucional.html">Institucional</a>
+        </div>
+        <div class="menu-item">
+            <a href="profissionais.html">Profissionais</a>
+        </div>
+        <div class="menu-item" id="menuEspecialidades">
+            <button class="menu-toggle" onclick="toggleMenu('menuEspecialidades')">
+                Especialidades <span class="menu-toggle-icon">+</span>
+            </button>
+            <div class="sub-links">
+                <a href="dirsocietario.html">Empresarial e Societário</a>
+                <a href="dirinr.html">Direito Imobiliário, Notarial e Registral</a>
+                <a href="dirintelec.html">Comunicação e Propriedade Intelectual</a>
+                <a href="dirsucessorio.html">Direito Sucessório e Família</a>
+                <a href="dirambiental.html">Direito Ambiental</a>
+                <a href="#">Direito de Saúde Suplementar</a>
+                <a href="dirdespent.html">Direito Desportivo e do Entretenimento</a>
+                <a href="recuperacao.html">Recuperação Judicial e Falência</a>
+                <a href="contTrib.html">Contencioso Tributário</a>
+                <a href="diradm.html">Direito Administrativo</a>
+                <a href="#">Arbitragem e Mediação</a>
+            </div>
+        </div>
+        <div class="menu-item" id="menuRecuperacoes">
+            <button class="menu-toggle" onclick="toggleMenu('menuRecuperacoes')">
+                Recuperações <span class="menu-toggle-icon">+</span>
+            </button>
+            <div class="sub-links">
+                <a href="grppetro.html">Grupo Petrópolis</a>
+                <a href="americanas.html">Grupo Americanas</a>
+                <a href="mintucano.html">Mina Tucano</a>
+                <a href="gas.html">G.A.S. Consultoria</a>
+                <a href="transporte.html">Transporte Campo Grande & Viação Penha</a>
+                <a href="transcarioca.html">Consórcio Transcarioca</a>
+                <a href="stcruz.html">Consórcio Santa Cruz</a>
+                <a href="airmix.html">Airmix — Falência</a>
+                <a href="kpfr.html">KPFR Empreendimentos</a>
+                <a href="rodopetro.html">Rodopetro</a>
+                <a href="qldtotal.html">Qualidade Total</a>
+                <a href="rnr.html">RNR Montagens</a>
+                <a href="canaamates.html">Canaã Mates — Falência</a>
+                <a href="txrx.html">TX RX — Falência</a>
+                <a href="costapereira.html">Costa Pereira Bokel</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="contato.html">Contato</a>
+        </div>
     </div>
 
     <!-- ========================
@@ -1649,6 +1763,12 @@
             navbar.classList.toggle('scrolled', window.scrollY > 60);
         });
 
+        // Toggle mobile submenus
+        function toggleMenu(id) {
+            const item = document.getElementById(id);
+            item.classList.toggle('expanded');
+        }
+
         // Hamburger
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -1668,12 +1788,29 @@
 
         // Area tabs
         function switchTab(tab) {
-            const isEstrategico = tab === 'estrategico';
-            document.getElementById('tabEstrategico').classList.toggle('active', isEstrategico);
-            document.getElementById('tabContencioso').classList.toggle('active', !isEstrategico);
-            document.getElementById('panelEstrategico').classList.toggle('hidden', !isEstrategico);
-            document.getElementById('panelContencioso').classList.toggle('hidden', isEstrategico);
+            const tabE = document.getElementById('tabEstrategico');
+            const tabC = document.getElementById('tabContencioso');
+            const panelE = document.getElementById('panelEstrategico');
+            const panelC = document.getElementById('panelContencioso');
+
+            if (tab === 'estrategico') {
+                tabE.classList.add('active');
+                tabC.classList.remove('active');
+                panelE.classList.remove('hidden');
+                panelC.classList.add('hidden');
+            } else {
+                tabC.classList.add('active');
+                tabE.classList.remove('active');
+                panelC.classList.remove('hidden');
+                panelE.classList.add('hidden');
+            }
         }
+
+        // Init: garantir estado correto ao carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('panelContencioso').classList.add('hidden');
+            document.getElementById('panelEstrategico').classList.remove('hidden');
+        });
     </script>
 </body>
 </html>
