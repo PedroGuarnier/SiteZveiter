@@ -160,9 +160,13 @@
             .hamburger { display: flex; }
             .page-hero-inner { padding: 40px 24px 0; }
             .page-content { padding: 48px 24px 60px; }
-            .tribute { grid-template-columns: 1fr; gap: 24px; }
-            .tribute-img { aspect-ratio: 4/3; max-width: 220px; }
+            .tribute { grid-template-columns: 1fr; gap: 0; }
+            .tribute-img-wrap { width: 100%; margin-bottom: 28px; }
+            .tribute-img { aspect-ratio: 4/5; max-width: 100%; width: 100%; }
+            .tribute-img img { object-position: center 10%; }
             .socios-grid { grid-template-columns: repeat(2, 1fr); }
+            .socio-arrow { display: none; }
+            .socio-card { padding-right: 14px; }
             footer { padding: 60px 24px 32px; }
             .footer-top { grid-template-columns: 1fr; gap: 32px; }
             .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
@@ -268,7 +272,6 @@
             <div class="hero-tabs">
                 <div class="hero-tab active">Sócios <span style="color:rgba(184,150,62,0.4);font-size:0.6rem;margin-left:4px;">17</span></div>
                 <div class="hero-tab">Associados</div>
-                <div class="hero-tab">Of Counsel</div>
             </div>
         </div>
     </div>
