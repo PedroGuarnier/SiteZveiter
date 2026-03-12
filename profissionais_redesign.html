@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profissionais | Escritório de Advocacia Zveiter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Tenor+Sans&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #B8963E;
+            --gold-light: #D4AF6A;
+            --gold-pale: #E8D5A3;
+            --black: #0A0A0A;
+            --black-rich: #111111;
+            --black-soft: #1A1A1A;
+            --black-mid: #242424;
+            --white: #F5F0E8;
+            --white-dim: #C8C0B0;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-sans: 'Tenor Sans', sans-serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--black); color: var(--white); font-family: var(--font-body); font-weight: 300; overflow-x: hidden; }
+
+        /* NAV */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 80px; background: rgba(10,10,10,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(184,150,62,0.15); transition: height var(--transition); }
+        nav.scrolled { height: 64px; }
+        .nav-logo img { height: 44px; width: auto; filter: invert(1) brightness(1.8); opacity: 0.92; transition: opacity var(--transition); }
+        .nav-logo img:hover { opacity: 1; }
+        .nav-links { display: flex; align-items: center; gap: 0; list-style: none; }
+        .nav-links > li { position: relative; }
+        .nav-links > li > a, .nav-links > li > .nav-btn { font-family: var(--font-sans); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white-dim); text-decoration: none; padding: 28px 18px; display: block; transition: color var(--transition); background: none; border: none; cursor: pointer; }
+        .nav-links > li > a:hover, .nav-links > li > .nav-btn:hover, .nav-links > li:hover > a, .nav-links > li:hover > .nav-btn { color: var(--gold-light); }
+        .nav-links > li > a.current { color: var(--gold); }
+        .dropdown-panel { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: var(--black-soft); border: 1px solid rgba(184,150,62,0.2); min-width: 280px; padding: 12px 0; opacity: 0; pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease; z-index: 100; }
+        .dropdown-panel.wide { min-width: 340px; columns: 2; column-gap: 0; }
+        .nav-links > li:hover .dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+        .dropdown-panel a { display: block; font-family: var(--font-body); font-size: 0.75rem; letter-spacing: 0.05em; color: var(--white-dim); text-decoration: none; padding: 9px 24px; transition: color 0.2s, padding-left 0.2s; break-inside: avoid; }
+        .dropdown-panel a:hover { color: var(--gold-light); padding-left: 30px; }
+        .nav-divider { width: 1px; height: 16px; background: rgba(184,150,62,0.2); margin: 0 6px; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+        .hamburger span { display: block; width: 24px; height: 1px; background: var(--white); transition: var(--transition); }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px,4px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px,-4px); }
+        .mobile-menu { display: block; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--black-rich); z-index: 999; padding: 100px 40px 40px; overflow-y: auto; transform: translateX(100%); transition: transform 0.5s cubic-bezier(0.77,0,0.175,1); }
+        .mobile-menu.open { transform: translateX(0); }
+        .mobile-menu .menu-item { border-bottom: 1px solid rgba(184,150,62,0.1); }
+        .mobile-menu .menu-item > a, .mobile-menu .menu-item > .menu-toggle { display: flex; justify-content: space-between; align-items: center; font-family: var(--font-display); font-size: 1.8rem; color: var(--white); text-decoration: none; padding: 14px 0; width: 100%; background: none; border: none; cursor: pointer; text-align: left; transition: color 0.2s; }
+        .mobile-menu .menu-item > a:hover, .mobile-menu .menu-item > .menu-toggle:hover { color: var(--gold-light); }
+        .mobile-menu .menu-toggle-icon { font-size: 1.2rem; color: var(--gold); transition: transform 0.3s; flex-shrink: 0; }
+        .mobile-menu .menu-item.expanded .menu-toggle-icon { transform: rotate(45deg); }
+        .mobile-menu .sub-links { padding: 0 0 12px 16px; display: none; }
+        .mobile-menu .menu-item.expanded .sub-links { display: block; }
+        .mobile-menu .sub-links a { display: block; font-family: var(--font-body); font-size: 0.9rem; color: var(--white-dim); text-decoration: none; padding: 8px 0; border-bottom: 1px solid rgba(184,150,62,0.05); transition: color 0.2s, padding-left 0.2s; }
+        .mobile-menu .sub-links a:hover { color: var(--gold-light); padding-left: 8px; }
+
+        /* PAGE HERO */
+        .page-hero { padding-top: 80px; background: var(--black-soft); border-bottom: 1px solid rgba(184,150,62,0.1); position: relative; overflow: hidden; }
+        .page-hero::before { content: 'EQUIPE'; position: absolute; right: -20px; top: 50%; transform: translateY(-50%); font-family: var(--font-display); font-size: 14rem; font-weight: 300; color: transparent; -webkit-text-stroke: 1px rgba(184,150,62,0.05); pointer-events: none; line-height: 1; }
+        .page-hero-inner { max-width: 1400px; margin: 0 auto; padding: 60px 80px 0; position: relative; z-index: 1; }
+        .breadcrumb { display: flex; align-items: center; gap: 10px; margin-bottom: 32px; }
+        .breadcrumb a { font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-decoration: none; transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--gold-light); }
+        .breadcrumb-sep { font-size: 0.6rem; color: rgba(184,150,62,0.3); }
+        .breadcrumb span { font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white-dim); opacity: 0.5; }
+        .page-hero-tag { display: inline-block; font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--black); background: var(--gold); padding: 4px 14px; margin-bottom: 20px; }
+        .page-hero-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.15; color: var(--white); max-width: 800px; margin-bottom: 0; }
+        .page-hero-title em { font-style: italic; color: var(--gold-pale); }
+        .hero-tabs { display: flex; gap: 0; border-top: 1px solid rgba(184,150,62,0.12); margin-top: 40px; }
+        .hero-tab { font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(200,192,176,0.45); padding: 16px 24px 16px 0; margin-right: 24px; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; user-select: none; }
+        .hero-tab.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+
+        /* MAIN */
+        .page-content { max-width: 1400px; margin: 0 auto; padding: 70px 80px 80px; }
+
+        /* WALDEMAR */
+        .tribute { display: grid; grid-template-columns: 200px 1fr; gap: 56px; padding-bottom: 56px; border-bottom: 1px solid rgba(184,150,62,0.12); margin-bottom: 56px; }
+        .tribute-img-wrap { position: relative; flex-shrink: 0; }
+        .tribute-img { width: 100%; aspect-ratio: 3/4; background: var(--black-soft); border: 1px solid rgba(184,150,62,0.15); overflow: hidden; }
+        .tribute-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: grayscale(20%); }
+        .tribute-dates { position: absolute; bottom: 0; left: 0; right: 0; background: var(--gold); padding: 5px 10px; font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 0.2em; color: var(--black); text-align: center; text-transform: uppercase; }
+        .tribute-eyebrow { font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; opacity: 0.8; }
+        .tribute-name { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 8px; }
+        .tribute-subtitle { font-family: var(--font-body); font-size: 0.78rem; color: rgba(200,192,176,0.4); letter-spacing: 0.04em; margin-bottom: 24px; font-style: italic; line-height: 1.7; }
+        .tribute-divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 24px; opacity: 0.5; }
+        .tribute-bio { font-family: var(--font-body); font-size: 0.85rem; line-height: 1.95; color: rgba(200,192,176,0.65); text-align: justify; }
+
+        /* INTRO */
+        .intro-text { font-family: var(--font-body); font-size: 0.85rem; line-height: 1.9; color: rgba(200,192,176,0.5); max-width: 700px; margin-bottom: 40px; text-align: justify; }
+
+        /* SECTION LABEL */
+        .sec-label { font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; opacity: 0.7; }
+
+        /* SOCIOS GRID */
+        .socios-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-bottom: 32px; }
+        .socio-card { background: var(--black-soft); padding: 22px 18px 18px; border-left: 2px solid transparent; cursor: pointer; transition: all 0.25s; position: relative; text-decoration: none; display: block; }
+        .socio-card:hover, .socio-card.active { background: var(--black-mid); border-left-color: var(--gold); }
+        .socio-initials { width: 40px; height: 40px; border: 1px solid rgba(184,150,62,0.25); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 0.85rem; color: var(--gold); margin-bottom: 14px; flex-shrink: 0; overflow: hidden; }
+        .socio-initials img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: grayscale(20%); }
+
+        .profile-photo { width: 100px; height: 120px; overflow: hidden; border: 1px solid rgba(184,150,62,0.2); margin-bottom: 16px; flex-shrink: 0; }
+        .profile-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: grayscale(10%); }
+        .socio-name { font-family: var(--font-body); font-size: 0.82rem; color: var(--white); line-height: 1.35; margin-bottom: 5px; }
+        .socio-role { font-family: var(--font-sans); font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); opacity: 0.6; }
+        .socio-arrow { position: absolute; bottom: 16px; right: 16px; font-size: 0.75rem; color: rgba(184,150,62,0.25); transition: all 0.2s; }
+        .socio-card:hover .socio-arrow, .socio-card.active .socio-arrow { color: var(--gold); transform: translate(2px,-2px); }
+
+        /* PROFILE PANEL */
+        .profile-panel { display: none; background: var(--black-rich); border: 1px solid rgba(184,150,62,0.12); padding: 32px; margin-bottom: 28px; }
+        .profile-panel.visible { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .profile-name { font-family: var(--font-display); font-size: 1.6rem; font-weight: 300; color: var(--white); margin-bottom: 6px; }
+        .profile-role { font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+        .profile-bio { font-family: var(--font-body); font-size: 0.82rem; line-height: 1.9; color: rgba(200,192,176,0.6); text-align: justify; }
+        .profile-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+        .profile-tag { font-family: var(--font-sans); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(184,150,62,0.2); padding: 4px 10px; }
+        .profile-cta { display: inline-block; margin-top: 20px; font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); background: var(--gold); padding: 10px 20px; text-decoration: none; transition: background 0.2s; }
+        .profile-cta:hover { background: var(--gold-light); }
+        .profile-right { border-left: 1px solid rgba(184,150,62,0.1); padding-left: 40px; }
+        .detail-label { font-family: var(--font-sans); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); opacity: 0.6; margin-top: 20px; margin-bottom: 5px; }
+        .detail-label:first-child { margin-top: 0; }
+        .detail-value { font-family: var(--font-body); font-size: 0.82rem; color: rgba(200,192,176,0.6); line-height: 1.7; }
+
+        /* FOOTER */
+        footer { background: var(--black-rich); border-top: 1px solid rgba(184,150,62,0.15); padding: 80px 80px 40px; }
+        .footer-inner { max-width: 1400px; margin: 0 auto; }
+        .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(184,150,62,0.1); }
+        .footer-brand img { height: 44px; filter: invert(1) brightness(1.8); opacity: 0.8; margin-bottom: 20px; display: block; }
+        .footer-brand p { font-size: 0.82rem; line-height: 1.8; color: rgba(200,192,176,0.5); max-width: 260px; text-align: justify; }
+        .footer-col-title { font-family: var(--font-sans); font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+        .footer-address strong { display: block; font-family: var(--font-display); font-size: 1rem; font-weight: 400; color: var(--white-dim); margin-bottom: 8px; }
+        .footer-address p { font-size: 0.8rem; line-height: 1.9; color: rgba(200,192,176,0.5); }
+        .footer-address a { display: inline-block; font-size: 0.75rem; color: var(--gold); text-decoration: none; margin-top: 8px; opacity: 0.8; transition: opacity 0.2s; }
+        .footer-address a:hover { opacity: 1; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; }
+        .footer-copy { font-size: 0.72rem; color: rgba(200,192,176,0.3); letter-spacing: 0.05em; }
+        .footer-social { display: flex; gap: 16px; }
+        .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(184,150,62,0.2); display: flex; align-items: center; justify-content: center; transition: border-color 0.3s, background 0.3s; }
+        .footer-social a:hover { border-color: var(--gold); background: rgba(184,150,62,0.08); }
+        .footer-social svg { width: 14px; height: 14px; fill: var(--white-dim); }
+
+        /* RESPONSIVE */
+        @media (max-width: 1100px) {
+            .socios-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+        }
+        @media (max-width: 900px) {
+            .tribute { grid-template-columns: 160px 1fr; gap: 32px; }
+            .profile-panel.visible { grid-template-columns: 1fr; }
+            .profile-right { border-left: none; padding-left: 0; border-top: 1px solid rgba(184,150,62,0.1); padding-top: 24px; margin-top: 8px; }
+        }
+        @media (max-width: 768px) {
+            nav { padding: 0 24px; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .page-hero-inner { padding: 40px 24px 0; }
+            .page-content { padding: 48px 24px 60px; }
+            .tribute { grid-template-columns: 1fr; gap: 24px; }
+            .tribute-img { aspect-ratio: 4/3; max-width: 220px; }
+            .socios-grid { grid-template-columns: repeat(2, 1fr); }
+            footer { padding: 60px 24px 32px; }
+            .footer-top { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+        }
+        @media (max-width: 480px) {
+            .socios-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-logo">
+            <a href="index.html"><img src="imgs/logo_transparente.png" alt="Escritório de Advocacia Zveiter"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="institucional.html">Institucional</a></li>
+            <li><a href="profissionais.html" class="current">Profissionais</a></li>
+            <li class="has-dropdown">
+                <span class="nav-btn">Especialidades</span>
+                <div class="dropdown-panel wide">
+                    <a href="dirsocietario.html">Empresarial e Societário</a>
+                    <a href="dirinr.html">Direito Imobiliário, Notarial e Registral</a>
+                    <a href="dirintelec.html">Comunicação e Propriedade Intelectual</a>
+                    <a href="dirsucessorio.html">Direito Sucessório e Família</a>
+                    <a href="dirambiental.html">Direito Ambiental</a>
+                    <a href="#">Direito de Saúde Suplementar</a>
+                    <a href="dirdespent.html">Direito Desportivo e do Entretenimento</a>
+                    <a href="recuperacao.html">Recuperação Judicial e Falência</a>
+                    <a href="contTrib.html">Contencioso Tributário</a>
+                    <a href="diradm.html">Direito Administrativo</a>
+                    <a href="#">Arbitragem e Mediação</a>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <span class="nav-btn">Recuperações</span>
+                <div class="dropdown-panel">
+                    <a href="grppetro.html">Grupo Petrópolis</a>
+                    <a href="americanas.html">Grupo Americanas</a>
+                    <a href="mintucano.html">Mina Tucano</a>
+                    <a href="gas.html">G.A.S. Consultoria</a>
+                    <a href="transporte.html">Transporte Campo Grande</a>
+                    <a href="transcarioca.html">Consórcio Transcarioca</a>
+                    <a href="stcruz.html">Consórcio Santa Cruz</a>
+                    <a href="airmix.html">Airmix — Falência</a>
+                    <a href="kpfr.html">KPFR Empreendimentos</a>
+                    <a href="rodopetro.html">Rodopetro</a>
+                    <a href="qldtotal.html">Qualidade Total</a>
+                    <a href="rnr.html">RNR Montagens</a>
+                    <a href="canaamates.html">Canaã Mates — Falência</a>
+                    <a href="txrx.html">TX RX — Falência</a>
+                    <a href="costapereira.html">Costa Pereira Bokel</a>
+                </div>
+            </li>
+            <div class="nav-divider"></div>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="menu-item"><a href="institucional.html">Institucional</a></div>
+        <div class="menu-item"><a href="profissionais.html">Profissionais</a></div>
+        <div class="menu-item" id="menuEsp">
+            <button class="menu-toggle" onclick="toggleMobileMenu('menuEsp')">Especialidades <span class="menu-toggle-icon">+</span></button>
+            <div class="sub-links">
+                <a href="dirsocietario.html">Empresarial e Societário</a>
+                <a href="dirinr.html">Direito Imobiliário</a>
+                <a href="dirintelec.html">Propriedade Intelectual</a>
+                <a href="dirsucessorio.html">Direito Sucessório e Família</a>
+                <a href="dirambiental.html">Direito Ambiental</a>
+                <a href="dirdespent.html">Direito Desportivo</a>
+                <a href="contTrib.html">Contencioso Tributário</a>
+                <a href="diradm.html">Direito Administrativo</a>
+            </div>
+        </div>
+        <div class="menu-item" id="menuRec">
+            <button class="menu-toggle" onclick="toggleMobileMenu('menuRec')">Recuperações <span class="menu-toggle-icon">+</span></button>
+            <div class="sub-links">
+                <a href="grppetro.html">Grupo Petrópolis</a>
+                <a href="americanas.html">Grupo Americanas</a>
+                <a href="mintucano.html">Mina Tucano</a>
+                <a href="gas.html">G.A.S. Consultoria</a>
+                <a href="transcarioca.html">Consórcio Transcarioca</a>
+                <a href="airmix.html">Airmix — Falência</a>
+            </div>
+        </div>
+        <div class="menu-item"><a href="contato.html">Contato</a></div>
+    </div>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+        <div class="page-hero-inner">
+            <div class="breadcrumb">
+                <a href="index.html">Início</a>
+                <span class="breadcrumb-sep">›</span>
+                <span>Profissionais</span>
+            </div>
+            <div class="page-hero-tag">Equipe</div>
+            <h1 class="page-hero-title">Nossos <em>Profissionais</em></h1>
+            <div class="hero-tabs">
+                <div class="hero-tab active">Sócios <span style="color:rgba(184,150,62,0.4);font-size:0.6rem;margin-left:4px;">17</span></div>
+                <div class="hero-tab">Associados</div>
+                <div class="hero-tab">Of Counsel</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="page-content">
+
+        <!-- WALDEMAR IN MEMORIAM -->
+        <div class="tribute">
+            <div class="tribute-img-wrap">
+                <div class="tribute-img">
+                    <img src="imgs/waldemarzveiter.png" alt="Waldemar Zveiter">
+                </div>
+                <div class="tribute-dates">1932 – 2024</div>
+            </div>
+            <div>
+                <div class="tribute-eyebrow">In Memoriam · Sócio Fundador</div>
+                <div class="tribute-name">Waldemar Zveiter</div>
+                <div class="tribute-subtitle">
+                    Presidente da OAB/RJ · Desembargador do TJRJ · Ministro do STJ
+                </div>
+                <div class="tribute-divider"></div>
+                <div class="tribute-bio">
+                    Iniciada sua atividade advocatícia, Waldemar Zveiter presidiu a Ordem dos Advogados do Brasil/RJ em dois biênios, pertenceu também ao Conselho Federal dessa mesma entidade, e ao Conselho Superior do Instituto dos Advogados do Brasil, no qual permaneceu filiado sendo Membro Nato da Ordem dos Advogados do Brasil. Exerceu a advocacia por cerca de vinte e cinco anos ininterruptos, no curso dos quais foi eleito pelo Tribunal de Justiça do Estado do Rio de Janeiro para compor o Tribunal Regional Eleitoral como jurista, cumprindo o primeiro mandato de dois anos e reeleito para o segundo biênio. Foi nomeado Desembargador do Tribunal de Justiça do Estado do Rio de Janeiro no quinto reservado aos advogados, por atender os requisitos constitucionais do "notável saber jurídico e conduta ilibada".
+                </div>
+            </div>
+        </div>
+
+        <!-- INTRO -->
+        <p class="intro-text">O Escritório de advocacia desde seu início sempre focou em seus profissionais, sendo uma verdadeira escola para a produção de excelentes advogados, que ingressam em sua maioria como estagiários e, após sua formação e aprovação na OAB, têm a oportunidade de ingressar e crescer na sociedade.</p>
+
+        <div class="sec-label">Sócios — clique para ver o perfil</div>
+
+        <!-- GRID -->
+        <div class="socios-grid">
+            <div class="socio-card" onclick="showProfile(this,'sergio')">
+                <div class="socio-initials">SZ</div>
+                <div class="socio-name">Sergio Zveiter</div>
+                <div class="socio-role">Sócio</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'flavio')">
+                <div class="socio-initials">FZ</div>
+                <div class="socio-name">Flavio Zveiter</div>
+                <div class="socio-role">Sócio</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'carlos')">
+                <div class="socio-initials">CS</div>
+                <div class="socio-name">Carlos Alberto Sussekind</div>
+                <div class="socio-role">Sócio</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'claudio')">
+                <div class="socio-initials">CT</div>
+                <div class="socio-name">Claudio Taborda</div>
+                <div class="socio-role">Sócio</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'mariana')">
+                <div class="socio-initials">MB</div>
+                <div class="socio-name">Mariana Burity</div>
+                <div class="socio-role">Sócia</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'renata')">
+                <div class="socio-initials">RA</div>
+                <div class="socio-name">Renata do Amaral</div>
+                <div class="socio-role">Sócia</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'pedro')">
+                <div class="socio-initials">PN</div>
+                <div class="socio-name">Pedro Francisco da Silva Neto</div>
+                <div class="socio-role">Sócio</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'ricardo')">
+                <div class="socio-initials">RD</div>
+                <div class="socio-name">Ricardo Diniz de Andrade</div>
+                <div class="socio-role">Sócio</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'igor')">
+                <div class="socio-initials">IL</div>
+                <div class="socio-name">Igor Lethiere da Silva</div>
+                <div class="socio-role">Sócio</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'raquel')">
+                <div class="socio-initials">RN</div>
+                <div class="socio-name">Raquel Di Servan Nunes</div>
+                <div class="socio-role">Sócia</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'luciana')">
+                <div class="socio-initials">LS</div>
+                <div class="socio-name">Luciana Gomes de O. Souza</div>
+                <div class="socio-role">Sócia</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'natasha')">
+                <div class="socio-initials">NF</div>
+                <div class="socio-name">Natasha Fernanda M. Fiore Correia</div>
+                <div class="socio-role">Sócia</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'carolina')">
+                <div class="socio-initials">CM</div>
+                <div class="socio-name">Carolina de Jesus Müller</div>
+                <div class="socio-role">Sócia</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'juliane')">
+                <div class="socio-initials">JP</div>
+                <div class="socio-name">Juliane Boim Previtali</div>
+                <div class="socio-role">Sócia</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'gustavo')">
+                <div class="socio-initials">GE</div>
+                <div class="socio-name">Gustavo Oliveira Caldeira Esganzela</div>
+                <div class="socio-role">Sócio</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'mariaantonia')">
+                <div class="socio-initials">MS</div>
+                <div class="socio-name">Maria Antonia Simões Xavier De Souza</div>
+                <div class="socio-role">Sócia</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+            <div class="socio-card" onclick="showProfile(this,'felipe')">
+                <div class="socio-initials">FZ</div>
+                <div class="socio-name">Felipe Zveiter</div>
+                <div class="socio-role">Sócio</div>
+                <span class="socio-arrow">↗</span>
+            </div>
+        </div>
+
+        <!-- PROFILE PANEL -->
+        <div class="profile-panel" id="profilePanel">
+            <div>
+                <div style="display:flex; gap:20px; align-items:flex-start; margin-bottom:4px;">
+                    <div class="profile-photo" id="pPhotoWrap" style="display:none;">
+                        <img id="pPhoto" src="" alt="">
+                    </div>
+                    <div>
+                        <div class="profile-name" id="pName"></div>
+                        <div class="profile-role" id="pRole"></div>
+                    </div>
+                </div>
+                <div class="profile-bio" id="pBio"></div>
+                <div class="profile-tags" id="pTags"></div>
+                <a class="profile-cta" id="pLink" href="#">Ver perfil completo →</a>
+            </div>
+            <div class="profile-right">
+                <div class="detail-label">Escritório</div>
+                <div class="detail-value" id="pOffice"></div>
+                <div class="detail-label">Especialidades</div>
+                <div class="detail-value" id="pAreas"></div>
+                <div class="detail-label">Formação</div>
+                <div class="detail-value" id="pEdu"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="imgs/logo_transparente.png" alt="Escritório de Advocacia Zveiter">
+                    <p>Fundado em 1957, o Escritório Zveiter é referência em advocacia de excelência no Brasil.</p>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">Rio de Janeiro</div>
+                    <strong>Sede Principal</strong>
+                    <p>Av. Presidente Antônio Carlos nº 51<br>19º e 20º andares, Centro<br>Rio de Janeiro — RJ</p>
+                    <p>Tel.: 55 (21) 3380-1155</p>
+                    <a href="https://maps.app.goo.gl/bw6XGbnmrtH9fzNT8" target="_blank">Ver no mapa →</a>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">São Paulo</div>
+                    <strong>Escritório SP</strong>
+                    <p>Avenida Paulista, nº 777<br>Jardim Paulista, 7º andar<br>São Paulo — SP</p>
+                    <p>Tel.: 55 (11) 4858-0383</p>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">Brasília</div>
+                    <strong>Escritório BSB</strong>
+                    <p>Tel.: 55 (61) 3447-4343</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2025 Escritório de Advocacia Zveiter. Todos os direitos reservados.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const profiles = {
+            sergio:      { name:'Sergio Zveiter',                        role:'Sócio',  link:'sergio.html',       office:'Rio de Janeiro', areas:'Recuperação Judicial e Falência\nDireito Empresarial',         edu:'–', bio:'Sócio com décadas de atuação nas áreas empresarial e recuperacional, responsável pela condução de alguns dos maiores casos de administração judicial do país.' },
+            flavio:      { name:'Flavio Zveiter',                        role:'Sócio',  link:'flavio.html',       office:'Rio de Janeiro', areas:'Direito Desportivo\nDireito Empresarial',                      edu:'–', bio:'Experiente nas áreas desportiva e empresarial, atuando em casos de alta complexidade perante os principais tribunais do país.' },
+            carlos:      { name:'Carlos Alberto Sussekind',              role:'Sócio',  link:'carlosalberto.html',office:'Rio de Janeiro', areas:'Direito Trabalhista\nContencioso',                             edu:'–', bio:'Especialista em direito do trabalho e contencioso empresarial, com trajetória consolidada nas relações trabalhistas de grandes corporações.' },
+            claudio:     { name:'Claudio Taborda',                       role:'Sócio',  link:'claudiotaborda.html',office:'Rio de Janeiro',areas:'Direito Societário\nFusões e Aquisições',                      edu:'–', bio:'Atua principalmente em operações societárias complexas e assessoria a grupos empresariais nacionais e internacionais.' },
+            mariana:     { name:'Mariana Burity',                        role:'Sócia',  link:'mariana.html',      office:'Rio de Janeiro', areas:'Recuperação Judicial\nDireito Empresarial',                    edu:'–', bio:'Integra o time de recuperação e falências, com participação ativa nos principais casos sob administração judicial do escritório.' },
+            renata:      { name:'Renata do Amaral',                      role:'Sócia',  link:'renata.html',       office:'Rio de Janeiro', areas:'Direito Imobiliário\nNotarial e Registral',                    edu:'–', bio:'Especialista em direito imobiliário, notarial e registral, com vasta experiência em operações de grande porte e assessoria a incorporadoras.' },
+            pedro:       { name:'Pedro Francisco da Silva Neto',         role:'Sócio',  link:'pedroneto.html',    office:'Rio de Janeiro', areas:'Contencioso Tributário\nPlanejamento Fiscal',                  edu:'–', bio:'Atuação voltada ao contencioso tributário e planejamento fiscal estratégico para grupos empresariais.' },
+            ricardo:     { name:'Ricardo Diniz de Andrade',              role:'Sócio',  link:'diniz.html',        office:'Rio de Janeiro', areas:'Direito Administrativo\nLicitações e Concessões',              edu:'–', bio:'Especializado em direito público e administrativo, com foco em contratos públicos, concessões e licitações.' },
+            igor:        { name:'Igor Lethiere da Silva',                role:'Sócio',  link:'igor.html',         office:'Rio de Janeiro', areas:'Direito Empresarial\nRecuperação Judicial',                    edu:'–', bio:'Atua em processos de reestruturação de grandes grupos empresariais.' },
+            raquel:      { name:'Raquel Di Servan Nunes',                role:'Sócia',  link:'raquel.html',       office:'Rio de Janeiro', areas:'Direito de Família\nDireito Sucessório',                       edu:'–', bio:'Especialista em direito das famílias e sucessões, com atuação em inventários complexos e planejamento patrimonial.' },
+            luciana:     { name:'Luciana Gomes de O. Souza',             role:'Sócia',  link:'luciana.html',      office:'Rio de Janeiro', areas:'Propriedade Intelectual\nDireito Digital',                     edu:'–', bio:'Atua na área de comunicação, propriedade intelectual e direito digital, com foco em proteção de marcas e contratos de licença.' },
+            natasha:     { name:'Natasha Fernanda M. Fiore Correia',     role:'Sócia',  link:'natasha.html',      office:'Rio de Janeiro', areas:'Direito Ambiental\nRegulação',                                 edu:'–', bio:'Especialista em direito ambiental e regulatório, com atuação em licenciamentos complexos e assessoria a empresas do setor de energia.' },
+            carolina:    { name:'Carolina de Jesus Müller',              role:'Sócia',  link:'carolina.html',     office:'Rio de Janeiro', areas:'Saúde Suplementar\nDireito Regulatório',                       edu:'–', bio:'Atua na área de saúde suplementar e direito regulatório, com experiência em operadoras de planos de saúde e entidades hospitalares.' },
+            juliane:     { name:'Juliane Boim Previtali',                role:'Sócia',  link:'juliane.html',      office:'Rio de Janeiro', areas:'Direito Empresarial\nRecuperação Judicial',                    edu:'–', bio:'Integra o time do escritório com atuação em direito empresarial e recuperacional.' },
+            gustavo:     { name:'Gustavo Oliveira Caldeira Esganzela',   role:'Sócio',  link:'gustavo.html',      office:'Rio de Janeiro', areas:'Direito Empresarial\nContencioso',                             edu:'–', photo:'imgs/gustavocaldeira.jpeg', bio:'Atua em contencioso empresarial e assessoria a grupos nacionais e internacionais.' },
+            mariaantonia:{ name:'Maria Antonia Simões Xavier De Souza',  role:'Sócia',  link:'mariaantonia.html', office:'Rio de Janeiro', areas:'Direito Empresarial\nRecuperação Judicial',                    edu:'–', bio:'Integra o time do escritório com atuação em direito empresarial e recuperacional.' },
+            felipe:      { name:'Felipe Zveiter',                        role:'Sócio',  link:'felipe.html',       office:'Rio de Janeiro', areas:'Direito Desportivo\nArbitragem',                               edu:'–', bio:'Especializado em direito desportivo e arbitragem, com atuação em federações, clubes e atletas no âmbito nacional e internacional.' }
+        };
+
+        function showProfile(card, key) {
+            document.querySelectorAll('.socio-card').forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            const p = profiles[key];
+            document.getElementById('pName').textContent = p.name;
+            document.getElementById('pRole').textContent = p.role;
+            document.getElementById('pBio').textContent = p.bio;
+            document.getElementById('pOffice').textContent = p.office;
+            document.getElementById('pAreas').innerHTML = p.areas.replace(/\n/g, '<br>');
+            document.getElementById('pEdu').textContent = p.edu;
+            document.getElementById('pLink').href = p.link;
+            const photoWrap = document.getElementById('pPhotoWrap');
+            const photoEl = document.getElementById('pPhoto');
+            if (p.photo) {
+                photoEl.src = p.photo;
+                photoEl.alt = p.name;
+                photoWrap.style.display = 'block';
+            } else {
+                photoWrap.style.display = 'none';
+            }
+            const tagsEl = document.getElementById('pTags');
+            tagsEl.innerHTML = '';
+            p.areas.split('\n').forEach(a => {
+                const t = document.createElement('span');
+                t.className = 'profile-tag';
+                t.textContent = a;
+                tagsEl.appendChild(t);
+            });
+            const panel = document.getElementById('profilePanel');
+            panel.classList.add('visible');
+            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('open');
+            document.getElementById('mobileMenu').classList.toggle('open');
+        });
+
+        function toggleMobileMenu(id) {
+            document.getElementById(id).classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>
