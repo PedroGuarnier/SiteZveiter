@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"c:/Users/Pedro/Nova pasta/SiteZveiter/assets/scripts\")",
+      "Bash(mv \"c:/Users/Pedro/Nova pasta/SiteZveiter/combine_gas.py\" \"c:/Users/Pedro/Nova pasta/SiteZveiter/combine_gas_v2.py\" \"c:/Users/Pedro/Nova pasta/SiteZveiter/combine_gas_v3.py\" \"c:/Users/Pedro/Nova pasta/SiteZveiter/combine_gas_final.py\" \"c:/Users/Pedro/Nova pasta/SiteZveiter/assets/scripts/\")"
+    ]
+  }
+}
