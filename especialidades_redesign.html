@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/ChatGPT Image 13 de mai. de 2025, 15_42_05.png" type="image/png">
+    <title>Especialidades | Escritório de Advocacia Zveiter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Tenor+Sans&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ========================
+           VARIABLES & RESET
+        ======================== */
+        :root {
+            --gold: #B8963E;
+            --gold-light: #D4AF6A;
+            --gold-pale: #E8D5A3;
+            --black: #0A0A0A;
+            --black-rich: #111111;
+            --black-soft: #1A1A1A;
+            --black-mid: #242424;
+            --white: #F5F0E8;
+            --white-dim: #C8C0B0;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-sans: 'Tenor Sans', sans-serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-weight: 300;
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        /* Cursor */
+        .cursor {
+            width: 8px; height: 8px; background: var(--gold); border-radius: 50%;
+            position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
+            transition: transform 0.15s ease;
+        }
+        .cursor-ring {
+            width: 32px; height: 32px; border: 1px solid rgba(184,150,62,0.5); border-radius: 50%;
+            position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998;
+            transition: transform 0.4s ease, width 0.3s ease, height 0.3s ease;
+        }
+        body:has(a:hover) .cursor-ring, body:has(button:hover) .cursor-ring {
+            width: 48px; height: 48px; border-color: var(--gold);
+        }
+
+        /* ========================
+           NAVBAR
+        ======================== */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 60px;
+            display: flex; align-items: center; justify-content: space-between; height: 80px;
+            background: rgba(10,10,10,0.95); backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(184,150,62,0.15); transition: height var(--transition), background var(--transition);
+        }
+        nav.scrolled { height: 64px; background: rgba(10,10,10,0.98); }
+        .nav-logo img { height: 48px; width: auto; filter: invert(1) brightness(1.8); opacity: 0.92; transition: opacity var(--transition), transform var(--transition); }
+        .nav-logo img:hover { opacity: 1; transform: scale(1.03); }
+        .nav-links { display: flex; align-items: center; gap: 0; list-style: none; }
+        .nav-links > li { position: relative; }
+        .nav-links > li > a, .nav-links > li > .nav-btn {
+            font-family: var(--font-sans); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--white-dim); text-decoration: none; padding: 28px 18px; display: block;
+            transition: color var(--transition); background: none; border: none; cursor: pointer;
+        }
+        .nav-links > li > a:hover, .nav-links > li > .nav-btn:hover,
+        .nav-links > li:hover > a, .nav-links > li:hover > .nav-btn,
+        .nav-links > li > a.active,
+        .nav-links > li > .nav-btn.active { color: var(--gold-light); }
+        .dropdown-panel {
+            position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px);
+            background: var(--black-soft); border: 1px solid rgba(184,150,62,0.2); min-width: 280px; padding: 12px 0;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease; z-index: 100;
+        }
+        .dropdown-panel.wide { min-width: 340px; columns: 2; column-gap: 0; }
+        .nav-links > li:hover .dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+        .dropdown-panel a {
+            display: block; font-family: var(--font-body); font-size: 0.75rem; letter-spacing: 0.05em;
+            color: var(--white-dim); text-decoration: none; padding: 9px 24px; transition: color 0.2s ease, padding-left 0.2s ease; break-inside: avoid;
+        }
+        .dropdown-panel a:hover { color: var(--gold-light); padding-left: 30px; }
+        .nav-divider { width: 1px; height: 16px; background: rgba(184,150,62,0.2); margin: 0 6px; }
+
+        /* Hamburger */
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+        .hamburger span { display: block; width: 24px; height: 1px; background: var(--white); transition: var(--transition); }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none; position: fixed; top: 80px; left: 0; right: 0; bottom: 0;
+            background: var(--black-rich); z-index: 900; overflow-y: auto; padding: 32px 24px;
+            border-top: 1px solid rgba(184,150,62,0.15);
+        }
+        .mobile-menu.open { display: block; }
+        .menu-item { border-bottom: 1px solid rgba(184,150,62,0.08); }
+        .menu-item a, .menu-toggle {
+            display: block; padding: 16px 0; font-family: var(--font-sans); font-size: 0.85rem;
+            letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-dim);
+            text-decoration: none; background: none; border: none; width: 100%; text-align: left;
+            cursor: pointer; transition: color 0.2s;
+        }
+        .menu-item a:hover, .menu-toggle:hover { color: var(--gold-light); }
+        .menu-toggle { display: flex; justify-content: space-between; align-items: center; }
+        .sub-links { display: none; padding: 8px 0 16px 16px; }
+        .sub-links.open { display: block; }
+        .sub-links a { font-size: 0.75rem; letter-spacing: 0.08em; padding: 8px 0; text-transform: none; }
+
+        /* ========================
+           HERO
+        ======================== */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 480px;
+            overflow: hidden;
+        }
+        .hero-slide {
+            position: absolute; inset: 0;
+            opacity: 0;
+            transition: opacity 1.2s ease;
+        }
+        .hero-slide.active { opacity: 1; }
+        .hero-slide img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: brightness(0.35);
+        }
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.6) 70%, var(--black) 100%);
+        }
+        .hero-content {
+            position: absolute; bottom: 12%; left: 80px; right: 80px;
+        }
+        .hero-label {
+            font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 0.35em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+            display: flex; align-items: center; gap: 16px;
+        }
+        .hero-label::before {
+            content: ''; display: block; width: 40px; height: 1px; background: var(--gold);
+        }
+        .hero-title {
+            font-family: var(--font-display); font-size: clamp(3.5rem, 7vw, 6.5rem);
+            font-weight: 300; line-height: 1.0; color: var(--white);
+            letter-spacing: -0.01em;
+        }
+
+        /* ========================
+           OVERVIEW GRID
+        ======================== */
+        .overview-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 80px 60px;
+        }
+
+        .overview-header {
+            margin-bottom: 64px;
+        }
+
+        .overview-label {
+            font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+            display: flex; align-items: center; gap: 14px;
+        }
+        .overview-label::before {
+            content: ''; display: block; width: 28px; height: 1px; background: var(--gold);
+        }
+
+        .overview-heading {
+            font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 3.8rem);
+            font-weight: 300; line-height: 1.1; color: var(--white);
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+        }
+
+        .overview-card {
+            padding: 32px 28px;
+            border: 1px solid rgba(184,150,62,0.1);
+            text-decoration: none;
+            transition: border-color 0.3s, background 0.3s;
+            display: block;
+        }
+        .overview-card:hover {
+            border-color: rgba(184,150,62,0.35);
+            background: rgba(184,150,62,0.04);
+        }
+        .overview-card-number {
+            font-family: var(--font-display); font-size: 2.5rem; font-weight: 300;
+            color: rgba(184,150,62,0.15); line-height: 1; margin-bottom: 14px;
+        }
+        .overview-card-name {
+            font-family: var(--font-sans); font-size: 0.68rem; letter-spacing: 0.15em;
+            text-transform: uppercase; color: var(--gold-pale); line-height: 1.5;
+        }
+        .overview-card-arrow {
+            display: block; margin-top: 18px; font-size: 0.7rem; color: rgba(184,150,62,0.4);
+            letter-spacing: 0.1em; transition: color 0.2s, transform 0.2s;
+        }
+        .overview-card:hover .overview-card-arrow {
+            color: var(--gold); transform: translateX(4px);
+        }
+
+        /* ========================
+           SPECIALTIES DETAILS
+        ======================== */
+        .especialidades-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 80px 120px;
+        }
+
+        .section-rule {
+            width: 100%; height: 1px; background: linear-gradient(to right, rgba(184,150,62,0.3), transparent);
+            margin-bottom: 80px;
+        }
+
+        /* Accordion */
+        .esp-item {
+            border-top: 1px solid rgba(184,150,62,0.12);
+        }
+        .esp-item:last-child {
+            border-bottom: 1px solid rgba(184,150,62,0.12);
+        }
+
+        .esp-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 36px 0; cursor: pointer;
+            transition: color 0.3s;
+            gap: 24px;
+        }
+        .esp-header:hover .esp-title { color: var(--gold-light); }
+        .esp-header:hover .esp-toggle { border-color: var(--gold); }
+
+        .esp-header-left {
+            display: flex; align-items: baseline; gap: 28px;
+        }
+
+        .esp-number {
+            font-family: var(--font-display); font-size: 1.8rem; font-weight: 300;
+            color: rgba(184,150,62,0.25); min-width: 52px;
+        }
+
+        .esp-title {
+            font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+            font-weight: 300; color: var(--white); transition: color 0.3s;
+        }
+
+        .esp-toggle {
+            width: 40px; height: 40px; border: 1px solid rgba(184,150,62,0.25);
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+            transition: border-color 0.3s, background 0.3s; position: relative;
+        }
+        .esp-toggle::before,
+        .esp-toggle::after {
+            content: ''; position: absolute;
+            background: var(--gold); transition: transform 0.3s, opacity 0.3s;
+        }
+        .esp-toggle::before { width: 14px; height: 1px; }
+        .esp-toggle::after { width: 1px; height: 14px; }
+        .esp-item.open .esp-toggle::after { transform: rotate(90deg); opacity: 0; }
+        .esp-item.open .esp-header .esp-title { color: var(--gold-light); }
+        .esp-item.open .esp-toggle { border-color: var(--gold); background: rgba(184,150,62,0.06); }
+
+        .esp-body {
+            display: none;
+            padding: 0 0 48px 80px;
+        }
+        .esp-item.open .esp-body { display: block; }
+
+        .esp-text {
+            font-size: 1rem; line-height: 1.95; color: var(--white-dim);
+            text-align: justify; max-width: 820px; margin-bottom: 20px;
+        }
+
+        .esp-link {
+            font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--gold); text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+            margin-top: 8px; transition: color 0.2s;
+        }
+        .esp-link:hover { color: var(--gold-light); }
+        .esp-link::after { content: '→'; }
+
+        /* Recuperações links grid */
+        .rec-links-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            max-width: 820px;
+            margin-top: 16px;
+        }
+        .rec-link-item {
+            display: block; font-size: 0.8rem; letter-spacing: 0.04em;
+            color: var(--white-dim); text-decoration: none; padding: 12px 16px;
+            border: 1px solid rgba(184,150,62,0.1); transition: border-color 0.2s, color 0.2s, padding-left 0.2s;
+        }
+        .rec-link-item:hover { border-color: rgba(184,150,62,0.3); color: var(--gold-light); padding-left: 20px; }
+
+        /* ========================
+           FOOTER
+        ======================== */
+        footer {
+            background: var(--black-rich);
+            border-top: 1px solid rgba(184,150,62,0.15);
+            padding: 80px 80px 40px;
+        }
+        .footer-inner { max-width: 1400px; margin: 0 auto; }
+        .footer-top {
+            display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 60px; padding-bottom: 60px;
+            border-bottom: 1px solid rgba(184,150,62,0.1);
+        }
+        .footer-brand img {
+            height: 36px; filter: brightness(0) invert(1); opacity: 0.8; margin-bottom: 24px;
+        }
+        .footer-brand p { font-size: 0.82rem; line-height: 1.8; color: rgba(200,192,176,0.5); max-width: 260px; }
+        .footer-col-title {
+            font-family: var(--font-sans); font-size: 0.62rem; letter-spacing: 0.25em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
+        }
+        .footer-address p { font-size: 0.8rem; line-height: 1.9; color: rgba(200,192,176,0.5); }
+        .footer-address strong {
+            display: block; font-family: var(--font-display); font-size: 1rem;
+            font-weight: 400; color: var(--white-dim); margin-bottom: 8px;
+        }
+        .footer-address a {
+            display: inline-block; font-size: 0.75rem; color: var(--gold);
+            text-decoration: none; margin-top: 8px; opacity: 0.8; transition: opacity 0.2s;
+        }
+        .footer-address a:hover { opacity: 1; }
+        .footer-bottom {
+            display: flex; justify-content: space-between; align-items: center; padding-top: 32px;
+        }
+        .footer-copy { font-size: 0.72rem; color: rgba(200,192,176,0.3); letter-spacing: 0.05em; }
+        .footer-social { display: flex; gap: 16px; }
+        .footer-social a {
+            width: 36px; height: 36px; border: 1px solid rgba(184,150,62,0.2);
+            display: flex; align-items: center; justify-content: center;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .footer-social a:hover { border-color: var(--gold); background: rgba(184,150,62,0.08); }
+        .footer-social svg { width: 14px; height: 14px; fill: var(--white-dim); }
+
+        /* ========================
+           RESPONSIVE
+        ======================== */
+        @media (max-width: 1200px) {
+            .overview-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 900px) {
+            .overview-grid { grid-template-columns: repeat(2, 1fr); }
+            .esp-body { padding-left: 0; }
+            .rec-links-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 24px; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .hero-content { left: 24px; right: 24px; bottom: 14%; }
+            .overview-section { padding: 80px 24px 40px; }
+            .overview-grid { grid-template-columns: repeat(2, 1fr); }
+            .especialidades-section { padding: 40px 24px 80px; }
+            .esp-number { font-size: 1.4rem; min-width: 36px; }
+            .footer-top { grid-template-columns: 1fr; gap: 40px; }
+            footer { padding: 60px 24px 32px; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .overview-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <a href="index_redesign.html">
+                <img src="imgs/logozvtt.png" alt="Escritório de Advocacia Zveiter">
+            </a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="institucional_redesign.html">Institucional</a></li>
+            <li><a href="profissionais_redesign.html">Profissionais</a></li>
+            <li class="has-dropdown">
+                <a class="nav-btn active" href="especialidades_redesign.html">Especialidades</a>
+                <div class="dropdown-panel wide">
+                    <a href="#empresarial">Empresarial e Societário</a>
+                    <a href="#imobiliario">Direito Imobiliário, Notarial e Registral</a>
+                    <a href="#propriedade-intelectual">Comunicação e Propriedade Intelectual</a>
+                    <a href="#sucessorio">Direito Sucessório e Família</a>
+                    <a href="#ambiental">Direito Ambiental</a>
+                    <a href="#saude-suplementar">Direito de Saúde Suplementar</a>
+                    <a href="#desportivo">Direito Desportivo e do Entretenimento</a>
+                    <a href="#recuperacao">Recuperação Judicial e Falência</a>
+                    <a href="#tributario">Contencioso Tributário</a>
+                    <a href="#administrativo">Direito Administrativo</a>
+                    <a href="#arbitragem">Arbitragem e Mediação</a>
+                    <a href="#consumidor">Direito do Consumidor</a>
+                    <a href="#eleitoral">Direito Eleitoral</a>
+                    <a href="#saneamento">Direito ao Saneamento Básico</a>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a class="nav-btn" href="recuperacao_redesign.html">Recuperações</a>
+                <div class="dropdown-panel">
+                    <a href="grppetro_redesign.html">Grupo Petrópolis</a>
+                    <a href="americanas_redesign.html">Grupo Americanas</a>
+                    <a href="mintucano.html">Mina Tucano</a>
+                    <a href="gas_redesign.html">G.A.S. Consultoria</a>
+                    <a href="transporte.html">Transporte Campo Grande & Viação Penha</a>
+                    <a href="transcarioca_redesign.html">Consórcio Transcarioca</a>
+                    <a href="stcruz_redesign.html">Consórcio Santa Cruz</a>
+                    <a href="airmix_redesign.html">Airmix — Falência</a>
+                    <a href="kpfr_redesign.html">KPFR Empreendimentos</a>
+                    <a href="rodopetro_redesign.html">Rodopetro</a>
+                    <a href="qldtotal_redesign.html">Qualidade Total</a>
+                    <a href="rnr_redesign.html">RNR Montagens</a>
+                    <a href="canaamates_redesign.html">Canaã Mates — Falência</a>
+                    <a href="txrx_redesign.html">TX RX — Falência</a>
+                    <a href="costapereira_redesign.html">Costa Pereira Bokel</a>
+                </div>
+            </li>
+            <div class="nav-divider"></div>
+            <li><a href="contato_redesign.html">Contato</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="menu-item">
+            <a href="institucional_redesign.html">Institucional</a>
+        </div>
+        <div class="menu-item">
+            <a href="profissionais_redesign.html">Profissionais</a>
+        </div>
+        <div class="menu-item" id="menuEspecialidades">
+            <button class="menu-toggle" onclick="toggleMenu('menuEspecialidades')">
+                Especialidades <span class="menu-toggle-icon">+</span>
+            </button>
+            <div class="sub-links">
+                <a href="#empresarial">Empresarial e Societário</a>
+                <a href="#imobiliario">Direito Imobiliário, Notarial e Registral</a>
+                <a href="#propriedade-intelectual">Comunicação e Propriedade Intelectual</a>
+                <a href="#sucessorio">Direito Sucessório e Família</a>
+                <a href="#ambiental">Direito Ambiental</a>
+                <a href="#saude-suplementar">Direito de Saúde Suplementar</a>
+                <a href="#desportivo">Direito Desportivo e do Entretenimento</a>
+                <a href="#recuperacao">Recuperação Judicial e Falência</a>
+                <a href="#tributario">Contencioso Tributário</a>
+                <a href="#administrativo">Direito Administrativo</a>
+                <a href="#arbitragem">Arbitragem e Mediação</a>
+                <a href="#consumidor">Direito do Consumidor</a>
+                <a href="#eleitoral">Direito Eleitoral</a>
+                <a href="#saneamento">Direito ao Saneamento Básico</a>
+            </div>
+        </div>
+        <div class="menu-item" id="menuRecuperacoes">
+            <button class="menu-toggle" onclick="toggleMenu('menuRecuperacoes')">
+                Recuperações <span class="menu-toggle-icon">+</span>
+            </button>
+            <div class="sub-links">
+                <a href="grppetro_redesign.html">Grupo Petrópolis</a>
+                <a href="americanas_redesign.html">Grupo Americanas</a>
+                <a href="mintucano.html">Mina Tucano</a>
+                <a href="gas_redesign.html">G.A.S. Consultoria</a>
+                <a href="transporte.html">Transporte Campo Grande & Viação Penha</a>
+                <a href="transcarioca_redesign.html">Consórcio Transcarioca</a>
+                <a href="stcruz_redesign.html">Consórcio Santa Cruz</a>
+                <a href="airmix_redesign.html">Airmix — Falência</a>
+                <a href="kpfr_redesign.html">KPFR Empreendimentos</a>
+                <a href="rodopetro_redesign.html">Rodopetro</a>
+                <a href="qldtotal_redesign.html">Qualidade Total</a>
+                <a href="rnr_redesign.html">RNR Montagens</a>
+                <a href="canaamates_redesign.html">Canaã Mates — Falência</a>
+                <a href="txrx_redesign.html">TX RX — Falência</a>
+                <a href="costapereira_redesign.html">Costa Pereira Bokel</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="contato_redesign.html">Contato</a>
+        </div>
+    </div>
+
+    <!-- ========================
+         HERO
+    ======================== -->
+    <section class="hero" id="hero">
+        <div class="hero-slide active">
+            <img src="imgs/imgsitesala.jpeg" alt="Escritório Zveiter">
+        </div>
+        <div class="hero-slide">
+            <img src="imgs/imgslivros2.jpeg" alt="Escritório Zveiter">
+        </div>
+        <div class="hero-slide">
+            <img src="imgs/IMG_4235-editada.JPG" alt="Escritório Zveiter">
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-label">Escritório de Advocacia Zveiter</div>
+            <h1 class="hero-title">Áreas de<br><em>Atuação</em></h1>
+        </div>
+    </section>
+
+    <!-- ========================
+         OVERVIEW GRID
+    ======================== -->
+    <section class="overview-section">
+        <div class="overview-header">
+            <div class="overview-label">Especialidades</div>
+            <h2 class="overview-heading">Excelência em todas<br>as frentes do Direito</h2>
+        </div>
+
+        <div class="overview-grid">
+            <a href="#empresarial" class="overview-card">
+                <div class="overview-card-number">01</div>
+                <div class="overview-card-name">Empresarial e Societário</div>
+                <span class="overview-card-arrow">Ver mais →</span>
+            </a>
+            <a href="#imobiliario" class="overview-card">
+                <div class="overview-card-number">02</div>
+                <div class="overview-card-name">Direito Imobiliário, Notarial e Registral</div>
+                <span class="overview-card-arrow">Ver mais →</span>
+            </a>
+            <a href="#propriedade-intelectual" class="overview-card">
+                <div class="overview-card-number">03</div>
+                <div class="overview-card-name">Comunicação e Propriedade Intelectual</div>
+                <span class="overview-card-arrow">Ver mais →</span>
+            </a>
+            <a href="#sucessorio" class="overview-card">
+                <div class="overview-card-number">04</div>
+                <div class="overview-card-name">Direito Sucessório e Família</div>
+                <span class="overview-card-arrow">Ver mais →</span>
+            </a>
+            <a href="#ambiental" class="overview-card">
+                <div class="overview-card-number">05</div>
+                <div class="overview-card-name">Direito Ambiental</div>
+                <span class="overview-card-arrow">Ver mais →</span>
+            </a>
+            <a href="#saude-suplementar" class="overview-card">
+                <div class="overview-card-number">06</div>
+                <div class="overview-card-name">Direito de Saúde Suplementar</div>
+                <span class="overview-card-arrow">Ver mais →</span>
+            </a>
+            <a href="#desportivo" class="overview-card">
+                <div class="overview-card-number">07</div>
+                <div class="overview-card-name">Direito Desportivo e do Entretenimento</div>
+                <span class="overview-card-arrow">Ver mais →</span>
+            </a>
+            <a href="#recuperacao" class="overview-card">
+                <div class="overview-card-number">08</div>
+                <div class="overview-card-name">Recuperação Judicial e Falência</div>
+                <span class="overview-card-arrow">Ver mais →</span>
+            </a>
+            <a href="#tributario" class="overview-card">
+                <div class="overview-card-number">09</div>
+                <div class="overview-card-name">Contencioso Tributário</div>
+                <span class="overview-card-arrow">Ver mais →</span>
+            </a>
+            <a href="#administrativo" class="overview-card">
+                <div class="overview-card-number">10</div>
+                <div class="overview-card-name">Direito Administrativo</div>
+                <span class="overview-card-arrow">Ver mais →</span>
+            </a>
+            <a href="#arbitragem" class="overview-card">
+                <div class="overview-card-number">11</div>
+                <div class="overview-card-name">Arbitragem e Mediação</div>
+                <span class="overview-card-arrow">Ver mais →</span>
+            </a>
+            <a href="#consumidor" class="overview-card">
+                <div class="overview-card-number">12</div>
+                <div class="overview-card-name">Direito do Consumidor</div>
+                <span class="overview-card-arrow">Ver mais →</span>
+            </a>
+            <a href="#eleitoral" class="overview-card">
+                <div class="overview-card-number">13</div>
+                <div class="overview-card-name">Direito Eleitoral</div>
+                <span class="overview-card-arrow">Ver mais →</span>
+            </a>
+            <a href="#saneamento" class="overview-card">
+                <div class="overview-card-number">14</div>
+                <div class="overview-card-name">Direito ao Saneamento Básico</div>
+                <span class="overview-card-arrow">Ver mais →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ========================
+         ESPECIALIDADES DETALHADAS
+    ======================== -->
+    <section class="especialidades-section">
+        <div class="section-rule"></div>
+
+        <!-- 01 -->
+        <div class="esp-item open" id="empresarial">
+            <div class="esp-header" onclick="toggleEsp(this)">
+                <div class="esp-header-left">
+                    <span class="esp-number">01</span>
+                    <h2 class="esp-title">Empresarial e Societário</h2>
+                </div>
+                <div class="esp-toggle"></div>
+            </div>
+            <div class="esp-body">
+                <p class="esp-text">
+                    O Escritório de Advocacia Zveiter conta com uma equipe de advogados especializados na área de Direito Societário, oferecendo uma ampla assessoria jurídica para suas necessidades e de sua empresa, apresentando soluções jurídicas com visão de mercado.
+                </p>
+                <p class="esp-text">
+                    A atuação da equipe abrange a constituição e/ou reorganização das estruturas empresariais, além da defesa e representação das pessoas jurídicas na esfera do contencioso em ações que envolvam direitos e obrigações de sócios e acionistas, prestando também assessoria consultiva e preventiva às empresas.
+                </p>
+                <a href="dirsocietario.html" class="esp-link">Ver página completa</a>
+            </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="esp-item" id="imobiliario">
+            <div class="esp-header" onclick="toggleEsp(this)">
+                <div class="esp-header-left">
+                    <span class="esp-number">02</span>
+                    <h2 class="esp-title">Direito Imobiliário, Notarial e Registral</h2>
+                </div>
+                <div class="esp-toggle"></div>
+            </div>
+            <div class="esp-body">
+                <p class="esp-text">
+                    O Escritório de Advocacia Zveiter tem renome na área de Direito Imobiliário e busca oferecer uma análise completa das oportunidades de novos empreendimentos, apresentando soluções multidisciplinares adequadas ao contexto do direito imobiliário.
+                </p>
+                <p class="esp-text">
+                    Devido este caráter de sua equipe, é possível realizar abordagem estratégica em todas as causas, desde as mais simples até as mais complexas que hoje são enfrentadas pelo setor imobiliário, elaborando teses criativas mediante a combinação do direito societário, administrativo, tributário, ambiental e civil.
+                </p>
+                <p class="esp-text">
+                    Na área notarial, o Escritório atua em todos os trâmites extrajudiciais, buscando uma ágil atuação na prestação de serviços. A assessoria jurídica proporciona eficiência e segurança aliando a simplificação de processos notariais, com atuação em escrituras públicas, documentação imobiliária, lavratura e registro de contratos, notificações e protestos.
+                </p>
+                <a href="dirinr.html" class="esp-link">Ver página completa</a>
+            </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="esp-item" id="propriedade-intelectual">
+            <div class="esp-header" onclick="toggleEsp(this)">
+                <div class="esp-header-left">
+                    <span class="esp-number">03</span>
+                    <h2 class="esp-title">Comunicação e Propriedade Intelectual</h2>
+                </div>
+                <div class="esp-toggle"></div>
+            </div>
+            <div class="esp-body">
+                <p class="esp-text">
+                    O Escritório de Advocacia Zveiter possui grande experiência na área de Propriedade Intelectual, prestando uma completa assessoria e consultoria tanto no âmbito administrativo como judicial. Sempre atuando com um alto padrão de excelência, priorizando os interesses dos nossos clientes, protegendo suas invenções e inovações e oferecendo serviços de excelência na defesa de seus direitos de propriedade intelectual no âmbito contencioso judicial e administrativo.
+                </p>
+                <a href="dirintelec.html" class="esp-link">Ver página completa</a>
+            </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="esp-item" id="sucessorio">
+            <div class="esp-header" onclick="toggleEsp(this)">
+                <div class="esp-header-left">
+                    <span class="esp-number">04</span>
+                    <h2 class="esp-title">Direito Sucessório e Família</h2>
+                </div>
+                <div class="esp-toggle"></div>
+            </div>
+            <div class="esp-body">
+                <p class="esp-text">
+                    O departamento de sucessões e família do Escritório de Advocacia Zveiter conta com advogados especializados na área para atuar, tanto em demandas judiciais como em extrajudiciais, priorizando o interesse dos seus clientes nas questões de planejamento sucessório, testamentos, inventários, partilha, casamento, separação e divórcio, pensão alimentícia, investigação de paternidade, direito de visita, dentre outras.
+                </p>
+                <a href="dirsucessorio.html" class="esp-link">Ver página completa</a>
+            </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="esp-item" id="ambiental">
+            <div class="esp-header" onclick="toggleEsp(this)">
+                <div class="esp-header-left">
+                    <span class="esp-number">05</span>
+                    <h2 class="esp-title">Direito Ambiental</h2>
+                </div>
+                <div class="esp-toggle"></div>
+            </div>
+            <div class="esp-body">
+                <p class="esp-text">
+                    O Escritório de Advocacia Zveiter atua na área de Direito Ambiental Contencioso, cível e administrativo. O Escritório conta com uma equipe de vasta expertise na atuação contenciosa, com uma visão estratégica e técnica sobre o mérito, possibilitando a elaboração das melhores teses de defesa em processos e autos de infração administrativos promovidos pelas entidades da Administração Direta e Indireta.
+                </p>
+                <p class="esp-text">
+                    Atua também nos inquéritos civis e ações civis públicas propostas pelo Ministério Público, em ações de indenização, nas negociações de Termos de Ajustamento de Conduta — TAC, representações civis perante o TCU, medidas urgentes e execuções fiscais nos mais diversos setores produtivos, trabalhando de forma a minimizar riscos envolvendo responsabilidade socioambiental por parte das empresas.
+                </p>
+                <a href="dirambiental.html" class="esp-link">Ver página completa</a>
+            </div>
+        </div>
+
+        <!-- 06 -->
+        <div class="esp-item" id="saude-suplementar">
+            <div class="esp-header" onclick="toggleEsp(this)">
+                <div class="esp-header-left">
+                    <span class="esp-number">06</span>
+                    <h2 class="esp-title">Direito de Saúde Suplementar</h2>
+                </div>
+                <div class="esp-toggle"></div>
+            </div>
+            <div class="esp-body">
+                <p class="esp-text">
+                    O Escritório de Advocacia Zveiter atua na área de Direito de Saúde Suplementar, representando operadoras de planos de saúde, hospitais, clínicas e demais agentes do setor, com assessoria jurídica especializada nas relações regulatórias perante a ANS, bem como no contencioso judicial e administrativo envolvendo contratos de saúde, coberturas assistenciais e questões de direito do consumidor aplicadas ao setor.
+                </p>
+            </div>
+        </div>
+
+        <!-- 07 -->
+        <div class="esp-item" id="desportivo">
+            <div class="esp-header" onclick="toggleEsp(this)">
+                <div class="esp-header-left">
+                    <span class="esp-number">07</span>
+                    <h2 class="esp-title">Direito Desportivo e do Entretenimento</h2>
+                </div>
+                <div class="esp-toggle"></div>
+            </div>
+            <div class="esp-body">
+                <p class="esp-text">
+                    O Escritório de Advocacia Zveiter tem amplo conhecimento e notória prática no âmbito do direito desportivo, entende que apesar das paixões inerentes ao meio esportivo esta é uma atividade negocial e para tanto está preparado para atender todos os envolvidos na indústria do esporte e entretenimento.
+                </p>
+                <p class="esp-text">
+                    O Escritório atua assessorando estes players na esfera administrativa e judicial, bem como na consultiva. Dentre esses se inserem atletas, clubes, agentes, federações, ligas, confederações esportivas, patrocinadores, fornecedores, entidades esportivas e demais empresas atuantes no ramo dos esportes.
+                </p>
+                <a href="dirdespent.html" class="esp-link">Ver página completa</a>
+            </div>
+        </div>
+
+        <!-- 08 -->
+        <div class="esp-item" id="recuperacao">
+            <div class="esp-header" onclick="toggleEsp(this)">
+                <div class="esp-header-left">
+                    <span class="esp-number">08</span>
+                    <h2 class="esp-title">Recuperação Judicial e Falência</h2>
+                </div>
+                <div class="esp-toggle"></div>
+            </div>
+            <div class="esp-body">
+                <p class="esp-text">
+                    O Escritório de Advocacia Zveiter possui vasta experiência na atuação em processos de Recuperação Judicial e Falência, representando credores, devedores e administradores judiciais nas mais complexas reestruturações empresariais do país. Nossa equipe atua com dedicação e estratégia para assegurar os interesses dos clientes em todas as fases do processo.
+                </p>
+                <div class="rec-links-grid">
+                    <a href="kpfr_redesign.html" class="rec-link-item">KPFR Empreendimentos</a>
+                    <a href="grppetro_redesign.html" class="rec-link-item">Grupo Petrópolis</a>
+                    <a href="americanas_redesign.html" class="rec-link-item">Grupo Americanas</a>
+                    <a href="mintucano.html" class="rec-link-item">Mina Tucano</a>
+                    <a href="gas_redesign.html" class="rec-link-item">G.A.S. Consultoria</a>
+                    <a href="transporte.html" class="rec-link-item">Transporte Campo Grande & Viação Penha</a>
+                    <a href="transcarioca_redesign.html" class="rec-link-item">Consórcio Transcarioca</a>
+                    <a href="stcruz_redesign.html" class="rec-link-item">Consórcio Santa Cruz</a>
+                    <a href="airmix_redesign.html" class="rec-link-item">Airmix — Falência</a>
+                    <a href="rodopetro_redesign.html" class="rec-link-item">Rodopetro</a>
+                    <a href="txrx_redesign.html" class="rec-link-item">TX RX — Falência</a>
+                    <a href="canaamates_redesign.html" class="rec-link-item">Canaã Mates — Falência</a>
+                    <a href="rnr_redesign.html" class="rec-link-item">RNR Montagens</a>
+                    <a href="qldtotal_redesign.html" class="rec-link-item">Qualidade Total</a>
+                    <a href="costapereira_redesign.html" class="rec-link-item">Costa Pereira Bokel</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 09 -->
+        <div class="esp-item" id="tributario">
+            <div class="esp-header" onclick="toggleEsp(this)">
+                <div class="esp-header-left">
+                    <span class="esp-number">09</span>
+                    <h2 class="esp-title">Contencioso Tributário</h2>
+                </div>
+                <div class="esp-toggle"></div>
+            </div>
+            <div class="esp-body">
+                <p class="esp-text">
+                    O Escritório de Advocacia Zveiter tem notória atuação no contencioso tributário, seja na esfera judicial, seja na esfera administrativa, objetivando, através de teses criativas e inovadoras, resguardar o direito de seus clientes ao pagamento justo do tributo, prevenindo o pagamento indevido de multas, tributos e juros.
+                </p>
+                <p class="esp-text">
+                    Além disso, o Escritório mantém controle atualizado dos precedentes firmados pelos Tribunais Superiores, bem como da edição de atos administrativos e decisões administrativas relevantes, que podem servir de suporte para o desenvolvimento de teses que ajudarão a resguardar o direito de seus clientes.
+                </p>
+                <a href="contTrib.html" class="esp-link">Ver página completa</a>
+            </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="esp-item" id="administrativo">
+            <div class="esp-header" onclick="toggleEsp(this)">
+                <div class="esp-header-left">
+                    <span class="esp-number">10</span>
+                    <h2 class="esp-title">Direito Administrativo</h2>
+                </div>
+                <div class="esp-toggle"></div>
+            </div>
+            <div class="esp-body">
+                <p class="esp-text">
+                    O Escritório de Advocacia Zveiter tem experiência renomada em Direito Administrativo, focando no atendimento a servidores e funcionários públicos, agentes políticos, prestadores de serviços públicos, concessionárias, empresas públicas e sociedades de economia mista.
+                </p>
+                <p class="esp-text">
+                    O Escritório é reconhecido pela competente atuação nos processos administrativos disciplinares (PAD), ações de improbidade administrativa, ações civis públicas, mandados de segurança, acompanhamento de licitações e recursos em procedimentos licitatórios, recurso em processos e concursos públicos, bem como a defesa do direito dos clientes em detrimento à atuação do poder público como Estados, Municípios, União e respectivas autarquias.
+                </p>
+                <a href="diradm.html" class="esp-link">Ver página completa</a>
+            </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="esp-item" id="arbitragem">
+            <div class="esp-header" onclick="toggleEsp(this)">
+                <div class="esp-header-left">
+                    <span class="esp-number">11</span>
+                    <h2 class="esp-title">Arbitragem e Mediação</h2>
+                </div>
+                <div class="esp-toggle"></div>
+            </div>
+            <div class="esp-body">
+                <p class="esp-text">
+                    O Escritório de Advocacia Zveiter atua na representação de partes em procedimentos arbitrais e mediações, tanto no âmbito nacional quanto internacional, em disputas das mais diversas naturezas — comerciais, societárias, contratuais e de infraestrutura. Nossa equipe é preparada para conduzir ou assessorar processos perante as principais câmaras arbitrais do Brasil.
+                </p>
+                <p class="esp-text">
+                    Também prestamos assessoria na elaboração e revisão de cláusulas compromissórias e compromissos arbitrais, buscando sempre a solução mais eficiente e segura para os interesses dos clientes.
+                </p>
+            </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="esp-item" id="consumidor">
+            <div class="esp-header" onclick="toggleEsp(this)">
+                <div class="esp-header-left">
+                    <span class="esp-number">12</span>
+                    <h2 class="esp-title">Direito do Consumidor</h2>
+                </div>
+                <div class="esp-toggle"></div>
+            </div>
+            <div class="esp-body">
+                <p class="esp-text">
+                    O Escritório de Advocacia Zveiter tem uma vasta experiência na defesa dos interesses e dos direitos dos consumidores, contra os abusos nas relações de consumo e falhas nos produtos e serviços vendidos, oferecendo representação nos litígios judiciais e assessoria preventiva para empresas que buscam adequar suas práticas às normas consumeristas.
+                </p>
+                <a href="dirconsumidor.html" class="esp-link">Ver página completa</a>
+            </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="esp-item" id="eleitoral">
+            <div class="esp-header" onclick="toggleEsp(this)">
+                <div class="esp-header-left">
+                    <span class="esp-number">13</span>
+                    <h2 class="esp-title">Direito Eleitoral</h2>
+                </div>
+                <div class="esp-toggle"></div>
+            </div>
+            <div class="esp-body">
+                <p class="esp-text">
+                    O Escritório de Advocacia Zveiter atua na seara do direito eleitoral, tendo como foco o contencioso, na defesa do direito, como exemplo no curso de ações de infrações em propaganda eleitoral; abuso de poder econômico, abuso de poder político e uso indevido dos meios de comunicação social.
+                </p>
+                <a href="direleitoral.html" class="esp-link">Ver página completa</a>
+            </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="esp-item" id="saneamento">
+            <div class="esp-header" onclick="toggleEsp(this)">
+                <div class="esp-header-left">
+                    <span class="esp-number">14</span>
+                    <h2 class="esp-title">Direito ao Saneamento Básico</h2>
+                </div>
+                <div class="esp-toggle"></div>
+            </div>
+            <div class="esp-body">
+                <p class="esp-text">
+                    O Escritório de Advocacia Zveiter retomou a atuação na seara do Direito ao Saneamento Básico, tendo como foco a defesa dos interesses de empresas do ramo de água e esgoto, com atuação em processos judiciais estratégicos e de larga escala em todos os Tribunais pátrios, oferecendo soluções estratégicas ao cliente neste ramo do Direito.
+                </p>
+                <a href="dirsanbasico.html" class="esp-link">Ver página completa</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ========================
+         FOOTER
+    ======================== -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="imgs/logozvtt.png" alt="Escritório de Advocacia Zveiter" style="height:52px; filter: invert(1) brightness(1.8); opacity:0.85; margin-bottom:20px; display:block;">
+                    <p>Fundado em 1957, o Escritório Zveiter é referência em advocacia de excelência no Brasil.</p>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">Rio de Janeiro</div>
+                    <strong>Sede Principal</strong>
+                    <p>Av. Presidente Antônio Carlos nº 51<br>19º e 20º andares, Centro<br>Rio de Janeiro — RJ</p>
+                    <p>Tel.: 55 (21) 3380-1155</p>
+                    <a href="https://maps.app.goo.gl/bw6XGbnmrtH9fzNT8" target="_blank">Ver no mapa →</a>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">São Paulo</div>
+                    <strong>Escritório SP</strong>
+                    <p>Avenida Paulista, nº 777<br>Jardim Paulista, 7º andar<br>São Paulo — SP</p>
+                    <p>Tel.: 55 (11) 4858-0383</p>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">Brasília</div>
+                    <strong>Escritório BSB</strong>
+                    <p>Tel.: 55 (61) 3447-4343</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2025 Escritório de Advocacia Zveiter. Todos os direitos reservados.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* --- Cursor --- */
+        const cursor = document.getElementById('cursor');
+        const cursorRing = document.getElementById('cursorRing');
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            cursor.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
+        });
+        function animateRing() {
+            ringX += (mouseX - ringX) * 0.12;
+            ringY += (mouseY - ringY) * 0.12;
+            cursorRing.style.transform = `translate(${ringX - 16}px, ${ringY - 16}px)`;
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        /* --- Navbar scroll --- */
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        /* --- Hamburger / Mobile Menu --- */
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        function toggleMenu(id) {
+            const item = document.getElementById(id);
+            const sub = item.querySelector('.sub-links');
+            const icon = item.querySelector('.menu-toggle-icon');
+            sub.classList.toggle('open');
+            icon.textContent = sub.classList.contains('open') ? '−' : '+';
+        }
+
+        /* --- Hero Slideshow --- */
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        setInterval(nextSlide, 5000);
+
+        /* --- Accordion --- */
+        function toggleEsp(header) {
+            const item = header.closest('.esp-item');
+            item.classList.toggle('open');
+        }
+
+        /* --- Scroll to anchor: open accordion if target is closed --- */
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const targetId = link.getAttribute('href').slice(1);
+                const target = document.getElementById(targetId);
+                if (target && target.classList.contains('esp-item')) {
+                    setTimeout(() => {
+                        if (!target.classList.contains('open')) {
+                            target.classList.add('open');
+                        }
+                    }, 400);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

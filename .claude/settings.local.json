@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(mkdir -p \"c:/Users/Pedro/Nova pasta/SiteZveiter/assets/scripts\")",
-      "Bash(mv \"c:/Users/Pedro/Nova pasta/SiteZveiter/combine_gas.py\" \"c:/Users/Pedro/Nova pasta/SiteZveiter/combine_gas_v2.py\" \"c:/Users/Pedro/Nova pasta/SiteZveiter/combine_gas_v3.py\" \"c:/Users/Pedro/Nova pasta/SiteZveiter/combine_gas_final.py\" \"c:/Users/Pedro/Nova pasta/SiteZveiter/assets/scripts/\")"
+      "Bash(mv \"c:/Users/Pedro/Nova pasta/SiteZveiter/combine_gas.py\" \"c:/Users/Pedro/Nova pasta/SiteZveiter/combine_gas_v2.py\" \"c:/Users/Pedro/Nova pasta/SiteZveiter/combine_gas_v3.py\" \"c:/Users/Pedro/Nova pasta/SiteZveiter/combine_gas_final.py\" \"c:/Users/Pedro/Nova pasta/SiteZveiter/assets/scripts/\")",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(sed -i -e 's|href=\"\"dirsocietario\\\\.html\"\"|href=\"\"especialidades_redesign.html#empresarial\"\"|g' -e 's|href=\"\"dirinr\\\\.html\"\"|href=\"\"especialidades_redesign.html#imobiliario\"\"|g' -e 's|href=\"\"dirintelec\\\\.html\"\"|href=\"\"especialidades_redesign.html#propriedade-intelectual\"\"|g' -e 's|href=\"\"dirsucessorio\\\\.html\"\"|href=\"\"especialidades_redesign.html#sucessorio\"\"|g' -e 's|href=\"\"dirambiental\\\\.html\"\"|href=\"\"especialidades_redesign.html#ambiental\"\"|g' -e 's|href=\"\"dirsaudesupl\\\\.html\"\"|href=\"\"especialidades_redesign.html#saude-suplementar\"\"|g' -e 's|href=\"\"dirdespent\\\\.html\"\"|href=\"\"especialidades_redesign.html#desportivo\"\"|g' -e 's|href=\"\"recuperacao\\\\.html\"\"|href=\"\"especialidades_redesign.html#recuperacao\"\"|g' -e 's|href=\"\"contTrib\\\\.html\"\"|href=\"\"especialidades_redesign.html#tributario\"\"|g' -e 's|href=\"\"diradm\\\\.html\"\"|href=\"\"especialidades_redesign.html#administrativo\"\"|g' -e 's|href=\"\"arbitragem\\\\.html\"\"|href=\"\"especialidades_redesign.html#arbitragem\"\"|g' \"$f\")",
+      "Bash(echo \"Atualizado: $f\")",
+      "Bash(done)"
     ]
   }
 }

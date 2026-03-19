@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/ChatGPT Image 13 de mai. de 2025, 15_42_05.png" type="image/png">
+    <title>Institucional | Escritório de Advocacia Zveiter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Tenor+Sans&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ========================
+           VARIABLES & RESET
+        ======================== */
+        :root {
+            --gold: #B8963E;
+            --gold-light: #D4AF6A;
+            --gold-pale: #E8D5A3;
+            --black: #0A0A0A;
+            --black-rich: #111111;
+            --black-soft: #1A1A1A;
+            --black-mid: #242424;
+            --white: #F5F0E8;
+            --white-dim: #C8C0B0;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-sans: 'Tenor Sans', sans-serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-weight: 300;
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        /* Cursor */
+        .cursor {
+            width: 8px; height: 8px; background: var(--gold); border-radius: 50%;
+            position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
+            transition: transform 0.15s ease;
+        }
+        .cursor-ring {
+            width: 32px; height: 32px; border: 1px solid rgba(184,150,62,0.5); border-radius: 50%;
+            position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998;
+            transition: transform 0.4s ease, width 0.3s ease, height 0.3s ease;
+        }
+        body:has(a:hover) .cursor-ring, body:has(button:hover) .cursor-ring {
+            width: 48px; height: 48px; border-color: var(--gold);
+        }
+
+        /* ========================
+           NAVBAR
+        ======================== */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 60px;
+            display: flex; align-items: center; justify-content: space-between; height: 80px;
+            background: rgba(10,10,10,0.95); backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(184,150,62,0.15); transition: height var(--transition), background var(--transition);
+        }
+        nav.scrolled { height: 64px; background: rgba(10,10,10,0.98); }
+        .nav-logo img { height: 48px; width: auto; filter: invert(1) brightness(1.8); opacity: 0.92; transition: opacity var(--transition), transform var(--transition); }
+        .nav-logo img:hover { opacity: 1; transform: scale(1.03); }
+        .nav-links { display: flex; align-items: center; gap: 0; list-style: none; }
+        .nav-links > li { position: relative; }
+        .nav-links > li > a, .nav-links > li > .nav-btn {
+            font-family: var(--font-sans); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--white-dim); text-decoration: none; padding: 28px 18px; display: block;
+            transition: color var(--transition); background: none; border: none; cursor: pointer;
+        }
+        .nav-links > li > a:hover, .nav-links > li > .nav-btn:hover,
+        .nav-links > li:hover > a, .nav-links > li:hover > .nav-btn,
+        .nav-links > li > a.active { color: var(--gold-light); }
+        .dropdown-panel {
+            position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px);
+            background: var(--black-soft); border: 1px solid rgba(184,150,62,0.2); min-width: 280px; padding: 12px 0;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease; z-index: 100;
+        }
+        .dropdown-panel.wide { min-width: 340px; columns: 2; column-gap: 0; }
+        .nav-links > li:hover .dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+        .dropdown-panel a {
+            display: block; font-family: var(--font-body); font-size: 0.75rem; letter-spacing: 0.05em;
+            color: var(--white-dim); text-decoration: none; padding: 9px 24px; transition: color 0.2s ease, padding-left 0.2s ease; break-inside: avoid;
+        }
+        .dropdown-panel a:hover { color: var(--gold-light); padding-left: 30px; }
+        .nav-divider { width: 1px; height: 16px; background: rgba(184,150,62,0.2); margin: 0 6px; }
+
+        /* Hamburger */
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+        .hamburger span { display: block; width: 24px; height: 1px; background: var(--white); transition: var(--transition); }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none; position: fixed; top: 80px; left: 0; right: 0; bottom: 0;
+            background: var(--black-rich); z-index: 900; overflow-y: auto; padding: 32px 24px;
+            border-top: 1px solid rgba(184,150,62,0.15);
+        }
+        .mobile-menu.open { display: block; }
+        .menu-item { border-bottom: 1px solid rgba(184,150,62,0.08); }
+        .menu-item a, .menu-toggle {
+            display: block; padding: 16px 0; font-family: var(--font-sans); font-size: 0.85rem;
+            letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-dim);
+            text-decoration: none; background: none; border: none; width: 100%; text-align: left;
+            cursor: pointer; transition: color 0.2s;
+        }
+        .menu-item a:hover, .menu-toggle:hover { color: var(--gold-light); }
+        .menu-toggle { display: flex; justify-content: space-between; align-items: center; }
+        .sub-links { display: none; padding: 8px 0 16px 16px; }
+        .sub-links.open { display: block; }
+        .sub-links a { font-size: 0.75rem; letter-spacing: 0.08em; padding: 8px 0; text-transform: none; }
+
+        /* ========================
+           HERO / SLIDESHOW
+        ======================== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+        }
+
+        .hero-slide {
+            position: absolute; inset: 0;
+            opacity: 0;
+            transition: opacity 1.2s ease;
+        }
+        .hero-slide.active { opacity: 1; }
+        .hero-slide img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: brightness(0.45);
+        }
+
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.6) 70%, var(--black) 100%);
+        }
+
+        .hero-content {
+            position: absolute; bottom: 12%; left: 80px; right: 80px;
+        }
+        .hero-label {
+            font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 0.35em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+            display: flex; align-items: center; gap: 16px;
+        }
+        .hero-label::before {
+            content: ''; display: block; width: 40px; height: 1px; background: var(--gold);
+        }
+        .hero-title {
+            font-family: var(--font-display); font-size: clamp(3.5rem, 7vw, 6.5rem);
+            font-weight: 300; line-height: 1.0; color: var(--white);
+            letter-spacing: -0.01em;
+        }
+
+        /* Slide indicators */
+        .hero-indicators {
+            position: absolute; bottom: 6%; left: 80px;
+            display: flex; gap: 10px;
+        }
+        .hero-dot {
+            width: 24px; height: 1px; background: rgba(200,192,176,0.3);
+            cursor: pointer; transition: background 0.3s, width 0.3s;
+        }
+        .hero-dot.active { width: 48px; background: var(--gold); }
+
+        /* ========================
+           INSTITUTIONAL CONTENT
+        ======================== */
+        .institucional-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 120px 80px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .inst-sidebar {
+            position: sticky;
+            top: 120px;
+        }
+
+        .inst-label {
+            font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 0.3em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+            display: flex; align-items: center; gap: 14px;
+        }
+        .inst-label::before {
+            content: ''; display: block; width: 28px; height: 1px; background: var(--gold);
+        }
+
+        .inst-heading {
+            font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 3.8rem);
+            font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 40px;
+        }
+
+        .inst-year {
+            font-family: var(--font-display); font-size: 5rem; font-weight: 300;
+            color: rgba(184,150,62,0.12); line-height: 1; margin-bottom: 8px;
+        }
+
+        .inst-year-label {
+            font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 0.25em;
+            text-transform: uppercase; color: rgba(200,192,176,0.4);
+        }
+
+        .inst-body { }
+
+        .inst-text {
+            font-size: 1.05rem; line-height: 1.95; color: var(--white-dim);
+            text-align: justify; margin-bottom: 36px;
+        }
+
+        .inst-divider {
+            width: 40px; height: 1px; background: rgba(184,150,62,0.3); margin: 40px 0;
+        }
+
+        .inst-compliance {
+            background: var(--black-soft);
+            border: 1px solid rgba(184,150,62,0.15);
+            padding: 32px 36px;
+            margin-bottom: 48px;
+        }
+
+        .inst-compliance-title {
+            font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 0.25em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+        }
+
+        .inst-compliance p {
+            font-size: 0.9rem; line-height: 1.8; color: var(--white-dim);
+        }
+
+        .inst-compliance a {
+            color: var(--gold-light); text-decoration: none; transition: color 0.2s;
+        }
+        .inst-compliance a:hover { color: var(--gold); }
+
+        /* Botão */
+        .btn-outline-gold {
+            font-family: var(--font-sans); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--gold); background: transparent; border: 1px solid rgba(184,150,62,0.4);
+            padding: 16px 40px; text-decoration: none; transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 12px;
+        }
+        .btn-outline-gold:hover { border-color: var(--gold); background: rgba(184,150,62,0.08); color: var(--gold-light); }
+
+        /* Linha dourada decorativa */
+        .section-rule {
+            width: 100%; height: 1px; background: linear-gradient(to right, rgba(184,150,62,0.3), transparent);
+            margin-bottom: 80px;
+        }
+
+        /* ========================
+           VALORES E PRINCÍPIOS (bloco extra decorativo)
+        ======================== */
+        .valores-section {
+            background: var(--black-soft);
+            border-top: 1px solid rgba(184,150,62,0.1);
+            border-bottom: 1px solid rgba(184,150,62,0.1);
+            padding: 80px;
+        }
+
+        .valores-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .valores-header {
+            text-align: center;
+            margin-bottom: 72px;
+        }
+
+        .valores-label {
+            font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 0.35em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: block;
+        }
+
+        .valores-title {
+            font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 300; color: var(--white); line-height: 1.2;
+        }
+
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .valor-card {
+            padding: 48px 40px;
+            border: 1px solid rgba(184,150,62,0.1);
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .valor-card:hover {
+            border-color: rgba(184,150,62,0.3);
+            background: rgba(184,150,62,0.03);
+        }
+
+        .valor-number {
+            font-family: var(--font-display); font-size: 3.5rem; font-weight: 300;
+            color: rgba(184,150,62,0.15); line-height: 1; margin-bottom: 16px;
+        }
+
+        .valor-name {
+            font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--gold-pale); margin-bottom: 16px;
+        }
+
+        .valor-desc {
+            font-size: 0.88rem; line-height: 1.8; color: rgba(200,192,176,0.6);
+        }
+
+        /* ========================
+           FOOTER
+        ======================== */
+        footer {
+            background: var(--black-rich);
+            border-top: 1px solid rgba(184,150,62,0.15);
+            padding: 80px 80px 40px;
+        }
+        .footer-inner { max-width: 1400px; margin: 0 auto; }
+        .footer-top {
+            display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 60px; padding-bottom: 60px;
+            border-bottom: 1px solid rgba(184,150,62,0.1);
+        }
+        .footer-brand img {
+            height: 36px; filter: brightness(0) invert(1); opacity: 0.8; margin-bottom: 24px;
+        }
+        .footer-brand p { font-size: 0.82rem; line-height: 1.8; color: rgba(200,192,176,0.5); max-width: 260px; }
+        .footer-col-title {
+            font-family: var(--font-sans); font-size: 0.62rem; letter-spacing: 0.25em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
+        }
+        .footer-address p { font-size: 0.8rem; line-height: 1.9; color: rgba(200,192,176,0.5); }
+        .footer-address strong {
+            display: block; font-family: var(--font-display); font-size: 1rem;
+            font-weight: 400; color: var(--white-dim); margin-bottom: 8px;
+        }
+        .footer-address a {
+            display: inline-block; font-size: 0.75rem; color: var(--gold);
+            text-decoration: none; margin-top: 8px; opacity: 0.8; transition: opacity 0.2s;
+        }
+        .footer-address a:hover { opacity: 1; }
+        .footer-bottom {
+            display: flex; justify-content: space-between; align-items: center; padding-top: 32px;
+        }
+        .footer-copy { font-size: 0.72rem; color: rgba(200,192,176,0.3); letter-spacing: 0.05em; }
+        .footer-social { display: flex; gap: 16px; }
+        .footer-social a {
+            width: 36px; height: 36px; border: 1px solid rgba(184,150,62,0.2);
+            display: flex; align-items: center; justify-content: center;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .footer-social a:hover { border-color: var(--gold); background: rgba(184,150,62,0.08); }
+        .footer-social svg { width: 14px; height: 14px; fill: var(--white-dim); }
+
+        /* ========================
+           RESPONSIVE
+        ======================== */
+        @media (max-width: 1100px) {
+            .institucional-section { grid-template-columns: 1fr; gap: 60px; }
+            .inst-sidebar { position: relative; top: 0; }
+            .valores-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 24px; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .hero-content { left: 24px; right: 24px; bottom: 14%; }
+            .hero-indicators { left: 24px; }
+            .institucional-section { padding: 80px 24px; }
+            .valores-section { padding: 60px 24px; }
+            .valores-grid { grid-template-columns: 1fr; }
+            .footer-top { grid-template-columns: 1fr; gap: 40px; }
+            footer { padding: 60px 24px 32px; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <a href="index_redesign.html">
+                <img src="imgs/logozvtt.png" alt="Escritório de Advocacia Zveiter">
+            </a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="institucional_redesign.html" class="active">Institucional</a></li>
+            <li><a href="profissionais_redesign.html">Profissionais</a></li>
+            <li class="has-dropdown">
+                <a class="nav-btn" href="especialidades_redesign.html">Especialidades</a>
+                <div class="dropdown-panel wide">
+                    <a href="especialidades_redesign.html#empresarial">Empresarial e Societário</a>
+                    <a href="especialidades_redesign.html#imobiliario">Direito Imobiliário, Notarial e Registral</a>
+                    <a href="especialidades_redesign.html#propriedade-intelectual">Comunicação e Propriedade Intelectual</a>
+                    <a href="especialidades_redesign.html#sucessorio">Direito Sucessório e Família</a>
+                    <a href="especialidades_redesign.html#ambiental">Direito Ambiental</a>
+                    <a href="especialidades_redesign.html#saude-suplementar">Direito de Saúde Suplementar</a>
+                    <a href="especialidades_redesign.html#desportivo">Direito Desportivo e do Entretenimento</a>
+                    <a href="especialidades_redesign.html#recuperacao">Recuperação Judicial e Falência</a>
+                    <a href="especialidades_redesign.html#tributario">Contencioso Tributário</a>
+                    <a href="especialidades_redesign.html#administrativo">Direito Administrativo</a>
+                    <a href="especialidades_redesign.html#arbitragem">Arbitragem e Mediação</a>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a class="nav-btn" href="recuperacao_redesign.html">Recuperações</a>
+                <div class="dropdown-panel">
+                    <a href="grppetro.html">Grupo Petrópolis</a>
+                    <a href="americanas.html">Grupo Americanas</a>
+                    <a href="mintucano.html">Mina Tucano</a>
+                    <a href="gas_redesign.html">G.A.S. Consultoria</a>
+                    <a href="transporte.html">Transporte Campo Grande & Viação Penha</a>
+                    <a href="transcarioca.html">Consórcio Transcarioca</a>
+                    <a href="stcruz.html">Consórcio Santa Cruz</a>
+                    <a href="airmix.html">Airmix — Falência</a>
+                    <a href="kpfr.html">KPFR Empreendimentos</a>
+                    <a href="rodopetro.html">Rodopetro</a>
+                    <a href="qldtotal.html">Qualidade Total</a>
+                    <a href="rnr.html">RNR Montagens</a>
+                    <a href="canaamates.html">Canaã Mates — Falência</a>
+                    <a href="txrx.html">TX RX — Falência</a>
+                    <a href="costapereira.html">Costa Pereira Bokel</a>
+                </div>
+            </li>
+            <div class="nav-divider"></div>
+            <li><a href="contato_redesign.html">Contato</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="menu-item">
+            <a href="institucional_redesign.html">Institucional</a>
+        </div>
+        <div class="menu-item">
+            <a href="profissionais_redesign.html">Profissionais</a>
+        </div>
+        <div class="menu-item" id="menuEspecialidades">
+            <button class="menu-toggle" onclick="toggleMenu('menuEspecialidades')">
+                Especialidades <span class="menu-toggle-icon">+</span>
+            </button>
+            <div class="sub-links">
+                <a href="especialidades_redesign.html#empresarial">Empresarial e Societário</a>
+                <a href="especialidades_redesign.html#imobiliario">Direito Imobiliário, Notarial e Registral</a>
+                <a href="especialidades_redesign.html#propriedade-intelectual">Comunicação e Propriedade Intelectual</a>
+                <a href="especialidades_redesign.html#sucessorio">Direito Sucessório e Família</a>
+                <a href="especialidades_redesign.html#ambiental">Direito Ambiental</a>
+                <a href="especialidades_redesign.html#saude-suplementar">Direito de Saúde Suplementar</a>
+                <a href="especialidades_redesign.html#desportivo">Direito Desportivo e do Entretenimento</a>
+                <a href="especialidades_redesign.html#recuperacao">Recuperação Judicial e Falência</a>
+                <a href="especialidades_redesign.html#tributario">Contencioso Tributário</a>
+                <a href="especialidades_redesign.html#administrativo">Direito Administrativo</a>
+                <a href="especialidades_redesign.html#arbitragem">Arbitragem e Mediação</a>
+            </div>
+        </div>
+        <div class="menu-item" id="menuRecuperacoes">
+            <button class="menu-toggle" onclick="toggleMenu('menuRecuperacoes')">
+                Recuperações <span class="menu-toggle-icon">+</span>
+            </button>
+            <div class="sub-links">
+                <a href="grppetro.html">Grupo Petrópolis</a>
+                <a href="americanas.html">Grupo Americanas</a>
+                <a href="mintucano.html">Mina Tucano</a>
+                <a href="gas.html">G.A.S. Consultoria</a>
+                <a href="transporte.html">Transporte Campo Grande & Viação Penha</a>
+                <a href="transcarioca.html">Consórcio Transcarioca</a>
+                <a href="stcruz.html">Consórcio Santa Cruz</a>
+                <a href="airmix.html">Airmix — Falência</a>
+                <a href="kpfr.html">KPFR Empreendimentos</a>
+                <a href="rodopetro.html">Rodopetro</a>
+                <a href="qldtotal.html">Qualidade Total</a>
+                <a href="rnr.html">RNR Montagens</a>
+                <a href="canaamates.html">Canaã Mates — Falência</a>
+                <a href="txrx.html">TX RX — Falência</a>
+                <a href="costapereira.html">Costa Pereira Bokel</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="contato_redesign.html">Contato</a>
+        </div>
+    </div>
+
+    <!-- ========================
+         HERO / SLIDESHOW
+    ======================== -->
+    <section class="hero" id="hero">
+        <div class="hero-slide active">
+            <img src="imgs/imgsitesala.jpeg" alt="Escritório Zveiter">
+        </div>
+        <div class="hero-slide">
+            <img src="imgs/IMG_4262-editada.JPG" alt="Escritório Zveiter">
+        </div>
+        <div class="hero-slide">
+            <img src="imgs/IMG_4235-editada.JPG" alt="Escritório Zveiter">
+        </div>
+        <div class="hero-slide">
+            <img src="imgs/IMG_4384-editada.JPG" alt="Escritório Zveiter">
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-label">Escritório de Advocacia Zveiter</div>
+            <h1 class="hero-title">Institucional</h1>
+        </div>
+
+        <div class="hero-indicators" id="heroIndicators">
+            <div class="hero-dot active" onclick="goToSlide(0)"></div>
+            <div class="hero-dot" onclick="goToSlide(1)"></div>
+            <div class="hero-dot" onclick="goToSlide(2)"></div>
+            <div class="hero-dot" onclick="goToSlide(3)"></div>
+        </div>
+    </section>
+
+    <!-- ========================
+         CONTEÚDO INSTITUCIONAL
+    ======================== -->
+    <section class="institucional-section">
+        <!-- Sidebar Esquerda -->
+        <div class="inst-sidebar">
+            <div class="inst-label">Sobre o Escritório</div>
+            <h2 class="inst-heading">Tradição e<br><em>Excelência</em><br>desde 1957</h2>
+            <div class="inst-year">1957</div>
+            <div class="inst-year-label">Ano de Fundação</div>
+        </div>
+
+        <!-- Corpo do Texto -->
+        <div class="inst-body">
+            <p class="inst-text">
+                O Escritório de Advocacia Zveiter, fundado pelo advogado Waldemar Zveiter em 1957, é reconhecido pela sua atuação de excelência em litígio, consultoria e assessoria judicial e extrajudicial, contencioso em diversas áreas, recuperação judicial e falências, tendo como princípio a luta pelos direitos de seus constituintes sempre em obediência ao ordenamento jurídico vigente, à ética e à moralidade no exercício da profissão.
+            </p>
+
+            <div class="inst-divider"></div>
+
+            <p class="inst-text">
+                Regido pelo presente Código de Integridade, elaborado com base nos princípios e valores que norteiam sua essência, o Escritório de Advocacia Zveiter mantém estes valores fundamentais em sua atuação de forma irrepreensível e inegociável.
+            </p>
+
+            <div class="inst-compliance">
+                <div class="inst-compliance-title">Canal de Compliance</div>
+                <p>
+                    Em quaisquer das áreas de sua atuação, seja contenciosa, seja em consultoria, ou mesmo na elaboração de pareceres jurídicos, os princípios e valores estabelecidos obrigatoriamente devem ser respeitados. Em caso de verificação ou suspeição de violação aos mesmos, disponibilizamos o Canal de Comunicação <a href="mailto:compliance@zveiter.adv.br">compliance@zveiter.adv.br</a>, através do qual poderão ser encaminhadas dúvidas, sugestões, reclamações, registros de fato ou denúncias envolvendo toda e qualquer norma relacionada ao Programa de Integridade do escritório.
+                </p>
+            </div>
+
+            <a href="assets/pdfs/pdfs grupo petrópolis/pdfs grupo petrópolis/institucional.pdf" class="btn-outline-gold" target="_blank" rel="noopener noreferrer">
+                Saiba mais — Código de Integridade
+            </a>
+        </div>
+    </section>
+
+    <!-- ========================
+         VALORES E PRINCÍPIOS
+    ======================== -->
+    <section class="valores-section">
+        <div class="valores-inner">
+            <div class="valores-header">
+                <span class="valores-label">Nossos Fundamentos</span>
+                <h2 class="valores-title">Valores que norteiam<br>nossa essência</h2>
+            </div>
+            <div class="valores-grid">
+                <div class="valor-card">
+                    <div class="valor-number">01</div>
+                    <div class="valor-name">Ética</div>
+                    <p class="valor-desc">Conduta irrepreensível no exercício da advocacia, com respeito pleno ao ordenamento jurídico e às normas da OAB.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-number">02</div>
+                    <div class="valor-name">Excelência</div>
+                    <p class="valor-desc">Comprometimento com a mais alta qualidade técnica em todas as áreas de atuação, do contencioso à consultoria.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-number">03</div>
+                    <div class="valor-name">Integridade</div>
+                    <p class="valor-desc">Transparência e honestidade como pilares inegociáveis em cada relação com clientes, parceiros e a sociedade.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-number">04</div>
+                    <div class="valor-name">Comprometimento</div>
+                    <p class="valor-desc">Dedicação total aos interesses de nossos constituintes, com responsabilidade e lealdade em cada mandato.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-number">05</div>
+                    <div class="valor-name">Inovação</div>
+                    <p class="valor-desc">Atualização constante frente às transformações do direito e da sociedade, sem perder a solidez da tradição.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-number">06</div>
+                    <div class="valor-name">Responsabilidade</div>
+                    <p class="valor-desc">Consciência do impacto social da advocacia e do papel do escritório na construção de uma sociedade mais justa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================
+         FOOTER
+    ======================== -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="imgs/logozvtt.png" alt="Escritório de Advocacia Zveiter" style="height:52px; filter: invert(1) brightness(1.8); opacity:0.85; margin-bottom:20px; display:block;">
+                    <p>Fundado em 1957, o Escritório Zveiter é referência em advocacia de excelência no Brasil.</p>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">Rio de Janeiro</div>
+                    <strong>Sede Principal</strong>
+                    <p>Av. Presidente Antônio Carlos nº 51<br>19º e 20º andares, Centro<br>Rio de Janeiro — RJ</p>
+                    <p>Tel.: 55 (21) 3380-1155</p>
+                    <a href="https://maps.app.goo.gl/bw6XGbnmrtH9fzNT8" target="_blank">Ver no mapa →</a>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">São Paulo</div>
+                    <strong>Escritório SP</strong>
+                    <p>Avenida Paulista, nº 777<br>Jardim Paulista, 7º andar<br>São Paulo — SP</p>
+                    <p>Tel.: 55 (11) 4858-0383</p>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">Brasília</div>
+                    <strong>Escritório BSB</strong>
+                    <p>Tel.: 55 (61) 3447-4343</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2025 Escritório de Advocacia Zveiter. Todos os direitos reservados.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* --- Cursor --- */
+        const cursor = document.getElementById('cursor');
+        const cursorRing = document.getElementById('cursorRing');
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            cursor.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
+        });
+        function animateRing() {
+            ringX += (mouseX - ringX) * 0.12;
+            ringY += (mouseY - ringY) * 0.12;
+            cursorRing.style.transform = `translate(${ringX - 16}px, ${ringY - 16}px)`;
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        /* --- Navbar scroll --- */
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        /* --- Hamburger / Mobile Menu --- */
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        function toggleMenu(id) {
+            const item = document.getElementById(id);
+            const sub = item.querySelector('.sub-links');
+            const icon = item.querySelector('.menu-toggle-icon');
+            sub.classList.toggle('open');
+            icon.textContent = sub.classList.contains('open') ? '−' : '+';
+        }
+
+        /* --- Hero Slideshow --- */
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.hero-dot');
+        let currentSlide = 0;
+
+        function goToSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        setInterval(() => {
+            goToSlide((currentSlide + 1) % slides.length);
+        }, 5000);
+    </script>
+
+</body>
+</html>

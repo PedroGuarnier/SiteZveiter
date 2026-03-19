@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustavo Caldeira | Escritório de Advocacia Zveiter</title>
+    <title>Natasha Fernanda M. Fiore Correia | Escritório de Advocacia Zveiter</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Tenor+Sans&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        /* ========================
-           VARIABLES & RESET (Herdados do index)
-        ======================== */
+
         :root {
             --gold: #B8963E;
             --gold-light: #D4AF6A;
@@ -37,7 +35,6 @@
             cursor: default;
         }
 
-        /* Cursor */
         .cursor {
             width: 8px; height: 8px; background: var(--gold); border-radius: 50%;
             position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
@@ -52,10 +49,6 @@
             width: 48px; height: 48px; border-color: var(--gold);
         }
 
-        /* ========================
-           COMPONENTES GLOBAIS (Nav, Footer, Buttons)
-        ======================== */
-        /* NAVBAR */
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 60px;
             display: flex; align-items: center; justify-content: space-between; height: 80px;
@@ -86,8 +79,7 @@
         }
         .dropdown-panel a:hover { color: var(--gold-light); padding-left: 30px; }
         .nav-divider { width: 1px; height: 16px; background: rgba(184,150,62,0.2); margin: 0 6px; }
-        
-        /* BOTOES GERAIS */
+
         .btn-outline-gold {
             font-family: var(--font-sans); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
             color: var(--gold); background: transparent; border: 1px solid rgba(184,150,62,0.4);
@@ -100,12 +92,7 @@
             border-top: 1px solid rgba(184,150,62,0.15);
             padding: 80px 80px 40px;
         }
-
-        .footer-inner {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
+        .footer-inner { max-width: 1400px; margin: 0 auto; }
         .footer-top {
             display: grid;
             grid-template-columns: 1.5fr 1fr 1fr 1fr;
@@ -113,108 +100,43 @@
             padding-bottom: 60px;
             border-bottom: 1px solid rgba(184,150,62,0.1);
         }
-
-        .footer-brand img {
-            height: 36px;
-            filter: brightness(0) invert(1);
-            opacity: 0.8;
-            margin-bottom: 24px;
-        }
-
-        .footer-brand p {
-            font-size: 0.82rem;
-            line-height: 1.8;
-            color: rgba(200,192,176,0.5);
-            max-width: 260px;
-        }
-
+        .footer-brand img { height: 36px; filter: brightness(0) invert(1); opacity: 0.8; margin-bottom: 24px; }
+        .footer-brand p { font-size: 0.82rem; line-height: 1.8; color: rgba(200,192,176,0.5); max-width: 260px; }
         .footer-col-title {
-            font-family: var(--font-sans);
-            font-size: 0.62rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 24px;
+            font-family: var(--font-sans); font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 24px;
         }
-
-        .footer-address p {
-            font-size: 0.8rem;
-            line-height: 1.9;
-            color: rgba(200,192,176,0.5);
-        }
-
+        .footer-address p { font-size: 0.8rem; line-height: 1.9; color: rgba(200,192,176,0.5); }
         .footer-address strong {
-            display: block;
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--white-dim);
-            margin-bottom: 8px;
+            display: block; font-family: var(--font-display); font-size: 1rem; font-weight: 400;
+            color: var(--white-dim); margin-bottom: 8px;
         }
-
         .footer-address a {
-            display: inline-block;
-            font-size: 0.75rem;
-            color: var(--gold);
-            text-decoration: none;
-            margin-top: 8px;
-            opacity: 0.8;
-            transition: opacity 0.2s;
+            display: inline-block; font-size: 0.75rem; color: var(--gold); text-decoration: none;
+            margin-top: 8px; opacity: 0.8; transition: opacity 0.2s;
         }
         .footer-address a:hover { opacity: 1; }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 32px;
-        }
-
-        .footer-copy {
-            font-size: 0.72rem;
-            color: rgba(200,192,176,0.3);
-            letter-spacing: 0.05em;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 16px;
-        }
-
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; }
+        .footer-copy { font-size: 0.72rem; color: rgba(200,192,176,0.3); letter-spacing: 0.05em; }
+        .footer-social { display: flex; gap: 16px; }
         .footer-social a {
-            width: 36px;
-            height: 36px;
-            border: 1px solid rgba(184,150,62,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 36px; height: 36px; border: 1px solid rgba(184,150,62,0.2);
+            display: flex; align-items: center; justify-content: center;
             transition: border-color 0.3s ease, background 0.3s ease;
         }
+        .footer-social a:hover { border-color: var(--gold); background: rgba(184,150,62,0.08); }
+        .footer-social svg { width: 14px; height: 14px; fill: var(--white-dim); }
 
-        .footer-social a:hover {
-            border-color: var(--gold);
-            background: rgba(184,150,62,0.08);
-        }
-
-        .footer-social svg {
-            width: 14px;
-            height: 14px;
-            fill: var(--white-dim);
-        }
-
-        /* Ícones Sociais (Perfil e Footer) */
         .social-links { display: flex; gap: 16px; margin-top: 24px; }
         .social-links a {
             width: 40px; height: 40px; border: 1px solid rgba(184,150,62,0.2); border-radius: 2px;
-            display: flex; align-items: center; justify-content: center; transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+            display: flex; align-items: center; justify-content: center;
+            transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
         }
         .social-links a:hover { border-color: var(--gold); background: rgba(184,150,62,0.08); transform: translateY(-3px); }
         .social-links svg { width: 16px; height: 16px; fill: var(--white-dim); transition: fill 0.3s ease; }
         .social-links a:hover svg { fill: var(--gold-light); }
 
-        /* ========================
-           PÁGINA DO PROFISSIONAL
-        ======================== */
         .profile-container {
             padding: 160px 80px 80px;
             max-width: 1400px;
@@ -224,85 +146,30 @@
             gap: 100px;
             align-items: start;
         }
-
-        .profile-image-wrapper {
-            position: sticky;
-            top: 120px; /* Mantém a imagem fixa ao rolar o texto */
-        }
-
+        .profile-image-wrapper { position: sticky; top: 120px; }
         .profile-img {
-            width: 100%;
-            aspect-ratio: 3/4;
-            object-fit: cover;
-            border: 1px solid rgba(184,150,62,0.15);
-            filter: grayscale(20%) contrast(1.1);
+            width: 100%; aspect-ratio: 3/4; object-fit: cover;
+            border: 1px solid rgba(184,150,62,0.15); filter: grayscale(20%) contrast(1.1);
             background: var(--black-soft);
         }
-
         .profile-role {
-            font-family: var(--font-sans);
-            font-size: 0.7rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
+            font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 16px;
         }
-
-        .profile-role::before {
-            content: '';
-            display: block;
-            width: 30px;
-            height: 1px;
-            background: var(--gold);
-        }
-
+        .profile-role::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); }
         .profile-name {
-            font-family: var(--font-display);
-            font-size: clamp(3rem, 5vw, 4.5rem);
-            font-weight: 300;
-            line-height: 1.1;
-            color: var(--white);
-            margin-bottom: 40px;
+            font-family: var(--font-display); font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 300;
+            line-height: 1.1; color: var(--white); margin-bottom: 40px;
         }
-
-        .profile-section-block {
-            margin-bottom: 60px;
-        }
-
+        .profile-section-block { margin-bottom: 60px; }
         .profile-section-title {
-            font-family: var(--font-sans);
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--gold-pale);
-            border-bottom: 1px solid rgba(184,150,62,0.2);
-            padding-bottom: 12px;
-            margin-bottom: 24px;
+            font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--gold-pale); border-bottom: 1px solid rgba(184,150,62,0.2); padding-bottom: 12px; margin-bottom: 24px;
         }
+        .profile-text { font-size: 1.05rem; line-height: 1.9; color: var(--white-dim); text-align: justify; }
+        .profile-text p { margin-bottom: 20px; }
+        .profile-actions { margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(184,150,62,0.1); }
 
-        .profile-text {
-            font-size: 1.05rem;
-            line-height: 1.9;
-            color: var(--white-dim);
-            text-align: justify;
-        }
-
-        .profile-text p {
-            margin-bottom: 20px;
-        }
-
-        .profile-actions {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(184,150,62,0.1);
-        }
-
-        /* ========================
-           RESPONSIVE GERAL
-        ======================== */
         .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
         .hamburger span { display: block; width: 24px; height: 1px; background: var(--white); transition: var(--transition); }
         .mobile-menu {
@@ -325,19 +192,10 @@
         .sub-links a { font-size: 0.75rem; letter-spacing: 0.08em; padding: 8px 0; text-transform: none; }
 
         @media (max-width: 992px) {
-            .profile-container {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-            .profile-image-wrapper {
-                position: relative;
-                top: 0;
-                max-width: 500px;
-                margin: 0 auto;
-            }
+            .profile-container { grid-template-columns: 1fr; gap: 60px; }
+            .profile-image-wrapper { position: relative; top: 0; max-width: 500px; margin: 0 auto; }
             .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
         }
-
         @media (max-width: 768px) {
             nav { padding: 0 24px; }
             .nav-links { display: none; }
@@ -347,6 +205,7 @@
             footer { padding: 60px 24px 32px; }
             .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
         }
+
     </style>
 </head>
 <body>
@@ -368,26 +227,26 @@
                 <a class="nav-btn" href="especialidades_redesign.html">Especialidades</a>
                 <div class="dropdown-panel wide">
                     <a href="especialidades_redesign.html#empresarial">Empresarial e Societário</a>
-                    <a href="especialidades_redesign.html#imobiliario">Direito Imobiliário, Notarial e Registral</a>
+                    <a href="especialidades_redesign.html#imobiliário">Direito Imobiliário, Notarial e Registral</a>
                     <a href="especialidades_redesign.html#propriedade-intelectual">Comunicação e Propriedade Intelectual</a>
                     <a href="especialidades_redesign.html#sucessorio">Direito Sucessório e Família</a>
                     <a href="especialidades_redesign.html#ambiental">Direito Ambiental</a>
-                    <a href="especialidades_redesign.html#saude-suplementar">Direito de Saúde Suplementar</a>
+                    <a href="especialidades_redesign.html#saúde-suplementar">Direito de Saúde Suplementar</a>
                     <a href="especialidades_redesign.html#desportivo">Direito Desportivo e do Entretenimento</a>
-                    <a href="especialidades_redesign.html#recuperacao">Recuperação Judicial e Falência</a>
-                    <a href="especialidades_redesign.html#tributario">Contencioso Tributário</a>
+                    <a href="especialidades_redesign.html#recuperação">Recuperação Judicial e Falência</a>
+                    <a href="especialidades_redesign.html#tributário">Contencioso Tributário</a>
                     <a href="especialidades_redesign.html#administrativo">Direito Administrativo</a>
                     <a href="especialidades_redesign.html#arbitragem">Arbitragem e Mediação</a>
                 </div>
             </li>
             <li class="has-dropdown">
-                <a class="nav-btn" href="recuperacao_redesign.html">Recuperações</a>
+                <a class="nav-btn" href="recuperação_redesign.html">Recuperações</a>
                 <div class="dropdown-panel">
                     <a href="grppetro.html">Grupo Petrópolis</a>
                     <a href="americanas.html">Grupo Americanas</a>
                     <a href="mintucano.html">Mina Tucano</a>
                     <a href="gas_redesign.html">G.A.S. Consultoria</a>
-                    <a href="transporte.html">Transporte Campo Grande & Viação Penha</a>
+                    <a href="transporte.html">Transporte Campo Grande &amp; Viação Penha</a>
                     <a href="transcarioca.html">Consórcio Transcarioca</a>
                     <a href="stcruz.html">Consórcio Santa Cruz</a>
                     <a href="airmix.html">Airmix — Falência</a>
@@ -409,89 +268,36 @@
         </button>
     </nav>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <div class="menu-item">
-            <a href="institucional_redesign.html">Institucional</a>
-        </div>
-        <div class="menu-item">
-            <a href="profissionais_redesign.html">Profissionais</a>
-        </div>
-        <div class="menu-item" id="menuEspecialidades">
-            <button class="menu-toggle" onclick="toggleMenu('menuEspecialidades')">
-                Especialidades <span class="menu-toggle-icon">+</span>
-            </button>
-            <div class="sub-links">
-                <a href="especialidades_redesign.html#empresarial">Empresarial e Societário</a>
-                <a href="especialidades_redesign.html#imobiliario">Direito Imobiliário, Notarial e Registral</a>
-                <a href="especialidades_redesign.html#propriedade-intelectual">Comunicação e Propriedade Intelectual</a>
-                <a href="especialidades_redesign.html#sucessorio">Direito Sucessório e Família</a>
-                <a href="especialidades_redesign.html#ambiental">Direito Ambiental</a>
-                <a href="#">Direito de Saúde Suplementar</a>
-                <a href="especialidades_redesign.html#desportivo">Direito Desportivo e do Entretenimento</a>
-                <a href="especialidades_redesign.html#recuperacao">Recuperação Judicial e Falência</a>
-                <a href="especialidades_redesign.html#tributario">Contencioso Tributário</a>
-                <a href="especialidades_redesign.html#administrativo">Direito Administrativo</a>
-                <a href="#">Arbitragem e Mediação</a>
-            </div>
-        </div>
-        <div class="menu-item" id="menuRecuperacoes">
-            <button class="menu-toggle" onclick="toggleMenu('menuRecuperacoes')">
-                Recuperações <span class="menu-toggle-icon">+</span>
-            </button>
-            <div class="sub-links">
-                <a href="grppetro.html">Grupo Petrópolis</a>
-                <a href="americanas.html">Grupo Americanas</a>
-                <a href="mintucano.html">Mina Tucano</a>
-                <a href="gas.html">G.A.S. Consultoria</a>
-                <a href="transporte.html">Transporte Campo Grande & Viação Penha</a>
-                <a href="transcarioca.html">Consórcio Transcarioca</a>
-                <a href="stcruz.html">Consórcio Santa Cruz</a>
-                <a href="airmix.html">Airmix — Falência</a>
-                <a href="kpfr.html">KPFR Empreendimentos</a>
-                <a href="rodopetro.html">Rodopetro</a>
-                <a href="qldtotal.html">Qualidade Total</a>
-                <a href="rnr.html">RNR Montagens</a>
-                <a href="canaamates.html">Canaã Mates — Falência</a>
-                <a href="txrx.html">TX RX — Falência</a>
-                <a href="costapereira.html">Costa Pereira Bokel</a>
-            </div>
-        </div>
-        <div class="menu-item">
-            <a href="contato_redesign.html">Contato</a>
-        </div>
+        <div class="menu-item"><a href="institucional_redesign.html">Institucional</a></div>
+        <div class="menu-item"><a href="profissionais_redesign.html">Profissionais</a></div>
+        <div class="menu-item"><a href="contato_redesign.html">Contato</a></div>
     </div>
 
     <main class="profile-container">
         <div class="profile-image-wrapper">
-            <img src="imgs/gustavocaldeira.jpeg" alt="Gustavo Caldeira" class="profile-img">
-            
+            <div style="background: var(--black-soft); width:100%; aspect-ratio:3/4; border: 1px solid rgba(184,150,62,0.15);"></div>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/gustavo-caldeira-2558397b" target="_blank" aria-label="LinkedIn">
+                <a href="#" target="_blank" aria-label="LinkedIn">
                     <svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
                 </a>
-                
             </div>
         </div>
 
         <div>
-            <div class="profile-role">Sócio</div>
-            <h1 class="profile-name">Gustavo Oliveira Caldeira Esganzela</h1>
+            <div class="profile-role">Sócia</div>
+            <h1 class="profile-name">Natasha Fernanda M. Fiore Correia</h1>
 
             <div class="profile-section-block">
                 <h2 class="profile-section-title">Formação</h2>
                 <div class="profile-text">
-                    <p>Formado na Universidade Veiga de Almeida (UVA-RJ), possui especialização em Direito de Negócios (FMU), Direito Penal Econômico (PUC-MG), Advocacia Imobiliária e Notarial junto à PUC-MG e, atualmente, iniciou MBA em Gestão de Negócios Digitais e Inteligência Artificial junto à USP/ESALQ.</p>
-                    <p>Ingressou no escritório ainda como estagiário no segmento de contencioso de massa de grandes clientes, tornando-se advogado sócio em 2015.</p>
-                    <p>Destacou-se no contencioso de massa, atuando com empresas do setor de Saúde Suplementar. Atualmente se dedica a demandas estratégicas cíveis, empresariais, imobiliárias e administrativas, assessorando jurídica e negocialmente os clientes do Escritório.</p>
+                    <p>Graduada pela Universidade Cândido Mendes, com especialização em Direito Civil pela mesma instituicao.</p>
                 </div>
             </div>
-
             <div class="profile-section-block">
                 <h2 class="profile-section-title">Experiência</h2>
                 <div class="profile-text">
-                    <p>Dentre os anos de 2017 e 2018 integrou o grupo de pesquisa “Laboratório de Pesquisa de Jurisdição Constitucional Brasileira” cadastrado perante a PROPESQ/UFRRJ no diretório de grupos de pesquisa do LATTES/CNPQ, vinculado a Universidade Federal Rural do Rio de Janeiro – UFRRJ.</p>
-                    <p>Docente Convidado pela UNIASSELVI (Centro Universitário Leonardo da Vinci) do Curso de Pós-Graduação em Auditoria de Saúde para membros do Exército Brasileiro nos anos de 2018, 2019 e 2021, para ministrar as disciplinas de Legislação em Saúde e Aspectos Jurídicos Aplicados a Auditoria em Saúde.</p>
+                    <p>Tornou-se sócia em 2012. Atua em contencioso de massa no setor de Telefonia e em demandas cíveis estratégicas, incluindo processos de Recuperação Judicial. Assessora clientes em litígios complexos com vasta experiência em tribunais do Rio de Janeiro.</p>
                 </div>
             </div>
 
@@ -503,9 +309,6 @@
         </div>
     </main>
 
-    <!-- ========================
-         FOOTER
-    ======================== -->
     <footer>
         <div class="footer-inner">
             <div class="footer-top">
