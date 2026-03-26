@@ -483,10 +483,11 @@
                     <div class="socio-name">Renata Nunes de Assis Tavares</div>
                     <div class="socio-role">Associada</div>
                 </div>
-                <div class="assoc-card">
+                <div class="socio-card" onclick="showAssocProfile(this,'meferreira')">
                     <div class="socio-initials">MF</div>
-                    <div class="socio-name">Maria Eduarda Vasconcelos Ferreira</div>
-                    <div class="socio-role">Associada</div>
+                    <div class="socio-name">Maria Eduarda Ferreira</div>
+                    <div class="socio-role">Advogada</div>
+                    <span class="socio-arrow">↗</span>
                 </div>
                 <div class="assoc-card">
                     <div class="socio-initials">BD</div>
@@ -498,10 +499,11 @@
                     <div class="socio-name">André Luiz Carneiro da Silva Motta</div>
                     <div class="socio-role">Associado</div>
                 </div>
-                <div class="assoc-card">
+                <div class="socio-card" onclick="showAssocProfile(this,'alcorrea')">
                     <div class="socio-initials">AC</div>
-                    <div class="socio-name">Anna Luisa Costa e Correa</div>
-                    <div class="socio-role">Associada</div>
+                    <div class="socio-name">Anna Luísa Costa e Corrêa</div>
+                    <div class="socio-role">Advogada</div>
+                    <span class="socio-arrow">↗</span>
                 </div>
                 <div class="assoc-card">
                     <div class="socio-initials">GP</div>
@@ -532,6 +534,32 @@
                     <div class="socio-initials">MC</div>
                     <div class="socio-name">Maria Eduarda Câmara Machado</div>
                     <div class="socio-role">Associada</div>
+                </div>
+            </div>
+
+            <!-- ASSOC PROFILE PANEL -->
+            <div class="profile-panel" id="assocProfilePanel">
+                <div>
+                    <div style="display:flex; gap:20px; align-items:flex-start; margin-bottom:4px;">
+                        <div class="profile-photo" id="apPhotoWrap" style="display:none;">
+                            <img id="apPhoto" src="" alt="">
+                        </div>
+                        <div>
+                            <div class="profile-name" id="apName"></div>
+                            <div class="profile-role" id="apRole"></div>
+                        </div>
+                    </div>
+                    <div class="profile-bio" id="apBio"></div>
+                    <div class="profile-tags" id="apTags"></div>
+                    <a class="profile-cta" id="apLink" href="#">Ver perfil completo →</a>
+                </div>
+                <div class="profile-right">
+                    <div class="detail-label">Escritório</div>
+                    <div class="detail-value" id="apOffice"></div>
+                    <div class="detail-label">Especialidades</div>
+                    <div class="detail-value" id="apAreas"></div>
+                    <div class="detail-label">Formação</div>
+                    <div class="detail-value" id="apEdu"></div>
                 </div>
             </div>
         </div><!-- /secAssociados -->
@@ -594,7 +622,9 @@
             juliane:     { name:'Juliane Boim Previtali',                role:'Sócia',  link:'juliane_redesign.html',      office:'Rio de Janeiro', areas:'Direito Empresarial\nRecuperação Judicial',                    edu:'–', bio:'Integra o time do escritório com atuação em direito empresarial e recuperacional.' },
             gustavo:     { name:'Gustavo Oliveira Caldeira Esganzela',   role:'Sócio',  link:'gustavo_redesign.html',      office:'Rio de Janeiro', areas:'Direito Empresarial\nContencioso',                             edu:'–', photo:'imgs/gustavocaldeira.jpeg', bio:'Atua em contencioso empresarial e assessoria a grupos nacionais e internacionais.' },
             mariaantonia:{ name:'Maria Antonia Simões Xavier De Souza',  role:'Sócia',  link:'mariaantonia_redesign.html', office:'Rio de Janeiro', areas:'Direito Empresarial\nRecuperação Judicial',                    edu:'–', bio:'Integra o time do escritório com atuação em direito empresarial e recuperacional.' },
-            felipe:      { name:'Felipe Zveiter',                        role:'Sócio',  link:'felipe_redesign.html',       office:'Rio de Janeiro', areas:'Direito Desportivo\nArbitragem',                               edu:'–', bio:'Especializado em direito desportivo e arbitragem, com atuação em federações, clubes e atletas no âmbito nacional e internacional.' }
+            felipe:      { name:'Felipe Zveiter',                        role:'Sócio',  link:'felipe_redesign.html',       office:'Rio de Janeiro', areas:'Direito Desportivo\nArbitragem',                               edu:'–', bio:'Especializado em direito desportivo e arbitragem, com atuação em federações, clubes e atletas no âmbito nacional e internacional.' },
+            meferreira:  { name:'Maria Eduarda Ferreira',                 role:'Advogada', link:'meferreira_redesign.html',  office:'Rio de Janeiro', areas:'Contencioso Cível\nContingência Jurídica',                      edu:'Universidade Cândido Mendes (2019)', photo:'imgs/meferreira.png', bio:'Atua na contingência jurídica, auxiliando na análise e gestão de riscos legais relacionados às demandas de contencioso cível e estratégico.' },
+            alcorrea:    { name:'Anna Luísa Costa e Corrêa',              role:'Advogada', link:'alcorrea_redesign.html',    office:'Rio de Janeiro', areas:'Contencioso Cível\nDireito do Consumidor\nSaneamento Básico',   edu:'UCAM — Graduação em Direito\nLegale — Pós-graduanda em Processo Civil', bio:'Integra a equipe de Contencioso Cível desde 2025, com atuação em demandas cíveis e consumeristas relacionadas ao Direito de Saneamento Básico.' }
         };
 
         function showProfile(card, key) {
@@ -626,6 +656,39 @@
                 tagsEl.appendChild(t);
             });
             const panel = document.getElementById('profilePanel');
+            panel.classList.add('visible');
+            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showAssocProfile(card, key) {
+            document.querySelectorAll('.socio-card').forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            const p = profiles[key];
+            document.getElementById('apName').textContent = p.name;
+            document.getElementById('apRole').textContent = p.role;
+            document.getElementById('apBio').textContent = p.bio;
+            document.getElementById('apOffice').textContent = p.office;
+            document.getElementById('apAreas').innerHTML = p.areas.replace(/\n/g, '<br>');
+            document.getElementById('apEdu').textContent = p.edu;
+            document.getElementById('apLink').href = p.link;
+            const photoWrap = document.getElementById('apPhotoWrap');
+            const photoEl = document.getElementById('apPhoto');
+            if (p.photo) {
+                photoEl.src = p.photo;
+                photoEl.alt = p.name;
+                photoWrap.style.display = 'block';
+            } else {
+                photoWrap.style.display = 'none';
+            }
+            const tagsEl = document.getElementById('apTags');
+            tagsEl.innerHTML = '';
+            p.areas.split('\n').forEach(a => {
+                const t = document.createElement('span');
+                t.className = 'profile-tag';
+                t.textContent = a;
+                tagsEl.appendChild(t);
+            });
+            const panel = document.getElementById('assocProfilePanel');
             panel.classList.add('visible');
             panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
