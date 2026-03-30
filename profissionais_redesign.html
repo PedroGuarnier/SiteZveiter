@@ -495,6 +495,7 @@
                     <div class="socio-role">Advogado</div>
                     <span class="socio-arrow">↗</span>
                 </div>
+               
                 <div class="assoc-card">
                     <div class="socio-initials">AM</div>
                     <div class="socio-name">André Luiz Carneiro da Silva Motta</div>
@@ -503,13 +504,14 @@
                 <div class="socio-card" onclick="showAssocProfile(this,'alcorrea')">
                     <div class="socio-initials">AC</div>
                     <div class="socio-name">Anna Luísa Costa e Corrêa</div>
-                    <div class="socio-role">Advogada</div>
+                    <div class="socio-role">Associada</div>
                     <span class="socio-arrow">↗</span>
                 </div>
-                <div class="assoc-card">
+                <div class="socio-card" onclick="showAssocProfile(this,'giselepaula')">
                     <div class="socio-initials">GP</div>
                     <div class="socio-name">Gisele da Silva Paula</div>
                     <div class="socio-role">Associada</div>
+                    <span class="socio-arrow">↗</span>
                 </div>
                 <div class="assoc-card">
                     <div class="socio-initials">CO</div>
@@ -521,20 +523,22 @@
                     <div class="socio-name">Maria Eduarda Braz Soares</div>
                     <div class="socio-role">Associada</div>
                 </div>
-                <div class="assoc-card">
+                 <div class="socio-card" onclick="showAssocProfile(this,'pedroaugusto')">
                     <div class="socio-initials">PA</div>
                     <div class="socio-name">Pedro Augusto Braga Alcazar</div>
                     <div class="socio-role">Associado</div>
+                    <span class="socio-arrow">↗</span>
                 </div>
                 <div class="assoc-card">
                     <div class="socio-initials">BN</div>
                     <div class="socio-name">Bruno Davi Nóbrega Oliveira da Silva</div>
                     <div class="socio-role">Associado</div>
                 </div>
-                <div class="assoc-card">
+                <div class="socio-card" onclick="showAssocProfile(this,'mecamara')">
                     <div class="socio-initials">MM</div>
                     <div class="socio-name">Maria Eduarda Camara Machado</div>
-                    <div class="socio-role">Associada</div>
+                    <div class="socio-role">Advogada</div>
+                    <span class="socio-arrow">↗</span>
                 </div>
             </div>
 
@@ -619,14 +623,17 @@
             raquel:      { name:'Raquel Di Servan Nunes',                role:'Sócia',  link:'raquel_redesign.html',       office:'Rio de Janeiro', areas:'Direito de Família\nDireito Sucessório',                       edu:'–', bio:'Especialista em direito das famílias e sucessões, com atuação em inventários complexos e planejamento patrimonial.' },
             luciana:     { name:'Luciana Gomes de O. Souza',             role:'Sócia',  link:'luciana_redesign.html',      office:'Rio de Janeiro', areas:'Propriedade Intelectual\nDireito Digital',                     edu:'–', photo: 'imgs/luciana.png', bio:'Atua na área de comunicação, propriedade intelectual e direito digital, com foco em proteção de marcas e contratos de licença.' },
             natasha:     { name:'Natasha Fernanda M. Fiore Correia',     role:'Sócia',  link:'natasha_redesign.html',      office:'Rio de Janeiro', areas:'Direito Ambiental\nRegulação',                                 edu:'–', bio:'Especialista em direito ambiental e regulatório, com atuação em licenciamentos complexos e assessoria a empresas do setor de energia.' },
-            carolina:    { name:'Carolina de Jesus Müller',              role:'Sócia',  link:'carolina_redesign.html',     office:'Rio de Janeiro', areas:'Saúde Suplementar\nDireito Regulatório',                       edu:'–', bio:'Atua na área de saúde suplementar e direito regulatório, com experiência em operadoras de planos de saúde e entidades hospitalares.' },
+            carolina:    { name:'Carolina de Jesus Müller',              role:'Sócia',  link:'carolina_redesign.html',     office:'Brasília', areas:'Saúde Suplementar\nDireito Regulatório',                             edu:'Graduada pelo UniCEUB — Centro Universitario de Brasília.', photo: 'imgs/carolbsb.png', bio:'Atua na área de saúde suplementar e direito regulatório, com experiência em operadoras de planos de saúde e entidades hospitalares.' },
             juliane:     { name:'Juliane Boim Previtali',                role:'Sócia',  link:'juliane_redesign.html',      office:'Rio de Janeiro', areas:'Direito Empresarial\nRecuperação Judicial',                    edu:'–', bio:'Integra o time do escritório com atuação em direito empresarial e recuperacional.' },
             gustavo:     { name:'Gustavo Oliveira Caldeira Esganzela',   role:'Sócio',  link:'gustavo_redesign.html',      office:'Rio de Janeiro', areas:'Direito Empresarial\nContencioso',                             edu:'–', photo:'imgs/gustavocaldeira.jpeg', bio:'Atua em contencioso empresarial e assessoria a grupos nacionais e internacionais.' },
             mariaantonia:{ name:'Maria Antonia Simões Xavier De Souza',  role:'Sócia',  link:'mariaantonia_redesign.html', office:'Rio de Janeiro', areas:'Direito Empresarial\nRecuperação Judicial',                    edu:'–', bio:'Integra o time do escritório com atuação em direito empresarial e recuperacional.' },
             felipe:      { name:'Felipe Zveiter',                        role:'Sócio',  link:'felipe_redesign.html',       office:'Rio de Janeiro', areas:'Direito Desportivo\nArbitragem',                               edu:'–', bio:'Especializado em direito desportivo e arbitragem, com atuação em federações, clubes e atletas no âmbito nacional e internacional.' },
             meferreira:  { name:'Maria Eduarda Ferreira',                 role:'Advogada', link:'meferreira_redesign.html',  office:'Rio de Janeiro', areas:'Contencioso Cível\nContingência Jurídica',                      edu:'Universidade Cândido Mendes (2019)', photo:'imgs/meferreira.png', bio:'Atua na contingência jurídica, auxiliando na análise e gestão de riscos legais relacionados às demandas de contencioso cível e estratégico.' },
             alcorrea:    { name:'Anna Luísa Costa e Corrêa',              role:'Advogada', link:'alcorrea_redesign.html',    office:'Rio de Janeiro', areas:'Contencioso Cível\nDireito do Consumidor\nSaneamento Básico',   edu:'UCAM — Graduação em Direito\nLegale — Pós-graduanda em Processo Civil', photo:'imgs/alcosta.png', bio:'Integra a equipe de Contencioso Cível desde 2025, com atuação em demandas cíveis e consumeristas relacionadas ao Direito de Saneamento Básico.' },
-            bernardo:    { name:'Bernardo Diniz Schuch',                   role:'Advogado', link:'bernardo_redesign.html',   office:'Rio de Janeiro', areas:'Contencioso Cível\nDireito Empresarial\nRecuperação Judicial',   edu:'IBMEC Centro — Graduação em Direito\nFGV — Pós-graduando em Direito Empresarial', photo:'imgs/bernardo.png', bio:'Atua no Contencioso Cível com foco em Direito Empresarial, Recuperação Judicial e Falências. Participou de relevantes processos de recuperação judicial, incluindo os das Lojas Americanas, MMX e Agrogalaxy.' }
+            bernardo:    { name:'Bernardo Diniz Schuch',                   role:'Advogado', link:'bernardo_redesign.html',   office:'Rio de Janeiro', areas:'Contencioso Cível\nDireito Empresarial\nRecuperação Judicial',   edu:'IBMEC Centro — Graduação em Direito\nFGV — Pós-graduando em Direito Empresarial', photo:'imgs/bernardo.png', bio:'Atua no Contencioso Cível com foco em Direito Empresarial, Recuperação Judicial e Falências. Participou de relevantes processos de recuperação judicial, incluindo os das Lojas Americanas, MMX e Agrogalaxy.' },
+            pedroaugusto:{ name:'Pedro Augusto Braga Alcazar',              role:'Advogado', link:'pedroaugusto_redesign.html', office:'Rio de Janeiro', areas:'Contencioso Estratégico\nDireito Empresarial\nDireito Financeiro', edu:'Ibmec-RJ — Graduação em Direito\nFGV-RJ — LL.M. em Direito Empresarial\nIbmec-RJ — Minor in Business Law', photo:'imgs/pedroaugusto.png', bio:'Iniciou carreira jurídica como estagiário no escritório em 2023 e atua no contencioso estratégico como Advogado Associado desde 2025, com forte engajamento na área empresarial e financeira.' },
+            giselepaula: { name:'Gisele da Silva Paula',                    role:'Advogada', link:'giselepaula_redesign.html',  office:'Rio de Janeiro', areas:'Direito Empresarial\nDireito Cível',                              edu:'UNIESP — Graduação em Direito', photo:'imgs/giselepaula.png', bio:'Atuando no mercado jurídico desde 2015, com sólida experiência em Direito Empresarial e Direito Cível. Atua na prevenção de litígios, elaboração de contratos e defesa dos interesses de empresas e pessoas físicas, unindo rigor técnico e visão prática.' },
+            mecamara:    { name:'Maria Eduarda Camara Machado',              role:'Advogada', link:'mecamara_redesign.html',     office:'Rio de Janeiro', areas:'Contencioso Cível Estratégico\nEntretenimento e Comunicação\nDireito Digital', edu:'IBMEC-RJ — Graduação em Direito\nPUC-RS — Pós-graduanda em Direito Digital e LGPD', photo:'imgs/mmachado.jpeg', bio:'Ingressou no escritório como estagiária, tornando-se advogada associada em 2025. Integra a equipe de contencioso cível estratégico, atuando na área de entretenimento e comunicação com interlocução direta junto a grandes empresas.' }
         };
 
         function showProfile(card, key) {

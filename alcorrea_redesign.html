@@ -34,20 +34,6 @@
             cursor: default;
         }
 
-        .cursor {
-            width: 8px; height: 8px; background: var(--gold); border-radius: 50%;
-            position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
-            transition: transform 0.15s ease;
-        }
-        .cursor-ring {
-            width: 32px; height: 32px; border: 1px solid rgba(184,150,62,0.5); border-radius: 50%;
-            position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998;
-            transition: transform 0.4s ease, width 0.3s ease, height 0.3s ease;
-        }
-        body:has(a:hover) .cursor-ring, body:has(button:hover) .cursor-ring {
-            width: 48px; height: 48px; border-color: var(--gold);
-        }
-
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 60px;
             display: flex; align-items: center; justify-content: space-between; height: 80px;
@@ -191,9 +177,6 @@
     </style>
 </head>
 <body>
-
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
 
     <nav id="navbar">
         <div class="nav-logo">
@@ -375,21 +358,6 @@
     </footer>
 
     <script>
-        const cursor = document.getElementById('cursor');
-        const cursorRing = document.getElementById('cursorRing');
-        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX; mouseY = e.clientY;
-            cursor.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
-        });
-        function animateRing() {
-            ringX += (mouseX - ringX) * 0.12;
-            ringY += (mouseY - ringY) * 0.12;
-            cursorRing.style.transform = `translate(${ringX - 16}px, ${ringY - 16}px)`;
-            requestAnimationFrame(animateRing);
-        }
-        animateRing();
 
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
