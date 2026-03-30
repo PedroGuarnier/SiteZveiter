@@ -611,12 +611,12 @@
 
     <script>
         const profiles = {
-            sergio:      { name:'Sergio Zveiter',                        role:'Sócio',  link:'sergio_redesign.html',       office:'Rio de Janeiro', areas:'Recuperação Judicial e Falência\nDireito Empresarial',         edu:'–', bio:'Sócio com décadas de atuação nas áreas empresarial e recuperacional, responsável pela condução de alguns dos maiores casos de administração judicial do país.' },
-            flavio:      { name:'Flavio Zveiter',                        role:'Sócio',  link:'flavio_redesign.html',       office:'Rio de Janeiro', areas:'Direito Desportivo\nDireito Empresarial',                      edu:'–', bio:'Experiente nas áreas desportiva e empresarial, atuando em casos de alta complexidade perante os principais tribunais do país.' },
+            sergio:      { name:'Sergio Zveiter',                        role:'Sócio',  link:'sergio_redesign.html',       office:'Rio de Janeiro', areas:'Recuperação Judicial e Falência\nDireito Empresarial',         edu:'Universidade Gama Filho', photo: 'imgs/sergiozvt.png', bio:'Sócio com décadas de atuação nas áreas empresarial e recuperacional, responsável pela condução de alguns dos maiores casos de administração judicial do país.' },
+            flavio:      { name:'Flavio Zveiter',                        role:'Sócio',  link:'flavio_redesign.html',       office:'Rio de Janeiro', areas:'Direito Desportivo\nDireito Empresarial',                      edu:'Universidade Gama Filho — Graduação em Direito\nNYU — Sport and Business', photo: 'imgs/flaviozvt.png', bio:'Experiente nas áreas desportiva e empresarial, atuando em casos de alta complexidade perante os principais tribunais do país.' },
             carlos:      { name:'Carlos Alberto Sussekind',              role:'Sócio',  link:'carlosalberto_redesign.html',office:'Rio de Janeiro', areas:'Direito Trabalhista\nContencioso',                             edu:'–', bio:'Especialista em direito do trabalho e contencioso empresarial, com trajetória consolidada nas relações trabalhistas de grandes corporações.' },
             claudio:     { name:'Claudio Taborda',                       role:'Sócio',  link:'claudiotaborda_redesign.html',office:'Rio de Janeiro',areas:'Direito Societário\nFusões e Aquisições',                      edu:'–', bio:'Atua principalmente em operações societárias complexas e assessoria a grupos empresariais nacionais e internacionais.' },
             mariana:     { name:'Mariana Burity',                        role:'Sócia',  link:'mariana_redesign.html',      office:'Rio de Janeiro', areas:'Recuperação Judicial\nDireito Empresarial',                    edu:'–', bio:'Integra o time de recuperação e falências, com participação ativa nos principais casos sob administração judicial do escritório.' },
-            renata:      { name:'Renata do Amaral',                      role:'Sócia',  link:'renata_redesign.html',       office:'Rio de Janeiro', areas:'Direito Imobiliário\nNotarial e Registral',                    edu:'–', bio:'Especialista em direito imobiliário, notarial e registral, com vasta experiência em operações de grande porte e assessoria a incorporadoras.' },
+            renata:      { name:'Renata do Amaral',                      role:'Sócia',  link:'renata_redesign.html',       office:'Brasília', areas:'Direito Imobiliário\nNotarial e Registral',                    edu:'–', bio:'Especialista em direito imobiliário, notarial e registral, com vasta experiência em operações de grande porte e assessoria a incorporadoras.' },
             pedro:       { name:'Pedro Francisco da Silva Neto',         role:'Sócio',  link:'pedroneto_redesign.html',    office:'Rio de Janeiro', areas:'Contencioso Tributário\nPlanejamento Fiscal',                  edu:'–', bio:'Atuação voltada ao contencioso tributário e planejamento fiscal estratégico para grupos empresariais.' },
             ricardo:     { name:'Ricardo Diniz de Andrade',              role:'Sócio',  link:'diniz_redesign.html',        office:'Rio de Janeiro', areas:'Direito Administrativo\nLicitações e Concessões',              edu:'–', bio:'Especializado em direito público e administrativo, com foco em contratos públicos, concessões e licitações.' },
             igor:        { name:'Igor Lethiere da Silva',                role:'Sócio',  link:'igor_redesign.html',         office:'Rio de Janeiro', areas:'Direito Empresarial\nRecuperação Judicial',                    edu:'–', photo:'imgs/igor.png', bio:'Atua em processos de reestruturação de grandes grupos empresariais.' },
@@ -645,7 +645,7 @@
             document.getElementById('pBio').textContent = p.bio;
             document.getElementById('pOffice').textContent = p.office;
             document.getElementById('pAreas').innerHTML = p.areas.replace(/\n/g, '<br>');
-            document.getElementById('pEdu').textContent = p.edu;
+            document.getElementById('pEdu').innerHTML = p.edu.replace(/\n/g, '<br>');
             document.getElementById('pLink').href = p.link;
             const photoWrap = document.getElementById('pPhotoWrap');
             const photoEl = document.getElementById('pPhoto');
@@ -678,7 +678,7 @@
             document.getElementById('apBio').textContent = p.bio;
             document.getElementById('apOffice').textContent = p.office;
             document.getElementById('apAreas').innerHTML = p.areas.replace(/\n/g, '<br>');
-            document.getElementById('apEdu').textContent = p.edu;
+            document.getElementById('apEdu').innerHTML = p.edu.replace(/\n/g, '<br>');
             document.getElementById('apLink').href = p.link;
             const photoWrap = document.getElementById('apPhotoWrap');
             const photoEl = document.getElementById('apPhoto');
