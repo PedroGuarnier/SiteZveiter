@@ -54,13 +54,13 @@
         nav.scrolled { height: 64px; }
  
         .nav-logo img {
-            height: 44px;
+            height: 48px;
             width: auto;
             filter: invert(1) brightness(1.8);
             opacity: 0.92;
-            transition: opacity var(--transition);
+            transition: opacity var(--transition), transform var(--transition);
         }
-        .nav-logo img:hover { opacity: 1; }
+        .nav-logo img:hover { opacity: 1; transform: scale(1.03); }
  
         .nav-links {
             display: flex;
@@ -556,9 +556,9 @@
             border-bottom: 1px solid rgba(184,150,62,0.1);
         }
         .footer-brand img {
-            height: 44px;
+            height: 52px;
             filter: invert(1) brightness(1.8);
-            opacity: 0.8;
+            opacity: 0.85;
             margin-bottom: 20px;
             display: block;
         }
@@ -741,7 +741,7 @@
             <li><a href="#" onclick="showPanel('ata', this); return false;">Ata de AGC <span class="count">8</span></a></li>
             <li><a href="#" onclick="showPanel('plano', this); return false;">Plano de RJ <span class="count">10</span></a></li>
             <li><a href="#" onclick="showPanel('decisoes', this); return false;">Decisões Judiciais <span class="count">11</span></a></li>
-            <li><a href="#" onclick="showPanel('rma', this); return false;">RMA <span class="count">36</span></a></li>
+            <li><a href="#" onclick="showPanel('rma', this); return false;">RMA <span class="count">39</span></a></li>
             <li><a href="#" onclick="showPanel('pmp', this); return false;">PMP <span class="count">27+</span></a></li>
             <li><a href="#" onclick="showPanel('modelos', this); return false;">Modelos <span class="count">9</span></a></li>
         </ul>
@@ -1016,9 +1016,10 @@
         <div class="doc-panel" id="panel-rma">
             <div class="panel-header">
                 <h2 class="panel-title">Relatório Mensal de Atividades (RMA)</h2>
-                <span class="panel-count">37 relatórios</span>
+                <span class="panel-count">39 relatórios</span>
             </div>
             <div class="doc-list">
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">26/05/2026</span><span class="doc-name">38° RMA</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/americanas/38º RELATÓRIO MENSAL AMERICANAS.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">2.00MB</span></a></div></div>
                 <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">01/04/2026</span><span class="doc-name">37° RMA</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/americanas/0855557-28.2023.8.19.0001- RMA 37º AMERICANAS.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">2.00MB</span></a></div></div>
                 <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">03/03/2026</span><span class="doc-name">36° RMA</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/americanas/AMERICANAS - 36º Relatorio Mensal - Versão PÚBLICA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">2.00MB</span></a></div></div>
                 <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">05/02/2026</span><span class="doc-name">35° RMA</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/americanas/AMERICANAS - 35º Relatorio Mensal - Versão PUBLICA_compressed.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">2.00MB</span></a></div></div>
@@ -1054,6 +1055,8 @@
                 <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">30/06/2023</span><span class="doc-name">4° RMA</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/americanas/AMERICANAS - 4º Relatorio Mensal - Versão PUBLICA 30 06 23.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">1.15MB</span></a></div></div>
                 <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">31/05/2023</span><span class="doc-name">3° RMA</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/americanas/AMERICANAS 3 - RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">950KB</span></a></div></div>
                 <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">05/05/2023</span><span class="doc-name">2° RMA</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/americanas/Grupo Americanas - RMA - 02_05_2023.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">1.25MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">12/12/2023</span><span class="doc-name">Relatório do Aditivo ao Plano de Recuperação Judicial</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/americanas/Relatorio-do-Aditivo-ao-Plano-de-Recuperacao-Judicial.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">2.60MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">04/04/2023</span><span class="doc-name">Relatório do Plano de Recuperação Judicial</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/americanas/Grupo Americanas - Relatório do Plano de Recuperação Judicial.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.56MB</span></a></div></div>
                 <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">22/03/2023</span><span class="doc-name">Relatório Circunstanciado — Versão Pública</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/americanas/Grupo Americanas – Relatório Circunstanciado - versão pública – 22_03_2023.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">11.37MB</span></a></div></div>
             </div>
         </div>
@@ -1126,7 +1129,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="footer-copy">© 2025 Escritório de Advocacia Zveiter. Todos os direitos reservados.<br><span style="opacity:0.5;">Desenvolvido por <a href="https://pedroguarnier.github.io/portfoliopedro/" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;opacity:1;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='1'">Pedro Guarnier</a></span></p>
+            <p class="footer-copy">© 2025 Escritório de Advocacia Zveiter. Todos os direitos reservados.<br><span style="opacity:0.5;">Desenvolvido por <a href="https://www.linkedin.com/in/pedroguarnier/" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;opacity:1;">Pedro Guarnier</a></span></p>
             <div class="footer-social">
                 <a aria-label="Instagram" href="#">
                     <svg viewbox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path></svg>
