@@ -1,358 +1,257 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="imgs/ChatGPT Image 13 de mai. de 2025, 15_42_05.png" type="image/png">
     <title>Sergio Zveiter | Escritório de Advocacia Zveiter</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Tenor+Sans&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        .card {
-    width: auto; /* Ajuste para que a largura seja determinada pelo conteúdo */
-    height: fit-content;
-    background: #191919;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px; /* Ajuste do padding */
-    gap: 10px; /* Espaço entre os ícones */
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
-    border-radius: 5px; /* Adiciona bordas arredondadas se desejado */
-}
+        :root {
+            --gold: #B8963E;
+            --gold-light: #D4AF6A;
+            --gold-pale: #E8D5A3;
+            --black: #0A0A0A;
+            --black-rich: #111111;
+            --black-soft: #1A1A1A;
+            --black-mid: #242424;
+            --white: #F5F0E8;
+            --white-dim: #C8C0B0;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-sans: 'Tenor Sans', sans-serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { background-color: var(--black); color: var(--white); font-family: var(--font-body); font-weight: 300; overflow-x: hidden; cursor: default; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 80px; background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(184,150,62,0.15); transition: height var(--transition), background var(--transition); }
+        nav.scrolled { height: 64px; background: rgba(10,10,10,0.98); }
+        .nav-logo img { height: 48px; width: auto; filter: invert(1) brightness(1.8); opacity: 0.92; transition: opacity var(--transition), transform var(--transition); }
+        .nav-logo img:hover { opacity: 1; transform: scale(1.03); }
+        .nav-links { display: flex; align-items: center; gap: 0; list-style: none; }
+        .nav-links > li { position: relative; }
+        .nav-links > li > a, .nav-links > li > .nav-btn { font-family: var(--font-sans); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white-dim); text-decoration: none; padding: 28px 18px; display: block; transition: color var(--transition); background: none; border: none; cursor: pointer; }
+        .nav-links > li > a:hover, .nav-links > li > .nav-btn:hover, .nav-links > li:hover > a, .nav-links > li:hover > .nav-btn { color: var(--gold-light); }
+        .dropdown-panel { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: var(--black-soft); border: 1px solid rgba(184,150,62,0.2); min-width: 280px; padding: 12px 0; opacity: 0; pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease; z-index: 100; }
+        .dropdown-panel.wide { min-width: 340px; columns: 2; column-gap: 0; }
+        .nav-links > li:hover .dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+        .dropdown-panel a { display: block; font-family: var(--font-body); font-size: 0.75rem; letter-spacing: 0.05em; color: var(--white-dim); text-decoration: none; padding: 9px 24px; transition: color 0.2s ease, padding-left 0.2s ease; break-inside: avoid; }
+        .dropdown-panel a:hover { color: var(--gold-light); padding-left: 30px; }
+        .nav-divider { width: 1px; height: 16px; background: rgba(184,150,62,0.2); margin: 0 6px; }
+        .btn-outline-gold { font-family: var(--font-sans); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); background: transparent; border: 1px solid rgba(184,150,62,0.4); padding: 16px 40px; text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 12px; }
+        .btn-outline-gold:hover { border-color: var(--gold); background: rgba(184,150,62,0.08); }
+        footer { background: var(--black-rich); border-top: 1px solid rgba(184,150,62,0.15); padding: 80px 80px 40px; }
+        .footer-inner { max-width: 1400px; margin: 0 auto; }
+        .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(184,150,62,0.1); }
+        .footer-brand img { height: 52px; filter: invert(1) brightness(1.8); opacity: 0.85; margin-bottom: 20px; display: block; }
+        .footer-brand p { font-size: 0.82rem; line-height: 1.8; color: rgba(200,192,176,0.5); max-width: 260px; }
+        .footer-col-title { font-family: var(--font-sans); font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+        .footer-address p { font-size: 0.8rem; line-height: 1.9; color: rgba(200,192,176,0.5); }
+        .footer-address strong { display: block; font-family: var(--font-display); font-size: 1rem; font-weight: 400; color: var(--white-dim); margin-bottom: 8px; }
+        .footer-address a { display: inline-block; font-size: 0.75rem; color: var(--gold); text-decoration: none; margin-top: 8px; opacity: 0.8; transition: opacity 0.2s; }
+        .footer-address a:hover { opacity: 1; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; }
+        .footer-copy { font-size: 0.72rem; color: rgba(200,192,176,0.3); letter-spacing: 0.05em; }
+        .footer-social { display: flex; gap: 16px; }
+        .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(184,150,62,0.2); display: flex; align-items: center; justify-content: center; transition: border-color 0.3s ease, background 0.3s ease; }
+        .footer-social a:hover { border-color: var(--gold); background: rgba(184,150,62,0.08); }
+        .footer-social svg { width: 14px; height: 14px; fill: var(--white-dim); }
+        .social-links { display: flex; gap: 16px; margin-top: 24px; }
+        .social-links a { width: 40px; height: 40px; border: 1px solid rgba(184,150,62,0.2); border-radius: 2px; display: flex; align-items: center; justify-content: center; transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease; }
+        .social-links a:hover { border-color: var(--gold); background: rgba(184,150,62,0.08); transform: translateY(-3px); }
+        .social-links svg { width: 16px; height: 16px; fill: var(--white-dim); transition: fill 0.3s ease; }
+        .social-links a:hover svg { fill: var(--gold-light); }
+        .profile-container { padding: 160px 80px 80px; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 4fr 6fr; gap: 100px; align-items: start; }
+        .profile-image-wrapper { position: sticky; top: 120px; }
+        .profile-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border: 1px solid rgba(184,150,62,0.15); filter: grayscale(20%) contrast(1.1); background: var(--black-soft); }
+        .profile-role { font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
+        .profile-role::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); }
+        .profile-name { font-family: var(--font-display); font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 40px; }
+        .profile-section-block { margin-bottom: 60px; }
+        .profile-section-title { font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-pale); border-bottom: 1px solid rgba(184,150,62,0.2); padding-bottom: 12px; margin-bottom: 24px; }
+        .profile-text { font-size: 1.05rem; line-height: 1.9; color: var(--white-dim); text-align: justify; }
+        .profile-text p { margin-bottom: 20px; }
+        .profile-actions { margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(184,150,62,0.1); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+        .hamburger span { display: block; width: 24px; height: 1px; background: var(--white); transition: var(--transition); }
+        .mobile-menu {
+            display: none; position: fixed; top: 80px; left: 0; right: 0; bottom: 0;
+            background: var(--black-rich); z-index: 900; overflow-y: auto; padding: 32px 24px;
+            border-top: 1px solid rgba(184,150,62,0.15);
+        }
+        .mobile-menu.open { display: block; }
+        .menu-item { border-bottom: 1px solid rgba(184,150,62,0.08); }
+        .menu-item a, .menu-toggle {
+            display: block; padding: 16px 0; font-family: var(--font-sans); font-size: 0.85rem;
+            letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-dim);
+            text-decoration: none; background: none; border: none; width: 100%; text-align: left;
+            cursor: pointer; transition: color 0.2s;
+        }
+        .menu-item a:hover, .menu-toggle:hover { color: var(--gold-light); }
+        .menu-toggle { display: flex; justify-content: space-between; align-items: center; }
+        .sub-links { display: none; padding: 8px 0 16px 16px; }
+        .sub-links.open { display: block; }
+        .sub-links a { font-size: 0.75rem; letter-spacing: 0.08em; padding: 8px 0; text-transform: none; }
+        @media (max-width: 992px) {
+            .profile-container { grid-template-columns: 1fr; gap: 60px; }
+            .profile-image-wrapper { position: relative; top: 0; max-width: 500px; margin: 0 auto; }
+            .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+        }
+        @media (max-width: 768px) {
+            nav { padding: 0 24px; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .profile-container { padding: 120px 24px 60px; }
+            .footer-top { grid-template-columns: 1fr; }
+            footer { padding: 60px 24px 32px; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
 
-.socialContainer {
-    width: 32px; /* Tamanho dos ícones */
-    height: 32px; /* Tamanho dos ícones */
-    background-color: rgb(44, 44, 44);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    transition-duration: .3s;
-}
+    <nav id="navbar">
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="imgs/logozvtt.png" alt="Escritório de Advocacia Zveiter">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="institucional.html">Institucional</a></li>
+            <li><a href="profissionais.html">Profissionais</a></li>
+            <li class="has-dropdown">
+                <a class="nav-btn" href="especialidades.html">Especialidades</a>
+                <div class="dropdown-panel wide">
+                    <a href="especialidades.html#empresarial">Empresarial e Societário</a>
+                    <a href="especialidades.html#imobiliario">Direito Imobiliário, Notarial e Registral</a>
+                    <a href="especialidades.html#propriedade-intelectual">Comunicação e Propriedade Intelectual</a>
+                    <a href="especialidades.html#sucessorio">Direito Sucessório e Família</a>
+                    <a href="especialidades.html#ambiental">Direito Ambiental</a>
+                    <a href="especialidades.html#saude-suplementar">Direito de Saúde Suplementar</a>
+                    <a href="especialidades.html#desportivo">Direito Desportivo e do Entretenimento</a>
+                    <a href="especialidades.html#recuperacao">Recuperação Judicial e Falência</a>
+                    <a href="especialidades.html#tributario">Contencioso Tributário</a>
+                    <a href="especialidades.html#administrativo">Direito Administrativo</a>
+                    <a href="especialidades.html#arbitragem">Arbitragem e Mediação</a>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a class="nav-btn" href="recuperacao.html">Recuperações</a>
+                <div class="dropdown-panel">
+                    <a href="grppetro.html">Grupo Petrópolis</a>
+                    <a href="americanas.html">Grupo Americanas</a>
+                    <a href="mintucano.html">Mina Tucano</a>
+                    <a href="gas.html">G.A.S. Consultoria</a>
+                    <a href="transporte.html">Transporte Campo Grande &amp; Viação Penha</a>
+                    <a href="transcarioca.html">Consórcio Transcarioca</a>
+                    <a href="stcruz.html">Consórcio Santa Cruz</a>
+                    <a href="airmix.html">Airmix — Falência</a>
+                    <a href="kpfr.html">KPFR Empreendimentos</a>
+                    <a href="rodopetro.html">Rodopetro</a>
+                    <a href="qldtotal.html">Qualidade Total</a>
+                    <a href="rnr.html">RNR Montagens</a>
+                    <a href="canaamates.html">Canaã Mates — Falência</a>
+                    <a href="txrx.html">TX RX — Falência</a>
+                    <a href="costapereira.html">Costa Pereira Bokel</a>
+                </div>
+            </li>
+            <div class="nav-divider"></div>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
 
-.containerOne:hover {
-    background-color: #d62976;
-}
+     <main class="profile-container">
+        <div class="profile-image-wrapper">
+            <img class="profile-img" src="imgs/sergiozvt.png" alt="Sergio Zveiter">
+        </div>
 
-.containerThree:hover {
-    background-color: #0072b1;
-}
+        <div>
+            <div class="profile-role">Sócio</div>
+            <h1 class="profile-name">Sergio Zveiter</h1>
 
-.socialContainer:active {
-    transform: scale(0.9);
-}
+            <div class="profile-section-block">
+                <h2 class="profile-section-title">Formação</h2>
+                <div class="profile-text">
+                    <p>Formou-se em Direito pela Universidade Gama Filho/RJ</p>
+                </div>
+            </div>
 
-.socialSvg {
-    width: 20px; /* Tamanho reduzido dos ícones */
-}
+            <div class="profile-section-block">
+                <h2 class="profile-section-title">Experiência</h2>
+                <div class="profile-text">
+                    <p>Nascido em Niterói-RJ, advogado. Depois de formado, passou a trabalhar no escritório de advocacia de seu pai, então chamado de Escritório de Advocacia Waldemar Zveiter. Posteriormente, o escritório passou a ser um dos mais renomados do Rio de Janeiro e do Brasil, transformando-se no Escritório de Advocacia Zveiter.</p>
+                    <p>Dedicou muitos anos de sua carreira à Ordem dos Advogados do Brasil, onde foi Presidente por dois mandatos, e também contribuiu com o Superior Tribunal de Justiça Desportiva do Futebol, onde foi Presidente por dois anos, e Secretário de Justiça do Estado do Rio de Janeiro.</p>
+                    <p>Foi deputado federal por dois mandatos (2011/2014 e 2015/2018), onde foi relator da Lei de Mediação em vigor no Brasil (Lei 13.140/2015), além de Presidente da Comissão que alterou a Lei de Arbitragem (Lei nº 13.129/2015), tendo ainda votado favoravelmente ao texto do Código de Processo Civil em vigor (Lei 13.105/15).</p>
+                    <p>Além do exercício da advocacia, exerce também a função de Administrador Judicial junto às Varas Empresariais do Tribunal de Justiça do Estado do Rio de Janeiro.</p>
+                </div>
+            </div>
 
-.socialSvg path {
-    fill: rgb(255, 255, 255);
-}
-
-.socialContainer:hover .socialSvg {
-    animation: slide-in-top 0.3s both;
-}
-
-.social-icons-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espaço entre os ícones */
-}
-
-@keyframes slide-in-top {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-    
-        </style>
-        <style>
-            /* Reorganizar a foto para dispositivos móveis */
-@media only screen and (max-width: 768px) {
-    .socio-container {
-        display: flex;
-        flex-direction: column; /* Torna o layout vertical */
-        align-items: center; /* Centraliza horizontalmente */
-        text-align: center; /* Centraliza o texto */
-    }
-
-    .socio-container img {
-        margin-top: 10px; /* Espaço entre a escritura e a foto */
-    }
-}
-
-        </style>
-    </head>
-    <body id="top">
-        <div class="loading">
-            <div>
-                <img src="https://zveiter1.websiteseguro.com/_2023/wp-content/themes/zveiter/img/loading.png?1" alt="">
+            <div class="profile-actions">
+                <a href="profissionais.html" class="btn-outline-gold">
+                    ← Voltar para Profissionais
+                </a>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="transition-wrapper">
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item"><a class="nav-link" href="institucional.html"><strong>INSTITUCIONAL</strong></a></li>
-                            <li class="nav-item"><a class="nav-link" href="profissionais.html"><strong>PROFISSIONAIS</strong></a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="especialidadesLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <strong>ESPECIALIDADES</strong>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownEspecialidades">
-                                    <a class="dropdown-item" href="dirsocietario.html">Empresarial e Societário</a>
-                                    <a class="dropdown-item" href="dirinr.html">Direito Imobiliário, Notarial e Registral</a>
-                                    <a class="dropdown-item" href="dirintelec.html">Comunicação e Propriedade Intelectual</a>
-                                    <a class="dropdown-item" href="dirsucessorio.html">Direito Sucessório e Família</a>
-                                    <a class="dropdown-item" href="dirambiental.html">Direito Ambiental</a>
-                                    <a class="dropdown-item" href="">Direito de Saúde Suplementar</a>
-                                    <a class="dropdown-item" href="dirdespent.html">Direito Desportivo e do Entretenimento</a>
-                                    <a class="dropdown-item" href="#">Recuperação Judicial e Falência</a>
-                                    <a class="dropdown-item" href="contTrib.html">Contencioso Tributário</a>
-                                    <a class="dropdown-item" href="diradm.html">Direito Administrativo</a>
-                                    <a class="dropdown-item" href="#">Arbitragem e Mediação</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRecuperacoes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <strong>RECUPERAÇÕES JUDICIAIS E FALÊNCIAS</strong>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownRecuperacoes">
-                                    <a class="dropdown-item" href="grppetro.html">GRUPO PETRÓPOLIS</a>
-                                    <a class="dropdown-item" href="americanas.html">GRUPO AMERICANAS</a>
-                                    <a class="dropdown-item" href="mintucano.html">MINA TUCANO</a>
-                                    <a class="dropdown-item" href="gas.html">G.A.S. CONSULTORIA</a>
-                                    <a class="dropdown-item" href="transporte.html">TRANSPORTE CAMPO GRANDE LTDA E VIAÇÃO PENHA RIO LTDA</a>
-                                    <a class="dropdown-item" href="transcarioca.html">CONSÓRCIO TRANSCARIOCA DE TRANSPORTES</a>
-                                    <a class="dropdown-item" href="stcruz.html">CONSÓRCIO SANTA CRUZ TRANSPORTES</a>
-                                    <a class="dropdown-item" href="airmix.html">AIRMIX AR CONDICIONADO LTDA - FALÊNCIA</a>
-                                    <a class="dropdown-item" href="kpfr.html">KPFR EMPREENDIMENTOS</a>
-                                    <a class="dropdown-item" href="rodopetro.html">RODOPETRO DISTRIBUIDORA DE PETROLEO LTDA - RECUPERAÇÃO JUDICIAL</a>
-                                    <a class="dropdown-item" href="qldtotal.html">QUALIDADE TOTAL OPERADORA DE RECURSOS HUMANOS LTDA.</a>
-                                    <a class="dropdown-item" href="rnr.html">RNR MONTAGENS ELETRICAS E HIDRAULICAS LTDA - EPP.</a>
-                                     <a class="dropdown-item" href="canaamates.html">CANAÃ MATES COMÉRCIO DE ALIMENTOS EIRELI - FALÊNCIA</a>
-                                    <a class="dropdown-item" href="txrx.html">TX RX GLOBAL COMMUNICATION LTDA ME- FALÊNCIA</a>
-                                    <a class="dropdown-item" href="costapereira.html">COSTA PEREIRA BOKEL ENGENHARIA E CONSTRUÇÕES S.A.</a>
+    </main>
 
-
-                                    
-                                </div>
-                                
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="contato.html"><strong>CONTATO</strong></a></li> 
-                            <div class hidden="card">
-                                <div class="social-icons-wrapper">
-                                    <a href="#" class="socialContainer containerOne">
-                                        <svg class="socialSvg instagramSvg" viewBox="0 0 16 16"> 
-                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
-                                        </svg>
-                                    </a>
-                                    <a href="#" class="socialContainer containerThree">
-                                        <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512">
-                                            <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </ul>
-
-                        
-                        
-                    </div>
-
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="imgs/logozvtt.png" alt="Escritório de Advocacia Zveiter" style="height:52px; filter: invert(1) brightness(1.8); opacity:0.85; margin-bottom:20px; display:block;">
+                    <p>Fundado em 1957, o Escritório Zveiter é referência em advocacia de excelência no Brasil.</p>
                 </div>
-                
-        </nav>
-        
-        <header class="sticky-header">
-            <div class="container d-flex flex-column align-items-center py-3">
-                <div class="logo-wrapper">
-                    <a href="index.html">
-                        <img src="imgs/zveiter-advocacia.jpg" alt="Logo" class="img-fluid logo">
+                <div class="footer-address">
+                    <div class="footer-col-title">Rio de Janeiro</div>
+                    <strong>Sede Principal</strong>
+                    <p>Av. Presidente Antônio Carlos nº 51<br>19º e 20º andares, Centro<br>Rio de Janeiro — RJ</p>
+                    <p>Tel.: 55 (21) 3380-1155</p>
+                    <a href="https://maps.app.goo.gl/bw6XGbnmrtH9fzNT8" target="_blank">Ver no mapa →</a>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">São Paulo</div>
+                    <strong>Escritório SP</strong>
+                    <p>Avenida Paulista, nº 777<br>Jardim Paulista, 7º andar<br>São Paulo — SP</p>
+                    <p>Tel.: 55 (11) 4858-0383</p>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">Brasília</div>
+                    <strong>Escritório BSB</strong>
+                    <p>Tel.: 55 (61) 3447-4343</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2025 Escritório de Advocacia Zveiter. Todos os direitos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/escritoriodeadvocaciazveiter" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
                     </a>
                 </div>
-                
-                </div>
             </div>
-        </header>
-        <section id="single-equipe">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="equipe-full">
-                            <div class="equipe-title main-title color-black">
-                                <h1>Sergio Zveiter</h1>
-                            </div>
-                            <div class="equipe-categoria main-text color-dark-gray">
-                                                        <h3>
-                                    Sócio						</h3>
-                            </div>
-                                                <div class="equipe-conteudo main-text color-black">
-                                                                                        <h5><b>FORMAÇÃO </b></h5>
-                                                                <p><span class="TextRun SCXW84268144 BCX8" lang="PT-BR" xml:lang="PT-BR" data-contrast="auto"><span class="NormalTextRun SCXW84268144 BCX8" data-ccp-parastyle="Normal (Web)">Nascido em Niterói-RJ, advogado, ingressou, em 1974, na Universidade Gama Filho/RJ, onde se formou em Direito no ano de 1979. </span></p>
-                                                                                        <h5><b>​EXPERIÊNCIA</b></h5>
-                                                                <p><span data-contrast="auto">Depois de formado, passou a trabalhar no escritório de advocacia de seu pai, então chamado de Escritório de Advocacia Waldemar Zveiter. Posteriormente, o escritório passou a ser um dos mais renomados do Rio de Janeiro e do Brasil, transformando-se no Escritório de Advocacia Zveiter.  
+        </div>
+    </footer>
 
-                                                                    Dedicou muitos anos de sua careira à Ordem dos Advogados do Brasil, onde foi Presidente por dois mandatos e também contribui com o Superior Tribunal de Justiça Desportiva do Futebol, onde foi Presidente por dois anos e Secretário de Justiça do Estado do Rio de Janeiro.  
-                                                                    
-                                                                    Foi deputado federal por dois mandatos (2011/2014 e 2015/2018) onde foi relator da Lei de Mediação em vigor no Brasil (Lei 13.140/2015), além de Presidente da Comissão que alterou a Lei de Arbitragem (Lei nº 13.129/2015), tendo ainda votado favoravelmente ao texto do Código de Processo Civil em vigor (Lei 13.105/15).  
-                                                                    
-                                                                    Além do exercício da advocacia, exerce também a função de Administrador Judicial junto as Varas Empresariais do Tribunal de Justiça do Estado do Rio de Janeiro. </span></p>
-                                                    </div>
-                                                <div class="equipe-btn">
-                                <a class="main-btn btn-switch btn-dark-gray" href="profissionais.html">
-                                    <span class="font-ratio">Voltar</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-5">
-                        <div class="equipe-figura">
-                                                                    <img src="imgs/" alt="" class="img-fluid">
-                                            </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-    
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
 
-    
-                 <footer>
-                    <div class="footer-logo">
-                        <a href="#top" id="scrollToTop">
-                        <a href="index.html"><img src="imgs/logopreta.jpg" alt="Logo" class="footer-logo-img"></a>
-                    </div>
-                    <div class="footer-addresses">
-                        <div class="footer-address footer-address-bra">
-                            <h4>Brasília</h4>
-                            <p>Tel.: 55 (61) 3447-4343</p>
-                        </div>
-                        <div class="footer-address footer-address-rio">
-                            <h4>Rio de Janeiro</h4>
-                            <p>Av Presidente Antônio Carlos nº 51, 19º e 20º andares, Centro - Rio de Janeiro - RJ</p>
-                            <p>Tel.: 55 (21) 3380-1155</p>
-                            <a href="https://maps.app.goo.gl/bw6XGbnmrtH9fzNT8" target="_blank">Ver no Google Maps</a>
-                        </div>
-                        <div class="footer-address footer-address-sp">
-                            <h4>São Paulo</h4>
-                            <p>Avenida Paulista, nº 777, Jardim Paulista, 7º andar, São Paulo </p>
-                            <p>Tel.: 55 (11) 4858-0383</p>
-                        </div>
-                    </footer>
-                
-    
-      <!--
-                      jQuery and Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@highwayjs/core@latest"></script>
-      <script src="assets/js/highway-setup.js"></script>
-      <script src="assets/js/script.js"></script>
-      <script>
-          document.getElementById('especialidadesLink').addEventListener('click', function(event) {
-              event.preventDefault();
-              document.getElementById('areas-de-atuacao').scrollIntoView({ behavior: 'smooth' });
-          });
-          </script>
-          <script>
-              document.querySelector('.footer-logo a').addEventListener('click', function(event) {
-                  event.preventDefault();
-                  window.scrollTo({
-                      top: 0,
-                      behavior: 'smooth'
-                  });
-              });
-          </script>
-          <script>
-              document.addEventListener('scroll', function() {
-      var header = document.querySelector('header');
-      var logoWrapper = document.querySelector('.logo-wrapper');
-      
-      if (window.scrollY > 100) {
-          logoWrapper.classList.add('scrolled');
-          logoWrapper.classList.remove('center');
-      } else {
-          logoWrapper.classList.remove('scrolled');
-          logoWrapper.classList.add('center');
-      }
-  });
-              
-          </script>
-          <script>
-              document.addEventListener('DOMContentLoaded', function() {
-                  var navbar = document.querySelector('.navbar');
-                  var lastScrollTop = 0;
-                  
-                  window.addEventListener('scroll', function() {
-                      var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          
-                      if (currentScrollTop > lastScrollTop) {
-                          // Rolando para baixo
-                          navbar.classList.add('navbar-hidden');
-                      } else {
-                          // Rolando para cima
-                          navbar.classList.remove('navbar-hidden');
-                      }
-          
-                      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Para não permitir valores negativos
-                  });
-              });
-          </script>
-          <script>
-              document.addEventListener('DOMContentLoaded', function() {
-                  var navbar = document.querySelector('.navbar');
-                  var lastScrollTop = 0;
-          
-                  window.addEventListener('scroll', function() {
-                      var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          
-                      if (currentScrollTop > lastScrollTop) {
-                          // Rolando para baixo
-                          navbar.classList.add('navbar-transparent');
-                          navbar.classList.remove('navbar-visible');
-                      } else {
-                          // Rolando para cima
-                          navbar.classList.add('navbar-visible');
-                          navbar.classList.remove('navbar-transparent');
-                      }
-          //js
-                      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Para não permitir valores negativos
-                  });
-              });
-          </script>
-          <script>
-              document.addEventListener('DOMContentLoaded', function () {
-      var header = document.querySelector('header');
-      
-      window.addEventListener('scroll', function () {
-          if (window.scrollY > 50) { // Ajuste o valor conforme necessário
-              header.classList.add('header-scrolled');
-          } else {
-              header.classList.remove('header-scrolled');
-          }
-      });
-  });
-          </script>
-          
-          
-  </body>
-  </html>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        function toggleMenu(id) {
+            const item = document.getElementById(id);
+            const sub = item.querySelector('.sub-links');
+            const icon = item.querySelector('.menu-toggle-icon');
+            sub.classList.toggle('open');
+            icon.textContent = sub.classList.contains('open') ? '−' : '+';
+        }
+    </script>
+</body>
+</html>

@@ -1,16 +1,22 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flavio Zveiter | Escritório de Advocacia Zveiter</title>
+    <title>Maria Eduarda Braz Soares | Escritório de Advocacia Zveiter</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Tenor+Sans&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #B8963E; --gold-light: #D4AF6A; --gold-pale: #E8D5A3; --black: #0A0A0A; --black-rich: #111111; --black-soft: #1A1A1A; --black-mid: #242424; --white: #F5F0E8; --white-dim: #C8C0B0; --font-display: 'Cormorant Garamond', serif; --font-sans: 'Tenor Sans', sans-serif; --font-body: 'Montserrat', sans-serif; --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        :root {
+            --gold: #B8963E; --gold-light: #D4AF6A; --gold-pale: #E8D5A3;
+            --black: #0A0A0A; --black-rich: #111111; --black-soft: #1A1A1A; --black-mid: #242424;
+            --white: #F5F0E8; --white-dim: #C8C0B0;
+            --font-display: 'Cormorant Garamond', serif; --font-sans: 'Tenor Sans', sans-serif; --font-body: 'Montserrat', sans-serif;
+            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; font-size: 16px; }
-        body { background-color: var(--black); color: var(--white); font-family: var(--font-body); font-weight: 300; overflow-x: hidden; cursor: default; }
+        body { background-color: var(--black); color: var(--white); font-family: var(--font-body); font-weight: 300; overflow-x: hidden; }
         nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 80px; background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(184,150,62,0.15); transition: height var(--transition), background var(--transition); }
         nav.scrolled { height: 64px; background: rgba(10,10,10,0.98); }
         .nav-logo img { height: 48px; width: auto; filter: invert(1) brightness(1.8); opacity: 0.92; transition: opacity var(--transition), transform var(--transition); }
@@ -43,11 +49,6 @@
         .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(184,150,62,0.2); display: flex; align-items: center; justify-content: center; transition: border-color 0.3s ease, background 0.3s ease; }
         .footer-social a:hover { border-color: var(--gold); background: rgba(184,150,62,0.08); }
         .footer-social svg { width: 14px; height: 14px; fill: var(--white-dim); }
-        .social-links { display: flex; gap: 16px; margin-top: 24px; }
-        .social-links a { width: 40px; height: 40px; border: 1px solid rgba(184,150,62,0.2); border-radius: 2px; display: flex; align-items: center; justify-content: center; transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease; }
-        .social-links a:hover { border-color: var(--gold); background: rgba(184,150,62,0.08); transform: translateY(-3px); }
-        .social-links svg { width: 16px; height: 16px; fill: var(--white-dim); transition: fill 0.3s ease; }
-        .social-links a:hover svg { fill: var(--gold-light); }
         .profile-container { padding: 160px 80px 80px; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 4fr 6fr; gap: 100px; align-items: start; }
         .profile-image-wrapper { position: sticky; top: 120px; }
         .profile-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border: 1px solid rgba(184,150,62,0.15); filter: grayscale(20%) contrast(1.1); background: var(--black-soft); }
@@ -61,105 +62,91 @@
         .profile-actions { margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(184,150,62,0.1); }
         .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
         .hamburger span { display: block; width: 24px; height: 1px; background: var(--white); transition: var(--transition); }
-        .mobile-menu {
-            display: none; position: fixed; top: 80px; left: 0; right: 0; bottom: 0;
-            background: var(--black-rich); z-index: 900; overflow-y: auto; padding: 32px 24px;
-            border-top: 1px solid rgba(184,150,62,0.15);
-        }
+        .mobile-menu { display: none; position: fixed; top: 80px; left: 0; right: 0; bottom: 0; background: var(--black-rich); z-index: 900; overflow-y: auto; padding: 32px 24px; border-top: 1px solid rgba(184,150,62,0.15); }
         .mobile-menu.open { display: block; }
         .menu-item { border-bottom: 1px solid rgba(184,150,62,0.08); }
-        .menu-item a, .menu-toggle {
-            display: block; padding: 16px 0; font-family: var(--font-sans); font-size: 0.85rem;
-            letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-dim);
-            text-decoration: none; background: none; border: none; width: 100%; text-align: left;
-            cursor: pointer; transition: color 0.2s;
-        }
-        .menu-item a:hover, .menu-toggle:hover { color: var(--gold-light); }
-        .menu-toggle { display: flex; justify-content: space-between; align-items: center; }
-        .sub-links { display: none; padding: 8px 0 16px 16px; }
-        .sub-links.open { display: block; }
-        .sub-links a { font-size: 0.75rem; letter-spacing: 0.08em; padding: 8px 0; text-transform: none; }
+        .menu-item a { display: block; padding: 16px 0; font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-dim); text-decoration: none; transition: color 0.2s; }
+        .menu-item a:hover { color: var(--gold-light); }
         @media (max-width: 992px) { .profile-container { grid-template-columns: 1fr; gap: 60px; } .profile-image-wrapper { position: relative; top: 0; max-width: 500px; margin: 0 auto; } .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; } }
         @media (max-width: 768px) { nav { padding: 0 24px; } .nav-links { display: none; } .hamburger { display: flex; } .profile-container { padding: 120px 24px 60px; } .footer-top { grid-template-columns: 1fr; } footer { padding: 60px 24px 32px; } .footer-bottom { flex-direction: column; gap: 20px; text-align: center; } }
     </style>
 </head>
 <body>
-
     <nav id="navbar">
-        <div class="nav-logo">
-            <a href="index_redesign.html"><img src="imgs/logozvtt.png" alt="Escritório de Advocacia Zveiter"></a>
-        </div>
+        <div class="nav-logo"><a href="index.html"><img src="imgs/logozvtt.png" alt="Escritório de Advocacia Zveiter"></a></div>
         <ul class="nav-links">
-            <li><a href="institucional_redesign.html">Institucional</a></li>
-            <li><a href="profissionais_redesign.html">Profissionais</a></li>
+            <li><a href="institucional.html">Institucional</a></li>
+            <li><a href="profissionais.html">Profissionais</a></li>
             <li class="has-dropdown">
-                <a class="nav-btn" href="especialidades_redesign.html">Especialidades</a>
+                <a class="nav-btn" href="especialidades.html">Especialidades</a>
                 <div class="dropdown-panel wide">
-                    <a href="especialidades_redesign.html#empresarial">Empresarial e Societário</a>
-                    <a href="especialidades_redesign.html#imobiliario">Direito Imobiliário, Notarial e Registral</a>
-                    <a href="especialidades_redesign.html#propriedade-intelectual">Comunicação e Propriedade Intelectual</a>
-                    <a href="especialidades_redesign.html#sucessorio">Direito Sucessório e Família</a>
-                    <a href="especialidades_redesign.html#ambiental">Direito Ambiental</a>
-                    <a href="especialidades_redesign.html#saude-suplementar">Direito de Saúde Suplementar</a>
-                    <a href="especialidades_redesign.html#desportivo">Direito Desportivo e do Entretenimento</a>
-                    <a href="especialidades_redesign.html#recuperacao">Recuperação Judicial e Falência</a>
-                    <a href="especialidades_redesign.html#tributario">Contencioso Tributário</a>
-                    <a href="especialidades_redesign.html#administrativo">Direito Administrativo</a>
-                    <a href="especialidades_redesign.html#arbitragem">Arbitragem e Mediação</a>
+                    <a href="especialidades.html#empresarial">Empresarial e Societário</a>
+                    <a href="especialidades.html#imobiliário">Direito Imobiliário, Notarial e Registral</a>
+                    <a href="especialidades.html#propriedade-intelectual">Comunicação e Propriedade Intelectual</a>
+                    <a href="especialidades.html#sucessorio">Direito Sucessório e Família</a>
+                    <a href="especialidades.html#ambiental">Direito Ambiental</a>
+                    <a href="especialidades.html#saúde-suplementar">Direito de Saúde Suplementar</a>
+                    <a href="especialidades.html#desportivo">Direito Desportivo e do Entretenimento</a>
+                    <a href="especialidades.html#recuperação">Recuperação Judicial e Falência</a>
+                    <a href="especialidades.html#tributário">Contencioso Tributário</a>
+                    <a href="especialidades.html#administrativo">Direito Administrativo</a>
+                    <a href="especialidades.html#arbitragem">Arbitragem e Mediação</a>
                 </div>
             </li>
             <li class="has-dropdown">
-                <a class="nav-btn" href="recuperacao_redesign.html">Recuperações</a>
+                <a class="nav-btn" href="recuperação.html">Recuperações</a>
                 <div class="dropdown-panel">
-                    <a href="grppetro_redesign.html">Grupo Petrópolis</a>
-                    <a href="americanas_redesign.html">Grupo Americanas</a>
+                    <a href="grppetro.html">Grupo Petrópolis</a>
+                    <a href="americanas.html">Grupo Americanas</a>
                     <a href="mintucano.html">Mina Tucano</a>
-                    <a href="gas_redesign.html">G.A.S. Consultoria</a>
+                    <a href="gas.html">G.A.S. Consultoria</a>
                     <a href="transporte.html">Transporte Campo Grande &amp; Viação Penha</a>
-                    <a href="transcarioca_redesign.html">Consórcio Transcarioca</a>
-                    <a href="stcruz_redesign.html">Consórcio Santa Cruz</a>
-                    <a href="airmix_redesign.html">Airmix — Falência</a>
-                    <a href="kpfr_redesign.html">KPFR Empreendimentos</a>
-                    <a href="rodopetro_redesign.html">Rodopetro</a>
-                    <a href="qldtotal_redesign.html">Qualidade Total</a>
-                    <a href="rnr_redesign.html">RNR Montagens</a>
-                    <a href="canaamates_redesign.html">Canaã Mates — Falência</a>
-                    <a href="txrx_redesign.html">TX RX — Falência</a>
-                    <a href="costapereira_redesign.html">Costa Pereira Bokel</a>
+                    <a href="transcarioca.html">Consórcio Transcarioca</a>
+                    <a href="stcruz.html">Consórcio Santa Cruz</a>
+                    <a href="airmix.html">Airmix — Falência</a>
+                    <a href="kpfr.html">KPFR Empreendimentos</a>
+                    <a href="rodopetro.html">Rodopetro</a>
+                    <a href="qldtotal.html">Qualidade Total</a>
+                    <a href="rnr.html">RNR Montagens</a>
+                    <a href="canaamates.html">Canaã Mates — Falência</a>
+                    <a href="txrx.html">TX RX — Falência</a>
+                    <a href="costapereira.html">Costa Pereira Bokel</a>
                 </div>
             </li>
             <div class="nav-divider"></div>
-            <li><a href="contato_redesign.html">Contato</a></li>
+            <li><a href="contato.html">Contato</a></li>
         </ul>
         <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="menu-item"><a href="institucional.html">Institucional</a></div>
+        <div class="menu-item"><a href="profissionais.html">Profissionais</a></div>
+        <div class="menu-item"><a href="contato.html">Contato</a></div>
+    </div>
 
     <main class="profile-container">
         <div class="profile-image-wrapper">
-            <img class="profile-img" src="imgs/nophoto.png" alt="Flavio Zveiter">
+            <img class="profile-img" src="imgs/mebraz.png" alt="Maria Eduarda Braz Soares">
         </div>
         <div>
-            <div class="profile-role">Sócio</div>
-            <h1 class="profile-name">Flavio Zveiter</h1>
-
+            <div class="profile-role">Advogada Associada</div>
+            <h1 class="profile-name">Maria Eduarda Braz Soares</h1>
             <div class="profile-section-block">
                 <h2 class="profile-section-title">Formação</h2>
                 <div class="profile-text">
-                    <p>Formado em Direito pela Universidade Candido Mendes, é mestre em Sport and Business pela New York University (NYU).Direito pela Universidade Candido Mendes.</p>
+                    <p>Graduada em Direito pelo Centro Universitário UniProcessus.</p>
+                    <p>Especialização em Direito Processual Civil pela Universidade Cruzeiro do Sul.</p>
                 </div>
             </div>
-
             <div class="profile-section-block">
                 <h2 class="profile-section-title">Experiência</h2>
                 <div class="profile-text">
-                    <p>Nascido em Niterói - RJ, iniciou sua carreira ainda muito jovem, como estagiário do Escritório em 1998. Formado em 2003, passou a atuar primordialmente na advocacia contenciosa patrocinando os interesses de grandes empresas nos mais diversos setores, em litígios no Tribunal de Justiça do Rio de Janeiro e Tribunais Superiores. Atualmente tem atuação concentrada em demandas estratégicas.</p>
-                    <p>Flavio também é internacionalmente reconhecido por sua atuação no Direito Desportivo e do Entretenimento, tendo exercido a presidência do Superior Tribunal de Justiça Desportivo do Futebol no biênio 2012/2014. Posteriormente foi indicado como membro do Comitê Independente de Ética da Confederação Internacional de Futebol — FIFA para o quadriênio 2017/2021.</p>
-                    <p>É Conselheiro Federal da OAB pelo Estado do Rio de Janeiro (2016/2021), tendo sido presidente da Comissão de Acompanhamento Legislativo no biênio 2016/2018 e da Comissão Especial de Direito dos Jogos Esportivos, Lotéricos e Entretenimento (2019/2021). Membro Fundador da Academia Nacional de Direito Desportivo — 2013.</p>
+                    <p>Advogada associada com atuação na advocacia pública e privada, especialmente no direito civil e administrativo, com experiência em gestão de carteira de processos e atuação em todas as fases processuais.</p>
+                    <p>Ingressou no escritório em 2025, compondo a equipe de Brasília. Atua nos processos a partir da 2ª instância até o julgamento junto ao Superior Tribunal de Justiça e ao Supremo Tribunal Federal, representando os interesses dos clientes nas disputas judiciais através de acompanhamento processual e elaboração de peças recursais e memoriais.</p>
                 </div>
             </div>
-
             <div class="profile-actions">
-                <a href="profissionais_redesign.html" class="btn-outline-gold">← Voltar para Profissionais</a>
+                <a href="profissionais.html" class="btn-outline-gold">← Voltar para Profissionais</a>
             </div>
         </div>
     </main>
@@ -200,24 +187,10 @@
             </div>
         </div>
     </footer>
-
     <script>
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
-
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        hamburger.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-        });
-
-        function toggleMenu(id) {
-            const item = document.getElementById(id);
-            const sub = item.querySelector('.sub-links');
-            const icon = item.querySelector('.menu-toggle-icon');
-            sub.classList.toggle('open');
-            icon.textContent = sub.classList.contains('open') ? '−' : '+';
-        }
+        document.getElementById('hamburger').addEventListener('click', () => { document.getElementById('mobileMenu').classList.toggle('open'); });
     </script>
 </body>
 </html>

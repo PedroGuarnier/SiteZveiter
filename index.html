@@ -1,572 +1,1770 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="imgs/ChatGPT Image 13 de mai. de 2025, 15_42_05.png" type="image/png">
     <title>Escritório de Advocacia Zveiter</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <!-- Adicione aqui os links para CSS e JavaScript -->
-        <link rel="stylesheet" href="style.css">
-        
-        <title>Document</title>
-        <style>
-        .card {
-    width: auto; /* Ajuste para que a largura seja determinada pelo conteúdo */
-    height: fit-content;
-    background: #191919;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px; /* Ajuste do padding */
-    gap: 10px; /* Espaço entre os ícones */
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
-    border-radius: 5px; /* Adiciona bordas arredondadas se desejado */
-}
-
-.socialContainer {
-    width: 32px; /* Tamanho dos ícones */
-    height: 32px; /* Tamanho dos ícones */
-    background-color: rgb(44, 44, 44);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    transition-duration: .3s;
-}
-
-.containerOne:hover {
-    background-color: #d62976;
-}
-
-.containerThree:hover {
-    background-color: #0072b1;
-}
-
-.socialContainer:active {
-    transform: scale(0.9);
-}
-
-.socialSvg {
-    width: 20px; /* Tamanho reduzido dos ícones */
-}
-
-.socialSvg path {
-    fill: rgb(255, 255, 255);
-}
-
-.socialContainer:hover .socialSvg {
-    animation: slide-in-top 0.3s both;
-}
-
-.social-icons-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espaço entre os ícones */
-}
-
-@keyframes slide-in-top {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-    
-        </style>
-        <style>
-            /* Remove a margem padrão do body para garantir que a seção comece imediatamente após o título */
-body {
-    margin: 0;
-}
-
-/* Remove margens e padding do main-title para garantir que ele se encoste à seção */
-.main-title {
-    margin: 0;
-    padding: 20px; /* Ajuste o padding se necessário */
-}
-
-/* Remove o padding do container dentro da seção para garantir que o background se estenda até as bordas */
-#home-areas-de-atuacao {
-    background-color: #f0f0f0;
-    padding: 0; /* Remove padding interno para se encostar ao main-title */
-}
-
-/* Ajusta a margem do título da seção para garantir que não haja espaço extra */
-#home-areas-de-atuacao .container {
-    padding: 0;
-}
-
-/* Ajusta o botão para se encostar ao título */
-.submenu-button {
-    margin: 10px; /* Ajuste conforme necessário */
-}
-.logo-wrapper {
-    margin-left: -20px; /* Ajuste o valor conforme necessário */
-}
-
-.logo {
-    width: 200px; /* Ajuste o tamanho conforme necessário */
-    height: auto; /* Mantém a proporção da imagem */
-}
-/* Justifica o texto da seção "Quem Somos" */
-.secondary-text p {
-    text-align: justify;
-}
-
-/* Justifica o texto da área "Contencioso de Massa" */
-#contenciosoContent p {
-    text-align: justify;
-}
- /*
-    Este seletor mira o contêiner principal do modal pelo seu ID
-  /* Aplica os estilos de posicionamento APENAS QUANDO o modal tiver a classe '.show', 
-  que é adicionada pelo JavaScript do Bootstrap quando o modal é aberto. 
-*/
-#meuPopup.show {
-  display: flex !important;   /* Garante o comportamento flex para alinhamento */
-  justify-content: center;   /* Alinha o pop-up horizontalmente no centro */
-  align-items: flex-end;     /* Alinha o pop-up na parte inferior */
-}
-
-/* Adiciona um pouco de espaço para que o pop-up não fique colado na borda da tela. */
-#meuPopup .modal-dialog {
-  margin-bottom: 5vh; /* Ajuste este valor conforme necessário */
-}
-
-/* Estilização do conteúdo do modal (opcional, mas bom para manter seu estilo original) */
-#meuPopup .modal-content {
-  background-color: #191919;
-  color: white;
-  border-radius: 10px;
-}
-
-#meuPopup .close {
-    color: white;
-    opacity: 0.9;
-}
-
-        </style>
-    </head>
-    <body id="top">
-        <div class="loading">
-            <div>
-                <img src="https://zveiter1.websiteseguro.com/_2023/wp-content/themes/zveiter/img/loading.png?1" alt="">
-            </div>
-        </div>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="transition-wrapper">
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item"><a class="nav-link" href="institucional.html"><strong>INSTITUCIONAL</strong></a></li>
-                            <li class="nav-item"><a class="nav-link" href="profissionais.html"><strong>PROFISSIONAIS</strong></a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="especialidadesLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <strong>ESPECIALIDADES</strong>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownEspecialidades">
-                                    <a class="dropdown-item" href="dirsocietario.html">Empresarial e Societário</a>
-                                    <a class="dropdown-item" href="dirinr.html">Direito Imobiliário, Notarial e Registral</a>
-                                    <a class="dropdown-item" href="dirintelec.html">Comunicação e Propriedade Intelectual</a>
-                                    <a class="dropdown-item" href="dirsucessorio.html">Direito Sucessório e Família</a>
-                                    <a class="dropdown-item" href="dirambiental.html">Direito Ambiental</a>
-                                    <a class="dropdown-item" href="">Direito de Saúde Suplementar</a>
-                                    <a class="dropdown-item" href="dirdespent.html">Direito Desportivo e do Entretenimento</a>
-                                    <a class="dropdown-item" href="recuperacao.html">Recuperação Judicial e Falência</a>
-                                    <a class="dropdown-item" href="contTrib.html">Contencioso Tributário</a>
-                                    <a class="dropdown-item" href="diradm.html">Direito Administrativo</a>
-                                    <a class="dropdown-item" href="#">Arbitragem e Mediação</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="recuperacao.html" id="navbarDropdownRecuperacoes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <strong>RECUPERAÇÕES JUDICIAIS E FALÊNCIAS</strong>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownRecuperacoes">
-                                    <a class="dropdown-item" href="grppetro.html">GRUPO PETRÓPOLIS</a>
-                                    <a class="dropdown-item" href="americanas.html">GRUPO AMERICANAS</a>
-                                    <a class="dropdown-item" href="mintucano.html">MINA TUCANO</a>
-                                    <a class="dropdown-item" href="gas.html">G.A.S. CONSULTORIA</a>
-                                    <a class="dropdown-item" href="transporte.html">TRANSPORTE CAMPO GRANDE LTDA E VIAÇÃO PENHA RIO LTDA</a>
-                                    <a class="dropdown-item" href="transcarioca.html">CONSÓRCIO TRANSCARIOCA DE TRANSPORTES</a>
-                                    <a class="dropdown-item" href="stcruz.html">CONSÓRCIO SANTA CRUZ TRANSPORTES</a>
-                                    <a class="dropdown-item" href="airmix.html">AIRMIX AR CONDICIONADO LTDA - FALÊNCIA</a>
-                                    <a class="dropdown-item" href="kpfr.html">KPFR EMPREENDIMENTOS</a>
-                                    <a class="dropdown-item" href="rodopetro.html">RODOPETRO DISTRIBUIDORA DE PETROLEO LTDA - RECUPERAÇÃO JUDICIAL</a>
-                                           <a class="dropdown-item" href="qldtotal.html">QUALIDADE TOTAL OPERADORA DE RECURSOS HUMANOS LTDA.</a>
-                                    <a class="dropdown-item" href="rnr.html">RNR MONTAGENS ELETRICAS E HIDRAULICAS LTDA - EPP.</a>
-                                     <a class="dropdown-item" href="canaamates.html">CANAÃ MATES COMÉRCIO DE ALIMENTOS EIRELI - FALÊNCIA</a>
-                                    <a class="dropdown-item" href="txrx.html">TX RX GLOBAL COMMUNICATION LTDA ME- FALÊNCIA</a>
-                                    <a class="dropdown-item" href="costapereira.html">COSTA PEREIRA BOKEL ENGENHARIA E CONSTRUÇÕES S.A.</a>
-
-
-
-                                </div>
-                                
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="contato.html"><strong>CONTATO</strong></a></li> 
-                            <div class="card">
-                                <div class hidden="social-icons-wrapper">
-                                    <a href="#" class="socialContainer containerOne">
-                                        <svg class="socialSvg instagramSvg" viewBox="0 0 16 16"> 
-                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
-                                        </svg>
-                                    </a>
-                                    <a href="#" class="socialContainer containerThree">
-                                        <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512">
-                                            <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </ul>
-
-                        
-                        
-                    </div>
-
-                </div>
-                
-        </nav>
-        
-        <header class="sticky-header">
-            <div class="container d-flex flex-column align-items-center py-3">
-                <div class="logo-wrapper">
-                    <a href="index.html">
-                        <img src="imgs/zveiter-advocacia.jpg" alt="Logo" class="img-fluid logo">
-                    </a>
-                </div>
-                
-                </div>
-            </div>
-        </header>
-    
-    
-
-
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="imgs/imgsitesala.jpeg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="imgs/IMG_4262-editada.JPG" alt="Second slide">
-            </div>
-
-            <div class hidden="carousel-item">
-                <img class="d-block w-100" src="imgs/IMG_4266-editada.JPG" alt="Second slide">
-            </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="imgs/IMG_4235-editada.JPG" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="imgs/IMG_4384-editada.JPG" alt="First slide">
-                </div>
-            
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-    <section id="home-quem-somos">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="main-title text-black color-white">
-                        <h1>Quem Somos</h1>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="secondary-text color-black">
-                        <p>O Escritório de Advocacia Zveiter, fundado pelo Advogado Waldemar Zveiter, é reconhecido pela sua atuação de excelência em litígio, consultoria e assessoria, tendo como norte a garantia do direito de seus clientes, desde 1957.</p>
-                    </div>
-                    <a href="institucional.html" class="main-btn btn-black">
-                        <span class="font-ratio">Saiba mais</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Faixa Cinza -->
-    <div style="background-color: #dcdcdc; height: 100px; width: 100%;"></div>
-    
-    <div class="main-title text-black color-white" style="text-align: center; background-color: #191919; padding: 20px;">
-        <h1 style="margin: 0;">Áreas de Atuação</h1>
-    <section id="home-areas-de-atuacao" style="background-color: #dcdcdc;">
-        <div class="container">
-            <div class="text-center">
-                <button id="btnContencioso" class="submenu-button" style="margin-right: 20px;">Contencioso de Massa</button>
-                <button id="btnEstrategico" class="submenu-button" style="margin-left: 20px;">Estratégico</button>
-            </div>
-            
-            <div id="submenuContent" class="submenu-content">
-                <!-- Contencioso de Massa Content -->
-                <div id="contenciosoContent" class="content hidden">
-                    <h4><p>O Escritório de Advocacia Zveiter atua há mais de 20 anos com o contencioso de massa de grandes empresas dos mais diversos ramos do mercado.</p></h4>
-                    <h5><p>Devido aos anos de experiência, desenvolveu uma gestão perspicaz de seu contencioso de massa, dispondo de uma infraestrutura tecnológica que possibilita a integração de todos os colaboradores envolvidos no acompanhamento das questões jurídicas e administrativas de seus clientes, prestando um atendimento especializado dentro da peculiaridade do ramo no qual o cliente atua.</p></h5>
-                    <h5><p>Através de uma advocacia 5.0, o escritório conta com uma equipe de ponta que desenvolve estratégias de desempenho, gestão dos processos, prioriza a utilização de soluções adequadas de conflito, bem como acompanha o avanço e progresso tecnológico dentro de cada empresa, para poder satisfazer de maneira única a necessidade de cada cliente, atingindo os melhores resultados.</p></h5>
-                </div>
-                <!-- Estratégico Content -->
-                <div id="estrategicoContent" class="content">
-                    <div class="areas-de-atuacao">
-                        <a href="contTrib.html" class="area-item">
-                            <strong><h5>Contencioso Tributário</h5></strong>
-                        </a>
-                        <a href="diradm.html" class="area-item">
-                            <strong><h5>Direito Administrativo</h5></strong>
-                        </a>
-                        <a href="dirambiental.html" class="area-item">
-                            <strong><h5>Direito Ambiental</h5></strong>
-                        </a>
-                        <a href="pagina-saude.html" class="area-item">
-                            <strong><h5>Direito de Saúde Suplementar</h5></strong>
-                        </a>
-                        <a href="dirdespent.html" class="area-item">
-                            <strong><h5>Direito Desportivo e do Entretenimento</h5></strong>
-                        </a>
-                        <a href="direleitoral.html" class="area-item">
-                            <strong><h5>Direito Eleitoral</h5></strong>
-                        </a>
-                        <a href="dirinr.html" class="area-item">
-                            <strong><h5>Direito Imobiliário, Notarial e Registral</h5></strong>
-                        </a>
-                        <a href="dirconsumidor.html" class="area-item">
-                            <strong><h5>Direito do Consumidor</h5></strong>
-                        </a>
-                        <a href="dirsocietario.html" class="area-item">
-                            <strong><h5>Direito Societário</h5></strong>
-                        </a>
-                        <a href="dirsucessorio.html" class="area-item">
-                            <strong><h5>Direito Sucessório e Família</h5></strong>
-                        </a>
-                        <a href="dirintelec.html" class="area-item">
-                            <strong><h5>Propriedade Intelectual</h5></strong>
-                        </a>
-                        <a href="dirsanbasico.html" class="area-item">
-                            <strong><h5>Direito ao Saneamento Básico</h5></strong>
-                        </a>
-                        <a href="recuperacao.html" class="area-item">
-                            <strong><h5>Recuperação Judicial e Falência</h5></strong>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    
-    <footer>
-        <div class="footer-logo">
-            <a href="#top" id="scrollToTop">
-            <a href="index.html"><img src="imgs/logopreta.jpg" alt="Logo" class="footer-logo-img"></a>
-        </div>
-        <div class="footer-addresses">
-            <div class="footer-address footer-address-bra">
-                <h4>Brasília</h4>
-                <p>Tel.: 55 (61) 3447-4343</p>
-            </div>
-            <div class="footer-address footer-address-rio">
-                <h4>Rio de Janeiro</h4>
-                <p>Av Presidente Antônio Carlos nº 51, 19º e 20º andares, Centro - Rio de Janeiro - RJ</p>
-                <p>Tel.: 55 (21) 3380-1155</p>
-                <a href="https://maps.app.goo.gl/bw6XGbnmrtH9fzNT8" target="_blank ">Ver no Google Maps</a>
-            </div>
-            <div class="footer-address footer-address-sp">
-                <h4>São Paulo</h4>
-                <p>Avenida Paulista, nº 777, Jardim Paulista, 7º andar, São Paulo </p>
-                <p>Tel.: 55 (11) 4858-0383</p>
-            </div>
-        </footer>
-                    <div class="modal fade" id="meuPopup" tabindex="-1" role="dialog" aria-labelledby="meuPopupLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content" style="background-color: #191919; color: white; border-radius: 10px;">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="meuPopupLabel">OAB-RJ lança cartilha de combate ao golpe do falso advogado; veja dicas</h5>
-                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                            <div class="modal-body">
-                    <a href="https://g1.globo.com/rj/rio-de-janeiro/noticia/2025/08/14/oab-rj-lanca-cartilha-de-combate-ao-golpe-do-falso-advogado-veja-dicas.ghtml" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="btn btn-primary">
-                    Leia a matéria completa
-                    </a>
-                </div>
-                
-                </div>
-            </div>
-            </div>
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<!-- Botão de rolar para áreas de atuação -->
-<script>
-const link = document.getElementById('especialidadesLink');
-const target = document.getElementById('areas-de-atuacao');
-
-if (link && target) {
-    link.addEventListener('click', function(event) {
-        event.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-    });
-}
-</script>
-
-<!-- Scroll to Top -->
-<script>
-document.querySelector('.footer-logo a').addEventListener('click', function(event) {
-    event.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-</script>
-
-<!-- Animação da logo ao rolar -->
-<script>
-document.addEventListener('scroll', function() {
-    var header = document.querySelector('header');
-    var logoWrapper = document.querySelector('.logo-wrapper');
-    if (window.scrollY > 100) {
-        logoWrapper.classList.add('scrolled');
-        logoWrapper.classList.remove('center');
-    } else {
-        logoWrapper.classList.remove('scrolled');
-        logoWrapper.classList.add('center');
-    }
-});
-</script>
-
-<!-- Mostrar/ocultar navbar ao rolar -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var navbar = document.querySelector('.navbar');
-    var lastScrollTop = 0;
-    
-
-    window.addEventListener('scroll', function() {
-        var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (currentScrollTop > lastScrollTop) {
-            navbar.classList.add('navbar-hidden');
-        } else {
-            navbar.classList.remove('navbar-hidden');
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Tenor+Sans&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ========================
+           VARIABLES & RESET
+        ======================== */
+        :root {
+            --gold: #B8963E;
+            --gold-light: #D4AF6A;
+            --gold-pale: #E8D5A3;
+            --black: #0A0A0A;
+            --black-rich: #111111;
+            --black-soft: #1A1A1A;
+            --black-mid: #242424;
+            --white: #F5F0E8;
+            --white-dim: #C8C0B0;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-sans: 'Tenor Sans', sans-serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
-    });
-});
-</script>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<!-- Transparência da navbar ao rolar -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var navbar = document.querySelector('.navbar');
-    var lastScrollTop = 0;
+        html { scroll-behavior: smooth; font-size: 16px; }
 
-    if (window.innerWidth >= 992) {
-        window.addEventListener('scroll', function() {
-            var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-weight: 300;
+            overflow-x: hidden;
+            cursor: default;
+        }
 
-            if (currentScrollTop > lastScrollTop) {
-                navbar.classList.add('navbar-hidden');
-            } else {
-                navbar.classList.remove('navbar-hidden');
+        /* ========================
+           CUSTOM CURSOR
+        ======================== */
+
+        /* ========================
+           NAVIGATION
+        ======================== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 0 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(184,150,62,0.15);
+            transition: height var(--transition), background var(--transition);
+        }
+
+        nav.scrolled {
+            height: 64px;
+            background: rgba(10,10,10,0.98);
+        }
+
+        .nav-logo {
+            flex-shrink: 0;
+        }
+
+        .nav-logo img {
+            height: 48px;
+            width: auto;
+            filter: invert(1) brightness(1.8);
+            opacity: 0.92;
+            transition: opacity var(--transition), transform var(--transition);
+        }
+        .nav-logo img:hover { opacity: 1; transform: scale(1.03); }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            list-style: none;
+        }
+
+        .nav-links > li {
+            position: relative;
+        }
+
+        .nav-links > li > a,
+        .nav-links > li > .nav-btn {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            text-decoration: none;
+            padding: 28px 18px;
+            display: block;
+            transition: color var(--transition);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-links > li > a:hover,
+        .nav-links > li > .nav-btn:hover,
+        .nav-links > li:hover > a,
+        .nav-links > li:hover > .nav-btn {
+            color: var(--gold-light);
+        }
+
+        /* Dropdown */
+        .dropdown-panel {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: var(--black-soft);
+            border: 1px solid rgba(184,150,62,0.2);
+            min-width: 280px;
+            padding: 12px 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 100;
+        }
+
+        .dropdown-panel.wide {
+            min-width: 340px;
+            columns: 2;
+            column-gap: 0;
+        }
+
+        .nav-links > li:hover .dropdown-panel {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-panel a {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            color: var(--white-dim);
+            text-decoration: none;
+            padding: 9px 24px;
+            transition: color 0.2s ease, padding-left 0.2s ease;
+            break-inside: avoid;
+        }
+
+        .dropdown-panel a:hover {
+            color: var(--gold-light);
+            padding-left: 30px;
+        }
+
+        .nav-divider {
+            width: 1px;
+            height: 16px;
+            background: rgba(184,150,62,0.2);
+            margin: 0 6px;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 1px;
+            background: var(--white);
+            transition: var(--transition);
+        }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+
+        /* Mobile menu */
+        .mobile-menu {
+            display: block;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--black-rich);
+            z-index: 999;
+            padding: 100px 40px 40px;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        .mobile-menu .menu-item {
+            border-bottom: 1px solid rgba(184,150,62,0.1);
+        }
+        .mobile-menu .menu-item > a,
+        .mobile-menu .menu-item > .menu-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--white);
+            text-decoration: none;
+            padding: 14px 0;
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            transition: color 0.2s;
+        }
+        .mobile-menu .menu-item > a:hover,
+        .mobile-menu .menu-item > .menu-toggle:hover { color: var(--gold-light); }
+        .mobile-menu .menu-toggle-icon {
+            font-size: 1.2rem;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        .mobile-menu .menu-item.expanded .menu-toggle-icon {
+            transform: rotate(45deg);
+        }
+        .mobile-menu .sub-links {
+            padding: 0 0 12px 16px;
+            display: none;
+        }
+        .mobile-menu .menu-item.expanded .sub-links {
+            display: block;
+        }
+        .mobile-menu .sub-links a {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--white-dim);
+            text-decoration: none;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(184,150,62,0.05);
+            letter-spacing: 0.03em;
+            transition: color 0.2s, padding-left 0.2s;
+        }
+        .mobile-menu .sub-links a:hover {
+            color: var(--gold-light);
+            padding-left: 8px;
+        }
+
+        /* ========================
+           HERO
+        ======================== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        .hero-slides {
+            position: absolute;
+            inset: 0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+
+        .hero-slide.active { opacity: 1; }
+
+        .hero-slide::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(10,10,10,0.2) 0%,
+                rgba(10,10,10,0.15) 40%,
+                rgba(10,10,10,0.6) 75%,
+                rgba(10,10,10,0.92) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 80px 80px;
+            max-width: 900px;
+        }
+
+        .hero-eyebrow {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.5s forwards;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3.5rem, 7vw, 6rem);
+            font-weight: 300;
+            line-height: 1.05;
+            color: var(--white);
+            margin-bottom: 32px;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.7s forwards;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--gold-pale);
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 0.06em;
+            color: var(--white-dim);
+            max-width: 480px;
+            line-height: 1.8;
+            margin-bottom: 48px;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.9s forwards;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            opacity: 0;
+            animation: fadeUp 1s ease 1.1s forwards;
+        }
+
+        .btn-primary-gold {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--black);
+            background: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 16px 40px;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-primary-gold:hover {
+            background: var(--gold-light);
+            border-color: var(--gold-light);
+        }
+
+        .btn-outline-gold {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: transparent;
+            border: 1px solid rgba(184,150,62,0.4);
+            padding: 16px 40px;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-outline-gold:hover {
+            border-color: var(--gold);
+            background: rgba(184,150,62,0.08);
+        }
+
+        /* Hero scroll indicator */
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            right: 80px;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0;
+            animation: fadeIn 1s ease 1.5s forwards;
+        }
+
+        .hero-scroll span {
+            font-family: var(--font-sans);
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            writing-mode: vertical-rl;
+        }
+
+        .hero-scroll-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            animation: scrollLine 2s ease-in-out infinite;
+        }
+
+        /* Hero logo badge */
+        .hero-logo-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1.2s ease 0.2s forwards;
+            pointer-events: none;
+        }
+
+        .hero-logo-badge img {
+            width: clamp(280px, 35vw, 480px);
+            filter: invert(1) brightness(1.8);
+            opacity: 0.95;
+        }
+
+        .hero-logo-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+            margin: 20px auto 0;
+            opacity: 0.7;
+        }
+
+        /* About plaque image */
+        .about-plaque {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+
+        .about-plaque img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: sepia(15%) contrast(1.05);
+            transition: transform 0.8s ease;
+            display: block;
+        }
+
+        .about-plaque:hover img {
+            transform: scale(1.03);
+        }
+
+        .about-plaque::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(184,150,62,0.25);
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .about-plaque { display: none; }
+            .about-year { font-size: 4rem !important; }
+        }
+
+        /* RJ photo strip */
+        .rj-strip {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 360px;
+            overflow: hidden;
+        }
+
+        .rj-strip-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rj-strip-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+            filter: saturate(0.85);
+        }
+
+        .rj-strip-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .rj-strip-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10,10,10,0.3);
+            transition: background 0.4s ease;
+        }
+
+        .rj-strip-item:hover::after {
+            background: rgba(10,10,10,0.15);
+        }
+
+        .rj-strip-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 24px;
+            z-index: 2;
+            font-family: var(--font-sans);
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(232,213,163,0.7);
+        }
+
+        .hero-indicators {
+            position: absolute;
+            bottom: 44px;
+            left: 80px;
+            z-index: 2;
+            display: flex;
+            gap: 8px;
+        }
+
+        .hero-indicator {
+            width: 24px;
+            height: 1px;
+            background: rgba(184,150,62,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hero-indicator.active {
+            width: 48px;
+            background: var(--gold);
+        }
+
+        /* ========================
+           DECORATIVE ELEMENTS
+        ======================== */
+        .ornament {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .ornament-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(184,150,62,0.4), transparent);
+        }
+
+        .ornament-diamond {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        .section-label {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            line-height: 1.15;
+            color: var(--white);
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--gold-pale);
+        }
+
+        /* ========================
+           ABOUT SECTION
+        ======================== */
+        .about {
+            padding: 140px 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .about-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-year {
+            font-family: var(--font-display);
+            font-size: 8rem;
+            font-weight: 300;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(184,150,62,0.2);
+            line-height: 1;
+            margin-bottom: -20px;
+        }
+
+        .about-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+        }
+
+        .about-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-text {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: var(--white-dim);
+            margin: 24px 0 40px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(184,150,62,0.15);
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            margin-top: 8px;
+        }
+
+        /* ========================
+           AREAS SECTION
+        ======================== */
+        .areas-section {
+            background: var(--black-soft);
+            padding: 120px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .areas-section::before {
+            content: 'ESPECIALIDADES';
+            position: absolute;
+            top: 60px;
+            right: -20px;
+            font-family: var(--font-display);
+            font-size: 10rem;
+            font-weight: 300;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(184,150,62,0.05);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .areas-header {
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .areas-tabs {
+            display: flex;
+            gap: 0;
+            border-bottom: 1px solid rgba(184,150,62,0.2);
+        }
+
+        .area-tab {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            background: none;
+            border: none;
+            padding: 14px 28px;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .area-tab::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .area-tab.active {
+            color: var(--gold-light);
+        }
+
+        .area-tab.active::after {
+            transform: scaleX(1);
+        }
+
+        /* Estratégico grid */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .area-card {
+            background: var(--black-mid);
+            padding: 36px 28px;
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s ease;
+        }
+
+        .area-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .area-card:hover {
+            background: #2a2a2a;
+        }
+
+        .area-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .area-card-num {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: rgba(184,150,62,0.2);
+            margin-bottom: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .area-card:hover .area-card-num {
+            color: rgba(184,150,62,0.5);
+        }
+
+        .area-card-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: var(--white);
+            line-height: 1.3;
+            transition: color 0.3s ease;
+        }
+
+        .area-card:hover .area-card-title {
+            color: var(--gold-pale);
+        }
+
+        .area-card-arrow {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            width: 28px;
+            height: 28px;
+            border: 1px solid rgba(184,150,62,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translate(4px, 4px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .area-card:hover .area-card-arrow {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        .area-card-arrow svg {
+            width: 12px;
+            height: 12px;
+            fill: var(--gold);
+        }
+
+        /* Contencioso content */
+        .contencioso-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contencioso-text {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: var(--white-dim);
+        }
+
+        .contencioso-text p + p {
+            margin-top: 20px;
+        }
+
+        /* ========================
+           PROFISSIONAIS SECTION
+        ======================== */
+        .profissionais-section {
+            padding: 120px 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .profissionais-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 60px;
+        }
+
+        .profissionais-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .prof-card {
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            background: var(--black-soft);
+            aspect-ratio: 3/4;
+        }
+
+        .prof-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: transform 0.6s ease, filter 0.6s ease;
+        }
+
+        .prof-card:hover .prof-card-img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        .prof-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 28px;
+        }
+
+        .prof-card-name {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .prof-card-role {
+            font-family: var(--font-sans);
+            font-size: 0.6rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .prof-card-border {
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(184,150,62,0);
+            transition: border-color 0.4s ease;
+            pointer-events: none;
+        }
+
+        .prof-card:hover .prof-card-border {
+            border-color: rgba(184,150,62,0.3);
+        }
+
+        /* ========================
+           RECUPERACOES SECTION
+        ======================== */
+        .recuperacoes-section {
+            background: var(--black-soft);
+            padding: 120px 80px;
+        }
+
+        .recuperacoes-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .recuperacoes-list {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
+        .recuperacao-item {
+            display: block;
+            text-decoration: none;
+            padding: 32px 28px;
+            background: var(--black-mid);
+            border-left: 2px solid transparent;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .recuperacao-item:hover {
+            border-left-color: var(--gold);
+            background: #252525;
+        }
+
+        .recuperacao-item-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .recuperacao-item:hover .recuperacao-item-title {
+            color: var(--gold-pale);
+        }
+
+        .recuperacao-item-type {
+            font-family: var(--font-sans);
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            opacity: 0.7;
+        }
+
+        /* ========================
+           FOOTER
+        ======================== */
+        footer {
+            background: var(--black-rich);
+            border-top: 1px solid rgba(184,150,62,0.15);
+            padding: 80px 80px 40px;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(184,150,62,0.1);
+        }
+
+        .footer-brand img {
+            height: 36px;
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
+            margin-bottom: 24px;
+        }
+
+        .footer-brand p {
+            font-size: 0.82rem;
+            line-height: 1.8;
+            color: rgba(200,192,176,0.5);
+            max-width: 260px;
+        }
+
+        .footer-col-title {
+            font-family: var(--font-sans);
+            font-size: 0.62rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+
+        .footer-address p {
+            font-size: 0.8rem;
+            line-height: 1.9;
+            color: rgba(200,192,176,0.5);
+        }
+
+        .footer-address strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--white-dim);
+            margin-bottom: 8px;
+        }
+
+        .footer-address a {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--gold);
+            text-decoration: none;
+            margin-top: 8px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .footer-address a:hover { opacity: 1; }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 32px;
+        }
+
+        .footer-copy {
+            font-size: 0.72rem;
+            color: rgba(200,192,176,0.3);
+            letter-spacing: 0.05em;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(184,150,62,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            border-color: var(--gold);
+            background: rgba(184,150,62,0.08);
+        }
+
+        .footer-social svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--white-dim);
+        }
+
+        /* ========================
+           POPUP / MODAL
+        ======================== */
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease 1.5s forwards;
+        }
+
+        .popup-box {
+            background: var(--black-soft);
+            border: 1px solid rgba(184,150,62,0.25);
+            padding: 32px 40px;
+            max-width: 520px;
+            width: 90%;
+            position: relative;
+            transform: translateY(20px);
+            animation: slideUp 0.5s ease 1.5s forwards;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: var(--white-dim);
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+        }
+
+        .popup-close:hover { color: var(--gold); }
+
+        .popup-label {
+            font-family: var(--font-sans);
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .popup-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: var(--white);
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .popup-link {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--black);
+            background: var(--gold);
+            padding: 12px 28px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+
+        .popup-link:hover { background: var(--gold-light); }
+
+        /* ========================
+           ANIMATIONS
+        ======================== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); }
+            to   { transform: translateY(0); }
+        }
+
+        @keyframes scrollLine {
+            0%   { transform: scaleY(0); transform-origin: top; }
+            50%  { transform: scaleY(1); transform-origin: top; }
+            51%  { transform: scaleY(1); transform-origin: bottom; }
+            100% { transform: scaleY(0); transform-origin: bottom; }
+        }
+
+        /* ========================
+           UTILITIES
+        ======================== */
+        .hero-subtitle,
+        .about-text,
+        .contencioso-text,
+        .secondary-text p,
+        .footer-brand p,
+        .footer-address p {
+            text-align: justify;
+        }
+
+        .hidden { display: none !important; }
+
+        /* Areas tabs mobile */
+        @media (max-width: 768px) {
+            .areas-tabs {
+                width: 100%;
+                display: flex;
             }
-
-            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
-        });
-    }
-});
-</script>
-
-<!-- Header sticky ao rolar -->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var header = document.querySelector('header');
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-            header.classList.add('header-scrolled');
-        } else {
-            header.classList.remove('header-scrolled');
+            .area-tab {
+                flex: 1;
+                text-align: center;
+                padding: 12px 8px;
+                font-size: 0.65rem;
+            }
         }
-    });
-});
-</script>
 
-<!-- Botões de Áreas de Atuação -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const btnContencioso = document.getElementById('btnContencioso');
-    const btnEstrategico = document.getElementById('btnEstrategico');
-    const contenciosoContent = document.getElementById('contenciosoContent');
-    const estrategicoContent = document.getElementById('estrategicoContent');
+        /* ========================
+           RESPONSIVE
+        ======================== */
+        @media (max-width: 1100px) {
+            .areas-grid { grid-template-columns: repeat(3, 1fr); }
+            .profissionais-grid { grid-template-columns: repeat(3, 1fr); }
+            .recuperacoes-list { grid-template-columns: repeat(2, 1fr); }
+            .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+        }
 
-    contenciosoContent.classList.add('hidden');
-    estrategicoContent.classList.remove('hidden');
+        @media (max-width: 768px) {
+            nav { padding: 0 24px; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .mobile-menu { display: block; }
 
-    btnContencioso.addEventListener('click', function() {
-        contenciosoContent.classList.remove('hidden');
-        estrategicoContent.classList.add('hidden');
-    });
+            .hero-content { padding: 0 24px 80px; }
+            .hero-scroll { right: 24px; }
+            .hero-indicators { left: 24px; }
 
-    btnEstrategico.addEventListener('click', function() {
-        contenciosoContent.classList.add('hidden');
-        estrategicoContent.classList.remove('hidden');
-    });
-});
-</script>
+            .about { grid-template-columns: 1fr; padding: 80px 24px; gap: 40px; }
+            .about-year { font-size: 5rem; }
+            .about-stats { grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
-<!-- Hover Dropdown no desktop -->
-<script>
-$(document).ready(function() {
-  if ($(window).width() >= 992) {
-    $('.navbar .dropdown').hover(
-      function() {
-        $(this).addClass('show');
-        $(this).find('.dropdown-menu').addClass('show');
-      },
-      function() {
-        $(this).removeClass('show');
-        $(this).find('.dropdown-menu').removeClass('show');
-      }
-    );
-  }
-});
-</script>
-<script>
-  $(document).ready(function(){
-    $('#meuPopup').modal('show');
-  });
-</script>
+            .areas-section { padding: 80px 24px; }
+            .areas-grid { grid-template-columns: repeat(2, 1fr); }
+            .areas-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+            .contencioso-content { grid-template-columns: 1fr; gap: 40px; }
 
-        
+            .profissionais-section { padding: 80px 24px; }
+            .profissionais-grid { grid-template-columns: repeat(2, 1fr); }
+            .profissionais-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+
+            .recuperacoes-section { padding: 80px 24px; }
+            .recuperacoes-list { grid-template-columns: 1fr; }
+
+            footer { padding: 60px 24px 32px; }
+            .footer-top { grid-template-columns: 1fr; gap: 40px; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .areas-grid { grid-template-columns: 1fr; }
+            .profissionais-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-stats { grid-template-columns: 1fr; }
+            .hero-cta { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+
+    <!-- ========================
+         NAVIGATION
+    ======================== -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="imgs/logozvtt.png" alt="Escritório de Advocacia Zveiter">
+            </a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="institucional.html">Institucional</a></li>
+            <li><a href="profissionais.html">Profissionais</a></li>
+            <li class="has-dropdown">
+                <a class="nav-btn" href="especialidades.html">Especialidades</a>
+                <div class="dropdown-panel wide">
+                    <a href="especialidades.html#empresarial">Empresarial e Societário</a>
+                    <a href="especialidades.html#imobiliario">Direito Imobiliário, Notarial e Registral</a>
+                    <a href="especialidades.html#propriedade-intelectual">Comunicação e Propriedade Intelectual</a>
+                    <a href="especialidades.html#sucessorio">Direito Sucessório e Família</a>
+                    <a href="especialidades.html#ambiental">Direito Ambiental</a>
+                    <a href="especialidades.html#saude-suplementar">Direito de Saúde Suplementar</a>
+                    <a href="especialidades.html#desportivo">Direito Desportivo e do Entretenimento</a>
+                    <a href="especialidades.html#recuperacao">Recuperação Judicial e Falência</a>
+                    <a href="especialidades.html#tributario">Contencioso Tributário</a>
+                    <a href="especialidades.html#administrativo">Direito Administrativo</a>
+                    <a href="especialidades.html#arbitragem">Arbitragem e Mediação</a>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a class="nav-btn" href="recuperacao.html">Recuperações</a>
+                <div class="dropdown-panel">
+                    <a href="grppetro.html">Grupo Petrópolis</a>
+                    <a href="americanas.html">Grupo Americanas</a>
+                    <a href="mintucano.html">Mina Tucano</a>
+                    <a href="gas.html">G.A.S. Consultoria</a>
+                    <a href="transporte.html">Transporte Campo Grande & Viação Penha</a>
+                    <a href="transcarioca.html">Consórcio Transcarioca</a>
+                    <a href="stcruz.html">Consórcio Santa Cruz</a>
+                    <a href="airmix.html">Airmix — Falência</a>
+                    <a href="kpfr.html">KPFR Empreendimentos</a>
+                    <a href="rodopetro.html">Rodopetro</a>
+                    <a href="qldtotal.html">Qualidade Total</a>
+                    <a href="rnr.html">RNR Montagens</a>
+                    <a href="canaamates.html">Canaã Mates — Falência</a>
+                    <a href="txrx.html">TX RX — Falência</a>
+                    <a href="costapereira.html">Costa Pereira Bokel</a>
+                </div>
+            </li>
+            <div class="nav-divider"></div>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="menu-item">
+            <a href="institucional.html">Institucional</a>
+        </div>
+        <div class="menu-item">
+            <a href="profissionais.html">Profissionais</a>
+        </div>
+        <div class="menu-item" id="menuEspecialidades">
+            <button class="menu-toggle" onclick="toggleMenu('menuEspecialidades')">
+                Especialidades <span class="menu-toggle-icon">+</span>
+            </button>
+            <div class="sub-links">
+                <a href="especialidades.html#empresarial">Empresarial e Societário</a>
+                <a href="especialidades.html#imobiliario">Direito Imobiliário, Notarial e Registral</a>
+                <a href="especialidades.html#propriedade-intelectual">Comunicação e Propriedade Intelectual</a>
+                <a href="especialidades.html#sucessorio">Direito Sucessório e Família</a>
+                <a href="especialidades.html#ambiental">Direito Ambiental</a>
+                <a href="#">Direito de Saúde Suplementar</a>
+                <a href="especialidades.html#desportivo">Direito Desportivo e do Entretenimento</a>
+                <a href="especialidades.html#recuperacao">Recuperação Judicial e Falência</a>
+                <a href="especialidades.html#tributario">Contencioso Tributário</a>
+                <a href="especialidades.html#administrativo">Direito Administrativo</a>
+                <a href="#">Arbitragem e Mediação</a>
+            </div>
+        </div>
+        <div class="menu-item" id="menuRecuperacoes">
+            <button class="menu-toggle" onclick="toggleMenu('menuRecuperacoes')">
+                Recuperações <span class="menu-toggle-icon">+</span>
+            </button>
+            <div class="sub-links">
+                <a href="grppetro.html">Grupo Petrópolis</a>
+                <a href="americanas.html">Grupo Americanas</a>
+                <a href="mintucano.html">Mina Tucano</a>
+                <a href="gas.html">G.A.S. Consultoria</a>
+                <a href="transporte.html">Transporte Campo Grande & Viação Penha</a>
+                <a href="transcarioca.html">Consórcio Transcarioca</a>
+                <a href="stcruz.html">Consórcio Santa Cruz</a>
+                <a href="airmix.html">Airmix — Falência</a>
+                <a href="kpfr.html">KPFR Empreendimentos</a>
+                <a href="rodopetro.html">Rodopetro</a>
+                <a href="qldtotal.html">Qualidade Total</a>
+                <a href="rnr.html">RNR Montagens</a>
+                <a href="canaamates.html">Canaã Mates — Falência</a>
+                <a href="txrx.html">TX RX — Falência</a>
+                <a href="costapereira.html">Costa Pereira Bokel</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <a href="contato.html">Contato</a>
+        </div>
+    </div>
+
+    <!-- ========================
+         HERO
+    ======================== -->
+    <section class="hero">
+        <div class="hero-slides" id="heroSlides">
+            <div class="hero-slide active">
+                <img src="imgs/IMG_4262-editada.JPG" alt="Vista do Pão de Açúcar" style="
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center 55%;
+                ">
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <p class="hero-eyebrow">Desde 1957</p>
+            <h1 class="hero-title">
+                Excelência<br>
+                em <em>Advocacia</em><br>
+                por tradição.
+            </h1>
+            <p class="hero-subtitle">
+                Litígio, consultoria e assessoria jurídica com princípios inabaláveis de ética, moralidade e comprometimento com os direitos de nossos constituintes.
+            </p>
+            <div class="hero-cta">
+                <a href="institucional.html" class="btn-primary-gold">Conheça o escritório</a>
+                <a href="contato.html" class="btn-outline-gold">Fale conosco</a>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <div class="hero-scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+
+        <div class="hero-indicators" id="heroIndicators" style="display:none"></div>
+    </section>
+
+    <!-- ========================
+         ABOUT
+    ======================== -->
+    <section style="background: var(--black);">
+        <div class="about">
+            <div class="about-left" id="aboutLeft">
+                <div class="about-plaque">
+                    <img src="imgs/siteplacazvt.jpeg" alt="Placa Escritório Zveiter — Fundado em 1957">
+                </div>
+                <div style="margin-top: 32px;">
+                    <div class="about-year">1957</div>
+                    <div class="ornament">
+                        <div class="ornament-diamond"></div>
+                        <div class="ornament-line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-right" id="aboutRight">
+                <p class="section-label">Quem Somos</p>
+                <h2 class="section-title">Uma história de <em>tradição</em> e excelência</h2>
+                <p class="about-text">
+                    O Escritório de Advocacia Zveiter, fundado pelo advogado Waldemar Zveiter em 1957, é reconhecido pela sua atuação de excelência em litígio, consultoria e assessoria judicial e extrajudicial, contencioso em diversas áreas, recuperação judicial e falências, tendo como princípio a luta pelos direitos de seus constituintes sempre em obediência ao ordenamento jurídico vigente, à ética e à moralidade no exercício da profissão.
+                </p>
+                <a href="institucional.html" class="btn-primary-gold">Nossa história</a>
+                <div class="about-stats">
+                    <div>
+                        <div class="stat-number">67+</div>
+                        <div class="stat-label">Anos de atuação</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Especialidades</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Escritórios</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================
+         AREAS DE ATUAÇÃO
+    ======================== -->
+    <section class="areas-section" id="areas-de-atuacao">
+        <div class="areas-header">
+            <div>
+                <p class="section-label">Áreas de Atuação</p>
+                <h2 class="section-title">Nossa <em>expertise</em></h2>
+            </div>
+            <div class="areas-tabs">
+                <button class="area-tab active" id="tabEstrategico" onclick="switchTab('estrategico')">Estratégico</button>
+                <button class="area-tab" id="tabContencioso" onclick="switchTab('contencioso')">Contencioso de Massa</button>
+            </div>
+        </div>
+
+        <!-- Estratégico -->
+        <div class="areas-grid" id="panelEstrategico">
+            <a href="especialidades.html#tributario" class="area-card">
+                <div class="area-card-num">01</div>
+                <div class="area-card-title">Contencioso Tributário</div>
+                <div class="area-card-arrow"><svg viewBox="0 0 12 12"><path d="M0 6h10M6 2l4 4-4 4"/></svg></div>
+            </a>
+            <a href="especialidades.html#administrativo" class="area-card">
+                <div class="area-card-num">02</div>
+                <div class="area-card-title">Direito Administrativo</div>
+                <div class="area-card-arrow"><svg viewBox="0 0 12 12"><path d="M0 6h10M6 2l4 4-4 4"/></svg></div>
+            </a>
+            <a href="especialidades.html#ambiental" class="area-card">
+                <div class="area-card-num">03</div>
+                <div class="area-card-title">Direito Ambiental</div>
+                <div class="area-card-arrow"><svg viewBox="0 0 12 12"><path d="M0 6h10M6 2l4 4-4 4"/></svg></div>
+            </a>
+            <a href="especialidades.html#saude-suplementar" class="area-card">
+                <div class="area-card-num">04</div>
+                <div class="area-card-title">Direito de Saúde Suplementar</div>
+                <div class="area-card-arrow"><svg viewBox="0 0 12 12"><path d="M0 6h10M6 2l4 4-4 4"/></svg></div>
+            </a>
+            <a href="especialidades.html#desportivo" class="area-card">
+                <div class="area-card-num">05</div>
+                <div class="area-card-title">Direito Desportivo e do Entretenimento</div>
+                <div class="area-card-arrow"><svg viewBox="0 0 12 12"><path d="M0 6h10M6 2l4 4-4 4"/></svg></div>
+            </a>
+            <a href="direleitoral.html" class="area-card">
+                <div class="area-card-num">06</div>
+                <div class="area-card-title">Direito Eleitoral</div>
+                <div class="area-card-arrow"><svg viewBox="0 0 12 12"><path d="M0 6h10M6 2l4 4-4 4"/></svg></div>
+            </a>
+            <a href="especialidades.html#imobiliario" class="area-card">
+                <div class="area-card-num">07</div>
+                <div class="area-card-title">Direito Imobiliário, Notarial e Registral</div>
+                <div class="area-card-arrow"><svg viewBox="0 0 12 12"><path d="M0 6h10M6 2l4 4-4 4"/></svg></div>
+            </a>
+            <a href="dirconsumidor.html" class="area-card">
+                <div class="area-card-num">08</div>
+                <div class="area-card-title">Direito do Consumidor</div>
+                <div class="area-card-arrow"><svg viewBox="0 0 12 12"><path d="M0 6h10M6 2l4 4-4 4"/></svg></div>
+            </a>
+            <a href="especialidades.html#empresarial" class="area-card">
+                <div class="area-card-num">09</div>
+                <div class="area-card-title">Direito Societário</div>
+                <div class="area-card-arrow"><svg viewBox="0 0 12 12"><path d="M0 6h10M6 2l4 4-4 4"/></svg></div>
+            </a>
+            <a href="especialidades.html#sucessorio" class="area-card">
+                <div class="area-card-num">10</div>
+                <div class="area-card-title">Direito Sucessório e Família</div>
+                <div class="area-card-arrow"><svg viewBox="0 0 12 12"><path d="M0 6h10M6 2l4 4-4 4"/></svg></div>
+            </a>
+            <a href="especialidades.html#propriedade-intelectual" class="area-card">
+                <div class="area-card-num">11</div>
+                <div class="area-card-title">Propriedade Intelectual</div>
+                <div class="area-card-arrow"><svg viewBox="0 0 12 12"><path d="M0 6h10M6 2l4 4-4 4"/></svg></div>
+            </a>
+            <a href="dirsanbasico.html" class="area-card">
+                <div class="area-card-num">12</div>
+                <div class="area-card-title">Direito ao Saneamento Básico</div>
+                <div class="area-card-arrow"><svg viewBox="0 0 12 12"><path d="M0 6h10M6 2l4 4-4 4"/></svg></div>
+            </a>
+        </div>
+
+        <!-- Contencioso -->
+        <div class="contencioso-content hidden" id="panelContencioso">
+            <div>
+                <div class="contencioso-text">
+                    <p>O Escritório de Advocacia Zveiter atua há mais de 20 anos com o contencioso de massa de grandes empresas dos mais diversos ramos do mercado.</p>
+                    <p>Devido aos anos de experiência, desenvolveu uma gestão perspicaz de seu contencioso de massa, dispondo de uma infraestrutura tecnológica que possibilita a integração de todos os colaboradores envolvidos no acompanhamento das questões jurídicas e administrativas de seus clientes.</p>
+                </div>
+            </div>
+            <div>
+                <p class="contencioso-text">
+                    Através de uma advocacia 5.0, o escritório conta com uma equipe de ponta que desenvolve estratégias de desempenho, gestão dos processos, prioriza a utilização de soluções adequadas de conflito, bem como acompanha o avanço e progresso tecnológico dentro de cada empresa, para poder satisfazer de maneira única a necessidade de cada cliente, atingindo os melhores resultados.
+                </p>
+                <br><br>
+                <a href="especialidades.html#recuperacao" class="btn-primary-gold" style="margin-top:24px">Ver casos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================
+         RECUPERAÇÕES
+    ======================== -->
+    <section class="recuperacoes-section">
+        <div class="recuperacoes-inner">
+            <p class="section-label">Casos de Destaque</p>
+            <h2 class="section-title">Recuperações Judiciais<br>e <em>Falências</em></h2>
+
+            <div class="recuperacoes-list">
+                <a href="grppetro.html" class="recuperacao-item">
+                    <div class="recuperacao-item-title">Grupo Petrópolis</div>
+                    <div class="recuperacao-item-type">Recuperação Judicial</div>
+                </a>
+                <a href="americanas.html" class="recuperacao-item">
+                    <div class="recuperacao-item-title">Grupo Americanas</div>
+                    <div class="recuperacao-item-type">Recuperação Judicial</div>
+                </a>
+                <a href="mintucano.html" class="recuperacao-item">
+                    <div class="recuperacao-item-title">Mina Tucano</div>
+                    <div class="recuperacao-item-type">Recuperação Judicial</div>
+                </a>
+                <a href="gas.html" class="recuperacao-item">
+                    <div class="recuperacao-item-title">G.A.S. Consultoria</div>
+                    <div class="recuperacao-item-type">Recuperação Judicial</div>
+                </a>
+                <a href="transporte.html" class="recuperacao-item">
+                    <div class="recuperacao-item-title">Transporte Campo Grande & Viação Penha</div>
+                    <div class="recuperacao-item-type">Recuperação Judicial</div>
+                </a>
+                <a href="transcarioca.html" class="recuperacao-item">
+                    <div class="recuperacao-item-title">Consórcio Transcarioca</div>
+                    <div class="recuperacao-item-type">Recuperação Judicial</div>
+                </a>
+                <a href="airmix.html" class="recuperacao-item">
+                    <div class="recuperacao-item-title">Airmix Ar Condicionado</div>
+                    <div class="recuperacao-item-type">Falência</div>
+                </a>
+                <a href="canaamates.html" class="recuperacao-item">
+                    <div class="recuperacao-item-title">Canaã Mates Comércio de Alimentos</div>
+                    <div class="recuperacao-item-type">Falência</div>
+                </a>
+                <a href="especialidades.html#recuperacao" class="recuperacao-item" style="border-left-color: rgba(184,150,62,0.3); display:flex; align-items:center; justify-content:center;">
+                    <div style="text-align:center;">
+                        <div class="recuperacao-item-title" style="color: var(--gold-light);">Ver todos os casos</div>
+                        <div class="recuperacao-item-type">→</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RJ Photo Strip -->
+    <div class="rj-strip">
+        <div class="rj-strip-item">
+            <img src="imgs/imgsitesala.jpeg" alt="Vista do Pão de Açúcar — Rio de Janeiro">
+            <div class="rj-strip-caption">Rio de Janeiro</div>
+        </div>
+        <div class="rj-strip-item">
+            <img src="imgs/IMG_4381.JPG" alt="Cristo Redentor ao entardecer">
+            <div class="rj-strip-caption">Rio de Janeiro</div>
+        </div>
+    </div>
+
+    <!-- ========================
+         FOOTER
+    ======================== -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="imgs/logozvtt.png" alt="Escritório de Advocacia Zveiter" style="height:52px; filter: invert(1) brightness(1.8); opacity:0.85; margin-bottom:20px; display:block;">
+                    <p>Fundado em 1957, o Escritório Zveiter é referência em advocacia de excelência no Brasil.</p>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">Rio de Janeiro</div>
+                    <strong>Sede Principal</strong>
+                    <p>Av. Presidente Antônio Carlos nº 51<br>19º e 20º andares, Centro<br>Rio de Janeiro — RJ</p>
+                    <p>Tel.: 55 (21) 3380-1155</p>
+                    <a href="https://maps.app.goo.gl/bw6XGbnmrtH9fzNT8" target="_blank">Ver no mapa →</a>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">São Paulo</div>
+                    <strong>Escritório SP</strong>
+                    <p>Avenida Paulista, nº 777<br>Jardim Paulista, 7º andar<br>São Paulo — SP</p>
+                    <p>Tel.: 55 (11) 4858-0383</p>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">Brasília</div>
+                    <strong>Escritório BSB</strong>
+                    <p>Tel.: 55 (61) 3447-4343</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2025 Escritório de Advocacia Zveiter. Todos os direitos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/escritoriodeadvocaciazveiter" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================
+         POPUP
+    ======================== -->
+    <div class="popup-overlay" id="popup">
+        <div class="popup-box">
+            <button class="popup-close" onclick="document.getElementById('popup').remove()">×</button>
+            <div class="popup-label">Notícia</div>
+            <h3 class="popup-title">OAB-RJ lança cartilha de combate ao golpe do falso advogado</h3>
+            <a href="https://g1.globo.com/rj/rio-de-janeiro/noticia/2025/08/14/oab-rj-lanca-cartilha-de-combate-ao-golpe-do-falso-advogado-veja-dicas.ghtml" target="_blank" class="popup-link">Leia a matéria</a>
+        </div>
+    </div>
+
+    <!-- ========================
+         JAVASCRIPT
+    ======================== -->
+    <script>
+        // Custom cursor
+
+        // Navbar scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Toggle mobile submenus
+        function toggleMenu(id) {
+            const item = document.getElementById(id);
+            item.classList.toggle('expanded');
+        }
+
+        // Hamburger
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('#aboutLeft, #aboutRight').forEach(el => observer.observe(el));
+
+        // Area tabs
+        function switchTab(tab) {
+            const tabE = document.getElementById('tabEstrategico');
+            const tabC = document.getElementById('tabContencioso');
+            const panelE = document.getElementById('panelEstrategico');
+            const panelC = document.getElementById('panelContencioso');
+
+            if (tab === 'estrategico') {
+                tabE.classList.add('active');
+                tabC.classList.remove('active');
+                panelE.classList.remove('hidden');
+                panelC.classList.add('hidden');
+            } else {
+                tabC.classList.add('active');
+                tabE.classList.remove('active');
+                panelC.classList.remove('hidden');
+                panelE.classList.add('hidden');
+            }
+        }
+
+        // Init: garantir estado correto ao carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('panelContencioso').classList.add('hidden');
+            document.getElementById('panelEstrategico').classList.remove('hidden');
+        });
+    </script>
 </body>
 </html>

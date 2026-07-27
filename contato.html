@@ -1,462 +1,636 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="imgs/ChatGPT Image 13 de mai. de 2025, 15_42_05.png" type="image/png">
     <title>Contato | Escritório de Advocacia Zveiter</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Tenor+Sans&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        .card {
-    width: auto; /* Ajuste para que a largura seja determinada pelo conteúdo */
-    height: fit-content;
-    background: #191919;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px; /* Ajuste do padding */
-    gap: 10px; /* Espaço entre os ícones */
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
-    border-radius: 5px; /* Adiciona bordas arredondadas se desejado */
-}
+        :root {
+            --gold: #B8963E;
+            --gold-light: #D4AF6A;
+            --gold-pale: #E8D5A3;
+            --black: #0A0A0A;
+            --black-rich: #111111;
+            --black-soft: #1A1A1A;
+            --black-mid: #242424;
+            --white: #F5F0E8;
+            --white-dim: #C8C0B0;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-sans: 'Tenor Sans', sans-serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
 
-.socialContainer {
-    width: 32px; /* Tamanho dos ícones */
-    height: 32px; /* Tamanho dos ícones */
-    background-color: rgb(44, 44, 44);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    transition-duration: .3s;
-}
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-weight: 300;
+            overflow-x: hidden;
+            cursor: default;
+        }
 
-.containerOne:hover {
-    background-color: #d62976;
-}
+        /* NAVBAR */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 80px; background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(184,150,62,0.15); transition: height var(--transition), background var(--transition); }
+        nav.scrolled { height: 64px; background: rgba(10,10,10,0.98); }
+        .nav-logo img { height: 48px; width: auto; filter: invert(1) brightness(1.8); opacity: 0.92; transition: opacity var(--transition), transform var(--transition); }
+        .nav-logo img:hover { opacity: 1; transform: scale(1.03); }
+        .nav-links { display: flex; align-items: center; gap: 0; list-style: none; }
+        .nav-links > li { position: relative; }
+        .nav-links > li > a, .nav-links > li > .nav-btn { font-family: var(--font-sans); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white-dim); text-decoration: none; padding: 28px 18px; display: block; transition: color var(--transition); background: none; border: none; cursor: pointer; }
+        .nav-links > li > a:hover, .nav-links > li > .nav-btn:hover, .nav-links > li:hover > a, .nav-links > li:hover > .nav-btn, .nav-links > li > a.active { color: var(--gold-light); }
+        .dropdown-panel { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: var(--black-soft); border: 1px solid rgba(184,150,62,0.2); min-width: 280px; padding: 12px 0; opacity: 0; pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease; z-index: 100; }
+        .dropdown-panel.wide { min-width: 340px; columns: 2; column-gap: 0; }
+        .nav-links > li:hover .dropdown-panel { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+        .dropdown-panel a { display: block; font-family: var(--font-body); font-size: 0.75rem; letter-spacing: 0.05em; color: var(--white-dim); text-decoration: none; padding: 9px 24px; transition: color 0.2s ease, padding-left 0.2s ease; break-inside: avoid; }
+        .dropdown-panel a:hover { color: var(--gold-light); padding-left: 30px; }
+        .nav-divider { width: 1px; height: 16px; background: rgba(184,150,62,0.2); margin: 0 6px; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+        .hamburger span { display: block; width: 24px; height: 1px; background: var(--white); transition: var(--transition); }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px,4px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px,-4px); }
+        .mobile-menu { display: none; position: fixed; top: 80px; left: 0; right: 0; bottom: 0; background: var(--black-rich); z-index: 900; overflow-y: auto; padding: 32px 24px; border-top: 1px solid rgba(184,150,62,0.15); }
+        .mobile-menu.open { display: block; }
+        .menu-item { border-bottom: 1px solid rgba(184,150,62,0.08); }
+        .menu-item a, .menu-toggle { display: block; padding: 16px 0; font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-dim); text-decoration: none; background: none; border: none; width: 100%; text-align: left; cursor: pointer; transition: color 0.2s; }
+        .menu-item a:hover, .menu-toggle:hover { color: var(--gold-light); }
+        .menu-toggle { display: flex; justify-content: space-between; align-items: center; }
+        .sub-links { display: none; padding: 8px 0 16px 16px; }
+        .sub-links.open { display: block; }
+        .sub-links a { font-size: 0.75rem; letter-spacing: 0.08em; padding: 8px 0; text-transform: none; }
 
-.containerThree:hover {
-    background-color: #0072b1;
-}
+        /* HERO */
+        .hero { position: relative; height: 70vh; min-height: 480px; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; filter: brightness(0.25); }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.15) 50%, rgba(10,10,10,0.7) 100%); }
+        .hero-overlay-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 40%; background: linear-gradient(to bottom, transparent, var(--black)); }
 
-.socialContainer:active {
-    transform: scale(0.9);
-}
+        /* Watermark year */
+        .hero-year {
+            position: absolute; right: 60px; bottom: 20px;
+            font-family: var(--font-display); font-size: 18rem; font-weight: 300;
+            color: transparent; -webkit-text-stroke: 1px rgba(184,150,62,0.06);
+            line-height: 1; pointer-events: none; user-select: none; letter-spacing: -0.03em;
+        }
 
-.socialSvg {
-    width: 20px; /* Tamanho reduzido dos ícones */
-}
+        .hero-content { position: absolute; bottom: 14%; left: 80px; right: 80px; }
+        .hero-eyebrow { font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+        .hero-eyebrow::before { content: ''; display: block; width: 48px; height: 1px; background: var(--gold); flex-shrink: 0; }
+        .hero-title { font-family: var(--font-display); font-size: clamp(4rem, 8vw, 7.5rem); font-weight: 300; line-height: 0.95; color: var(--white); letter-spacing: -0.02em; }
+        .hero-title em { font-style: italic; color: var(--gold-pale); }
+        .hero-sub { font-family: var(--font-body); font-size: 0.82rem; color: rgba(200,192,176,0.55); margin-top: 20px; letter-spacing: 0.04em; max-width: 420px; line-height: 1.8; }
 
-.socialSvg path {
-    fill: rgb(255, 255, 255);
-}
+        /* MAIN LAYOUT */
+        .contact-wrap { max-width: 1400px; margin: 0 auto; padding: 100px 80px 0; }
 
-.socialContainer:hover .socialSvg {
-    animation: slide-in-top 0.3s both;
-}
+        /* TWO COLUMNS */
+        .contact-grid { display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: start; }
 
-.social-icons-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espaço entre os ícones */
-}
+        /* LEFT — form side */
+        .contact-left {}
+        .section-eyebrow { font-family: var(--font-sans); font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; display: flex; align-items: center; gap: 14px; }
+        .section-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); flex-shrink: 0; }
+        .section-heading { font-family: var(--font-display); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 16px; }
+        .section-heading em { font-style: italic; color: var(--gold-pale); }
+        .section-desc { font-family: var(--font-body); font-size: 0.83rem; line-height: 1.9; color: rgba(200,192,176,0.5); max-width: 520px; margin-bottom: 48px; }
 
-@keyframes slide-in-top {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-    
-        </style>
-        <style>
-            .contact-section {
-    padding: 60px 0;
-    background-color:  #dcdcdc;
-}
+        /* Direct contact chips */
+        .contact-chips { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 52px; }
+        .chip { display: inline-flex; align-items: center; gap: 12px; padding: 14px 22px; border: 1px solid rgba(184,150,62,0.2); background: var(--black-soft); text-decoration: none; transition: border-color 0.3s, background 0.3s; }
+        .chip:hover { border-color: rgba(184,150,62,0.5); background: rgba(184,150,62,0.05); }
+        .chip-icon { width: 32px; height: 32px; border: 1px solid rgba(184,150,62,0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .chip-icon svg { width: 14px; height: 14px; fill: var(--gold); }
+        .chip-label { font-family: var(--font-sans); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(200,192,176,0.5); display: block; margin-bottom: 2px; }
+        .chip-value { font-family: var(--font-display); font-size: 1.05rem; color: var(--gold-pale); display: block; }
 
-.main-title {
-    color: #191919;
-    font-size: 2.5rem;
-    font-weight: bold;
-}
+        /* FORM */
+        .contact-form { display: flex; flex-direction: column; gap: 0; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+        .form-field { position: relative; margin-bottom: 2px; }
+        .form-field input,
+        .form-field textarea,
+        .form-field select {
+            width: 100%; background: var(--black-soft); border: none;
+            border-bottom: 1px solid rgba(184,150,62,0.2);
+            color: var(--white); font-family: var(--font-body); font-size: 0.85rem; font-weight: 300;
+            padding: 26px 20px 10px; outline: none;
+            transition: border-color 0.3s, background 0.3s;
+            -webkit-appearance: none; appearance: none;
+        }
+        .form-field textarea { resize: none; height: 140px; }
+        .form-field select { cursor: pointer; }
+        .form-field select option { background: var(--black-soft); }
+        .form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-bottom-color: var(--gold); background: rgba(184,150,62,0.03); }
+        .form-label {
+            position: absolute; left: 20px; top: 18px;
+            font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+            color: rgba(200,192,176,0.4); pointer-events: none;
+            transition: top 0.2s, font-size 0.2s, color 0.2s;
+        }
+        .form-field input:focus ~ .form-label,
+        .form-field input:not(:placeholder-shown) ~ .form-label,
+        .form-field textarea:focus ~ .form-label,
+        .form-field textarea:not(:placeholder-shown) ~ .form-label,
+        .form-field select:focus ~ .form-label { top: 9px; font-size: 0.52rem; color: var(--gold); }
+        .form-field input::placeholder, .form-field textarea::placeholder { color: transparent; }
+        .form-gold-bar { height: 1px; background: linear-gradient(to right, var(--gold), transparent); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; position: absolute; bottom: 0; left: 0; right: 0; }
+        .form-field input:focus ~ .form-gold-bar,
+        .form-field textarea:focus ~ .form-gold-bar,
+        .form-field select:focus ~ .form-gold-bar { transform: scaleX(1); }
+        .form-submit { display: flex; align-items: center; gap: 16px; margin-top: 2px; }
+        .btn-submit {
+            font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--black); background: var(--gold); border: none; padding: 18px 40px;
+            cursor: pointer; transition: background 0.3s, letter-spacing 0.3s;
+        }
+        .btn-submit:hover { background: var(--gold-light); letter-spacing: 0.28em; }
+        .form-note { font-size: 0.72rem; color: rgba(200,192,176,0.3); line-height: 1.6; }
 
-.contact-info {
-    background: #191919;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        /* RIGHT — offices side */
+        .contact-right { position: sticky; top: 100px; }
+        .offices-stack { display: flex; flex-direction: column; gap: 2px; }
+        .office-card {
+            padding: 32px 28px;
+            border: 1px solid rgba(184,150,62,0.1);
+            background: var(--black-soft);
+            transition: border-color 0.3s, background 0.3s;
+            position: relative; overflow: hidden;
+        }
+        .office-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--gold); transform: scaleY(0); transform-origin: bottom; transition: transform 0.4s ease; }
+        .office-card:hover { border-color: rgba(184,150,62,0.3); background: rgba(184,150,62,0.03); }
+        .office-card:hover::before { transform: scaleY(1); }
+        .office-card.main { border-color: rgba(184,150,62,0.2); }
+        .office-card.main::before { transform: scaleY(1); }
+        .office-tag { font-family: var(--font-sans); font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .office-tag::before { content: ''; display: block; width: 16px; height: 1px; background: var(--gold); }
+        .office-city { font-family: var(--font-display); font-size: 1.7rem; font-weight: 300; color: var(--white); margin-bottom: 16px; line-height: 1; }
+        .office-addr { font-size: 0.8rem; line-height: 1.9; color: rgba(200,192,176,0.55); margin-bottom: 14px; }
+        .office-tel { font-family: var(--font-display); font-size: 1.05rem; color: var(--gold-pale); text-decoration: none; display: block; margin-bottom: 14px; transition: color 0.2s; }
+        .office-tel:hover { color: var(--gold-light); }
+        .office-link { font-family: var(--font-sans); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.2s; opacity: 0.75; }
+        .office-link:hover { gap: 14px; opacity: 1; }
+        .office-link::after { content: '→'; }
+        .office-hours { font-size: 0.75rem; color: rgba(200,192,176,0.35); margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(184,150,62,0.08); display: flex; align-items: center; gap: 8px; }
+        .office-hours::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: 0.6; flex-shrink: 0; }
 
-.contact-email img {
-    width: 24px;
-    vertical-align: middle;
-}
+        /* DIVIDER */
+        .full-divider { max-width: 1400px; margin: 100px auto 0; padding: 0 80px; }
+        .full-divider hr { border: none; border-top: 1px solid rgba(184,150,62,0.12); }
 
-.contact-email span {
-    margin-left: 10px;
-    color: #f1f1f1;
-    text-decoration: none;
-}
+        /* MAP SECTION */
+        .map-section { margin-top: 0; }
+        .map-label-bar { max-width: 1400px; margin: 0 auto; padding: 56px 80px 28px; display: flex; align-items: center; justify-content: space-between; }
+        .map-label-text {}
+        .map-label-eyebrow { font-family: var(--font-sans); font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+        .map-label-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 300; color: var(--white); }
+        .map-address-snippet { font-size: 0.78rem; color: rgba(200,192,176,0.45); line-height: 1.7; text-align: right; }
+        .map-frame { width: 100%; height: 440px; position: relative; border-top: 1px solid rgba(184,150,62,0.1); }
+        .map-frame iframe { display: block; width: 100%; height: 100%; border: 0; filter: grayscale(1) invert(0.88) brightness(0.82) sepia(0.08); }
+        .map-frame-overlay { position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 80px rgba(10,10,10,0.5); }
+        .map-pin-badge {
+            position: absolute; bottom: 32px; left: 80px;
+            background: var(--black-rich); border: 1px solid rgba(184,150,62,0.3);
+            padding: 16px 24px; display: flex; align-items: center; gap: 16px;
+        }
+        .pin-dot { width: 10px; height: 10px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+        .pin-text { font-family: var(--font-body); font-size: 0.78rem; color: var(--white-dim); line-height: 1.4; }
+        .pin-text strong { display: block; font-weight: 400; color: var(--white); font-size: 0.82rem; }
 
-.card-address {
-    margin-bottom: 20px;
-}
+        /* FOOTER */
+        footer { background: var(--black-rich); border-top: 1px solid rgba(184,150,62,0.15); padding: 80px 80px 40px; margin-top: 0; }
+        .footer-inner { max-width: 1400px; margin: 0 auto; }
+        .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(184,150,62,0.1); }
+        .footer-brand img { height: 52px; filter: invert(1) brightness(1.8); opacity: 0.85; margin-bottom: 20px; display: block; }
+        .footer-brand p { font-size: 0.82rem; line-height: 1.8; color: rgba(200,192,176,0.5); max-width: 260px; }
+        .footer-col-title { font-family: var(--font-sans); font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+        .footer-address strong { display: block; font-family: var(--font-display); font-size: 1rem; font-weight: 400; color: var(--white-dim); margin-bottom: 8px; }
+        .footer-address p { font-size: 0.8rem; line-height: 1.9; color: rgba(200,192,176,0.5); }
+        .footer-address a { display: inline-block; font-size: 0.75rem; color: var(--gold); text-decoration: none; margin-top: 8px; opacity: 0.8; transition: opacity 0.2s; }
+        .footer-address a:hover { opacity: 1; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; }
+        .footer-copy { font-size: 0.72rem; color: rgba(200,192,176,0.3); letter-spacing: 0.05em; }
+        .footer-social { display: flex; gap: 16px; }
+        .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(184,150,62,0.2); display: flex; align-items: center; justify-content: center; transition: border-color 0.3s, background 0.3s; }
+        .footer-social a:hover { border-color: var(--gold); background: rgba(184,150,62,0.08); }
+        .footer-social svg { width: 14px; height: 14px; fill: var(--white-dim); }
 
-.card-address .city {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .contact-grid { grid-template-columns: 1fr 380px; gap: 60px; }
+        }
+        @media (max-width: 1024px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 80px; }
+            .contact-right { position: static; }
+            .offices-stack { display: grid; grid-template-columns: repeat(3, 1fr); }
+            .full-divider { padding: 0 48px; }
+            .map-label-bar { padding: 56px 48px 28px; }
+            .map-pin-badge { left: 48px; }
+        }
+        @media (max-width: 768px) {
+            nav { padding: 0 24px; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .hero-content { left: 24px; right: 24px; }
+            .hero-year { font-size: 8rem; right: 24px; }
+            .contact-wrap { padding: 72px 24px 0; }
+            .contact-grid { gap: 60px; }
+            .form-row { grid-template-columns: 1fr; }
+            .offices-stack { grid-template-columns: 1fr; }
+            .full-divider { padding: 0 24px; }
+            .map-label-bar { padding: 48px 24px 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
+            .map-address-snippet { text-align: left; }
+            .map-frame { height: 320px; }
+            .map-pin-badge { left: 24px; bottom: 20px; }
+            footer { padding: 60px 24px 32px; }
+            .footer-top { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+        }
+        @media (max-width: 480px) {
+            .contact-chips { flex-direction: column; }
+            .chip { width: 100%; }
+        }
+    </style>
+</head>
+<body>
 
-.card-address .address {
-    margin-top: 5px;
-    font-size: 1rem;
-    line-height: 1.6;
-}
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="imgs/logozvtt.png" alt="Escritório de Advocacia Zveiter">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="institucional.html">Institucional</a></li>
+            <li><a href="profissionais.html">Profissionais</a></li>
+            <li class="has-dropdown">
+                <a class="nav-btn" href="especialidades.html">Especialidades</a>
+                <div class="dropdown-panel wide">
+                    <a href="especialidades.html#empresarial">Empresarial e Societário</a>
+                    <a href="especialidades.html#imobiliario">Direito Imobiliário, Notarial e Registral</a>
+                    <a href="especialidades.html#propriedade-intelectual">Comunicação e Propriedade Intelectual</a>
+                    <a href="especialidades.html#sucessorio">Direito Sucessório e Família</a>
+                    <a href="especialidades.html#ambiental">Direito Ambiental</a>
+                    <a href="especialidades.html#saude-suplementar">Direito de Saúde Suplementar</a>
+                    <a href="especialidades.html#desportivo">Direito Desportivo e do Entretenimento</a>
+                    <a href="especialidades.html#recuperacao">Recuperação Judicial e Falência</a>
+                    <a href="especialidades.html#tributario">Contencioso Tributário</a>
+                    <a href="especialidades.html#administrativo">Direito Administrativo</a>
+                    <a href="especialidades.html#arbitragem">Arbitragem e Mediação</a>
+                    <a href="especialidades.html#consumidor">Direito do Consumidor</a>
+                    <a href="especialidades.html#eleitoral">Direito Eleitoral</a>
+                    <a href="especialidades.html#saneamento">Direito ao Saneamento Básico</a>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a class="nav-btn" href="recuperacao.html">Recuperações</a>
+                <div class="dropdown-panel">
+                    <a href="grppetro.html">Grupo Petrópolis</a>
+                    <a href="americanas.html">Grupo Americanas</a>
+                    <a href="mintucano.html">Mina Tucano</a>
+                    <a href="gas.html">G.A.S. Consultoria</a>
+                    <a href="transporte.html">Transporte Campo Grande & Viação Penha</a>
+                    <a href="transcarioca.html">Consórcio Transcarioca</a>
+                    <a href="stcruz.html">Consórcio Santa Cruz</a>
+                    <a href="airmix.html">Airmix — Falência</a>
+                    <a href="kpfr.html">KPFR Empreendimentos</a>
+                    <a href="rodopetro.html">Rodopetro</a>
+                    <a href="qldtotal.html">Qualidade Total</a>
+                    <a href="rnr.html">RNR Montagens</a>
+                    <a href="canaamates.html">Canaã Mates — Falência</a>
+                    <a href="txrx.html">TX RX — Falência</a>
+                    <a href="costapereira.html">Costa Pereira Bokel</a>
+                </div>
+            </li>
+            <div class="nav-divider"></div>
+            <li><a href="contato.html" class="active">Contato</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
 
-.card-address a {
-    color: #f1f1f1;
-    text-decoration: none;
-}
-
-.card-address a:hover {
-    text-decoration: underline;
-}
-
-
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.contact-form textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-.btn-submit {
-    background-color: #191919;
-    color: #fff;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.btn-submit:hover {
-    background-color: #fff;
-    color:#191919
-}
-
-        </style>
-    </head>
-    <body id="top">
-        <div class="loading">
-            <div>
-                <img src="https://zveiter1.websiteseguro.com/_2023/wp-content/themes/zveiter/img/loading.png?1" alt="">
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="menu-item"><a href="institucional.html">Institucional</a></div>
+        <div class="menu-item"><a href="profissionais.html">Profissionais</a></div>
+        <div class="menu-item" id="menuEspecialidades">
+            <button class="menu-toggle" onclick="toggleMenu('menuEspecialidades')">Especialidades <span class="menu-toggle-icon">+</span></button>
+            <div class="sub-links">
+                <a href="especialidades.html#empresarial">Empresarial e Societário</a>
+                <a href="especialidades.html#imobiliario">Direito Imobiliário, Notarial e Registral</a>
+                <a href="especialidades.html#propriedade-intelectual">Comunicação e Propriedade Intelectual</a>
+                <a href="especialidades.html#sucessorio">Direito Sucessório e Família</a>
+                <a href="especialidades.html#ambiental">Direito Ambiental</a>
+                <a href="especialidades.html#saude-suplementar">Direito de Saúde Suplementar</a>
+                <a href="especialidades.html#desportivo">Direito Desportivo e do Entretenimento</a>
+                <a href="especialidades.html#recuperacao">Recuperação Judicial e Falência</a>
+                <a href="especialidades.html#tributario">Contencioso Tributário</a>
+                <a href="especialidades.html#administrativo">Direito Administrativo</a>
+                <a href="especialidades.html#arbitragem">Arbitragem e Mediação</a>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="transition-wrapper">
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item"><a class="nav-link" href="institucional.html"><strong>INSTITUCIONAL</strong></a></li>
-                            <li class="nav-item"><a class="nav-link" href="profissionais.html"><strong>PROFISSIONAIS</strong></a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="especialidadesLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <strong>ESPECIALIDADES</strong>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownEspecialidades">
-                                    <a class="dropdown-item" href="dirsocietario.html">Empresarial e Societário</a>
-                                    <a class="dropdown-item" href="dirinr.html">Direito Imobiliário, Notarial e Registral</a>
-                                    <a class="dropdown-item" href="dirintelec.html">Comunicação e Propriedade Intelectual</a>
-                                    <a class="dropdown-item" href="dirsucessorio.html">Direito Sucessório e Família</a>
-                                    <a class="dropdown-item" href="dirambiental.html">Direito Ambiental</a>
-                                    <a class="dropdown-item" href="">Direito de Saúde Suplementar</a>
-                                    <a class="dropdown-item" href="dirdespent.html">Direito Desportivo e do Entretenimento</a>
-                                    <a class="dropdown-item" href="#">Recuperação Judicial e Falência</a>
-                                    <a class="dropdown-item" href="contTrib.html">Contencioso Tributário</a>
-                                    <a class="dropdown-item" href="diradm.html">Direito Administrativo</a>
-                                    <a class="dropdown-item" href="#">Arbitragem e Mediação</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRecuperacoes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <strong>RECUPERAÇÕES JUDICIAIS E FALÊNCIAS</strong>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownRecuperacoes">
-                                    <a class="dropdown-item" href="grppetro.html">GRUPO PETRÓPOLIS</a>
-                                    <a class="dropdown-item" href="americanas.html">GRUPO AMERICANAS</a>
-                                    <a class="dropdown-item" href="mintucano.html">MINA TUCANO</a>
-                                    <a class="dropdown-item" href="gas.html">G.A.S. CONSULTORIA</a>
-                                    <a class="dropdown-item" href="transporte.html">TRANSPORTE CAMPO GRANDE LTDA E VIAÇÃO PENHA RIO LTDA</a>
-                                    <a class="dropdown-item" href="transcarioca.html">CONSÓRCIO TRANSCARIOCA DE TRANSPORTES</a>
-                                    <a class="dropdown-item" href="stcruz.html">CONSÓRCIO SANTA CRUZ TRANSPORTES</a>
-                                    <a class="dropdown-item" href="airmix.html">AIRMIX AR CONDICIONADO LTDA - FALÊNCIA</a>
-                                    <a class="dropdown-item" href="kpfr.html">KPFR EMPREENDIMENTOS</a>
-                                    <a class="dropdown-item" href="rodopetro.html">RODOPETRO DISTRIBUIDORA DE PETROLEO LTDA - RECUPERAÇÃO JUDICIAL</a>
-                                           <a class="dropdown-item" href="qldtotal.html">QUALIDADE TOTAL OPERADORA DE RECURSOS HUMANOS LTDA.</a>
-                                    <a class="dropdown-item" href="rnr.html">RNR MONTAGENS ELETRICAS E HIDRAULICAS LTDA - EPP.</a>
-                                     <a class="dropdown-item" href="canaamates.html">CANAÃ MATES COMÉRCIO DE ALIMENTOS EIRELI - FALÊNCIA</a>
-                                    <a class="dropdown-item" href="txrx.html">TX RX GLOBAL COMMUNICATION LTDA ME- FALÊNCIA</a>
-                                    <a class="dropdown-item" href="costapereira.html">COSTA PEREIRA BOKEL ENGENHARIA E CONSTRUÇÕES S.A.</a>
+        <div class="menu-item" id="menuRecuperacoes">
+            <button class="menu-toggle" onclick="toggleMenu('menuRecuperacoes')">Recuperações <span class="menu-toggle-icon">+</span></button>
+            <div class="sub-links">
+                <a href="grppetro.html">Grupo Petrópolis</a>
+                <a href="americanas.html">Grupo Americanas</a>
+                <a href="mintucano.html">Mina Tucano</a>
+                <a href="gas.html">G.A.S. Consultoria</a>
+                <a href="transcarioca.html">Consórcio Transcarioca</a>
+                <a href="airmix.html">Airmix — Falência</a>
+                <a href="kpfr.html">KPFR Empreendimentos</a>
+            </div>
+        </div>
+        <div class="menu-item"><a href="contato.html">Contato</a></div>
+    </div>
 
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="imgs/imgsitesala.jpeg" alt="Escritório Zveiter">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-overlay-bottom"></div>
+        <div class="hero-year">1957</div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">Escritório de Advocacia Zveiter</div>
+            <h1 class="hero-title">Fale<br><em>Conosco</em></h1>
+            <p class="hero-sub">Três escritórios, uma só dedicação.<br>Rio de Janeiro · São Paulo · Brasília</p>
+        </div>
+    </section>
 
+    <!-- MAIN CONTENT -->
+    <div class="contact-wrap">
+        <div class="contact-grid">
 
+            <!-- LEFT — form -->
+            <div class="contact-left">
+                <div class="section-eyebrow">Contato</div>
+                <h2 class="section-heading">Envie sua <em>mensagem</em></h2>
+                <p class="section-desc">Nossa equipe está pronta para atendê-lo. Preencha o formulário ou utilize um dos canais de contato direto abaixo.</p>
 
-                                    
-                                </div>
-                                
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="contato.html"><strong>CONTATO</strong></a></li> 
-                            <div class="card">
-                                <div class hidden="social-icons-wrapper">
-                                    <a href="#" class="socialContainer containerOne">
-                                        <svg class="socialSvg instagramSvg" viewBox="0 0 16 16"> 
-                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
-                                        </svg>
-                                    </a>
-                                    <a href="#" class="socialContainer containerThree">
-                                        <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512">
-                                            <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </ul>
-
-                        
-                        
-                    </div>
-
-                </div>
-                
-        </nav>
-        
-        <header class="sticky-header">
-            <div class="container d-flex flex-column align-items-center py-3">
-                <div class="logo-wrapper">
-                    <a href="index.html">
-                        <img src="imgs/zveiter-advocacia.jpg" alt="Logo" class="img-fluid logo">
+                <!-- Quick contact chips -->
+                <div class="contact-chips">
+                    <a href="mailto:contato@zveiter.adv.br" class="chip">
+                        <div class="chip-icon">
+                            <svg viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+                        </div>
+                        <div>
+                            <span class="chip-label">E-mail</span>
+                            <span class="chip-value">contato@zveiter.adv.br</span>
+                        </div>
+                    </a>
+                    <a href="tel:2133801155" class="chip">
+                        <div class="chip-icon">
+                            <svg viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C11.4 30.9 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.1-11.4 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+                        </div>
+                        <div>
+                            <span class="chip-label">Rio de Janeiro</span>
+                            <span class="chip-value">+55 (21) 3380-1155</span>
+                        </div>
                     </a>
                 </div>
-                
+
+                <!-- Contact Form -->
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <input type="text" id="nome" name="nome" placeholder="Nome completo" autocomplete="off">
+                            <label class="form-label" for="nome">Nome completo</label>
+                            <div class="form-gold-bar"></div>
+                        </div>
+                        <div class="form-field">
+                            <input type="email" id="email" name="email" placeholder="E-mail" autocomplete="off">
+                            <label class="form-label" for="email">E-mail</label>
+                            <div class="form-gold-bar"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <input type="tel" id="telefone" name="telefone" placeholder="Telefone" autocomplete="off">
+                            <label class="form-label" for="telefone">Telefone</label>
+                            <div class="form-gold-bar"></div>
+                        </div>
+                        <div class="form-field">
+                            <select id="area" name="area">
+                                <option value="" disabled selected></option>
+                                <option value="empresarial">Empresarial e Societário</option>
+                                <option value="recuperacao">Recuperação Judicial e Falência</option>
+                                <option value="imobiliario">Direito Imobiliário</option>
+                                <option value="tributario">Contencioso Tributário</option>
+                                <option value="desportivo">Direito Desportivo</option>
+                                <option value="ambiental">Direito Ambiental</option>
+                                <option value="familia">Família e Sucessões</option>
+                                <option value="outro">Outra área</option>
+                            </select>
+                            <label class="form-label" for="area">Área de interesse</label>
+                            <div class="form-gold-bar"></div>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <textarea id="mensagem" name="mensagem" placeholder="Mensagem"></textarea>
+                        <label class="form-label" for="mensagem">Mensagem</label>
+                        <div class="form-gold-bar"></div>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn-submit" id="btnSubmit">Enviar mensagem</button>
+                        <p class="form-note">Retornamos em até<br>48 horas úteis</p>
+                    </div>
+                    <div id="formFeedback" style="display:none; margin-top:16px; padding:14px 20px; font-family:var(--font-sans); font-size:0.68rem; letter-spacing:0.12em;"></div>
+                </form>
+            </div>
+
+            <!-- RIGHT — offices -->
+            <div class="contact-right">
+                <div class="offices-stack">
+
+                    <div class="office-card main">
+                        <div class="office-tag">Sede Principal</div>
+                        <div class="office-city">Rio de Janeiro</div>
+                        <p class="office-addr">
+                            Av. Presidente Antônio Carlos, nº 51<br>
+                            19º e 20º andares — Centro<br>
+                            Rio de Janeiro — RJ — 20.020-010
+                        </p>
+                        <a href="tel:2133801155" class="office-tel">+55 (21) 3380-1155</a>
+                        <a href="https://maps.app.goo.gl/bw6XGbnmrtH9fzNT8" target="_blank" class="office-link">Ver no Google Maps</a>
+                        <div class="office-hours">Segunda a Sexta, 9h às 18h</div>
+                    </div>
+
+                    <div class="office-card">
+                        <div class="office-tag">Escritório</div>
+                        <div class="office-city">São Paulo</div>
+                        <p class="office-addr">
+                            Avenida Paulista, nº 777<br>
+                            Jardim Paulista — 7º andar<br>
+                            São Paulo — SP
+                        </p>
+                        <a href="tel:1148580383" class="office-tel">+55 (11) 4858-0383</a>
+                        <div class="office-hours">Segunda a Sexta, 9h às 18h</div>
+                    </div>
+
+                    <div class="office-card">
+                        <div class="office-tag">Escritório</div>
+                        <div class="office-city">Brasília</div>
+                        <p class="office-addr">Distrito Federal</p>
+                        <a href="tel:6134474343" class="office-tel">+55 (61) 3447-4343</a>
+                        <div class="office-hours">Segunda a Sexta, 9h às 18h</div>
+                    </div>
+
                 </div>
             </div>
-        </header>
-    
-       <section id="contato" class="contact-section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <!-- Título da Seção -->
-            <div class="col-12 text-center mb-4">
-                <h1 class="main-title">Contato</h1>
+
+        </div>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="full-divider" style="margin-top:100px;">
+        <hr>
+    </div>
+
+    <!-- MAP SECTION -->
+    <div class="map-section">
+        <div class="map-label-bar">
+            <div class="map-label-text">
+                <div class="map-label-eyebrow">Localização</div>
+                <div class="map-label-title">Sede Rio de Janeiro</div>
             </div>
-
-            <!-- Informações de Contato -->
-            <div class="col-lg-8 col-md-10 col-12">
-                <div class="contact-info text-center">
-                    <a href="mailto:contato@zveiter.adv.br" class="contact-email d-block mb-3">
-                        <span>Email: contato@zveiter.adv.br</span>
-                    </a>
-
-                    <div class="card-address mb-4">
-                        <p class="city fw-bold">Rio de Janeiro</p>
-                        <p class="address">
-                            Avenida Presidente Antônio Carlos, nº 51 - 19º e 20º andares<br>
-                            Centro - Rio de Janeiro - RJ - 20.020-010<br>
-                            <a href="tel:2133801155">+55 (21) 3380-1155</a>
-                        </p>
-                        <div class="map-embed mt-3">
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.0672567203824!2d-43.1719!3d-22.91089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9981def96b9079%3A0xd66c49e2c3487141!2sAvenida%20Presidente%20Ant%C3%B4nio%20Carlos%2051%2C%20Centro%2C%20Rio%20de%20Janeiro!5e0!3m2!1spt-BR!2sbr!4v1748963333656!5m2!1spt-BR!2sbr" 
-        width="100%" 
-        height="300" 
-        style="border:0; border-radius: 8px;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-</div>
-                    </div>
-
-                    <div class="card-address mb-4">
-                        <p class="city fw-bold">Brasília</p>
-                        <p class="address">
-                            <a href="tel:6134474343">+55 (61) 3447-4343</a>
-                        </p>
-                    </div>
-
-                    <div class="card-address mb-4">
-                        <p class="city fw-bold">São Paulo</p>
-                        <p class="address">
-                            Avenida Paulista, nº 777, Jardim Paulista, 7º andar, São Paulo<br>
-                            <a href="tel:1148580383">+55 (11) 4858-0383</a>
-                        </p>
-                    </div>
+            <div class="map-address-snippet">
+                Av. Presidente Antônio Carlos, nº 51<br>
+                19º e 20º andares — Centro, Rio de Janeiro
+            </div>
+        </div>
+        <div class="map-frame">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.0672567203824!2d-43.1719!3d-22.91089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9981def96b9079%3A0xd66c49e2c3487141!2sAvenida%20Presidente%20Ant%C3%B4nio%20Carlos%2051%2C%20Centro%2C%20Rio%20de%20Janeiro!5e0!3m2!1spt-BR!2sbr!4v1748963333656!5m2!1spt-BR!2sbr"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="map-frame-overlay"></div>
+            <div class="map-pin-badge">
+                <div class="pin-dot"></div>
+                <div class="pin-text">
+                    <strong>Escritório de Advocacia Zveiter</strong>
+                    Av. Presidente Antônio Carlos, 51 — Centro
                 </div>
             </div>
         </div>
     </div>
-</section>
-        
-                  <!-- Formulário de Contato -->
-<div class hidden ="col-lg-5 mb-4">
-    <h2 style="color: #191919;">Fale Conosco</h2>
-    <form action="process_form.php" method="post" class="contact-form">
-        <input type="text" name="nome" placeholder="Nome*" required>
-        <input type="email" name="email" placeholder="E-mail*" required>
-        <input type="text" name="assunto" placeholder="Assunto*" required>
-        <textarea name="msg" placeholder="Mensagem*" required></textarea>
-        <button type="submit" class="btn-submit">
-            <span class="font-ratio">Enviar</span>
-        </button>
-    </form>
-</div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="imgs/logozvtt.png" alt="Escritório de Advocacia Zveiter">
+                    <p>Fundado em 1957, o Escritório Zveiter é referência em advocacia de excelência no Brasil.</p>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">Rio de Janeiro</div>
+                    <strong>Sede Principal</strong>
+                    <p>Av. Presidente Antônio Carlos nº 51<br>19º e 20º andares, Centro<br>Rio de Janeiro — RJ</p>
+                    <p>Tel.: 55 (21) 3380-1155</p>
+                    <a href="https://maps.app.goo.gl/bw6XGbnmrtH9fzNT8" target="_blank">Ver no mapa →</a>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">São Paulo</div>
+                    <strong>Escritório SP</strong>
+                    <p>Avenida Paulista, nº 777<br>Jardim Paulista, 7º andar<br>São Paulo — SP</p>
+                    <p>Tel.: 55 (11) 4858-0383</p>
+                </div>
+                <div class="footer-address">
+                    <div class="footer-col-title">Brasília</div>
+                    <strong>Escritório BSB</strong>
+                    <p>Tel.: 55 (61) 3447-4343</p>
                 </div>
             </div>
-        </section>
-        
-        
-    
-            <footer>
-                <div class="footer-logo">
-                    <a href="#top" id="scrollToTop">
-                    <a href="index.html"><img src="imgs/logopreta.jpg" alt="Logo" class="footer-logo-img"></a>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2025 Escritório de Advocacia Zveiter. Todos os direitos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/escritoriodeadvocaciazveiter" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                    </a>
                 </div>
-                <div class="footer-addresses">
-                    <div class="footer-address footer-address-bra">
-                        <h4>Brasília</h4>
-                        <p>Tel.: 55 (61) 3447-4343</p>
-                    </div>
-                    <div class="footer-address footer-address-rio">
-                        <h4>Rio de Janeiro</h4>
-                        <p>Av Presidente Antônio Carlos nº 51, 19º e 20º andares, Centro - Rio de Janeiro - RJ</p>
-                        <p>Tel.: 55 (21) 3380-1155</p>
-                        <a href="https://maps.app.goo.gl/bw6XGbnmrtH9fzNT8" target="_blank">Ver no Google Maps</a>
-                    </div>
-                    <div class="footer-address footer-address-sp">
-                        <h4>São Paulo</h4>
-                        <p>Avenida Paulista, nº 777, 7º andar, São Paulo </p>
-                        <p>Tel.: 55 (11) 4858-0383</p>
-                    </div>
-                </footer>
-        
-    
-      <!-- jQuery and Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@highwayjs/core@latest"></script>
-      <script src="assets/js/highway-setup.js"></script>
-      <script src="assets/js/script.js"></script>
-      <script>
-          document.getElementById('especialidadesLink').addEventListener('click', function(event) {
-              event.preventDefault();
-              document.getElementById('areas-de-atuacao').scrollIntoView({ behavior: 'smooth' });
-          });
-          </script>
-          <script>
-              document.querySelector('.footer-logo a').addEventListener('click', function(event) {
-                  event.preventDefault();
-                  window.scrollTo({
-                      top: 0,
-                      behavior: 'smooth'
-                  });
-              });
-          </script>
-          <script>
-              document.addEventListener('scroll', function() {
-      var header = document.querySelector('header');
-      var logoWrapper = document.querySelector('.logo-wrapper');
-      
-      if (window.scrollY > 100) {
-          logoWrapper.classList.add('scrolled');
-          logoWrapper.classList.remove('center');
-      } else {
-          logoWrapper.classList.remove('scrolled');
-          logoWrapper.classList.add('center');
-      }
-  });
-              
-          </script>
-          <script>
-              document.addEventListener('DOMContentLoaded', function() {
-                  var navbar = document.querySelector('.navbar');
-                  var lastScrollTop = 0;
-                  
-                  window.addEventListener('scroll', function() {
-                      var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          
-                      if (currentScrollTop > lastScrollTop) {
-                          // Rolando para baixo
-                          navbar.classList.add('navbar-hidden');
-                      } else {
-                          // Rolando para cima
-                          navbar.classList.remove('navbar-hidden');
-                      }
-          
-                      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Para não permitir valores negativos
-                  });
-              });
-          </script>
-          <script>
-              document.addEventListener('DOMContentLoaded', function() {
-                  var navbar = document.querySelector('.navbar');
-                  var lastScrollTop = 0;
-          
-                  window.addEventListener('scroll', function() {
-                      var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          
-                      if (currentScrollTop > lastScrollTop) {
-                          // Rolando para baixo
-                          navbar.classList.add('navbar-transparent');
-                          navbar.classList.remove('navbar-visible');
-                      } else {
-                          // Rolando para cima
-                          navbar.classList.add('navbar-visible');
-                          navbar.classList.remove('navbar-transparent');
-                      }
-          
-                      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Para não permitir valores negativos
-                  });
-              });
-          </script>
-          <script>
-              document.addEventListener('DOMContentLoaded', function () {
-      var header = document.querySelector('header');
-      
-      window.addEventListener('scroll', function () {
-          if (window.scrollY > 50) { // Ajuste o valor conforme necessário
-              header.classList.add('header-scrolled');
-          } else {
-              header.classList.remove('header-scrolled');
-          }
-      });
-  });
-          </script>
-          
-          
-  </body>
-  </html>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        document.getElementById('hamburger').addEventListener('click', function() {
+            this.classList.toggle('open');
+            document.getElementById('mobileMenu').classList.toggle('open');
+        });
+
+        function toggleMenu(id) {
+            const item = document.getElementById(id);
+            const sub = item.querySelector('.sub-links');
+            const icon = item.querySelector('.menu-toggle-icon');
+            sub.classList.toggle('open');
+            icon.textContent = sub.classList.contains('open') ? '−' : '+';
+        }
+
+        // Float label for select
+        document.getElementById('area').addEventListener('change', function() {
+            this.closest('.form-field').querySelector('.form-label').style.cssText = 'top:9px;font-size:0.52rem;color:var(--gold)';
+        });
+
+        // Form submission via Formspree
+        const FORMSPREE_ID = 'myknlbzg';
+
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnSubmit');
+            const feedback = document.getElementById('formFeedback');
+
+            btn.textContent = 'Enviando…';
+            btn.disabled = true;
+
+            try {
+                const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                    method: 'POST',
+                    body: new FormData(this),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    feedback.style.display = 'block';
+                    feedback.style.cssText = 'display:block; margin-top:16px; padding:14px 20px; font-family:var(--font-sans); font-size:0.68rem; letter-spacing:0.12em; border:1px solid rgba(184,150,62,0.3); color:var(--gold-light); background:rgba(184,150,62,0.05);';
+                    feedback.textContent = 'Mensagem enviada com sucesso. Retornaremos em breve.';
+                    this.reset();
+                    document.getElementById('area').closest('.form-field').querySelector('.form-label').style.cssText = '';
+                    btn.textContent = 'Mensagem enviada ✓';
+                    setTimeout(() => {
+                        btn.textContent = 'Enviar mensagem';
+                        btn.disabled = false;
+                        feedback.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error();
+                }
+            } catch {
+                feedback.style.display = 'block';
+                feedback.style.cssText = 'display:block; margin-top:16px; padding:14px 20px; font-family:var(--font-sans); font-size:0.68rem; letter-spacing:0.12em; border:1px solid rgba(200,80,80,0.3); color:#e09090; background:rgba(200,80,80,0.05);';
+                feedback.textContent = 'Erro ao enviar. Tente novamente ou entre em contato por telefone.';
+                btn.textContent = 'Enviar mensagem';
+                btn.disabled = false;
+            }
+        });
+
+    </script>
+
+</body>
+</html>

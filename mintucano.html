@@ -1,933 +1,1006 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="imgs/ChatGPT Image 13 de mai. de 2025, 15_42_05.png" type="image/png">
-    <title>MINA TUCANO | Escritório de Advocacia Zveiter</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mina Tucano | Escritório de Advocacia Zveiter</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Tenor+Sans&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+   :root {
+            --gold: #B8963E;
+            --gold-light: #D4AF6A;
+            --gold-pale: #E8D5A3;
+            --black: #0A0A0A;
+            --black-rich: #111111;
+            --black-soft: #1A1A1A;
+            --black-mid: #242424;
+            --white: #F5F0E8;
+            --white-dim: #C8C0B0;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-sans: 'Tenor Sans', sans-serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
 
-   <style>
-        .card {
-    width: auto; /* Ajuste para que a largura seja determinada pelo conteúdo */
-    height: fit-content;
-    background: #191919;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px; /* Ajuste do padding */
-    gap: 10px; /* Espaço entre os ícones */
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
-    border-radius: 5px; /* Adiciona bordas arredondadas se desejado */
-}
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
 
-.socialContainer {
-    width: 32px; /* Tamanho dos ícones */
-    height: 32px; /* Tamanho dos ícones */
-    background-color: rgb(44, 44, 44);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    transition-duration: .3s;
-}
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-weight: 300;
+            overflow-x: hidden;
+        }
 
-.containerOne:hover {
-    background-color: #d62976;
-}
+        /* ========================
+           NAVIGATION
+        ======================== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 0 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            background: rgba(10,10,10,0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(184,150,62,0.15);
+            transition: height var(--transition);
+        }
+        nav.scrolled { height: 64px; }
 
-.containerThree:hover {
-    background-color: #0072b1;
-}
+        .nav-logo img {
+            height: 48px;
+            width: auto;
+            filter: invert(1) brightness(1.8);
+            opacity: 0.92;
+            transition: opacity var(--transition), transform var(--transition);
+        }
+        .nav-logo img:hover { opacity: 1; transform: scale(1.03); }
 
-.socialContainer:active {
-    transform: scale(0.9);
-}
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            list-style: none;
+        }
+        .nav-links > li { position: relative; }
+        .nav-links > li > a,
+        .nav-links > li > .nav-btn {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            text-decoration: none;
+            padding: 28px 18px;
+            display: block;
+            transition: color var(--transition);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .nav-links > li > a:hover,
+        .nav-links > li > .nav-btn:hover,
+        .nav-links > li:hover > a,
+        .nav-links > li:hover > .nav-btn { color: var(--gold-light); }
 
-.socialSvg {
-    width: 20px; /* Tamanho reduzido dos ícones */
-}
+        .dropdown-panel {
+            position: absolute;
+            top: 100%; left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: var(--black-soft);
+            border: 1px solid rgba(184,150,62,0.2);
+            min-width: 280px;
+            padding: 12px 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 100;
+        }
+        .dropdown-panel.wide { min-width: 340px; columns: 2; column-gap: 0; }
+        .nav-links > li:hover .dropdown-panel {
+            opacity: 1; pointer-events: all;
+            transform: translateX(-50%) translateY(0);
+        }
+        .dropdown-panel a {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            color: var(--white-dim);
+            text-decoration: none;
+            padding: 9px 24px;
+            transition: color 0.2s, padding-left 0.2s;
+            break-inside: avoid;
+        }
+        .dropdown-panel a:hover { color: var(--gold-light); padding-left: 30px; }
 
-.socialSvg path {
-    fill: rgb(255, 255, 255);
-}
+        .nav-divider { width: 1px; height: 16px; background: rgba(184,150,62,0.2); margin: 0 6px; }
 
-.socialContainer:hover .socialSvg {
-    animation: slide-in-top 0.3s both;
-}
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+        .hamburger span { display: block; width: 24px; height: 1px; background: var(--white); transition: var(--transition); }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px,4px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px,-4px); }
 
-.social-icons-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espaço entre os ícones */
-}
+        .mobile-menu {
+            display: block;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--black-rich);
+            z-index: 999;
+            padding: 100px 40px 40px;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.77,0,0.175,1);
+        }
+        .mobile-menu.open { transform: translateX(0); }
+        .mobile-menu .menu-item { border-bottom: 1px solid rgba(184,150,62,0.1); }
+        .mobile-menu .menu-item > a,
+        .mobile-menu .menu-item > .menu-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--white);
+            text-decoration: none;
+            padding: 14px 0;
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            transition: color 0.2s;
+        }
+        .mobile-menu .menu-item > a:hover,
+        .mobile-menu .menu-item > .menu-toggle:hover { color: var(--gold-light); }
+        .mobile-menu .menu-toggle-icon { font-size: 1.2rem; color: var(--gold); transition: transform 0.3s; flex-shrink: 0; }
+        .mobile-menu .menu-item.expanded .menu-toggle-icon { transform: rotate(45deg); }
+        .mobile-menu .sub-links { padding: 0 0 12px 16px; display: none; }
+        .mobile-menu .menu-item.expanded .sub-links { display: block; }
+        .mobile-menu .sub-links a {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--white-dim);
+            text-decoration: none;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(184,150,62,0.05);
+            transition: color 0.2s, padding-left 0.2s;
+        }
+        .mobile-menu .sub-links a:hover { color: var(--gold-light); padding-left: 8px; }
 
-@keyframes slide-in-top {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    
+        /* ========================
+           PAGE HERO
+        ======================== */
+        .page-hero {
+            padding-top: 80px;
+            background: var(--black-soft);
+            border-bottom: 1px solid rgba(184,150,62,0.1);
+            position: relative;
+            overflow: hidden;
+        }
 
-}
-    /* Estilo para o container do dropdown */
-.dropdown {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
+        .page-hero::before {
+            content: 'TUCANO';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var(--font-display);
+            font-size: 16rem;
+            font-weight: 300;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(184,150,62,0.05);
+            pointer-events: none;
+            line-height: 1;
+        }
 
-/* Estilo para o botão do dropdown */
-.dropbtn {
-  background-color: #0066cc;
-  color: #fff;
-  padding: 14px 18px;
-  font-size: 16px;
-  font-weight: 500;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: left;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  width: 100%;
-}
+        .page-hero-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 80px 50px;
+            position: relative;
+            z-index: 1;
+        }
 
-.dropbtn:hover {
-  background-color: #004c99;
-  color: #ffffff;
-}
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+        .breadcrumb a {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .breadcrumb a:hover { color: var(--gold-light); }
+        .breadcrumb-sep {
+            font-size: 0.6rem;
+            color: rgba(184,150,62,0.3);
+        }
+        .breadcrumb span {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            opacity: 0.5;
+        }
 
-/* Estilo para o conteúdo do dropdown */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #222;
-  min-width: 220px;
-  border-radius: 6px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-  z-index: 1000;
-  padding: 0.5rem 0;
-}
+        .page-hero-tag {
+            display: inline-block;
+            font-family: var(--font-sans);
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--black);
+            background: var(--gold);
+            padding: 4px 14px;
+            margin-bottom: 20px;
+        }
 
-/* Estilo para os itens do dropdown */
-.dropdown-content a {
-  color: #eee;
-  padding: 12px 18px;
-  text-decoration: none;
-  display: block;
-  font-size: 15px;
-  transition: background-color 0.2s ease, padding-left 0.2s ease;
-}
+        .page-hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 300;
+            line-height: 1.15;
+            color: var(--white);
+            max-width: 800px;
+            margin-bottom: 32px;
+        }
+        .page-hero-title em { font-style: italic; color: var(--gold-pale); }
 
-/* Alterar a cor de fundo e o texto ao passar o mouse sobre um item do dropdown */
-.dropdown-content a:hover {
-  background-color: #333;
-  padding-left: 24px;
-}
+        .meta-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            border-top: 1px solid rgba(184,150,62,0.15);
+            margin-top: 40px;
+        }
 
-/* Mostrar o conteúdo do dropdown ao passar o mouse sobre o botão */
-.dropdown:hover .dropdown-content {
-  display: block;
-  animation: fadeInDropdown 0.25s ease;
-}
+        .meta-item {
+            padding: 20px 32px 20px 0;
+            margin-right: 32px;
+            border-right: 1px solid rgba(184,150,62,0.1);
+        }
+        .meta-item:last-child { border-right: none; }
 
-/* Animação de aparição */
-@keyframes fadeInDropdown {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+        .meta-label {
+            font-family: var(--font-sans);
+            font-size: 0.58rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+        .meta-value {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--white-dim);
+            line-height: 1.5;
+        }
+        .meta-value a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        .meta-value a:hover { text-decoration: underline; }
 
-/* Estilo para o conteúdo que aparece ao clicar */
-.content {
-  display: none;
-  padding: 15px;
-  background-color: #2b2b2b;
-  border-radius: 4px;
-  margin-top: 8px;
-  color: #f0f0f0;
-  transition: max-height 0.3s ease-out;
-}
+        /* ========================
+           MAIN CONTENT
+        ======================== */
+        .page-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 80px;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 60px;
+            align-items: start;
+        }
 
-/* Mostrar o conteúdo ao clicar */
-.show {
-  display: block;
-  max-height: 1000px;
-}
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
 
-/* Ajustes de alinhamento vertical */
-.vertical-align-section .container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-}
+        .sidebar-title {
+            font-family: var(--font-sans);
+            font-size: 0.62rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
 
-.vertical-align-section .dropdown {
-  width: 100%;
-}
-/* Move toda a seção 'sobre-nos' para a esquerda e ajusta o conteúdo */
-#sobre-nos .section-content {
-  margin-left: 0;          /* Move o bloco para a esquerda */
-  align-items: flex-start;  /* Alinha o texto interno à esquerda */
-  text-align: left;         /* Garante o alinhamento do texto */
-}
+        .sidebar-nav {
+            list-style: none;
+        }
 
-#sobre-nos .section-content h3 {
-  margin-bottom: 15px;      /* Espaçamento abaixo do título principal */
-}
+        .sidebar-nav li + li { margin-top: 2px; }
 
-#sobre-nos .section-content h6 {
-  margin-bottom: 8px;       /* Espaçamento reduzido entre as linhas de informação */
-}
-    
-        </style>
-         
-    </head>
-    <body id="top">
-        <div class="loading-container">
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            color: var(--white-dim);
+            text-decoration: none;
+            padding: 10px 14px;
+            background: var(--black-soft);
+            border-left: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            color: var(--gold-light);
+            border-left-color: var(--gold);
+            background: var(--black-mid);
+            padding-left: 20px;
+        }
+
+        .sidebar-nav .count {
+            margin-left: auto;
+            font-size: 0.65rem;
+            color: rgba(184,150,62,0.5);
+            font-family: var(--font-display);
+        }
+
+        .sidebar-link-ext {
+            display: block;
+            margin-top: 24px;
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--black);
+            background: var(--gold);
+            padding: 12px 16px;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.2s;
+        }
+        .sidebar-link-ext:hover { background: var(--gold-light); }
+
+        /* Main panels */
+        .doc-panels { min-width: 0; }
+
+        .doc-panel {
+            display: none;
+        }
+        .doc-panel.active { display: block; }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(184,150,62,0.15);
+        }
+
+        .panel-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--white);
+        }
+        .panel-title em { font-style: italic; color: var(--gold-pale); }
+
+        .panel-count {
+            font-family: var(--font-sans);
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            opacity: 0.7;
+        }
+
+        /* Document items */
+        .doc-list { display: flex; flex-direction: column; gap: 2px; }
+
+        .doc-item {
+            background: var(--black-soft);
+            border-left: 2px solid transparent;
+            transition: border-color 0.2s, background 0.2s;
+            overflow: hidden;
+        }
+
+        .doc-item.open {
+            border-left-color: var(--gold);
+        }
+
+        .doc-item-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .doc-item-header:hover { background: var(--black-mid); }
+
+        .doc-date {
+            font-family: var(--font-sans);
+            font-size: 0.6rem;
+            letter-spacing: 0.12em;
+            color: var(--gold);
+            opacity: 0.7;
+            white-space: nowrap;
+            min-width: 80px;
+        }
+
+        .doc-name {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--white-dim);
+            line-height: 1.4;
+            flex: 1;
+            text-align: justify;
+        }
+
+        .doc-toggle {
+            width: 20px;
+            height: 20px;
+            border: 1px solid rgba(184,150,62,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+            color: var(--gold);
+            transition: transform 0.3s, background 0.2s;
+        }
+
+        .doc-item.open .doc-toggle {
+            transform: rotate(45deg);
+            background: rgba(184,150,62,0.1);
+        }
+
+        .doc-item-body {
+            display: none;
+            padding: 0 20px 20px 116px;
+            border-top: 1px solid rgba(184,150,62,0.08);
+        }
+
+        .doc-item.open .doc-item-body { display: block; }
+
+        .doc-item-body p {
+            font-size: 0.82rem;
+            line-height: 1.85;
+            color: var(--white-dim);
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .doc-item-body p:last-child { margin-bottom: 0; }
+
+        .pdf-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-sans);
+            font-size: 0.62rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+            border: 1px solid rgba(184,150,62,0.3);
+            padding: 8px 16px;
+            margin-top: 12px;
+            transition: all 0.2s;
+        }
+        .pdf-download:hover {
+            background: rgba(184,150,62,0.08);
+            border-color: var(--gold);
+            color: var(--gold-light);
+        }
+        .pdf-download svg { width: 12px; height: 12px; fill: currentColor; }
+        .pdf-download span.doc-link-size { color: rgba(184,150,62,.5); margin-left: 4px; text-transform: none; }
+
+        .doc-item-body strong {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: 16px;
+            margin-bottom: 4px;
+            opacity: 0.8;
+        }
+
+        .info-body strong { display: inline; text-transform: none; font-family: inherit; font-size: inherit; margin: 0; opacity: 1; font-weight: 500; color: var(--white); }
+        .info-body a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(184,150,62,.2); }
+        .info-body a:hover { color: var(--gold); }
+
+        /* ========================
+           FOOTER
+        ======================== */
+        footer {
+            background: var(--black-rich);
+            border-top: 1px solid rgba(184,150,62,0.15);
+            padding: 80px 80px 40px;
+            margin-top: 80px;
+        }
+        .footer-inner { max-width: 1400px; margin: 0 auto; }
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(184,150,62,0.1);
+        }
+        .footer-brand img {
+            height: 52px;
+            filter: invert(1) brightness(1.8);
+            opacity: 0.85;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .footer-brand p { font-size: 0.82rem; line-height: 1.8; color: rgba(200,192,176,0.5); max-width: 260px; text-align: justify; }
+        .footer-col-title { font-family: var(--font-sans); font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+        .footer-address strong { display: block; font-family: var(--font-display); font-size: 1rem; font-weight: 400; color: var(--white-dim); margin-bottom: 8px; }
+        .footer-address p { font-size: 0.8rem; line-height: 1.9; color: rgba(200,192,176,0.5); }
+        .footer-address a { display: inline-block; font-size: 0.75rem; color: var(--gold); text-decoration: none; margin-top: 8px; opacity: 0.8; transition: opacity 0.2s; }
+        .footer-address a:hover { opacity: 1; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; }
+        .footer-copy { font-size: 0.72rem; color: rgba(200,192,176,0.3); letter-spacing: 0.05em; }
+        .footer-social { display: flex; gap: 16px; }
+        .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(184,150,62,0.2); display: flex; align-items: center; justify-content: center; transition: border-color 0.3s, background 0.3s; }
+        .footer-social a:hover { border-color: var(--gold); background: rgba(184,150,62,0.08); }
+        .footer-social svg { width: 14px; height: 14px; fill: var(--white-dim); }
+
+        /* ========================
+           RESPONSIVE
+        ======================== */
+        @media (max-width: 1100px) {
+            .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+        }
+
+        @media (max-width: 900px) {
+            .page-content { grid-template-columns: 1fr; padding: 60px 24px; }
+            .sidebar { position: static; display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+            .sidebar-title { width: 100%; }
+            .sidebar-nav { display: flex; flex-wrap: wrap; gap: 4px; width: 100%; }
+            .sidebar-nav li { flex: 1 1 auto; }
+            .sidebar-nav a { padding: 8px 12px; font-size: 0.7rem; justify-content: center; }
+            .sidebar-nav .count { display: none; }
+            .sidebar-link-ext { display: none; }
+            .doc-item-body { padding-left: 20px; }
+            .doc-date { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 24px; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .page-hero-inner { padding: 40px 24px 40px; }
+            .page-hero-title { font-size: 1.8rem; }
+            .meta-grid { flex-direction: column; }
+            .meta-item { border-right: none; padding: 14px 0; margin-right: 0; border-bottom: 1px solid rgba(184,150,62,0.08); }
+            footer { padding: 60px 24px 32px; }
+            .footer-top { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+        }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+    <div class="nav-logo">
+        <a href="index.html">
+            <img alt="Escritório de Advocacia Zveiter" src="imgs/logozvtt.png"/>
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="institucional.html">Institucional</a></li>
+        <li><a href="profissionais.html">Profissionais</a></li>
+        <li class="has-dropdown">
+            <a class="nav-btn" href="especialidades.html">Especialidades</a>
+            <div class="dropdown-panel wide">
+                <a href="especialidades.html#empresarial">Empresarial e Societário</a>
+                <a href="especialidades.html#imobiliario">Imobiliário, Notarial e Registral</a>
+                <a href="especialidades.html#propriedade-intelectual">Comunicação e Propriedade Intelectual</a>
+                <a href="especialidades.html#sucessorio">Direito Sucessório e Família</a>
+                <a href="especialidades.html#ambiental">Direito Ambiental</a>
+                <a href="#">Direito de Saúde Suplementar</a>
+                <a href="especialidades.html#desportivo">Direito Desportivo e do Entretenimento</a>
+                <a href="especialidades.html#recuperacao">Recuperação Judicial e Falência</a>
+                <a href="especialidades.html#tributario">Contencioso Tributário</a>
+                <a href="especialidades.html#administrativo">Direito Administrativo</a>
+                <a href="#">Arbitragem e Mediação</a>
+            </div>
+        </li>
+        <li class="has-dropdown">
+            <a class="nav-btn" href="recuperacao.html">Recuperações</a>
+            <div class="dropdown-panel">
+                <a href="grppetro.html">Grupo Petrópolis</a>
+                <a href="americanas.html">Grupo Americanas</a>
+                <a href="mintucano.html" style="color: var(--gold-light);">Mina Tucano</a>
+                <a href="gas.html">G.A.S. Consultoria</a>
+                <a href="transporte.html">Transporte Campo Grande</a>
+                <a href="transcarioca.html">Consórcio Transcarioca</a>
+                <a href="stcruz.html">Consórcio Santa Cruz</a>
+                <a href="airmix.html">Airmix — Falência</a>
+                <a href="kpfr.html">KPFR Empreendimentos</a>
+                <a href="rodopetro.html">Rodopetro</a>
+                <a href="costapereira.html">Costa Pereira Bokel</a>
+            </div>
+        </li>
+        <div class="nav-divider"></div>
+        <li><a href="contato.html">Contato</a></li>
+    </ul>
+    <button aria-label="Menu" class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+    <div class="menu-item"><a href="institucional.html">Institucional</a></div>
+    <div class="menu-item"><a href="profissionais.html">Profissionais</a></div>
+    <div class="menu-item" id="menuEspecialidades">
+        <button class="menu-toggle" onclick="toggleMobileMenu('menuEspecialidades')">
+            Especialidades <span class="menu-toggle-icon">+</span>
+        </button>
+        <div class="sub-links">
+            <a href="especialidades.html#empresarial">Empresarial e Societário</a>
+            <a href="especialidades.html#imobiliario">Direito Imobiliário</a>
+            <a href="especialidades.html#propriedade-intelectual">Propriedade Intelectual</a>
+            <a href="especialidades.html#sucessorio">Direito Sucessório e Família</a>
+            <a href="especialidades.html#ambiental">Direito Ambiental</a>
+            <a href="especialidades.html#desportivo">Direito Desportivo</a>
+            <a href="especialidades.html#tributario">Contencioso Tributário</a>
+            <a href="especialidades.html#administrativo">Direito Administrativo</a>
         </div>
+    </div>
+    <div class="menu-item" id="menuRecuperacoes">
+        <button class="menu-toggle" onclick="toggleMobileMenu('menuRecuperacoes')">
+            Recuperações <span class="menu-toggle-icon">+</span>
+        </button>
+        <div class="sub-links">
+            <a href="grppetro.html">Grupo Petrópolis</a>
+            <a href="americanas.html">Grupo Americanas</a>
+            <a href="mintucano.html">Mina Tucano</a>
+            <a href="gas.html">G.A.S. Consultoria</a>
+            <a href="transcarioca.html">Consórcio Transcarioca</a>
+            <a href="airmix.html">Airmix — Falência</a>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="transition-wrapper">
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item"><a class="nav-link" href="institucional.html"><strong>INSTITUCIONAL</strong></a></li>
-                            <li class="nav-item"><a class="nav-link" href="profissionais.html"><strong>PROFISSIONAIS</strong></a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="especialidadesLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <strong>ESPECIALIDADES</strong>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownEspecialidades">
-                                    <a class="dropdown-item" href="dirsocietario.html">Empresarial e Societário</a>
-                                    <a class="dropdown-item" href="dirinr.html">Direito Imobiliário, Notarial e Registral</a>
-                                    <a class="dropdown-item" href="dirintelec.html">Comunicação e Propriedade Intelectual</a>
-                                    <a class="dropdown-item" href="dirsucessorio.html">Direito Sucessório e Família</a>
-                                    <a class="dropdown-item" href="dirambiental.html">Direito Ambiental</a>
-                                    <a class="dropdown-item" href="">Direito de Saúde Suplementar</a>
-                                    <a class="dropdown-item" href="dirdespent.html">Direito Desportivo e do Entretenimento</a>
-                                    <a class="dropdown-item" href="#">Recuperação Judicial e Falência</a>
-                                    <a class="dropdown-item" href="contTrib.html">Contencioso Tributário</a>
-                                    <a class="dropdown-item" href="diradm.html">Direito Administrativo</a>
-                                    <a class="dropdown-item" href="#">Arbitragem e Mediação</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRecuperacoes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <strong>RECUPERAÇÕES JUDICIAIS E FALÊNCIAS</strong>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownRecuperacoes">
-                                    <a class="dropdown-item" href="grppetro.html">GRUPO PETRÓPOLIS</a>
-                                    <a class="dropdown-item" href="americanas.html">GRUPO AMERICANAS</a>
-                                    <a class="dropdown-item" href="mintucano.html">MINA TUCANO</a>
-                                    <a class="dropdown-item" href="gas.html">G.A.S. CONSULTORIA</a>
-                                    <a class="dropdown-item" href="transporte.html">TRANSPORTE CAMPO GRANDE LTDA E VIAÇÃO PENHA RIO LTDA</a>
-                                    <a class="dropdown-item" href="transcarioca.html">CONSÓRCIO TRANSCARIOCA DE TRANSPORTES</a>
-                                    <a class="dropdown-item" href="stcruz.html">CONSÓRCIO SANTA CRUZ TRANSPORTES</a>
-                                    <a class="dropdown-item" href="airmix.html">AIRMIX AR CONDICIONADO LTDA - FALÊNCIA</a>
-                                    <a class="dropdown-item" href="kpfr.html">KPFR EMPREENDIMENTOS</a>
-                                    <a class="dropdown-item" href="qldtotal.html">QUALIDADE TOTAL OPERADORA DE RECURSOS HUMANOS LTDA.</a>
-                                    <a class="dropdown-item" href="rnr.html">RNR MONTAGENS ELETRICAS E HIDRAULICAS LTDA - EPP.</a>
-                                     <a class="dropdown-item" href="canaamates.html">CANAÃ MATES COMÉRCIO DE ALIMENTOS EIRELI - FALÊNCIA</a>
-                                    <a class="dropdown-item" href="txrx.html">TX RX GLOBAL COMMUNICATION LTDA ME- FALÊNCIA</a>
-                                    <a class="dropdown-item" href="costapereira.html">COSTA PEREIRA BOKEL ENGENHARIA E CONSTRUÇÕES S.A.</a>
+    </div>
+    <div class="menu-item"><a href="contato.html">Contato</a></div>
+</div>
 
-
-                                    
-                                </div>
-                                
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="contato.html"><strong>CONTATO</strong></a></li> 
-                            <div class="card">
-                                <div class hidden="social-icons-wrapper">
-                                    <a href="#" class="socialContainer containerOne">
-                                        <svg class="socialSvg instagramSvg" viewBox="0 0 16 16"> 
-                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
-                                        </svg>
-                                    </a>
-                                    <a href="#" class="socialContainer containerThree">
-                                        <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512">
-                                            <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </ul>
-
-
-                        
-                        
-                    </div>
-                    
-                </div>
-                
-        </nav>
-        
-        <header class="sticky-header">
-            <div class="container d-flex flex-column align-items-center py-3">
-                <div class="logo-wrapper">
-                    <a href="index.html">
-                        <img src="imgs/zveiter-advocacia.jpg" alt="Logo" class="img-fluid logo">
-                    </a>
-                </div>
-                
+<div class="page-hero">
+    <div class="page-hero-inner">
+        <div class="breadcrumb">
+            <a href="index.html">Início</a>
+            <span class="breadcrumb-sep">›</span>
+            <a href="especialidades.html#recuperacao">Recuperações Judiciais</a>
+            <span class="breadcrumb-sep">›</span>
+            <span>Mina Tucano</span>
+        </div>
+        <div class="page-hero-tag">Recuperação Judicial</div>
+        <h1 class="page-hero-title">Mina Tucano<br><em>Recuperação Judicial</em></h1>
+        <div class="meta-grid">
+            <div class="meta-item">
+                <div class="meta-label">Empresas</div>
+                <div class="meta-value">Mina Tucano Ltda., Beadell (Brazil) Pty Ltd. e Beadell (Brazil 2) Pty Ltd.</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Processo</div>
+                <div class="meta-value">Processo nº 0245214-56.2022.8.19.0001<br>1ª Vara Empresarial da Comarca da Capital — RJ</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Administrador Judicial</div>
+                <div class="meta-value">Escritório de Advocacia Zveiter<br>e Preserva-Ação Administração Judicial</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">E-mail Oficial</div>
+                <div class="meta-value">
+                    <a href="mailto:ajminatucano@psvar.com.br">ajminatucano@psvar.com.br</a>
                 </div>
             </div>
-        </header>
-
-    <section id="sobre-nos" class="container">
-        <h2 class="section-title">MINA TUCANO - RECUPERAÇÃO JUDICIAL</h2>
-        <div class="section-content">
-                <h3>
-                RECUPERAÇÃO JUDICIAL DAS EMPRESAS MINA TUCANO LTDA., BEADELL (BRAZIL) PTY LTD. E BEADELL (BRAZIL 2) PTY LTD.
-                </h3>
-
-                <h6>Processo nº 0245214-56.2022.8.19.0001</h6>
-                <h6>1ª Vara Empresarial da Comarca da Capital do Rio de Janeiro</h6>
-                <h6>Administrador Judicial: Escritório de Advocacia Zveiter e Preserva-Ação Administração Judicial.</h6>
-                <h6>E-mail oficial para contato: <strong>ajminatucano@psvar.com.br</strong></h6>
-                 </section>
-                 
-
-                 <section class="vertical-align-section">                    
-                    <div class="container">
-                        <div class="dropdown">
-                            <button class="dropbtn">INFORMATIVOS</button>
-                            <div class="dropdown-content">
-                                <a class="dropdown-item" onclick="toggleContent('content43')">INFORMATIVO 0001/2023</a>
-                                <div id="content43" class="content" style="display: none;">
-                                    <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER INFORMA:</strong></p>
-                                    <p>No dia de hoje (15/12/2022), foi publicado em Diário Oficial, o edital de Convocação da Assembleia Geral de Credores que será realizada exclusivamente de forma virtual e síncrona, através do sistema online de transmissão. A primeira convocação ocorrerá dia 24/01/2023, às 15h, com o credenciamento remoto iniciando às 13h. O link de acesso será enviado por e-mail para cada credor que se credenciar.</p>
-                                    <p>Caso não haja quórum na primeira convocação (presença de credores titulares de mais da metade dos créditos de cada classe), uma segunda convocação será realizada com qualquer número de credores no dia 31/01/2023, no mesmo ambiente virtual и horário, nos termos do artigo 37, §2º da Lei nº 11.101/2005.</p>
-                                    <p>Para participar da Assembleia, o credor deverá promover a habilitação prévia junto a este Administrador Judicial, encaminhando, <strong>ATÉ 24 HORAS ANTES</strong> da instalação da Assembleia (ou seja, até as 14:59h do dia 23/01/2023), a solicitação e a documentação necessária para o e-mail <a href="mailto:rj.tcgepenha@zveiter.adv.br" style="color:#0066cc;">rj.tcgepenha@zveiter.adv.br</a> com o assunto "Habilitação Prévia AGC".</p>
-                                    <p>Documentação necessária a ser enviada em anexo (formato PDF):</p>
-                                    <ul>
-                                        <li><strong>Pessoa Natural:</strong> Documento de identidade e CPF digitalizados.</li>
-                                        <li><strong>Pessoa Jurídica:</strong> Atos constitutivos (última alteração contratual para sociedade limitada; estatuto social e última ata de eleição da diretoria para S.A.), cartão do CNPJ, e identidade e CPF do representante legal.</li>
-                                    </ul>
-                                    <p>Em se tratando de credor estrangeiro, todos os documentos em língua estrangeira deverão ser acompanhados da tradução juramentada.</p>
-                                    <p>O credor poderá ser representado por procurador, desde que entregue a procuração com poderes específicos junto à documentação de habilitação. O modelo está disponível neste site.</p>
-                                    <p>O sindicato que deseje representar seus associados deverá apresentar a relação dos mesmos ao administrador judicial até 10 (dez) dias antes da assembleia.</p>
-                                    <p><strong>Atenção:</strong> Solicitações de habilitação prévia enviadas após as 14:59h do dia 23/01/2023 não serão aceitas, e o credor não poderá participar da Assembleia.</p>
-                                    <p>Mais informações podem ser consultadas no edital publicado no DJE de 15/12/2022, Caderno V, nº 64/2022:</p>
-                                    <p><a href="assets/pdfs/minatucano/EDITAL HOMOLOGACAO TUCANO - 5.10.2023.pdf" target="_blank">PUBLICACAO DO EDITAL - CONVOCACAO AGC TRANSPORTE CAMPO GRANDE E PENHA.pdf</a></p>
-                                    <p>Rio de Janeiro, 15 de dezembro de 2022.</p>
-                                    <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER</strong></p>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('content44')">INFORMATIVO 0002/2023</a>
-                                <div id="content44" class="content" style="display: none;">
-                                    <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER e PSVAR INFORMAM:</strong></p>
-                                    <p>
-                                        A Administração Judicial informa que foi publicado um edital no Diário Oficial em <strong>05 de outubro de 2023</strong>. Esta data deve ser considerada como a <strong>data de homologação do Plano de Recuperação Judicial</strong> das sociedades Mina Tucano Ltda., Beadell (Brazil) Pty Ltd e Beadell (Brazil 2) Pty Ltd (Processo Nº 0245214-56.2022.8.19.0001).
-                                    </p>
-                                    <p>
-                                        A partir desta data de publicação, iniciam-se todos os prazos previstos no plano para o pagamento dos créditos e para as demais providências por parte dos credores.
-                                    </p>
-                                    <p><strong>ATENÇÃO CREDORES: AÇÕES NECESSÁRIAS PARA RECEBIMENTO</strong></p>
-                                    <p>
-                                        Conforme as cláusulas 4.2 e 4.3 do PRJ, para receberem seus créditos, os credores deverão apresentar seus dados cadastrais e bancários atualizados, seguindo os passos abaixo:
-                                    </p>
-                                    <ul>
-                                        <li>
-                                            <strong>O QUÊ:</strong> Enviar o "Formulário de Atualização Cadastral" preenchido e assinado, junto com a "Relação de Documentação Suporte Obrigatória".
-                                        </li>
-                                        <li>
-                                            <strong>PARA ONDE:</strong> Enviar por e-mail para o Grupo Tucano (<a href="mailto:prj@tucanoresources.com.br" style="color:#0066cc;">prj@tucanoresources.com.br</a>) e com cópia para a Administração Judicial (<a href="mailto:ajminatucano@psvar.com.br" style="color:#0066cc;">ajminatucano@psvar.com.br</a>).
-                                        </li>
-                                        <li>
-                                            <strong>PRAZO:</strong> O envio deve ser feito dentro de <strong>5 (cinco) anos</strong> a contar da data de homologação (05/10/2023).
-                                        </li>
-                                    </ul>
-                                    <p>
-                                        <strong>IMPORTANTE:</strong> O pagamento dos créditos só será realizado após o envio correto e completo de toda a documentação. A falta do envio impedirá que o credor alegue descumprimento do plano ou receba juros e multas, além de outras penalidades previstas.
-                                    </p>
-                                    <p>
-                                        Credores interessados em se enquadrar como "Credores Parceiros Operacionais" devem observar os procedimentos e prazos específicos descritos nas cláusulas 3.1.6 e 3.1.6.1 do plano.
-                                    </p>
-                                    <p>Rio de Janeiro, 26 de setembro de 2024.</p>
-                                    <p><strong>ESCRITÓRIO DE ADVOCACIA ZVEITER</strong></p>
-                                </div>
-
-
-
-                                
-                            
-                            
-                            
-                            
-                            </div>
-
-                                
-                        </div>
-                        <div class="dropdown">
-                            <button class="dropbtn">EDITAIS</button>
-                        </div>
-                        <div class="dropdown">
-                            <button class="dropbtn">MODELOS</button>
-                            <div class="dropdown-content">
-                                <a class="dropdown-item" onclick="toggleContent('contentM1')">Instruções para Participação em AGC</a>
-                                <div id="contentM1" class="content" style="display: none;">
-                                <a href="assets/pdfs/Mina-Tucano-INSTRUCOES-PARA-PARTICIPACAO-EM-AGC-1.pdf" download class="pdf-link">
-                                    PDF Instruções para Participação em AGC • 839KB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('contentM2')">Modelo de Procuração para AGC</a>
-                                <div id="contentM2" class="content" style="display: none;">
-                                <a href="assets/pdfs/Grupo-Tucano-Modelo-de-Procuracao-AGC.pdf" download class="pdf-link">
-                                    PDF Modelo de Procuração para AGC • 70KB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('contentM3')">Modelo de Habilitação Administrativa de Crédito</a>
-                                <div id="contentM3" class="content" style="display: none;">
-                                <a href="assets/pdfs/Modelo-de-Habilitacao-de-Credito-RJ-Mina-Tucano.pdf" download class="pdf-link">
-                                    PDF Modelo de Habilitação Administrativa de Crédito • 116KB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('contentM4')">Modelo de Divergência Administrativa de Crédito</a>
-                                <div id="contentM4" class="content" style="display: none;">
-                                <a href="assets/pdfs/Modelo-de-Divergencia-de-Credito-RJ-Mina-Tucano.pdf" download class="pdf-link">
-                                    PDF Modelo de Divergência Administrativa de Crédito • 117KB
-                                </a><br>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dropdown">
-                            <button class="dropbtn">DOCUMENTOS</button>
-                            <div class="dropdown-content">
-                                                            <!-- DOCUMENTOS -->
-                            <a class="dropdown-item" onclick="toggleContent('doc1')">Relação de Credores elaborada pela Administração Judicial Conjunta</a>
-                            <div id="doc1" class="content" style="display: none;">
-                            <a href="assets/pdfs/minatucano/RELACAO NOMINAL DE CREDORES AJ - ART. 7 P.2 LRF.pdf" download class="pdf-link">
-                                PDF - Relação Nominal de Credores AJ - Art. 7 P.2 LRF (152KB)
-                            </a><br>
-                            </div>
-
-                            <a class="dropdown-item" onclick="toggleContent('doc2')">Relação Inicial de Credores</a>
-                            <div id="doc2" class="content" style="display: none;">
-                            <a href="assets/pdfs/minatucano/PRIMEIRA RELACAO DE CREDORES RJ MINA TUCANO ART. 52 20.09.2022.pdf" download class="pdf-link">
-                                PDF - Primeira Relação de Credores RJ Mina Tucano (528KB)
-                            </a><br>
-                            </div>
-
-                            <a class="dropdown-item" onclick="toggleContent('doc3')">Edital Publicado no DJE em 01/02/2023 (art. 7 § 2º e art. 53 da lei 11.101/05)</a>
-                            <div id="doc3" class="content" style="display: none;">
-                            <a href="assets/pdfs/minatucano/EDITAL ART. 7 P 2 E ART. 53.pdf" download class="pdf-link">
-                                PDF - Edital (427KB)
-                            </a><br>
-                            </div>
-                             <a class="dropdown-item" onclick="toggleContent('doc5')">Decisao-homologatoria-do-QGC-20-08-2025</a>
-                            <div id="doc5" class="content" style="display: none;">
-                            <a href="assets/pdfs/minatucano/Decisao-homologatoria-do-QGC-20-08-2025.pdf" download class="pdf-link">
-                                PDF Decisao-homologatoria-do-QGC-20-08-2025
-                            </a><br>
-                            </div>
-
-                            <a class="dropdown-item" onclick="toggleContent('doc4')">Edital Publicado no DJE em 05/10/2023 - Homologação do Plano de Recuperação Judicial</a>
-                            <div id="doc4" class="content" style="display: none;">
-                            <a href="assets/pdfs/minatucano/EDITAL HOMOLOGACAO TUCANO - 5.10.2023.pdf" download class="pdf-link">
-                                PDF - Homologação do Plano de RJ (479KB)
-                            </a><br>
-                            </div>
-                            </div>
-                        </div>
-                
-                        <div class="dropdown">
-                            <button class="dropbtn">HISTÓRICO</button>
-                            <div class="dropdown-content">
-                                <a class="dropdown-item" onclick="toggleContent('h1')">30/06/2025 - 33° Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h1" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/MINA-TUCANO-33-RMA.pdf" download class="pdf-link">
-                                    PDF MINA-TUCANO-33-RMA • 4.83MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h2')">05/06/2025 - 32° Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h2" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/MINA-TUCANO-32-RMA.pdf" download class="pdf-link">
-                                    PDF MINA-TUCANO-32-RMA • 3.63MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h3')">30/04/2025 - 31° Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h3" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/MINA-TUCANO-31-RMA.pdf" download class="pdf-link">
-                                    PDF MINA-TUCANO-31-RMA • 3.63MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h4')">31/03/2025 - 30º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h4" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/MINA-TUCANO-30-RMA.pdf" download class="pdf-link">
-                                    PDF MINA-TUCANO-30-RMA • 4.34MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h5')">28/02/2025 - 29º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h5" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/MINA-TUCANO-29-RMA.pdf" download class="pdf-link">
-                                    PDF MINA-TUCANO-29-RMA • 3.13MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h6')">31/01/2025 - 28º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h6" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/MINA-TUCANO-28-RMA.pdf" download class="pdf-link">
-                                    PDF MINA-TUCANO-28-RMA • 3.19MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h7')">31/12/2024 - 27º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h7" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/MINA-TUCANO-27-RMA.pdf" download class="pdf-link">
-                                    PDF MINA-TUCANO-27-RMA • 4.39MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h8')">02/12/2024 - 26° Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h8" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/Mina-Tucano-26-RMA.pdf" download class="pdf-link">
-                                    PDF Mina-Tucano-26-RMA • 2.91MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h9')">02/11/2024 - 25° Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h9" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/Mina-Tucano-25-RMA.pdf" download class="pdf-link">
-                                    PDF Mina-Tucano-25-RMA • 4.22MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h10')">30/09/2024 - 24º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h10" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/Mina-Tucano-24-RMA.pdf" download class="pdf-link">
-                                    PDF Mina-Tucano-24-RMA • 4.06MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h11')">02/09/2024 - 23º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h11" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/Mina-Tucano-23-RMA.pdf" download class="pdf-link">
-                                    PDF Mina-Tucano-23-RMA • 5.49MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h12')">31/07/2024 - 22º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h12" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/Mina-Tucano-22-RMA.pdf" download class="pdf-link">
-                                    PDF Mina-Tucano-22-RMA • 4.66MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h13')">02/07/2024 - 21º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h13" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/Mina-Tucano-21-RMA.pdf" download class="pdf-link">
-                                    PDF Mina-Tucano-21-RMA • 4.12MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h14')">29/05/2024 - 20° Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h14" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/Mina-Tucano-20-RMA.pdf" download class="pdf-link">
-                                    PDF Mina-Tucano-20-RMA • 4.59MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h15')">30/04/2024 - 19º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h15" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/Mina-Tucano-19-RMA.pdf" download class="pdf-link">
-                                    PDF Mina-Tucano-19-RMA • 3.62MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h16')">02/04/2024 - 18º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h16" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/Mina-Tucano-18-RMA.pdf" download class="pdf-link">
-                                    PDF Mina-Tucano-18-RMA • 4.00MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h17')">29/02/2024 - 17º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h17" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/Mina-Tucano-17-RMA.pdf" download class="pdf-link">
-                                    PDF Mina-Tucano-17-RMA • 3.12MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h18')">31/01/2024 - 16º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h18" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/16º Relatório Mensal de Atividade (RMA).pdf" download class="pdf-link">
-                                    PDF 16º Relatório Mensal de Atividade (RMA) • 3.81MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h19')">28/12/2023 - 15º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h19" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/15º Relatório Mensal de Atividade (RMA).pdf" download class="pdf-link">
-                                    PDF 15º Relatório Mensal de Atividade (RMA) • 3.52MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h20')">30/11/2023 - 14º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h20" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/14º Relato´rio Mensal.pdf" download class="pdf-link">
-                                    PDF 14º Relato´rio Mensal • 2.29MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h21')">31/10/2023 - 13º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h21" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/13º Relato´rio Mensal.pdf" download class="pdf-link">
-                                    PDF 13º Relato´rio Mensal • 5.95MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h22')">29/09/2023 - 12º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h22" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/12 RMA.pdf" download class="pdf-link">
-                                    PDF 12 RMA • 37.08MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h23')">21/09/2023 - DECISÃO - Homologando o Plano de Recuperação Judicial</a>
-                                <div id="h23" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/DECISÃO HOMOLOGANDO O PLANO - MINA TUCANO.pdf" download class="pdf-link">
-                                    PDF DECISÃO HOMOLOGANDO O PLANO - MINA TUCANO • 99KB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h24')">18/09/2023 - Ata da Assembleia de Credores realizada em15/09/2023 - PLANO APROVADO</a>
-                                <div id="h24" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/ATA DA AGC - APROVACAO DO PLANO.pdf" download class="pdf-link">
-                                    PDF ATA DA AGC - APROVACAO DO PLANO • 3.10MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h25')">04/09/2023 - 2º Aditivo do Plano de Recuperação Judicial</a>
-                                <div id="h25" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/ADITIVO PARTE 2.pdf" download class="pdf-link">
-                                    PDF 2º ADITIVO • 45.12MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h26')">31/08/2023 - 11º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h26" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/11 Relatorio Mensal.pdf" download class="pdf-link">
-                                    PDF 11 Relatorio Mensal • 37.29MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h27')">30/08/2023 - Aditivo do Plano de Recuperação Judicial</a>
-                                <div id="h27" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/02452145620228190001-2 LAUDO AVALIACAO DE ATIVOS.pdf" download class="pdf-link">
-                                    PDF PETICAO • 626KB
-                                </a><br>
-                                <a href="assets/pdfs/minatucano/ADITIVO PARTE 1.pdf" download class="pdf-link">
-                                    PDF ADITIVO PARTE 1 • 490KB
-                                </a><br>
-                                <a href="assets/pdfs/minatucano/ADITIVO PARTE 2.pdf" download class="pdf-link">
-                                    PDF ADITIVO PARTE 2 • 2.80MB
-                                </a><br>
-                                <a href="assets/pdfs/minatucano/ADITIVO PARTE 3.pdf" download class="pdf-link">
-                                    PDF ADITIVO PARTE 3 • 2.64MB
-                                </a><br>
-                                <a href="assets/pdfs/minatucano/ADITIVO PARTE 4.pdf" download class="pdf-link">
-                                    PDF ADITIVO PARTE 4 • 1.61MB
-                                </a><br>
-                                <a href="assets/pdfs/minatucano/ADITIVO PARTE 5.pdf" download class="pdf-link">
-                                    PDF ADITIVO PARTE 5 • 5.08MB
-                                </a><br>
-                                <a href="assets/pdfs/minatucano/ADITIVO PARTE 6.pdf" download class="pdf-link">
-                                    PDF ADITIVO PARTE 6 • 4.07MB
-                                </a><br>
-                                <a href="assets/pdfs/minatucano/ADITIVO PARTE 7.pdf" download class="pdf-link">
-                                    PDF ADITIVO PARTE 7 • 2.12MB
-                                </a><br>
-                                <a href="assets/pdfs/minatucano/ADITIVO PARTE 8.pdf" download class="pdf-link">
-                                    PDF ADITIVO PARTE 8 • 235KB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h28')">31/07/2023 - 10º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h28" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/10 Relatorio Mensal.pdf" download class="pdf-link">
-                                    PDF 10 Relatorio Mensal • 4.33MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h29')">03/07/2023 - Ata da Assembleia Geral de Credores - suspensão até 15/09/2023</a>
-                                <div id="h29" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/ATA AGC - 2 CONVOCACAO.pdf" download class="pdf-link">
-                                    PDF ATA AGC - 2 CONVOCACAO • 10.36MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h30')">30/06/2023 - 9º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h30" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/9 Relatorio Mensal.pdf" download class="pdf-link">
-                                    PDF 9 Relatorio Mensal • 31.58MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h31')">21/06/2023 - Ata da Assembleia Geral de Credores - Não instação</a>
-                                <div id="h31" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/ATA AGC - NAO INSTALACAO.pdf" download class="pdf-link">
-                                    PDF ATA AGC - NAO INSTALACAO • 3.63MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h32')">06/06/2023 - 8º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h32" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/8 Relatorio Mensal.pdf" download class="pdf-link">
-                                    PDF 8 Relatorio Mensal • 31.16MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h33')">22/05/2023 - Publicação no DJE do Edital de Convocação para a Assembleia Geral de Credores</a>
-                                <div id="h33" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/PUBLICACAO EDITAL AGC - MINA TUCANO.pdf" download class="pdf-link">
-                                    PDF PUBLICACAO EDITAL AGC - MINA TUCANO • 1.40MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h34')">02/05/2023 - 7º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h34" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/7º Relatório Mensal (TUCANO).pdf" download class="pdf-link">
-                                    PDF 7º Relatório Mensal (TUCANO) • 4.30MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h35')">11/04/2023 - Decisão que estabeleceu as datas para a realização da Assembleia Geral de Credores...</a>
-                                <div id="h35" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/DECISAO - FIXACAO DATA AGC.pdf" download class="pdf-link">
-                                    PDF DECISAO - FIXACAO DATA AGC • 117KB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h36')">31/03/2023- 6º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h36" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/6º Relatório Mensal (TUCANO).pdf" download class="pdf-link">
-                                    PDF 6º Relatório Mensal (TUCANO) • 3.78MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h37')">01/03/2023 - Publicado o edital do art. 7 § 2º e do art. 53 da lei 11.101/05 - início da fase judicial</a>
-                                <div id="h37" class="content" style="display: none;">
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h38')">28/02/2023- 5º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h38" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/5 RMA - 28.02.2023.pdf" download class="pdf-link">
-                                    PDF 5 RMA - 28.02.2023 • 2.64MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h39')">16/02/2023 - 4º Relatório Mensal de Atividades (RMA) - Complementar</a>
-                                <div id="h39" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/4 RMA complementar - 16.02.2023.pdf" download class="pdf-link">
-                                    PDF 4 RMA complementar - 16.02.2023 • 4.48MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h40')">31/01/2023 - 4º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h40" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/4 RMA - 31.01.2023.pdf" download class="pdf-link">
-                                    PDF 4 RMA - 31.01.2023 • 2.34MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h41')">02/01/2023 - 3º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h41" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/3 RMA - 02.01.2023.pdf" download class="pdf-link">
-                                    PDF 3 RMA - 02.01.2023 • 3.01MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h42')">12/12/2022 - Relatório de Verificação de Crédito do AJ e Relação Nominal de Credores art. 7º parágrafo 2º LRF</a>
-                                <div id="h42" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/RELACAO NOMINAL DE CREDORES AJ - ART. 7 P.2 LRF.pdf" download class="pdf-link">
-                                    PDF RELACAO NOMINAL DE CREDORES AJ - ART. 7 P.2 LRF • 152KB
-                                </a><br>
-                                <a href="assets/pdfs/minatucano/RELATORIO DE VERIFICACAO DE CREDITO AJ.pdf" download class="pdf-link">
-                                    PDF RELATORIO DE VERIFICACAO DE CREDITO AJ • 1.72MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h43')">07/12/2022 - Relatório AJ sobre o Plano de Recuperação Judicial</a>
-                                <div id="h43" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/RELATORIO DO AJ SOBRE O PLANO DE RECUPERACAO JUDICIAL.pdf" download class="pdf-link">
-                                    PDF RELATORIO DO AJ SOBRE O PLANO DE RECUPERACAO JUDICIAL • 1.64MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h44')">05/12/2022 - Certidão de Publicação do Edital do Plano de Recuperação Judicial</a>
-                                <div id="h44" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/PUBLICACAO EDITAL PLANO - 05.12.2022.pdf" download class="pdf-link">
-                                    PDF PUBLICACAO EDITAL PLANO - 05.12.2022 • 13KB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h45')">30/11/2022 - 2º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h45" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/2 - RMA - AJ MINA TUCANO.pdf" download class="pdf-link">
-                                    PDF 2 - RMA - AJ MINA TUCANO • 3.18MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h46')">18/11/2022 - Juntada do Plano de Recuperação Judicial</a>
-                                <div id="h46" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/PET JUNTADA DO PLANO.pdf" download class="pdf-link">
-                                    PDF PET JUNTADA DO PLANO • 1.82MB
-                                </a><br>
-                                <a href="assets/pdfs/minatucano/02452145620228190001-1 PLANO DE RJ.pdf" download class="pdf-link">
-                                    PDF 02452145620228190001-1 PLANO DE RJ • 942KB
-                                </a><br>
-                                <a href="assets/pdfs/minatucano/02452145620228190001-2 LAUDO DE VIABILIDADE ECONOMICO.pdf" download class="pdf-link">
-                                    PDF 02452145620228190001-2 LAUDO DE VIABILIDADE ECONOMICO • 1.75MB
-                                </a><br>
-                                <a href="assets/pdfs/minatucano/02452145620228190001-2 LAUDO AVALIACAO DE ATIVOS.pdf" download class="pdf-link">
-                                    PDF 02452145620228190001-2 LAUDO AVALIACAO DE ATIVOS • 51.17MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h47')">30/10/2022 - 1º Relatório Mensal de Atividades (RMA)</a>
-                                <div id="h47" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/1 - RMA - AJ MINA TUCANO.pdf" download class="pdf-link">
-                                    PDF 1 - RMA - AJ MINA TUCANO • 4.85MB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h48')">10/10/2022 - Publicado o primeiro edital - início da fase administrativa</a>
-                                <div id="h48" class="content" style="display: none;">
-                                <a href="assets/pdfs/miantucano/1 PUBLICAÇÃO EDITAL MINA TUCANO 10.10.pdf" download class="pdf-link">
-                                    PDF 1 PUBLICAÇÃO EDITAL MINA TUCANO 10.10 • 278KB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h49')">09/09/2022 - Deferido do Processamento da Recuperação Judicial</a>
-                                <div id="h49" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/DECISÃO QUE DEFERIU O PROCESSAMENTO DA RJ.pdf" download class="pdf-link">
-                                    PDF DECISÃO QUE DEFERIU O PROCESSAMENTO DA RJ • 115KB
-                                </a><br>
-                                </div>
-
-                                <a class="dropdown-item" onclick="toggleContent('h50')">06/09/2022 - Pedido de Recuperação Judicial</a>
-                                <div id="h50" class="content" style="display: none;">
-                                <a href="assets/pdfs/minatucano/INICIAL RJ - MINA TUCANO.pdf" download class="pdf-link">
-                                    PDF INICIAL RJ - MINA TUCANO • 3.10MB
-                                </a><br>
-                                </div>
-                            
-                            
-                            
-                            
-                            
-                            </div>
-                                
-                        </div>
-                
-                        
-
-                            
-                </div>
-                </section>
-               
-               
-                
-    
-    <footer>
-        <div class="footer-logo">
-            <a href="index.html"><img src="imgs/logopreta.jpg" alt="Logo" class="footer-logo-img"></a>
         </div>
-        <div class="footer-addresses">
+    </div>
+</div>
+
+<div class="page-content">
+
+    <aside class="sidebar">
+        <div class="sidebar-title">Documentos</div>
+        <ul class="sidebar-nav">
+            <li><a href="#" class="active" onclick="showPanel('informativos', this); return false;">Informativos <span class="count">2</span></a></li>
+            <li><a href="#" onclick="showPanel('modelos', this); return false;">Modelos <span class="count">4</span></a></li>
+            <li><a href="#" onclick="showPanel('documentos', this); return false;">Documentos <span class="count">5</span></a></li>
+            <li><a href="#" onclick="showPanel('historico', this); return false;">Histórico <span class="count">50</span></a></li>
+        </ul>
+    </aside>
+
+    <div class="doc-panels">
+
+        <div class="doc-panel active" id="panel-informativos">
+            <div class="panel-header">
+                <h2 class="panel-title">Informativos</h2>
+                <span class="panel-count">2 documentos</span>
+            </div>
+            <div class="doc-list">
+                <div class="doc-item">
+                    <div class="doc-item-header" onclick="toggleDoc(this)">
+                        <span class="doc-date">15/12/2022</span>
+                        <span class="doc-name">INFORMATIVO 0001/2023</span>
+                        <span class="doc-toggle">+</span>
+                    </div>
+                    <div class="doc-item-body">
+                        <div class="info-body">
+                            <p><strong>Escritório de Advocacia Zveiter Informa:</strong></p>
+                            <p>No dia de hoje (15/12/2022), foi publicado em Diário Oficial, o edital de Convocação da Assembleia Geral de Credores que será realizada exclusivamente de forma virtual e síncrona, através do sistema online de transmissão. A primeira convocação ocorrerá dia 24/01/2023, às 15h, com o credenciamento remoto iniciando às 13h. O link de acesso será enviado por e-mail para cada credor que se credenciar.</p>
+                            <p>Caso não haja quórum na primeira convocação (presença de credores titulares de mais da metade dos créditos de cada classe), uma segunda convocação será realizada com qualquer número de credores no dia 31/01/2023, no mesmo ambiente virtual e horário, nos termos do artigo 37, §2º da Lei nº 11.101/2005.</p>
+                            <p>Para participar da Assembleia, o credor deverá promover a habilitação prévia junto a este Administrador Judicial, encaminhando, <strong>até 24 horas antes</strong> da instalação da Assembleia (ou seja, até as 14:59h do dia 23/01/2023), a solicitação e a documentação necessária para o e-mail <a href="mailto:rj.tcgepenha@zveiter.adv.br">rj.tcgepenha@zveiter.adv.br</a> com o assunto "Habilitação Prévia AGC".</p>
+                            <p>Documentação necessária a ser enviada em anexo (formato PDF):</p>
+                            <p><strong>Pessoa Natural:</strong> Documento de identidade e CPF digitalizados.</p>
+                            <p><strong>Pessoa Jurídica:</strong> Atos constitutivos (última alteração contratual para sociedade limitada; estatuto social e última ata de eleição da diretoria para S.A.), cartão do CNPJ, e identidade e CPF do representante legal.</p>
+                            <p>Em se tratando de credor estrangeiro, todos os documentos em língua estrangeira deverão ser acompanhados da tradução juramentada.</p>
+                            <p>O credor poderá ser representado por procurador, desde que entregue a procuração com poderes específicos junto à documentação de habilitação. O modelo está disponível neste site.</p>
+                            <p>O sindicato que deseje representar seus associados deverá apresentar a relação dos mesmos ao administrador judicial até 10 (dez) dias antes da assembleia.</p>
+                            <p><strong>Atenção:</strong> Solicitações de habilitação prévia enviadas após as 14:59h do dia 23/01/2023 não serão aceitas, e o credor não poderá participar da Assembleia.</p>
+                            <p>Mais informações podem ser consultadas no edital publicado no DJE de 15/12/2022, Caderno V, nº 64/2022: <a href="assets/pdfs/minatucano/EDITAL HOMOLOGACAO TUCANO - 5.10.2023.pdf" target="_blank">PUBLICACAO DO EDITAL - CONVOCACAO AGC TRANSPORTE CAMPO GRANDE E PENHA.pdf</a></p>
+                            <p>Rio de Janeiro, 15 de dezembro de 2022.</p>
+                            <p><strong>Escritório de Advocacia Zveiter</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <div class="doc-item-header" onclick="toggleDoc(this)">
+                        <span class="doc-date">26/09/2024</span>
+                        <span class="doc-name">INFORMATIVO 0002/2023</span>
+                        <span class="doc-toggle">+</span>
+                    </div>
+                    <div class="doc-item-body">
+                        <div class="info-body">
+                            <p><strong>Escritório de Advocacia Zveiter e PSVAR Informam:</strong></p>
+                            <p>A Administração Judicial informa que foi publicado um edital no Diário Oficial em <strong>05 de outubro de 2023</strong>. Esta data deve ser considerada como a <strong>data de homologação do Plano de Recuperação Judicial</strong> das sociedades Mina Tucano Ltda., Beadell (Brazil) Pty Ltd e Beadell (Brazil 2) Pty Ltd (Processo Nº 0245214-56.2022.8.19.0001).</p>
+                            <p>A partir desta data de publicação, iniciam-se todos os prazos previstos no plano para o pagamento dos créditos e para as demais providências por parte dos credores.</p>
+                            <p><strong>Atenção credores: ações necessárias para recebimento.</strong></p>
+                            <p>Conforme as cláusulas 4.2 e 4.3 do PRJ, para receberem seus créditos, os credores deverão apresentar seus dados cadastrais e bancários atualizados, seguindo os passos abaixo:</p>
+                            <p><strong>O quê:</strong> Enviar o "Formulário de Atualização Cadastral" preenchido e assinado, junto com a "Relação de Documentação Suporte Obrigatória".</p>
+                            <p><strong>Para onde:</strong> Enviar por e-mail para o Grupo Tucano (<a href="mailto:prj@tucanoresources.com.br">prj@tucanoresources.com.br</a>) e com cópia para a Administração Judicial (<a href="mailto:ajminatucano@psvar.com.br">ajminatucano@psvar.com.br</a>).</p>
+                            <p><strong>Prazo:</strong> O envio deve ser feito dentro de <strong>5 (cinco) anos</strong> a contar da data de homologação (05/10/2023).</p>
+                            <p><strong>Importante:</strong> O pagamento dos créditos só será realizado após o envio correto e completo de toda a documentação. A falta do envio impedirá que o credor alegue descumprimento do plano ou receba juros e multas, além de outras penalidades previstas.</p>
+                            <p>Credores interessados em se enquadrar como "Credores Parceiros Operacionais" devem observar os procedimentos e prazos específicos descritos nas cláusulas 3.1.6 e 3.1.6.1 do plano.</p>
+                            <p>Rio de Janeiro, 26 de setembro de 2024.</p>
+                            <p><strong>Escritório de Advocacia Zveiter</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="doc-panel" id="panel-modelos">
+            <div class="panel-header">
+                <h2 class="panel-title">Modelos</h2>
+                <span class="panel-count">4 documentos</span>
+            </div>
+            <div class="doc-list">
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">——</span><span class="doc-name">Instruções para Participação em AGC</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/Mina-Tucano-INSTRUCOES-PARA-PARTICIPACAO-EM-AGC-1.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">839KB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">——</span><span class="doc-name">Modelo de Procuração para AGC</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/Grupo-Tucano-Modelo-de-Procuracao-AGC.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">70KB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">——</span><span class="doc-name">Modelo de Habilitação Administrativa de Crédito</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/Modelo-de-Habilitacao-de-Credito-RJ-Mina-Tucano.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">116KB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">——</span><span class="doc-name">Modelo de Divergência Administrativa de Crédito</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/Modelo-de-Divergencia-de-Credito-RJ-Mina-Tucano.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">117KB</span></a></div></div>
+            </div>
+        </div>
+
+        <div class="doc-panel" id="panel-documentos">
+            <div class="panel-header">
+                <h2 class="panel-title">Documentos</h2>
+                <span class="panel-count">5 documentos</span>
+            </div>
+            <div class="doc-list">
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">——</span><span class="doc-name">Relação de Credores elaborada pela Administração Judicial Conjunta</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/RELACAO NOMINAL DE CREDORES AJ - ART. 7 P.2 LRF.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">152KB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">20/09/2022</span><span class="doc-name">Relação Inicial de Credores</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/PRIMEIRA RELACAO DE CREDORES RJ MINA TUCANO ART. 52 20.09.2022.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">528KB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">01/02/2023</span><span class="doc-name">Edital Publicado no DJE em 01/02/2023 (art. 7 § 2º e art. 53 da lei 11.101/05)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/EDITAL ART. 7 P 2 E ART. 53.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">427KB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">20/08/2025</span><span class="doc-name">Decisão homologatória do QGC</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/Decisao-homologatoria-do-QGC-20-08-2025.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF</a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">05/10/2023</span><span class="doc-name">Edital Publicado no DJE em 05/10/2023 - Homologação do Plano de Recuperação Judicial</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/EDITAL HOMOLOGACAO TUCANO - 5.10.2023.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">479KB</span></a></div></div>
+            </div>
+        </div>
+
+        <div class="doc-panel" id="panel-historico">
+            <div class="panel-header">
+                <h2 class="panel-title">Histórico</h2>
+                <span class="panel-count">50 documentos</span>
+            </div>
+            <div class="doc-list">
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">30/06/2025</span><span class="doc-name">33° Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/MINA-TUCANO-33-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">4.83MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">05/06/2025</span><span class="doc-name">32° Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/MINA-TUCANO-32-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.63MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">30/04/2025</span><span class="doc-name">31° Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/MINA-TUCANO-31-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.63MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">31/03/2025</span><span class="doc-name">30º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/MINA-TUCANO-30-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">4.34MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">28/02/2025</span><span class="doc-name">29º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/MINA-TUCANO-29-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.13MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">31/01/2025</span><span class="doc-name">28º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/MINA-TUCANO-28-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.19MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">31/12/2024</span><span class="doc-name">27º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/MINA-TUCANO-27-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">4.39MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">02/12/2024</span><span class="doc-name">26° Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/Mina-Tucano-26-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">2.91MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">02/11/2024</span><span class="doc-name">25° Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/Mina-Tucano-25-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">4.22MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">30/09/2024</span><span class="doc-name">24º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/Mina-Tucano-24-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">4.06MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">02/09/2024</span><span class="doc-name">23º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/Mina-Tucano-23-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">5.49MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">31/07/2024</span><span class="doc-name">22º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/Mina-Tucano-22-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">4.66MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">02/07/2024</span><span class="doc-name">21º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/Mina-Tucano-21-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">4.12MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">29/05/2024</span><span class="doc-name">20° Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/Mina-Tucano-20-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">4.59MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">30/04/2024</span><span class="doc-name">19º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/Mina-Tucano-19-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.62MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">02/04/2024</span><span class="doc-name">18º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/Mina-Tucano-18-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">4.00MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">29/02/2024</span><span class="doc-name">17º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/Mina-Tucano-17-RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.12MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">31/01/2024</span><span class="doc-name">16º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/16º Relatório Mensal de Atividade (RMA).pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.81MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">28/12/2023</span><span class="doc-name">15º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/15º Relatório Mensal de Atividade (RMA).pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.52MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">30/11/2023</span><span class="doc-name">14º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/14º Relato´rio Mensal.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">2.29MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">31/10/2023</span><span class="doc-name">13º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/13º Relato´rio Mensal.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">5.95MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">29/09/2023</span><span class="doc-name">12º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/12 RMA.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">37.08MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">21/09/2023</span><span class="doc-name">DECISÃO - Homologando o Plano de Recuperação Judicial</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/DECISÃO HOMOLOGANDO O PLANO - MINA TUCANO.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">99KB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">18/09/2023</span><span class="doc-name">Ata da Assembleia de Credores realizada em 15/09/2023 - PLANO APROVADO</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/ATA DA AGC - APROVACAO DO PLANO.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.10MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">04/09/2023</span><span class="doc-name">2º Aditivo do Plano de Recuperação Judicial</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/ADITIVO PARTE 2.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> 2º Aditivo <span class="doc-link-size">45.12MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">31/08/2023</span><span class="doc-name">11º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/11 Relatorio Mensal.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">37.29MB</span></a></div></div>
+                <div class="doc-item">
+                    <div class="doc-item-header" onclick="toggleDoc(this)">
+                        <span class="doc-date">30/08/2023</span>
+                        <span class="doc-name">Aditivo do Plano de Recuperação Judicial</span>
+                        <span class="doc-toggle">+</span>
+                    </div>
+                    <div class="doc-item-body">
+                        <a class="pdf-download" href="assets/pdfs/minatucano/02452145620228190001-2 LAUDO AVALIACAO DE ATIVOS.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Petição <span class="doc-link-size">626KB</span></a><br>
+                        <a class="pdf-download" href="assets/pdfs/minatucano/ADITIVO PARTE 1.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Aditivo Parte 1 <span class="doc-link-size">490KB</span></a><br>
+                        <a class="pdf-download" href="assets/pdfs/minatucano/ADITIVO PARTE 2.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Aditivo Parte 2 <span class="doc-link-size">2.80MB</span></a><br>
+                        <a class="pdf-download" href="assets/pdfs/minatucano/ADITIVO PARTE 3.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Aditivo Parte 3 <span class="doc-link-size">2.64MB</span></a><br>
+                        <a class="pdf-download" href="assets/pdfs/minatucano/ADITIVO PARTE 4.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Aditivo Parte 4 <span class="doc-link-size">1.61MB</span></a><br>
+                        <a class="pdf-download" href="assets/pdfs/minatucano/ADITIVO PARTE 5.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Aditivo Parte 5 <span class="doc-link-size">5.08MB</span></a><br>
+                        <a class="pdf-download" href="assets/pdfs/minatucano/ADITIVO PARTE 6.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Aditivo Parte 6 <span class="doc-link-size">4.07MB</span></a><br>
+                        <a class="pdf-download" href="assets/pdfs/minatucano/ADITIVO PARTE 7.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Aditivo Parte 7 <span class="doc-link-size">2.12MB</span></a><br>
+                        <a class="pdf-download" href="assets/pdfs/minatucano/ADITIVO PARTE 8.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Aditivo Parte 8 <span class="doc-link-size">235KB</span></a>
+                    </div>
+                </div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">31/07/2023</span><span class="doc-name">10º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/10 Relatorio Mensal.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">4.33MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">03/07/2023</span><span class="doc-name">Ata da Assembleia Geral de Credores - suspensão até 15/09/2023</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/ATA AGC - 2 CONVOCACAO.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">10.36MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">30/06/2023</span><span class="doc-name">9º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/9 Relatorio Mensal.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">31.58MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">21/06/2023</span><span class="doc-name">Ata da Assembleia Geral de Credores - Não instalação</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/ATA AGC - NAO INSTALACAO.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.63MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">06/06/2023</span><span class="doc-name">8º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/8 Relatorio Mensal.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">31.16MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">22/05/2023</span><span class="doc-name">Publicação no DJE do Edital de Convocação para a Assembleia Geral de Credores</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/PUBLICACAO EDITAL AGC - MINA TUCANO.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">1.40MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">02/05/2023</span><span class="doc-name">7º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/7º Relatório Mensal (TUCANO).pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">4.30MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">11/04/2023</span><span class="doc-name">Decisão que estabeleceu as datas para a realização da Assembleia Geral de Credores</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/DECISAO - FIXACAO DATA AGC.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">117KB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">31/03/2023</span><span class="doc-name">6º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/6º Relatório Mensal (TUCANO).pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.78MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">01/03/2023</span><span class="doc-name">Publicado o edital do art. 7 § 2º e do art. 53 da lei 11.101/05 - início da fase judicial</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><p>Documento não disponibilizado no site de origem.</p></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">28/02/2023</span><span class="doc-name">5º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/5 RMA - 28.02.2023.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">2.64MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">16/02/2023</span><span class="doc-name">4º Relatório Mensal de Atividades (RMA) - Complementar</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/4 RMA complementar - 16.02.2023.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">4.48MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">31/01/2023</span><span class="doc-name">4º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/4 RMA - 31.01.2023.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">2.34MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">02/01/2023</span><span class="doc-name">3º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/3 RMA - 02.01.2023.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.01MB</span></a></div></div>
+                <div class="doc-item">
+                    <div class="doc-item-header" onclick="toggleDoc(this)">
+                        <span class="doc-date">12/12/2022</span>
+                        <span class="doc-name">Relatório de Verificação de Crédito do AJ e Relação Nominal de Credores art. 7º parágrafo 2º LRF</span>
+                        <span class="doc-toggle">+</span>
+                    </div>
+                    <div class="doc-item-body">
+                        <a class="pdf-download" href="assets/pdfs/minatucano/RELACAO NOMINAL DE CREDORES AJ - ART. 7 P.2 LRF.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Relação Nominal de Credores AJ <span class="doc-link-size">152KB</span></a><br>
+                        <a class="pdf-download" href="assets/pdfs/minatucano/RELATORIO DE VERIFICACAO DE CREDITO AJ.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Relatório de Verificação de Crédito AJ <span class="doc-link-size">1.72MB</span></a>
+                    </div>
+                </div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">07/12/2022</span><span class="doc-name">Relatório AJ sobre o Plano de Recuperação Judicial</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/RELATORIO DO AJ SOBRE O PLANO DE RECUPERACAO JUDICIAL.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">1.64MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">05/12/2022</span><span class="doc-name">Certidão de Publicação do Edital do Plano de Recuperação Judicial</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/PUBLICACAO EDITAL PLANO - 05.12.2022.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">13KB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">30/11/2022</span><span class="doc-name">2º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/2 - RMA - AJ MINA TUCANO.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.18MB</span></a></div></div>
+                <div class="doc-item">
+                    <div class="doc-item-header" onclick="toggleDoc(this)">
+                        <span class="doc-date">18/11/2022</span>
+                        <span class="doc-name">Juntada do Plano de Recuperação Judicial</span>
+                        <span class="doc-toggle">+</span>
+                    </div>
+                    <div class="doc-item-body">
+                        <a class="pdf-download" href="assets/pdfs/minatucano/PET JUNTADA DO PLANO.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Petição de Juntada <span class="doc-link-size">1.82MB</span></a><br>
+                        <a class="pdf-download" href="assets/pdfs/minatucano/02452145620228190001-1 PLANO DE RJ.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Plano de RJ <span class="doc-link-size">942KB</span></a><br>
+                        <a class="pdf-download" href="assets/pdfs/minatucano/02452145620228190001-2 LAUDO DE VIABILIDADE ECONOMICO.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Laudo de Viabilidade Econômico <span class="doc-link-size">1.75MB</span></a><br>
+                        <a class="pdf-download" href="assets/pdfs/minatucano/02452145620228190001-2 LAUDO AVALIACAO DE ATIVOS.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Laudo de Avaliação de Ativos <span class="doc-link-size">51.17MB</span></a>
+                    </div>
+                </div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">30/10/2022</span><span class="doc-name">1º Relatório Mensal de Atividades (RMA)</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/1 - RMA - AJ MINA TUCANO.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">4.85MB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">10/10/2022</span><span class="doc-name">Publicado o primeiro edital - início da fase administrativa</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/miantucano/1 PUBLICAÇÃO EDITAL MINA TUCANO 10.10.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">278KB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">09/09/2022</span><span class="doc-name">Deferido o Processamento da Recuperação Judicial</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/DECISÃO QUE DEFERIU O PROCESSAMENTO DA RJ.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">115KB</span></a></div></div>
+                <div class="doc-item"><div class="doc-item-header" onclick="toggleDoc(this)"><span class="doc-date">06/09/2022</span><span class="doc-name">Pedido de Recuperação Judicial</span><span class="doc-toggle">+</span></div><div class="doc-item-body"><a class="pdf-download" href="assets/pdfs/minatucano/INICIAL RJ - MINA TUCANO.pdf" download><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg> Baixar PDF <span class="doc-link-size">3.10MB</span></a></div></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img alt="Escritório de Advocacia Zveiter" src="imgs/logozvtt.png"/>
+                <p>Fundado em 1957, o Escritório Zveiter é referência em advocacia de excelência no Brasil.</p>
+            </div>
             <div class="footer-address">
-                <h4>Brasília</h4>
+                <div class="footer-col-title">Rio de Janeiro</div>
+                <strong>Sede Principal</strong>
+                <p>Av. Presidente Antônio Carlos nº 51<br>19º e 20º andares, Centro<br>Rio de Janeiro — RJ</p>
+                <p>Tel.: 55 (21) 3380-1155</p>
+                <a href="https://maps.app.goo.gl/bw6XGbnmrtH9fzNT8" target="_blank">Ver no mapa →</a>
+            </div>
+            <div class="footer-address">
+                <div class="footer-col-title">São Paulo</div>
+                <strong>Escritório SP</strong>
+                <p>Avenida Paulista, nº 777<br>Jardim Paulista, 7º andar<br>São Paulo — SP</p>
+                <p>Tel.: 55 (11) 4858-0383</p>
+            </div>
+            <div class="footer-address">
+                <div class="footer-col-title">Brasília</div>
+                <strong>Escritório BSB</strong>
                 <p>Tel.: 55 (61) 3447-4343</p>
             </div>
-            <div class="footer-address">
-                <h4>Rio de Janeiro</h4>
-                <p>Av Presidente Antônio Carlos nº 51, 19º e 20º andares, Centro - Rio de Janeiro - RJ</p>
-                <p>Tel.: 55 (21) 3380-1155</p>
-                <a href="https://maps.app.goo.gl/bw6XGbnmrtH9fzNT8" target="_blank">Ver no Google Maps</a>
-            </div>
-            <div class="footer-address">
-                                            <h4>São Paulo</h4>
-                            <p>Avenida Paulista, nº 777, Jardim Paulista, 7º andar, São Paulo </p>
-                            <p>Tel.: 55 (11) 4858-0383</p>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">© 2025 Escritório de Advocacia Zveiter. Todos os direitos reservados.</p>
+            <div class="footer-social">
+                <a aria-label="Instagram" href="#">
+                    <svg viewbox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path></svg>
+                </a>
+                <a href="https://www.linkedin.com/company/escritoriodeadvocaciazveiter" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg viewbox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
+                </a>
             </div>
         </div>
-        <div class="social-icons">
-            <a href="#" class="social-container containerOne">
-                <svg class="socialSvg instagramSvg" viewBox="0 0 16 16"> <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path> </svg>
-            </a>
-            <a href="#" class="social-container containerThree">
-                <svg class="socialSvg linkedinSvg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
-            </a>
-        </div>
-        
-    </footer>
-    
-      <!-- jQuery and Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@highwayjs/core@latest"></script>
-      <script src="assets/js/highway-setup.js"></script>
-      <script>
-        function toggleContent(contentId) {
-            var content = document.getElementById(contentId);
-            if (content.style.display === "none") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
-            }
-        }
-    </script>
-    <script>
-        function addComment() {
-    // Obter o valor do textarea
-    const commentInput = document.getElementById('comment-input');
-    const commentText = commentInput.value.trim();
+    </div>
+</footer>
 
-    // Verificar se o campo de comentário não está vazio
-    if (commentText) {
-        // Criar um novo elemento de comentário
-        const commentList = document.getElementById('comment-list');
-        const commentDiv = document.createElement('div');
-        commentDiv.classList.add('comment');
-        commentDiv.textContent = commentText;
+<script>
+    // Navbar scroll
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
 
-        // Adicionar o novo comentário à lista
-        commentList.appendChild(commentDiv);
+    // Hamburger
+    document.getElementById('hamburger').addEventListener('click', function() {
+        this.classList.toggle('open');
+        document.getElementById('mobileMenu').classList.toggle('open');
+    });
 
-        // Limpar o campo de comentário após o envio
-        commentInput.value = '';
-    } else {
-        alert('Por favor, digite um comentário.');
+    // Mobile submenus
+    function toggleMobileMenu(id) {
+        document.getElementById(id).classList.toggle('expanded');
     }
-}
-    </script>
-          
-  </body>
-  </html>
+
+    // Sidebar panel switching
+    function showPanel(name, link) {
+        document.querySelectorAll('.doc-panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+        document.getElementById('panel-' + name).classList.add('active');
+        link.classList.add('active');
+
+        // On mobile, scroll slightly down to panels
+        if (window.innerWidth <= 900) {
+            document.querySelector('.doc-panels').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    // Document accordion
+    function toggleDoc(header) {
+        const item = header.closest('.doc-item');
+        item.classList.toggle('open');
+    }
+</script>
+</body>
+</html>
