@@ -432,14 +432,14 @@
                     </div>
                 </div>
                 <div class="profile-bio" id="pBio"></div>
-                <div class="profile-tags" id="pTags"></div>
+                <div class="profile-tags" id="pTags" style="display:none;"></div>
                 <a class="profile-cta" id="pLink" href="#">Ver perfil completo →</a>
             </div>
             <div class="profile-right">
                 <div class="detail-label">Escritório</div>
                 <div class="detail-value" id="pOffice"></div>
-                <div class="detail-label">Especialidades</div>
-                <div class="detail-value" id="pAreas"></div>
+                <div class="detail-label" id="pAreasLabel" style="display:none;">Especialidades</div>
+                <div class="detail-value" id="pAreas" style="display:none;"></div>
                 <div class="detail-label">Formação</div>
                 <div class="detail-value" id="pEdu"></div>
             </div>
@@ -567,14 +567,14 @@
                         </div>
                     </div>
                     <div class="profile-bio" id="apBio"></div>
-                    <div class="profile-tags" id="apTags"></div>
+                    <div class="profile-tags" id="apTags" style="display:none;"></div>
                     <a class="profile-cta" id="apLink" href="#">Ver perfil completo →</a>
                 </div>
                 <div class="profile-right">
                     <div class="detail-label">Escritório</div>
                     <div class="detail-value" id="apOffice"></div>
-                    <div class="detail-label">Especialidades</div>
-                    <div class="detail-value" id="apAreas"></div>
+                    <div class="detail-label" id="apAreasLabel" style="display:none;">Especialidades</div>
+                    <div class="detail-value" id="apAreas" style="display:none;"></div>
                     <div class="detail-label">Formação</div>
                     <div class="detail-value" id="apEdu"></div>
                 </div>
@@ -634,7 +634,7 @@
             igor:        { name:'Igor Lethiere da Silva',                role:'Sócio',  link:'igor.html',         office:'Rio de Janeiro', areas:'Direito Empresarial\nRecuperação Judicial',                    edu:'Centro Universitário da Cidade do Rio de Janeiro\nUCM — Especialização em Processo Civil (2018)\nAlphaville — Especialização em Direito Imobiliário (2023)', photo:'imgs/igor.png', bio:'Atua em processos de reestruturação de grandes grupos empresariais.' },
             raquel:      { name:'Raquel Di Servan Nunes',                role:'Sócia',  link:'raquel.html',       office:'Rio de Janeiro', areas:'Direito de Família\nDireito Sucessório',                       edu:'Faculdade Brasileira de Ciências Jurídicas\nCEJUSC — Formação em Mediação\nUVA — Especialização em Processo Civil', photo:'imgs/raquel.png', bio:'Especialista em direito das famílias e sucessões, com atuação em inventários complexos e planejamento patrimonial.' },
             luciana:     { name:'Luciana Gomes de O. Souza',             role:'Sócia',  link:'luciana.html',      office:'Rio de Janeiro', areas:'Saúde Suplementar\nContencioso Cível\nSaneamento Básico',      edu:'Universidade São Paulo Apóstolo\nFEMPERJ — Especialização em Direito Público e Privado\nUCM — Especialização em Direito Aplicado aos Serviços de Saúde', photo: 'imgs/luciana.png', bio:'Ingressou no escritório como sócia em 2012. Atua na defesa de grandes empresas do setor de saúde suplementar e desde 2024 integra a equipe de Contencioso Cível, com ênfase em Direito do Saneamento Básico.' },
-            natasha:     { name:'Natasha Fernanda M. Fiore Correia',     role:'Sócia',  link:'natasha.html',      office:'Rio de Janeiro', areas:'Direito Ambiental\nRegulação',                                 edu:'Universidade Cândido Mendes — Graduação em Direito\nUCM — Especialização em Direito Civil', photo:'imgs/natasha.png', bio:'Especialista em direito ambiental e regulatório, com atuação em licenciamentos complexos e assessoria a empresas do setor de energia.' },
+            natasha:     { name:'Natasha Fernanda M. Fiore Correia',     role:'Sócia',  link:'natasha.html',      office:'Rio de Janeiro', areas:'Direito Ambiental\nRegulação',                                 edu:'Universidade Cândido Mendes — Graduação em Direito\nUCM — Especialização em Direito Civil', photo:'imgs/natasha.png', bio:'Tornou-se sócia em 2012. Atua em demandas cíveis estratégicas, incluindo processos de Recuperação Judicial. Assessora clientes em litígios complexos com vasta experiência em tribunais do Rio de Janeiro.' },
             carolina:    { name:'Carolina de Jesus Müller',              role:'Sócia',  link:'carolina.html',     office:'Brasília', areas:'Saúde Suplementar\nDireito Regulatório',                             edu:'UniCEUB — Centro Universitário de Brasília', photo: 'imgs/carolbsb.png', bio:'Atua na área de saúde suplementar e direito regulatório, com experiência em operadoras de planos de saúde e entidades hospitalares.' },
             juliane:     { name:'Juliane Boim Previtali',                role:'Sócia',  link:'juliane.html',      office:'Rio de Janeiro', areas:'Direito Empresarial\nRecuperação Judicial',                    edu:'Faculdade Brasileira de Ciências Jurídicas\nIBMEC — LLM', photo: 'imgs/nophoto.png', bio:'Integra o time do escritório com atuação em direito empresarial e recuperacional.' },
             gustavo:     { name:'Gustavo Oliveira Caldeira Esganzela',   role:'Sócio',  link:'gustavo.html',      office:'Rio de Janeiro', areas:'Direito Empresarial\nContencioso',                             edu:'UVA-RJ — Graduação em Direito\nFMU — Especialização em Direito de Negócios\nPUC-MG — Direito Penal Econômico', photo:'imgs/gustavocaldeira.jpeg', bio:'Atua em contencioso empresarial e assessoria a grupos nacionais e internacionais.' },
